@@ -1,0 +1,62 @@
+{
+  "meta": {
+    "title": "About Us - Digital Innovation Team",
+    "description": "Learn about our mission, values, and the talented team behind our digital transformation services.",
+    "path": "/about",
+    "ogImage": "/placeholder.svg"
+  },
+  "hero": {
+    "badge": "About Us",
+    "title": "Insights & Resources",
+    "description": "For over 15 years, we've been helping businesses transform their digital presence and achieve remarkable growth through creative solutions and strategic thinking."
+  },
+  "mission": {
+    "title": "Our Mission",
+    "descriptionOne": "We believe every business deserves a powerful digital presence that drives real results. Our mission is to democratize access to world-class digital services, making them accessible to companies of all sizes.",
+    "descriptionTwo": "Through innovation, collaboration, and unwavering commitment to excellence, we help our clients navigate the digital landscape and achieve sustainable growth.",
+    "image": "/placeholder.svg",
+    "alt": "Team collaboration"
+  },
+  "valuesBlock": {
+    "title": "Our Values",
+    "description": "The principles that guide everything we do"
+  },
+  "values": [
+    {
+      "icon": "Target",
+      "title": "Client-Focused",
+      "description": "Your success is our priority. We tailor every solution to meet your unique business goals."
+    },
+    {
+      "icon": "Zap",
+      "title": "Innovation",
+      "description": "We stay ahead of trends and leverage cutting-edge technology to deliver exceptional results."
+    },
+    {
+      "icon": "Award",
+      "title": "Excellence",
+      "description": "Quality is non-negotiable. We maintain the highest standards in everything we create."
+    },
+    {
+      "icon": "Users",
+      "title": "Collaboration",
+      "description": "We work as an extension of your team, fostering transparent communication and partnership."
+    }
+  ],
+  "teamBlock": {
+    "title": "Meet Our Team",
+    "description": "Talented professionals dedicated to your success"
+  },
+  "team": [
+    { "name": "Alex Thompson", "role": "Founder & CEO", "image": "/placeholder.svg", "bio": "15+ years leading digital transformation" },
+    { "name": "Sarah Martinez", "role": "Creative Director", "image": "/placeholder.svg", "bio": "Award-winning designer with global experience" },
+    { "name": "David Kim", "role": "Head of Development", "image": "/placeholder.svg", "bio": "Full-stack expert and tech innovator" },
+    { "name": "Jessica Brown", "role": "Marketing Strategist", "image": "/placeholder.svg", "bio": "Data-driven marketer with proven ROI" }
+  ],
+  "cta": {
+    "title": "Ready to Work Together?",
+    "description": "Let's discuss how we can help transform your business with our digital expertise.",
+    "btnText": "Get in Touch",
+    "btnUrl": "/contact"
+  }
+}

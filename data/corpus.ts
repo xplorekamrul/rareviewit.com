@@ -1,0 +1,268 @@
+import { Users, Target, Award, Zap, Clock, Video, Phone } from "lucide-react"
+
+//----------------------------------------------about page corpus-------------------------------------------------------------
+// src/data/corpus.ts
+// src/data/corpus.ts
+import type { ComponentType, SVGProps } from "react"
+
+export const FALLBACK_IMAGE = "/placeholder.svg"
+type LucideIcon = ComponentType<SVGProps<SVGSVGElement>>
+
+export const corpus = {
+  about: {
+    meta: {
+      title: "About Us - Digital Innovation Team",
+      description:
+        "Learn about our mission, values, and the talented team behind our digital transformation services.",
+      path: "/about",
+      ogImage: FALLBACK_IMAGE, // can swap to a real OG later
+    },
+    hero: {
+      badge: "About Us",
+      title: "Insights & Resources",
+      description:
+        "For over 15 years, we've been helping businesses transform their digital presence and achieve remarkable growth through creative solutions and strategic thinking.",
+    },
+    mission: {
+      title: "Our Mission",
+      descriptionOne:
+        "We believe every business deserves a powerful digital presence that drives real results. Our mission is to democratize access to world-class digital services, making them accessible to companies of all sizes.",
+      descriptionTwo:
+        "Through innovation, collaboration, and unwavering commitment to excellence, we help our clients navigate the digital landscape and achieve sustainable growth.",
+      image: "/placeholder.svg",
+      alt: "Team collaboration",
+    },
+    valuesBlock: {
+      title: "Our Values",
+      description: "The principles that guide everything we do",
+    },
+    values: [
+      {
+        icon: Target as LucideIcon,
+        title: "Client-Focused",
+        description:
+          "Your success is our priority. We tailor every solution to meet your unique business goals.",
+      },
+      {
+        icon: Zap as LucideIcon,
+        title: "Innovation",
+        description:
+          "We stay ahead of trends and leverage cutting-edge technology to deliver exceptional results.",
+      },
+      {
+        icon: Award as LucideIcon,
+        title: "Excellence",
+        description:
+          "Quality is non-negotiable. We maintain the highest standards in everything we create.",
+      },
+      {
+        icon: Users as LucideIcon,
+        title: "Collaboration",
+        description:
+          "We work as an extension of your team, fostering transparent communication and partnership.",
+      },
+    ] as { icon: LucideIcon; title: string; description: string }[],
+    teamBlock: {
+      title: "Meet Our Team",
+      description: "Talented professionals dedicated to your success",
+    },
+    team: [
+      {
+        name: "Alex Thompson",
+        role: "Founder & CEO",
+        image: "/placeholder.svg",
+        bio: "15+ years leading digital transformation",
+      },
+      {
+        name: "Sarah Martinez",
+        role: "Creative Director",
+        image: "/placeholder.svg",
+        bio: "Award-winning designer with global experience",
+      },
+      {
+        name: "David Kim",
+        role: "Head of Development",
+        image: "/placeholder.svg",
+        bio: "Full-stack expert and tech innovator",
+      },
+      {
+        name: "Jessica Brown",
+        role: "Marketing Strategist",
+        image: "/placeholder.svg",
+        bio: "Data-driven marketer with proven ROI",
+      },
+    ],
+    cta: {
+      title: "Ready to Work Together?",
+      description:
+        "Let's discuss how we can help transform your business with our digital expertise.",
+      btnText: "Get in Touch",
+      btnUrl: "/contact",
+    },
+  },
+
+  // 🔜 Add more pages here later, same pattern:
+  // home: { meta: {...}, hero: {...}, sections: [...] }
+} as const
+
+// Convenience named exports (optional)
+export const { about } = corpus
+
+//----------------------------------------------blog page corpus-------------------------------------------------------------
+export const blogHero = {
+   badge: "Blog",
+   title: "Insights & Resources",
+   description: "Expert advice, industry trends, and practical tips to help you succeed in the digital world."
+}
+
+export const featured = {
+   badge: "Featured",
+   title: "The Future of Web Design: Trends to Watch in 2025",
+   excerpt:
+      "Discover the emerging design trends that will shape the digital landscape in 2025, from AI-powered interfaces to immersive 3D experiences.",
+   image: "/placeholder.svg",
+   category: "Design",
+   date: "Jan 15, 2025",
+   readTime: "8 min read",
+   author: "Sarah Martinez",
+   btnText: "Read Articles",
+   btnUrl: "/blog/future-of-web-design"
+}
+
+export const blogPost = {
+   title: "Latest Articles",
+   btnText: "Load More Articles"
+
+}
+
+export const posts = [
+   {
+      title: "10 SEO Strategies That Actually Work in 2025",
+      excerpt: "Cut through the noise with proven SEO tactics that deliver real results for your business.",
+      image: "/placeholder.svg",
+      category: "Marketing",
+      date: "Jan 12, 2025",
+      readTime: "6 min read",
+   },
+   {
+      title: "Building Scalable React Applications",
+      excerpt: "Best practices for architecting React apps that grow with your business needs.",
+      image: "/placeholder.svg",
+      category: "Development",
+      date: "Jan 10, 2025",
+      readTime: "10 min read",
+   },
+   {
+      title: "The ROI of Good UX Design",
+      excerpt: "How investing in user experience design directly impacts your bottom line.",
+      image: "/placeholder.svg",
+      category: "Design",
+      date: "Jan 8, 2025",
+      readTime: "5 min read",
+   },
+   {
+      title: "Mobile-First Development: A Complete Guide",
+      excerpt: "Why mobile-first approach is essential and how to implement it effectively.",
+      image: "/placeholder.svg",
+      category: "Development",
+      date: "Jan 5, 2025",
+      readTime: "7 min read",
+   },
+   {
+      title: "Content Marketing Strategies for SaaS",
+      excerpt: "Proven content strategies that drive signups and reduce churn for SaaS companies.",
+      image: "/placeholder.svg",
+      category: "Marketing",
+      date: "Jan 3, 2025",
+      readTime: "9 min read",
+   },
+   {
+      title: "Accessibility in Modern Web Design",
+      excerpt: "Making your website accessible to everyone isn't just good practice—it's essential.",
+      image: "/placeholder.svg",
+      category: "Design",
+      date: "Dec 30, 2024",
+      readTime: "6 min read",
+   },
+]
+
+export const blogCta = {
+   title: "Stay Updated",
+   description: "Get the latest insights and tips delivered directly to your inbox.",
+   btnText: "Load More Articles",
+   btnUrl: "/contact"
+
+}
+
+//-------------------------------------------booking page corpus-------------------------------------------------------------
+export const bookingHero = {
+   badge: " Book a Consultation",
+   title: " Schedule a Free Consultation",
+   description: " Pick a time that works for you — no back and forth.",
+   btnText: "Book Now",
+   btnUrl: "#calendar"
+}
+
+export const meetingTypes = [
+   {
+      icon: Clock,
+      title: "15-Min Discovery Call",
+      duration: "15 minutes",
+      description: "Quick chat to understand your needs and see if we're a good fit.",
+      features: ["No commitment", "Friendly expert", "Quick turnaround"],
+   },
+   {
+      icon: Video,
+      title: "Strategy Session",
+      duration: "30 minutes",
+      description: "Deep dive into your project goals and discuss potential solutions.",
+      features: ["Video call", "Detailed discussion", "Action plan"],
+   },
+   {
+      icon: Phone,
+      title: "Project Planning",
+      duration: "60 minutes",
+      description: "Comprehensive planning session for complex projects.",
+      features: ["Full consultation", "Technical review", "Custom proposal"],
+   },
+]
+
+export const expectations = [
+   "Friendly expert (not a sales rep)",
+   "Video call or phone",
+   "No commitment required",
+   "Follow-up summary included",
+]
+
+export const faqs = [
+   {
+      question: "What if I need to reschedule?",
+      answer: "You can reschedule anytime up to 24 hours before your meeting through the confirmation email.",
+   },
+   {
+      question: "Do you offer video or phone calls?",
+      answer: "We offer both! You can choose your preferred method when booking.",
+   },
+   {
+      question: "Will I be charged for this meeting?",
+      answer: "No, all consultation calls are completely free with no obligation.",
+   },
+   {
+      question: "Can I book from outside my time zone?",
+      answer: "Yes! Our calendar automatically detects and adjusts to your local time zone.",
+   },
+]
+
+//----------------------------------------------about page corpus-------------------------------------------------------------
+
+//----------------------------------------------about page corpus-------------------------------------------------------------
+
+//----------------------------------------------about page corpus-------------------------------------------------------------
+
+//----------------------------------------------about page corpus-------------------------------------------------------------
+
+//----------------------------------------------about page corpus-------------------------------------------------------------
+
+//----------------------------------------------about page corpus-------------------------------------------------------------
+
+//----------------------------------------------about page corpus-------------------------------------------------------------
