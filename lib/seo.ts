@@ -3,7 +3,7 @@ import type { Metadata } from "next"
 
 // ---- Site URL helpers
 export const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/+$/, "") || "https://example.com"
+  process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/+$/, "") || "https://rareviewit.com"
 
 export const absoluteUrl = (path = "/") =>
   `${SITE_URL}${path.startsWith("/") ? path : `/${path}`}`

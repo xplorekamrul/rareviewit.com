@@ -223,7 +223,101 @@
         "btnText": "Book My Session Now",
         "btnUrl": "/booking/#calendar"
       }
+    },
+    {
+      "pageId": "careers",
+      "meta": {
+        "title": "Careers - Join Our Creative Team",
+        "description": "Build your career with a team that values innovation, creativity, and personal growth.",
+        "path": "/careers",
+        "ogImage": "/placeholder.svg"
+      },
+      "hero": {
+        "badge": "Careers",
+        "title": "Join Our Creative Team",
+        "description": "Build your career with a team that values innovation, creativity, and personal growth. We're always looking for talented individuals to join our mission."
+      },
+      "whySection": {
+        "title": "Why Work With Us?",
+        "subtitle": "We offer more than just a job - we offer a career where you can grow and make an impact"
+      },
+      "benefits": [
+        { "title": "Competitive Salary", "description": "Industry-leading compensation packages with performance bonuses" },
+        { "title": "Health & Wellness", "description": "Comprehensive health insurance and wellness programs" },
+        { "title": "Flexible Work", "description": "Remote-friendly with flexible hours and work-life balance" },
+        { "title": "Professional Growth", "description": "Continuous learning opportunities and career development" },
+        { "title": "Creative Environment", "description": "Collaborative culture that values innovation and creativity" },
+        { "title": "Latest Technology", "description": "Work with cutting-edge tools and technologies" }
+      ],
+      "valuesSection": { "title": "Our Values" },
+      "values": [
+        { "title": "Innovation First", "description": "We embrace new ideas and technologies to stay ahead of the curve." },
+        { "title": "Client Success", "description": "Our clients' success is our success. We go above and beyond every time." },
+        { "title": "Team Collaboration", "description": "We believe in the power of teamwork and open communication." },
+        { "title": "Continuous Learning", "description": "We invest in our team's growth and encourage ongoing education." }
+      ],
+      "openingsSection": {
+        "title": "Open Positions",
+        "subtitle": "Explore our current job openings and find your perfect role"
+      },
+      "openings": [
+        {
+          "title": "Senior Web Designer",
+          "slug": "senior-web-designer",
+          "department": "Design",
+          "location": "San Francisco, CA / Remote",
+          "type": "Full-time",
+          "description": "We're looking for a talented web designer to create beautiful, user-friendly websites for our clients."
+        },
+        {
+          "title": "Digital Marketing Manager",
+          "slug": "digital-marketing-manager",
+          "department": "Marketing",
+          "location": "San Francisco, CA / Remote",
+          "type": "Full-time",
+          "description": "Lead digital marketing campaigns and strategies for diverse clients across multiple industries."
+        },
+        {
+          "title": "Full-Stack Developer",
+          "slug": "full-stack-developer",
+          "department": "Development",
+          "location": "Remote",
+          "type": "Full-time",
+          "description": "Build scalable web applications using modern technologies like React, Node.js, and Next.js."
+        },
+        {
+          "title": "SEO Specialist",
+          "slug": "seo-specialist",
+          "department": "Marketing",
+          "location": "San Francisco, CA / Remote",
+          "type": "Full-time",
+          "description": "Drive organic growth for clients through strategic SEO planning and implementation."
+        },
+        {
+          "title": "Mobile App Developer",
+          "slug": "mobile-app-developer",
+          "department": "Development",
+          "location": "Remote",
+          "type": "Full-time",
+          "description": "Create native and cross-platform mobile applications for iOS and Android."
+        },
+        {
+          "title": "Content Strategist",
+          "slug": "content-strategist",
+          "department": "Marketing",
+          "location": "San Francisco, CA / Remote",
+          "type": "Full-time",
+          "description": "Develop content strategies that engage audiences and drive business results."
+        }
+      ],
+      "cta": {
+        "title": "Don't See the Right Role?",
+        "description": "We're always interested in hearing from talented individuals. Send us your resume and let's talk about future opportunities.",
+        "btnText": "Get in Touch",
+        "btnUrl": "/contact"
+      }
     }
+    
     
   ]
 }
