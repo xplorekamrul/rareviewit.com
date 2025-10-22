@@ -1,3 +1,4 @@
+// src/app/blog/page.tsx
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
@@ -5,52 +6,49 @@ import { Calendar, Clock, ArrowRight } from "lucide-react"
 import Link from "next/link"
 import { AnimateInView } from "@/components/animate-in-view"
 import { StaggerContainer } from "@/components/stagger-container"
-import { generateMetadata as generateSEOMetadata } from "@/lib/seo"
-import { blogCta, blogHero, blogPost, featured, posts } from "@/data/corpus"
 import Image from "next/image"
-
-
+import { blog, FALLBACK_IMAGE } from "@/data/corpus"
+import { generateMetadata as generateSEOMetadata } from "@/lib/seo"
 
 export const metadata = generateSEOMetadata({
-  title: "Blog - Insights & Resources",
-  description: "Expert advice, industry trends, and practical tips to help you succeed in the digital world.",
-  path: "/blog",
+  title: blog.meta.title,
+  description: blog.meta.description,
+  path: blog.meta.path,
+  ogImage: blog.meta.ogImage,
 })
 
+const withFallback = (src?: string) =>
+  src && src.trim().length > 0 ? src : FALLBACK_IMAGE
+
 export default function BlogPage() {
+  const { hero, featured, postList, posts, cta } = blog
 
   return (
     <>
-      {/* Hero Section */}
+      {/* Hero */}
       <section className="bg-gradient-to-b from-background to-muted/30 py-20 md:py-32">
         <div className="container px-4">
           <AnimateInView className="mx-auto max-w-3xl text-center">
-            <Badge className="mb-6" variant="secondary">
-              {blogHero.badge}
-            </Badge>
+            <Badge className="mb-6" variant="secondary">{hero.badge}</Badge>
             <h1 className="mb-6 text-4xl font-bold tracking-tight text-foreground md:text-6xl text-balance">
-              {blogHero.title}
+              {hero.title}
             </h1>
             <p className="text-lg text-muted-foreground leading-relaxed md:text-xl text-balance">
-              {blogHero.description}
+              {hero.description}
             </p>
           </AnimateInView>
         </div>
       </section>
 
-      {/* Featured Post */}
+      {/* Featured */}
       <section className="py-12 md:py-16">
         <div className="container px-4">
-          <AnimateInView >
+          <AnimateInView>
             <Card className="overflow-hidden transition-all hover:shadow-xl">
               <div className="grid gap-6 lg:grid-cols-2">
                 <div className="relative aspect-video lg:aspect-auto overflow-hidden">
                   <div className="h-full w-full object-cover">
-                    <Image
-                      src={featured.image || "/placeholder.svg"}
-                      alt={featured.title}
-                      fill
-                    />
+                    <Image src={withFallback(featured.image)} alt={featured.title} fill />
                   </div>
                 </div>
                 <CardContent className="flex flex-col justify-center p-6 lg:p-8">
@@ -82,24 +80,20 @@ export default function BlogPage() {
         </div>
       </section>
 
-      {/* Blog Posts Grid */}
+      {/* Grid */}
       <section className="py-12 md:py-20">
         <div className="container px-4">
           <AnimateInView className="mb-12">
-            <h2 className="text-2xl font-bold text-foreground md:text-3xl">{blogPost.title}</h2>
+            <h2 className="text-2xl font-bold text-foreground md:text-3xl">{postList.title}</h2>
           </AnimateInView>
 
           <StaggerContainer className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {posts.map((post, index) => (
-              <AnimateInView key={index} delay={index * 0.1} direction="up">
+            {posts.map((post, i) => (
+              <AnimateInView key={i} delay={i * 0.1} direction="up">
                 <Card className="group overflow-hidden transition-all hover:shadow-lg h-full">
                   <div className="relative aspect-video overflow-hidden">
                     <div className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105">
-                      <Image
-                        src={post.image || "/placeholder.svg"}
-                        alt={post.title}
-                        fill
-                      />
+                      <Image src={withFallback(post.image)} alt={post.title} fill />
                     </div>
                   </div>
                   <CardContent className="p-6">
@@ -126,26 +120,23 @@ export default function BlogPage() {
 
           <AnimateInView className="mt-12 text-center">
             <Button variant="outline" size="lg">
-              {blogPost.btnText}
+              {postList.btnText}
             </Button>
           </AnimateInView>
         </div>
       </section>
 
-      {/* Newsletter Section */}
+      {/* CTA */}
       <section className="bg-muted/30 py-20 md:py-32">
         <div className="container px-4">
-          <AnimateInView className="mx-auto max-w-2xl text-center" >
+          <AnimateInView className="mx-auto max-w-2xl text-center">
             <h2 className="mb-4 text-3xl font-bold tracking-tight text-foreground md:text-4xl text-balance">
-              {blogCta.title}
+              {cta.title}
             </h2>
             <p className="mb-8 text-lg text-muted-foreground leading-relaxed text-balance">
-              {blogCta.description}
+              {cta.description}
             </p>
-
-            <Link href={blogCta.btnUrl}>
-              <Button type="submit" >{blogCta.btnText}</Button>
-            </Link>
+            <Link href={cta.btnUrl}><Button type="button">{cta.btnText}</Button></Link>
           </AnimateInView>
         </div>
       </section>

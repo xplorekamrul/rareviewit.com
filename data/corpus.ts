@@ -1,7 +1,5 @@
 import { Users, Target, Award, Zap, Clock, Video, Phone } from "lucide-react"
 
-//----------------------------------------------about page corpus-------------------------------------------------------------
-// src/data/corpus.ts
 // src/data/corpus.ts
 import type { ComponentType, SVGProps } from "react"
 
@@ -9,13 +7,14 @@ export const FALLBACK_IMAGE = "/placeholder.svg"
 type LucideIcon = ComponentType<SVGProps<SVGSVGElement>>
 
 export const corpus = {
-  about: {
+   //----------------------------------------------about page corpus-------------------------------------------------------------
+   about: {
     meta: {
       title: "About Us - Digital Innovation Team",
       description:
         "Learn about our mission, values, and the talented team behind our digital transformation services.",
       path: "/about",
-      ogImage: FALLBACK_IMAGE, // can swap to a real OG later
+      ogImage: FALLBACK_IMAGE,
     },
     hero: {
       badge: "About Us",
@@ -100,158 +99,222 @@ export const corpus = {
       btnUrl: "/contact",
     },
   },
-
-  // 🔜 Add more pages here later, same pattern:
-  // home: { meta: {...}, hero: {...}, sections: [...] }
-} as const
-
-// Convenience named exports (optional)
-export const { about } = corpus
-
 //----------------------------------------------blog page corpus-------------------------------------------------------------
-export const blogHero = {
-   badge: "Blog",
-   title: "Insights & Resources",
-   description: "Expert advice, industry trends, and practical tips to help you succeed in the digital world."
-}
-
-export const featured = {
-   badge: "Featured",
-   title: "The Future of Web Design: Trends to Watch in 2025",
-   excerpt:
-      "Discover the emerging design trends that will shape the digital landscape in 2025, from AI-powered interfaces to immersive 3D experiences.",
-   image: "/placeholder.svg",
-   category: "Design",
-   date: "Jan 15, 2025",
-   readTime: "8 min read",
-   author: "Sarah Martinez",
-   btnText: "Read Articles",
-   btnUrl: "/blog/future-of-web-design"
-}
-
-export const blogPost = {
-   title: "Latest Articles",
-   btnText: "Load More Articles"
-
-}
-
-export const posts = [
-   {
-      title: "10 SEO Strategies That Actually Work in 2025",
-      excerpt: "Cut through the noise with proven SEO tactics that deliver real results for your business.",
-      image: "/placeholder.svg",
-      category: "Marketing",
-      date: "Jan 12, 2025",
-      readTime: "6 min read",
+  blog: {
+   meta: {
+     title: "Blog - Insights & Resources",
+     description:
+       "Expert advice, industry trends, and practical tips to help you succeed in the digital world.",
+     path: "/blog",
+     ogImage: FALLBACK_IMAGE,
    },
-   {
-      title: "Building Scalable React Applications",
-      excerpt: "Best practices for architecting React apps that grow with your business needs.",
-      image: "/placeholder.svg",
-      category: "Development",
-      date: "Jan 10, 2025",
-      readTime: "10 min read",
-   },
-   {
-      title: "The ROI of Good UX Design",
-      excerpt: "How investing in user experience design directly impacts your bottom line.",
-      image: "/placeholder.svg",
-      category: "Design",
-      date: "Jan 8, 2025",
-      readTime: "5 min read",
-   },
-   {
-      title: "Mobile-First Development: A Complete Guide",
-      excerpt: "Why mobile-first approach is essential and how to implement it effectively.",
-      image: "/placeholder.svg",
-      category: "Development",
-      date: "Jan 5, 2025",
-      readTime: "7 min read",
-   },
-   {
-      title: "Content Marketing Strategies for SaaS",
-      excerpt: "Proven content strategies that drive signups and reduce churn for SaaS companies.",
-      image: "/placeholder.svg",
-      category: "Marketing",
-      date: "Jan 3, 2025",
-      readTime: "9 min read",
-   },
-   {
-      title: "Accessibility in Modern Web Design",
-      excerpt: "Making your website accessible to everyone isn't just good practice—it's essential.",
-      image: "/placeholder.svg",
-      category: "Design",
-      date: "Dec 30, 2024",
-      readTime: "6 min read",
-   },
-]
 
-export const blogCta = {
-   title: "Stay Updated",
-   description: "Get the latest insights and tips delivered directly to your inbox.",
-   btnText: "Load More Articles",
-   btnUrl: "/contact"
+   hero: {
+     badge: "Blog",
+     title: "Insights & Resources",
+     description:
+       "Expert advice, industry trends, and practical tips to help you succeed in the digital world.",
+   },
 
-}
+   featured: {
+     badge: "Featured",
+     title: "The Future of Web Design: Trends to Watch in 2025",
+     excerpt:
+       "Discover the emerging design trends that will shape the digital landscape in 2025, from AI-powered interfaces to immersive 3D experiences.",
+     image: FALLBACK_IMAGE,
+     category: "Design",
+     date: "Jan 15, 2025",
+     readTime: "8 min read",
+     author: "Sarah Martinez",
+     btnText: "Read Articles",
+     btnUrl: "/blog/future-of-web-design",
+   },
 
-//-------------------------------------------booking page corpus-------------------------------------------------------------
-export const bookingHero = {
-   badge: " Book a Consultation",
-   title: " Schedule a Free Consultation",
-   description: " Pick a time that works for you — no back and forth.",
-   btnText: "Book Now",
-   btnUrl: "#calendar"
-}
+   // Grid header + load-more button text
+   postList: {
+     title: "Latest Articles",
+     btnText: "Load More Articles",
+   },
 
-export const meetingTypes = [
-   {
-      icon: Clock,
+   posts: [
+     {
+       title: "10 SEO Strategies That Actually Work in 2025",
+       excerpt:
+         "Cut through the noise with proven SEO tactics that deliver real results for your business.",
+       image: FALLBACK_IMAGE,
+       category: "Marketing",
+       date: "Jan 12, 2025",
+       readTime: "6 min read",
+     },
+     {
+       title: "Building Scalable React Applications",
+       excerpt:
+         "Best practices for architecting React apps that grow with your business needs.",
+       image: FALLBACK_IMAGE,
+       category: "Development",
+       date: "Jan 10, 2025",
+       readTime: "10 min read",
+     },
+     {
+       title: "The ROI of Good UX Design",
+       excerpt:
+         "How investing in user experience design directly impacts your bottom line.",
+       image: FALLBACK_IMAGE,
+       category: "Design",
+       date: "Jan 8, 2025",
+       readTime: "5 min read",
+     },
+     {
+       title: "Mobile-First Development: A Complete Guide",
+       excerpt:
+         "Why mobile-first approach is essential and how to implement it effectively.",
+       image: FALLBACK_IMAGE,
+       category: "Development",
+       date: "Jan 5, 2025",
+       readTime: "7 min read",
+     },
+     {
+       title: "Content Marketing Strategies for SaaS",
+       excerpt:
+         "Proven content strategies that drive signups and reduce churn for SaaS companies.",
+       image: FALLBACK_IMAGE,
+       category: "Marketing",
+       date: "Jan 3, 2025",
+       readTime: "9 min read",
+     },
+     {
+       title: "Accessibility in Modern Web Design",
+       excerpt:
+         "Making your website accessible to everyone isn't just good practice—it's essential.",
+       image: FALLBACK_IMAGE,
+       category: "Design",
+       date: "Dec 30, 2024",
+       readTime: "6 min read",
+     },
+   ],
+
+   cta: {
+     title: "Stay Updated",
+     description:
+       "Get the latest insights and tips delivered directly to your inbox.",
+     btnText: "Load More Articles",
+     btnUrl: "/contact",
+   },
+ },
+ //-------------------------------------------booking page corpus-------------------------------------------------------------
+ booking: {
+  meta: {
+    title: "Book a Consultation",
+    description: "Pick a time that works for you — no back and forth.",
+    path: "/booking",
+    ogImage: FALLBACK_IMAGE,
+  },
+
+  hero: {
+    badge: "Book a Consultation",
+    title: "Schedule a Free Consultation",
+    description: "Pick a time that works for you — no back and forth.",
+    btnText: "Book Now",
+    btnUrl: "#calendar",
+  },
+
+  meetingTypesSection: {
+    title: "Choose Your Meeting Type",
+    subtitle: "Select the consultation that best fits your needs",
+  },
+
+  meetingTypes: [
+    {
+      icon: Clock as LucideIcon,
       title: "15-Min Discovery Call",
       duration: "15 minutes",
-      description: "Quick chat to understand your needs and see if we're a good fit.",
+      description:
+        "Quick chat to understand your needs and see if we're a good fit.",
       features: ["No commitment", "Friendly expert", "Quick turnaround"],
-   },
-   {
-      icon: Video,
+    },
+    {
+      icon: Video as LucideIcon,
       title: "Strategy Session",
       duration: "30 minutes",
-      description: "Deep dive into your project goals and discuss potential solutions.",
+      description:
+        "Deep dive into your project goals and discuss potential solutions.",
       features: ["Video call", "Detailed discussion", "Action plan"],
-   },
-   {
-      icon: Phone,
+    },
+    {
+      icon: Phone as LucideIcon,
       title: "Project Planning",
       duration: "60 minutes",
-      description: "Comprehensive planning session for complex projects.",
+      description:
+        "Comprehensive planning session for complex projects.",
       features: ["Full consultation", "Technical review", "Custom proposal"],
-   },
-]
+    },
+  ] as {
+    icon: LucideIcon
+    title: string
+    duration: string
+    description: string
+    features: string[]
+  }[],
 
-export const expectations = [
-   "Friendly expert (not a sales rep)",
-   "Video call or phone",
-   "No commitment required",
-   "Follow-up summary included",
-]
+  calendarSection: {
+    title: "Pick Your Time",
+    subtitle: "Select a date and time that works best for you",
+    embedNoteTitle: "📅",
+    embedNoteLine1: "Calendar Integration (Calendly/TidyCal)",
+    embedNoteLine2: "Embed your booking calendar here",
+  },
 
-export const faqs = [
-   {
+  expectationsSection: {
+    title: "What to Expect",
+  },
+  expectations: [
+    "Friendly expert (not a sales rep)",
+    "Video call or phone",
+    "No commitment required",
+    "Follow-up summary included",
+  ],
+
+  faqSection: {
+    title: "Booking FAQ",
+  },
+  faqs: [
+    {
       question: "What if I need to reschedule?",
-      answer: "You can reschedule anytime up to 24 hours before your meeting through the confirmation email.",
-   },
-   {
+      answer:
+        "You can reschedule anytime up to 24 hours before your meeting through the confirmation email.",
+    },
+    {
       question: "Do you offer video or phone calls?",
-      answer: "We offer both! You can choose your preferred method when booking.",
-   },
-   {
+      answer:
+        "We offer both! You can choose your preferred method when booking.",
+    },
+    {
       question: "Will I be charged for this meeting?",
-      answer: "No, all consultation calls are completely free with no obligation.",
-   },
-   {
+      answer:
+        "No, all consultation calls are completely free with no obligation.",
+    },
+    {
       question: "Can I book from outside my time zone?",
-      answer: "Yes! Our calendar automatically detects and adjusts to your local time zone.",
-   },
-]
+      answer:
+        "Yes! Our calendar automatically detects and adjusts to your local time zone.",
+    },
+  ],
+
+  cta: {
+    title: "Let's Make Your Project Happen",
+    description:
+      "Book your free consultation now and take the first step toward your digital transformation",
+    btnText: "Book My Session Now",
+    btnUrl: "#calendar",
+  },
+},
+} as const
+
+// Convenience named exports 
+export const { about, blog, booking } = corpus
+
+
+
 
 //----------------------------------------------about page corpus-------------------------------------------------------------
 
