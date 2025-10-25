@@ -12,8 +12,8 @@ export const absoluteUrl = (path = "/") =>
 export interface SEOProps {
   title: string
   description: string
-  /** Optional keywords; Next supports string | string[], we prefer string[] */
-  keywords?: string[]
+  /** Accept string OR readonly/mutable arrays */
+  keywords?: string | ReadonlyArray<string>
   /** Convenience: single OG/Twitter image; can still override via openGraph/twitter */
   ogImage?: string
   /** If true, sets robots noindex/nofollow (can still override via robots) */
@@ -31,7 +31,7 @@ export interface SEOProps {
 export function generateSEO({
   title,
   description,
-  keywords = [],
+  keywords,
   ogImage = "/og-image.jpg",
   noIndex = false,
   path,
@@ -48,6 +48,14 @@ export function generateSEO({
     ? ogImage
     : `${SITE_URL}${ogImage?.startsWith("/") ? ogImage : `/${ogImage}`}`
 
+  // Normalize keywords (support string or readonly array)
+  const keywordsOut =
+    typeof keywords === "string"
+      ? keywords
+      : Array.isArray(keywords) && keywords.length
+      ? [...keywords] // spread to convert readonly -> mutable string[]
+      : undefined
+
   const computedRobots: Metadata["robots"] =
     noIndex
       ? { index: false, follow: false, nocache: false, googleBot: { index: false, follow: false } }
@@ -56,8 +64,7 @@ export function generateSEO({
   return {
     title: fullTitle,
     description,
-    // Prefer array form; Next also accepts string
-    keywords: keywords.length ? keywords : undefined,
+    keywords: keywordsOut,
 
     // Canonical
     alternates: {
@@ -92,10 +99,10 @@ export function generateSEO({
   }
 }
 
-// Alias to your existing name so imports stay the same
+// Keep alias for existing imports
 export const generateMetadata = generateSEO
 
-// ---- JSON-LD helper stays the same (you can JSON.stringify this)
+// ---- JSON-LD helper stays the same
 interface StructuredDataProps {
   type: "Organization" | "Service" | "Article" | "FAQPage" | "BreadcrumbList"
   data: Record<string, unknown>

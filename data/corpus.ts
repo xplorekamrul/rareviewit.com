@@ -1589,7 +1589,107 @@ export const corpus = {
       buttonText: "Claim Your Free Audit",
       href: "/contact"
     }
-  }
+  },
+//----------------------------------------------webDesign page corpus------------------------------------------------------------
+  webDesign: {
+    meta: {
+      title: "Web Design Services - Beautiful Websites That Convert",
+      description:
+        "Professional web design services that create stunning, user-friendly websites to drive results for your business.",
+      path: "/services/web-design",
+      ogImage: FALLBACK_IMAGE,
+      keywords: [
+        "web design",
+        "responsive web design",
+        "ui ux",
+        "website performance",
+        "mobile first"
+      ],
+    },
+
+    hero: {
+      badge: "Web Design",
+      title: "Beautiful Websites That Drive Results",
+      description:
+        "We create stunning, user-friendly websites that not only look amazing but also convert visitors into customers. Every design is crafted with your business goals in mind.",
+      primaryCta: { text: "Start Your Project", href: "/contact" },
+      secondaryCta: { text: "View Our Work", href: "/portfolio" }
+    },
+
+    showcaseImage: {
+      src: "/web-design-showcase.jpg",
+      alt: "Web design showcase"
+    },
+
+    featuresBlock: {
+      title: "What We Offer",
+      subtitle: "Comprehensive web design services tailored to your needs"
+    },
+
+    features: [
+      {
+        iconId: "layout",
+        title: "Responsive Design",
+        description: "Beautiful layouts that work flawlessly across all devices and screen sizes."
+      },
+      {
+        iconId: "palette",
+        title: "Custom UI/UX",
+        description: "Intuitive interfaces designed with your users and brand identity in mind."
+      },
+      {
+        iconId: "smartphone",
+        title: "Mobile-First",
+        description: "Optimized for mobile devices to reach your audience wherever they are."
+      },
+      {
+        iconId: "zap",
+        title: "Performance",
+        description: "Lightning-fast load times and smooth interactions for better user experience."
+      }
+    ],
+
+    benefitsBlock: {
+      title: "Why Invest in Professional Web Design?",
+      subtitle:
+        "Your website is often the first impression potential customers have of your business. A professionally designed website can make all the difference."
+    },
+
+    benefitsImage: {
+      src: "/web-design-benefits.jpg",
+      alt: "Web design benefits"
+    },
+
+    benefits: [
+      "Increase conversion rates by up to 200%",
+      "Improve user engagement and time on site",
+      "Build trust with professional design",
+      "Stand out from competitors",
+      "Reduce bounce rates significantly",
+      "Enhance brand perception and credibility"
+    ],
+
+    processBlock: {
+      title: "Our Design Process",
+      subtitle: "A structured approach that ensures exceptional results"
+    },
+
+    process: [
+      { title: "Research & Discovery", description: "Understanding your brand, audience, and goals" },
+      { title: "Wireframing", description: "Creating the blueprint for your website structure" },
+      { title: "Design Mockups", description: "Crafting pixel-perfect visual designs" },
+      { title: "Development", description: "Building your site with clean, modern code" },
+      { title: "Testing & Launch", description: "Ensuring everything works perfectly before going live" },
+      { title: "Support", description: "Ongoing maintenance and optimization" }
+    ],
+
+    cta: {
+      title: "Ready to Transform Your Website?",
+      subtitle: "Let's create a website that truly represents your brand and drives business growth.",
+      buttonText: "Get Started Today",
+      href: "/contact"
+    }
+  },
 
 
 
@@ -1597,7 +1697,7 @@ export const corpus = {
 
 
 // Convenience named exports 
-export const { about, blog, booking, careers, contact, events, faq, help, partners, portfolio, pricing, privacy, terms, testimonials, appDev, marketing, seo } = corpus
+export const { about, blog, booking, careers, contact, events, faq, help, partners, portfolio, pricing, privacy, terms, testimonials, appDev, marketing, seo, webDesign } = corpus
 
 
 
