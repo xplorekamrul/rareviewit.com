@@ -1,3 +1,4 @@
+// components/home/HeroSection.tsx
 "use client"
 
 import Link from "next/link"
@@ -5,7 +6,15 @@ import { Button } from "@/components/ui/button"
 import { ArrowRight, Sparkles } from "lucide-react"
 import { motion } from "framer-motion"
 
-export function HeroSection() {
+type HeroData = {
+  badge: string
+  title: string // contains safe <span> markup string
+  description: string
+  primaryCta: { label: string; href: string }
+  secondaryCta: { label: string; href: string }
+}
+
+export default function HeroSection({ data }: { data: HeroData }) {
   return (
     <section className="relative overflow-hidden bg-gradient-to-b from-background to-muted/30 py-20 md:py-32">
       <div className="container px-4">
@@ -17,7 +26,7 @@ export function HeroSection() {
             className="mb-6 inline-flex items-center gap-2 rounded-full bg-accent/10 px-4 py-2 text-sm font-medium text-accent"
           >
             <Sparkles className="h-4 w-4" />
-            <span>Award-Winning Digital Agency</span>
+            <span>{data.badge}</span>
           </motion.div>
 
           <motion.h1
@@ -25,9 +34,8 @@ export function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
             className="mb-6 text-4xl font-bold tracking-tight text-foreground md:text-6xl lg:text-7xl text-balance"
-          >
-            Transform Your Business with <span className="text-primary">Creative Digital Solutions</span>
-          </motion.h1>
+            dangerouslySetInnerHTML={{ __html: data.title }}
+          />
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -35,8 +43,7 @@ export function HeroSection() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="mb-8 text-lg text-muted-foreground md:text-xl leading-relaxed text-balance"
           >
-            We craft exceptional digital experiences that drive growth, engage audiences, and elevate your brand to new
-            heights.
+            {data.description}
           </motion.p>
 
           <motion.div
@@ -46,13 +53,13 @@ export function HeroSection() {
             className="flex flex-col gap-4 sm:flex-row sm:justify-center"
           >
             <Button size="lg" asChild>
-              <Link href="/contact">
-                Get Started
+              <Link href={data.primaryCta.href}>
+                {data.primaryCta.label}
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>
             <Button size="lg" variant="outline" asChild>
-              <Link href="/portfolio">View Our Work</Link>
+              <Link href={data.secondaryCta.href}>{data.secondaryCta.label}</Link>
             </Button>
           </motion.div>
         </div>

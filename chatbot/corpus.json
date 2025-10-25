@@ -1595,7 +1595,52 @@
         "button_text": "Schedule a Consultation",
         "href": "/contact"
       }
+    },
+    {
+      "pageId": "home",
+      "meta": {
+        "title": "Creative Digital Agency — Home",
+        "description": "We craft exceptional digital experiences that drive growth, engage audiences, and elevate your brand.",
+        "path": "/",
+        "ogImage": "/placeholder.svg",
+        "keywords": ["digital agency", "web design", "marketing", "seo", "app development"]
+      },
+      "hero": {
+        "badge": "Award-Winning Digital Agency",
+        "title": "Transform Your Business with Creative Digital Solutions",
+        "description": "We craft exceptional digital experiences that drive growth, engage audiences, and elevate your brand to new heights.",
+        "primaryCta": "Get Started",
+        "secondaryCta": "View Our Work"
+      },
+      "stats": [
+        { "value": "300%", "label": "Avg. Traffic Lift" },
+        { "value": "120+", "label": "Projects Delivered" },
+        { "value": "50+", "label": "Happy Clients" },
+        { "value": "12", "label": "Industry Awards" }
+      ],
+      "services": [
+        { "title": "Web Design", "description": "Beautiful, responsive websites that captivate your audience and drive conversions." },
+        { "title": "Digital Marketing", "description": "Strategic campaigns that amplify your brand and deliver measurable results." },
+        { "title": "SEO Services", "description": "Boost your visibility and rank higher in search results with our proven strategies." },
+        { "title": "App Development", "description": "Custom mobile and web applications built with cutting-edge technology." }
+      ],
+      "portfolio": [
+        { "title": "E-Commerce Platform", "category": "Web Development" },
+        { "title": "Brand Identity Design", "category": "Branding" },
+        { "title": "Mobile Banking App", "category": "App Development" },
+        { "title": "SEO Campaign Success", "category": "Digital Marketing" }
+      ],
+      "testimonials": [
+        { "name": "Sarah Johnson", "quote": "Traffic increased by 300% in three months." },
+        { "name": "Michael Chen", "quote": "Attention to detail and creative approach exceeded expectations." },
+        { "name": "Emily Rodriguez", "quote": "Now ranking #1 for all our target keywords." }
+      ],
+      "cta": {
+        "title": "Ready to Transform Your Business?",
+        "description": "Let's discuss how we can help you achieve your digital goals and drive real results for your business."
+      }
     }
+    
       
   ]
 }

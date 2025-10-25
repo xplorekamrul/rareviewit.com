@@ -1716,7 +1716,7 @@ export const corpus = {
       ctaLabel: "Learn More",
       items: [
         {
-          icon: "palette", 
+          icon: "palette",
           title: "Web Design",
           description:
             "Create stunning, user-friendly websites that captivate your audience and drive conversions.",
@@ -1766,14 +1766,76 @@ export const corpus = {
       buttonText: "Schedule a Consultation",
       href: "/contact",
     },
-  }
+  },
+  //----------------------------------------------homeData page corpus------------------------------------------------------------
 
+  homeData: {
+
+    "meta": {
+      "title": "Creative Digital Agency — Home",
+      "description": "We craft exceptional digital experiences that drive growth, engage audiences, and elevate your brand.",
+      "path": "/",
+      "ogImage": "/placeholder.svg",
+      "keywords": ["digital agency", "web design", "marketing", "seo", "app development"]
+    },
+    "hero": {
+      "badge": "Award-Winning Digital Agency",
+      "title": "Transform Your Business with <span class='text-primary'>Creative Digital Solutions</span>",
+      "description": "We craft exceptional digital experiences that drive growth, engage audiences, and elevate your brand to new heights.",
+      "primaryCta": { "label": "Get Started", "href": "/contact" },
+      "secondaryCta": { "label": "View Our Work", "href": "/portfolio" }
+    },
+    "stats": [
+      { "value": "300%", "label": "Avg. Traffic Lift" },
+      { "value": "120+", "label": "Projects Delivered" },
+      { "value": "50+", "label": "Happy Clients" },
+      { "value": "12", "label": "Industry Awards" }
+    ],
+    "services": {
+      "title": "Our Services",
+      "subtitle": "Comprehensive digital solutions tailored to your business needs",
+      "items": [
+        { "icon": "Palette", "title": "Web Design", "description": "Beautiful, responsive websites that captivate your audience and drive conversions.", "href": "/services/web-design" },
+        { "icon": "TrendingUp", "title": "Digital Marketing", "description": "Strategic campaigns that amplify your brand and deliver measurable results.", "href": "/services/digital-marketing" },
+        { "icon": "Search", "title": "SEO Services", "description": "Boost your visibility and rank higher in search results with our proven strategies.", "href": "/services/seo" },
+        { "icon": "Smartphone", "title": "App Development", "description": "Custom mobile and web applications built with cutting-edge technology.", "href": "/services/app-development" }
+      ]
+    },
+    "portfolio": {
+      "title": "Featured Work",
+      "subtitle": "Explore our portfolio of successful projects and client transformations",
+      "cta": { "label": "View All Projects", "href": "/portfolio" },
+      "projects": [
+        { "title": "E-Commerce Platform", "category": "Web Development", "image": "/modern-ecommerce-website.png", "tags": ["React", "Next.js", "Stripe"] },
+        { "title": "Brand Identity Design", "category": "Branding", "image": "/brand-identity-design-mockup.jpg", "tags": ["Design", "Branding", "UI/UX"] },
+        { "title": "Mobile Banking App", "category": "App Development", "image": "/mobile-banking-app.png", "tags": ["React Native", "FinTech", "iOS"] },
+        { "title": "SEO Campaign Success", "category": "Digital Marketing", "image": "/seo-analytics-dashboard.png", "tags": ["SEO", "Analytics", "Growth"] }
+      ]
+    },
+    "testimonials": {
+      "title": "What Our Clients Say",
+      "subtitle": "Don't just take our word for it - hear from businesses we've helped succeed",
+      "items": [
+        { "name": "Sarah Johnson", "role": "CEO, TechStart Inc", "avatar": "/professional-woman-headshot.png", "content": "Working with this team transformed our online presence. Our traffic increased by 300% in just three months!", "rating": 5 },
+        { "name": "Michael Chen", "role": "Founder, GrowthLabs", "avatar": "/professional-man-headshot.png", "content": "The attention to detail and creative approach exceeded our expectations. Highly recommend their services!", "rating": 5 },
+        { "name": "Emily Rodriguez", "role": "Marketing Director, Innovate Co", "avatar": "/professional-woman-headshot-2.png", "content": "Their SEO expertise helped us dominate our market. We're now ranking #1 for all our target keywords.", "rating": 5 }
+      ]
+    },
+    "cta": {
+      "title": "Ready to Transform Your Business?",
+      "description": "Let's discuss how we can help you achieve your digital goals and drive real results for your business.",
+      "primary": { "label": "Start Your Project", "href": "/contact" },
+      "secondary": { "label": "Explore Services", "href": "/services" }
+    }
+
+
+  }
 
 } as const
 
 
 // Convenience named exports 
-export const { about, blog, booking, careers, contact, events, faq, help, partners, portfolio, pricing, privacy, terms, testimonials, appDev, marketing, seo, webDesign, services } = corpus
+export const { about, blog, booking, careers, contact, events, faq, help, partners, portfolio, pricing, privacy, terms, testimonials, appDev, marketing, seo, webDesign, services, homeData } = corpus
 
 
 
