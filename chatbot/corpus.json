@@ -604,6 +604,117 @@
         "placeholder": "Enter your email",
         "btnText": "Notify Me"
       }
+    },
+    {
+      "pageId": "faq",
+      "meta": {
+        "title": "FAQ",
+        "description": "Got a question about our services, process, or pricing? We've answered the most frequent ones below.",
+        "path": "/faq",
+        "ogImage": "/placeholder.svg"
+      },
+      "hero": {
+        "badge": "FAQ",
+        "title": "Answers to Your Most Common Questions",
+        "description": "Got a question about our services, process, or pricing? We've answered the most frequent ones below.",
+        "ctaText": "Still Need Help? Chat With Us",
+        "ctaHref": "/contact"
+      },
+      "categories": ["General", "Web Design", "SEO", "App Development", "eCommerce", "Pricing & Payment"],
+      "faqsByCategory": {
+        "General": [
+          {"question":"How do I start a project?","answer":"Simply contact us through our website, schedule a consultation, or give us a call. We'll discuss your needs and provide a custom proposal."},
+          {"question":"What is your typical turnaround time?","answer":"Project timelines vary based on scope. A basic website takes 2-4 weeks, while complex applications can take 2-3 months. We'll provide a detailed timeline in your proposal."},
+          {"question":"Do you work with clients remotely?","answer":"Yes! We work with clients worldwide. We use video calls, project management tools, and regular updates to ensure smooth collaboration."}
+        ],
+        "Web Design": [
+          {"question":"Will my website work on phones?","answer":"All our websites are fully responsive and optimized for mobile, tablet, and desktop devices."},
+          {"question":"Do you use WordPress, Webflow, or custom code?","answer":"We work with various platforms based on your needs. We specialize in custom Next.js applications, but also work with WordPress, Webflow, and other CMS platforms."},
+          {"question":"Can I update the website myself after launch?","answer":"Yes! We provide training and documentation so you can make content updates. We also offer ongoing maintenance packages if you prefer us to handle updates."}
+        ],
+        "SEO": [
+          {"question":"How long until I see SEO results?","answer":"SEO is a long-term strategy. You may start seeing improvements in 3-6 months, with significant results typically appearing after 6-12 months of consistent optimization."},
+          {"question":"Do you guarantee rankings?","answer":"We don't guarantee specific rankings as search algorithms constantly change. However, we guarantee our best efforts using proven strategies and transparent reporting."},
+          {"question":"What's included in your SEO service?","answer":"Our SEO service includes keyword research, on-page optimization, technical SEO, content strategy, link building, and monthly performance reports."}
+        ],
+        "App Development": [
+          {"question":"Do you build both iOS and Android?","answer":"Yes! We develop native apps for both platforms, as well as cross-platform solutions using React Native for cost-effective development."},
+          {"question":"Will I own the source code?","answer":"Yes, upon final payment, you receive full ownership of the source code and all project files."},
+          {"question":"Do you provide app store submission?","answer":"Yes, we handle the entire app store submission process for both Apple App Store and Google Play Store, including all required assets and descriptions."}
+        ],
+        "eCommerce": [
+          {"question":"Can I manage my store after launch?","answer":"We provide comprehensive training on managing products, orders, inventory, and customers through your e-commerce platform."},
+          {"question":"Do you help with payment setup and shipping?","answer":"Yes, we integrate payment gateways (Stripe, PayPal, etc.) and configure shipping options based on your business needs."},
+          {"question":"What e-commerce platforms do you use?","answer":"We work with Shopify, WooCommerce, custom Next.js solutions, and headless commerce platforms depending on your requirements."}
+        ],
+        "Pricing & Payment": [
+          {"question":"Do you offer refunds?","answer":"Refunds are only issued if work hasn't begun. Partial refunds are evaluated case-by-case based on work completed."},
+          {"question":"What payment methods do you accept?","answer":"We accept credit cards, bank transfers, PayPal, and for larger projects, we can arrange payment plans."},
+          {"question":"How many design revisions are included?","answer":"Most packages include 2 major and 2 minor revisions. Additional revisions can be purchased if needed."},
+          {"question":"Do you require a deposit?","answer":"Yes, we typically require a 50% deposit to begin work, with the balance due upon completion or according to agreed milestones."}
+        ]
+      },
+      "cta": {
+        "title": "Didn't Find What You're Looking For?",
+        "description": "Our team is here to help answer any questions you have about our services.",
+        "primary": { "text": "Send Us a Message", "href": "/contact" },
+        "secondary": { "text": "Schedule a Call", "href": "/booking" }
+      }
+    },
+    {
+      "pageId": "help",
+      "meta": {
+        "title": "Help Center",
+        "description": "Find answers to your questions, browse our knowledge base, and get support for all our services.",
+        "path": "/help",
+        "ogImage": "/placeholder.svg",
+        "keywords": ["help center", "support", "FAQ", "customer service", "documentation"]
+      },
+      "hero": {
+        "badge": "Help Center",
+        "title": "How Can We Help You?",
+        "description": "Search our knowledge base or browse categories to find answers to your questions",
+        "searchPlaceholder": "Search for help articles..."
+      },
+      "categoriesSection": {
+        "title": "Browse by Category",
+        "subtitle": "Find the information you need organized by topic"
+      },
+      "categories": [
+        { "icon": "Book", "title": "Getting Started", "description": "Learn the basics and get up to speed quickly", "articles": 12, "link": "/help/getting-started" },
+        { "icon": "FileText", "title": "Services & Pricing", "description": "Understand our services, packages, and pricing", "articles": 8, "link": "/help/services" },
+        { "icon": "MessageCircle", "title": "Project Management", "description": "How we manage projects and communicate with clients", "articles": 15, "link": "/help/projects" },
+        { "icon": "Video", "title": "Video Tutorials", "description": "Step-by-step video guides for common tasks", "articles": 6, "link": "/help/tutorials" }
+      ],
+      "popularSection": {
+        "title": "Popular Articles",
+        "subtitle": "Most viewed help articles this month"
+      },
+      "popularArticles": [
+        { "title": "How do I get started with a new project?", "category": "Getting Started", "views": "2.5K" },
+        { "title": "What's included in your web design packages?", "category": "Services", "views": "1.8K" },
+        { "title": "How long does a typical project take?", "category": "Project Management", "views": "1.6K" },
+        { "title": "What payment methods do you accept?", "category": "Billing", "views": "1.4K" },
+        { "title": "Can I request revisions after project completion?", "category": "Project Management", "views": "1.2K" },
+        { "title": "Do you offer ongoing support and maintenance?", "category": "Services", "views": "1.1K" }
+      ],
+      "contactSection": {
+        "title": "Still Need Help?",
+        "subtitle": "Our support team is here to assist you",
+        "options": [
+          { "icon": "MessageCircle", "title": "Live Chat", "description": "Chat with our support team", "action": "Start Chat", "available": "Mon-Fri, 9AM-6PM PST" },
+          { "icon": "Mail", "title": "Email Support", "description": "Get help via email", "action": "Send Email", "available": "Response within 24 hours" },
+          { "icon": "Phone", "title": "Phone Support", "description": "Speak with an expert", "action": "Call Us", "available": "+1 (555) 123-4567" }
+        ]
+      },
+      "quickLinksSection": {
+        "title": "Explore More Resources",
+        "primary": { "text": "View FAQ", "href": "/faq" },
+        "secondary": { "text": "Contact Us", "href": "/contact" },
+        "tertiary": { "text": "Book a Call", "href": "/booking" }
+      }
     }
+    
+    
   ]
 }
