@@ -788,7 +788,85 @@
         }
       ],
       "cta": { "title": "Let's Grow Together", "description": "Join our network of successful partners and start earning today", "button": { "text": "Apply Now", "href": "/contact" } }
+    },
+    {
+      "pageId": "portfolio",
+      "meta": {
+        "title": "Our Work - Portfolio",
+        "description": "Explore our portfolio of successful digital transformations across web, app, branding, and marketing.",
+        "path": "/portfolio",
+        "ogImage": "/placeholder.svg",
+        "keywords": ["portfolio", "case studies", "web design", "app development", "branding", "marketing"]
+      },
+      "hero": {
+        "badge": "Our Work",
+        "title": "Projects That Drive Results",
+        "description": "Explore our portfolio of successful digital transformations and see how we've helped businesses achieve their goals."
+      },
+      "filters": ["All", "Web Design", "App Development", "Branding", "Digital Marketing"],
+      "projects": [
+        {
+          "title": "E-Commerce Platform",
+          "category": "Web Design",
+          "description": "Complete redesign and development of a modern e-commerce platform with 300% increase in conversions.",
+          "image": "/portfolio-ecommerce.png",
+          "tags": ["React", "Next.js", "Stripe", "Tailwind"],
+          "results": "+300% Conversions",
+          "href": "/projects/ecommerce-platform"
+        },
+        {
+          "title": "FinTech Mobile App",
+          "category": "App Development",
+          "description": "Secure mobile banking application serving 100K+ active users with seamless UX.",
+          "image": "/portfolio-fintech.png",
+          "tags": ["React Native", "Node.js", "Security"],
+          "results": "100K+ Users",
+          "href": "/projects/fintech-mobile-app"
+        },
+        {
+          "title": "Brand Identity Refresh",
+          "category": "Branding",
+          "description": "Complete brand overhaul including logo, guidelines, and marketing materials for a tech startup.",
+          "image": "/portfolio-branding.png",
+          "tags": ["Design", "Branding", "Strategy"],
+          "results": "Award Winner",
+          "href": "/projects/brand-identity-refresh"
+        },
+        {
+          "title": "SaaS Dashboard",
+          "category": "Web Design",
+          "description": "Analytics dashboard with real-time data visualization and intuitive user experience.",
+          "image": "/portfolio-saas.png",
+          "tags": ["React", "D3.js", "API Integration"],
+          "results": "98% Satisfaction",
+          "href": "/projects/saas-dashboard"
+        },
+        {
+          "title": "SEO Campaign",
+          "category": "Digital Marketing",
+          "description": "Comprehensive SEO strategy resulting in first-page rankings for 50+ keywords.",
+          "image": "/portfolio-seo.png",
+          "tags": ["SEO", "Content", "Analytics"],
+          "results": "+500% Traffic",
+          "href": "/projects/seo-campaign"
+        },
+        {
+          "title": "Healthcare Portal",
+          "category": "Web Design",
+          "description": "HIPAA-compliant patient portal with appointment scheduling and telemedicine features.",
+          "image": "/portfolio-healthcare.png",
+          "tags": ["Next.js", "Security", "Compliance"],
+          "results": "HIPAA Certified",
+          "href": "/projects/healthcare-portal"
+        }
+      ],
+      "cta": {
+        "title": "Let's Create Something Amazing",
+        "description": "Ready to see your project featured in our portfolio? Let's discuss your vision.",
+        "button": { "text": "Start Your Project", "href": "/contact" }
+      }
     }
+    
     
   ]
 }
