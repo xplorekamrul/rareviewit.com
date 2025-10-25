@@ -1,25 +1,33 @@
+// components/home/CtaSection.tsx
 "use client"
 
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { ArrowRight } from "lucide-react"
-import { AnimateInView } from "./animate-in-view"
+import { AnimateInView } from "@/components/animate-in-view"
 
-export function CtaSection() {
+type CTAData = {
+  title: string
+  description: string
+  primary: { label: string; href: string }
+  secondary: { label: string; href: string }
+}
+
+export default function CtaSection({ data }: { data: CTAData }) {
   return (
     <section className="relative overflow-hidden bg-primary py-20 text-primary-foreground md:py-32">
       <div className="container relative z-10 px-4">
-        <AnimateInView className="mx-auto max-w-3xl text-center" scale>
+        <AnimateInView className="mx-auto max-w-3xl text-center">
           <h2 className="mb-6 text-3xl font-bold tracking-tight md:text-5xl text-balance">
-            Ready to Transform Your Business?
+            {data.title}
           </h2>
           <p className="mb-8 text-lg leading-relaxed text-primary-foreground/90 md:text-xl text-balance">
-            Let's discuss how we can help you achieve your digital goals and drive real results for your business.
+            {data.description}
           </p>
           <div className="flex flex-col gap-4 sm:flex-row sm:justify-center">
             <Button size="lg" variant="secondary" asChild>
-              <Link href="/contact">
-                Start Your Project
+              <Link href={data.primary.href}>
+                {data.primary.label}
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>
@@ -29,7 +37,7 @@ export function CtaSection() {
               className="border-primary-foreground/20 bg-transparent text-primary-foreground hover:bg-primary-foreground/10"
               asChild
             >
-              <Link href="/services">Explore Services</Link>
+              <Link href={data.secondary.href}>{data.secondary.label}</Link>
             </Button>
           </div>
         </AnimateInView>

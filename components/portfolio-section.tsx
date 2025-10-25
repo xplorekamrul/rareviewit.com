@@ -1,55 +1,37 @@
+// components/home/PortfolioSection.tsx
 "use client"
 
-import Link from "next/link"
+import { AnimateInView } from "@/components/animate-in-view"
+import { StaggerContainer, staggerItem } from "@/components/stagger-container"
+import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { AnimateInView } from "./animate-in-view"
-import { StaggerContainer, staggerItem } from "./stagger-container"
 import { motion } from "framer-motion"
+import Link from "next/link"
 
-export function PortfolioSection() {
-  const projects = [
-    {
-      title: "E-Commerce Platform",
-      category: "Web Development",
-      image: "/modern-ecommerce-website.png",
-      tags: ["React", "Next.js", "Stripe"],
-    },
-    {
-      title: "Brand Identity Design",
-      category: "Branding",
-      image: "/brand-identity-design-mockup.jpg",
-      tags: ["Design", "Branding", "UI/UX"],
-    },
-    {
-      title: "Mobile Banking App",
-      category: "App Development",
-      image: "/mobile-banking-app.png",
-      tags: ["React Native", "FinTech", "iOS"],
-    },
-    {
-      title: "SEO Campaign Success",
-      category: "Digital Marketing",
-      image: "/seo-analytics-dashboard.png",
-      tags: ["SEO", "Analytics", "Growth"],
-    },
-  ]
+type Project = { title: string; category: string; image: string; tags: readonly string[] }
+type PortfolioBlock = {
+  title: string
+  subtitle: string
+  cta: { label: string; href: string }
+  projects: readonly Project[]
+}
 
+export default function PortfolioSection({ data }: { data: PortfolioBlock }) {
   return (
     <section className="bg-muted/30 py-20 md:py-32">
       <div className="container px-4">
         <AnimateInView className="mb-12 text-center md:mb-16">
           <h2 className="mb-4 text-3xl font-bold tracking-tight text-foreground md:text-5xl text-balance">
-            Featured Work
+            {data.title}
           </h2>
           <p className="mx-auto max-w-2xl text-lg text-muted-foreground leading-relaxed text-balance">
-            Explore our portfolio of successful projects and client transformations
+            {data.subtitle}
           </p>
         </AnimateInView>
 
         <StaggerContainer className="grid gap-6 md:grid-cols-2 lg:gap-8">
-          {projects.map((project, index) => (
+          {data.projects.map((project, index) => (
             <motion.div key={index} variants={staggerItem}>
               <Card className="group overflow-hidden transition-all hover:shadow-xl">
                 <div className="relative aspect-video overflow-hidden">
@@ -76,9 +58,9 @@ export function PortfolioSection() {
           ))}
         </StaggerContainer>
 
-        <AnimateInView delay={0.4} className="mt-12 text-center">
+        <AnimateInView delay={0.2} className="mt-12 text-center">
           <Button size="lg" variant="outline" asChild>
-            <Link href="/portfolio">View All Projects</Link>
+            <Link href={data.cta.href}>{data.cta.label}</Link>
           </Button>
         </AnimateInView>
       </div>

@@ -7,7 +7,7 @@ export const FALLBACK_IMAGE = "/placeholder.svg"
 type LucideIcon = ComponentType<SVGProps<SVGSVGElement>>
 
 export const corpus = {
-  //----------------------------------------------about page corpus------------------------------------------------------------
+  //----------------------------------------------about page corpus-------------------------------------------------------------
   about: {
     meta: {
       title: "About Us - Digital Innovation Team",
@@ -99,7 +99,7 @@ export const corpus = {
       btnUrl: "/contact",
     },
   },
-  //----------------------------------------------blog page corpus----------------------------------------------------------------
+  //----------------------------------------------blog page corpus--------------------------------------------------------------
   blog: {
     meta: {
       title: "Blog - Insights & Resources",
@@ -201,7 +201,7 @@ export const corpus = {
       btnUrl: "/contact",
     },
   },
-  //-------------------------------------------booking page corpus---------------------------------------------------------------
+  //-------------------------------------------booking page corpus--------------------------------------------------------------
   booking: {
     meta: {
       title: "Book a Consultation",
@@ -308,7 +308,7 @@ export const corpus = {
       btnUrl: "#calendar",
     },
   },
-  //----------------------------------------------careers page corpus-------------------------------------------------------------
+  //----------------------------------------------careers page corpus-----------------------------------------------------------
   careers: {
     meta: {
       title: "Careers - Join Our Creative Team",
@@ -417,7 +417,7 @@ export const corpus = {
       btnUrl: "/contact",
     },
   },
-  //----------------------------------------------contact page corpus-------------------------------------------------------------
+  //----------------------------------------------contact page corpus-----------------------------------------------------------
   contact: {
     meta: {
       title: "Contact Us",
@@ -505,7 +505,7 @@ export const corpus = {
       placeholderIcon: "MapPin"
     }
   },
-  //----------------------------------------------events page corpus-------------------------------------------------------------
+  //----------------------------------------------events page corpus------------------------------------------------------------
   events: {
     meta: {
       title: "Events & Webinars",
@@ -607,7 +607,7 @@ export const corpus = {
       btnText: "Notify Me",
     },
   },
-  //----------------------------------------------faq page corpus-------------------------------------------------------------
+  //----------------------------------------------faq page corpus---------------------------------------------------------------
   faq: {
     meta: {
       title: "FAQ",
@@ -756,7 +756,7 @@ export const corpus = {
       secondary: { text: "Schedule a Call", href: "/booking" },
     },
   },
-  //----------------------------------------------help page corpus-------------------------------------------------------------
+  //----------------------------------------------help page corpus--------------------------------------------------------------
   help: {
     meta: {
       title: "Help Center",
@@ -820,7 +820,7 @@ export const corpus = {
       tertiary: { text: "Book a Call", href: "/booking" },
     },
   },
-  //----------------------------------------------partners page corpus-------------------------------------------------------------
+  //----------------------------------------------partners page corpus----------------------------------------------------------
   partners: {
     meta: {
       title: "Partners & Affiliates",
@@ -915,17 +915,927 @@ export const corpus = {
       button: { text: "Apply Now", href: "/contact" },
     },
   },
+  //----------------------------------------------portfolio page corpus---------------------------------------------------------
+  portfolio: {
+    meta: {
+      title: "Our Work - Portfolio",
+      description:
+        "Explore our portfolio of successful digital transformations across web, app, branding, and marketing.",
+      path: "/portfolio",
+      ogImage: FALLBACK_IMAGE,
+      keywords: ["portfolio", "case studies", "web design", "app development", "branding", "marketing"],
+    },
+
+    hero: {
+      badge: "Our Work",
+      title: "Projects That Drive Results",
+      description:
+        "Explore our portfolio of successful digital transformations and see how we've helped businesses achieve their goals.",
+    },
+
+    filters: ["All", "Web Design", "App Development", "Branding", "Digital Marketing"] as const,
+
+    projects: [
+      {
+        title: "E-Commerce Platform",
+        category: "Web Design",
+        description:
+          "Complete redesign and development of a modern e-commerce platform with 300% increase in conversions.",
+        image: "/portfolio-ecommerce.png",
+        tags: ["React", "Next.js", "Stripe", "Tailwind"],
+        results: "+300% Conversions",
+        href: "/projects/ecommerce-platform"
+      },
+      {
+        title: "FinTech Mobile App",
+        category: "App Development",
+        description: "Secure mobile banking application serving 100K+ active users with seamless UX.",
+        image: "/portfolio-fintech.png",
+        tags: ["React Native", "Node.js", "Security"],
+        results: "100K+ Users",
+        href: "/projects/fintech-mobile-app"
+      },
+      {
+        title: "Brand Identity Refresh",
+        category: "Branding",
+        description: "Complete brand overhaul including logo, guidelines, and marketing materials for a tech startup.",
+        image: "/portfolio-branding.png",
+        tags: ["Design", "Branding", "Strategy"],
+        results: "Award Winner",
+        href: "/projects/brand-identity-refresh"
+      },
+      {
+        title: "SaaS Dashboard",
+        category: "Web Design",
+        description: "Analytics dashboard with real-time data visualization and intuitive user experience.",
+        image: "/portfolio-saas.png",
+        tags: ["React", "D3.js", "API Integration"],
+        results: "98% Satisfaction",
+        href: "/projects/saas-dashboard"
+      },
+      {
+        title: "SEO Campaign",
+        category: "Digital Marketing",
+        description: "Comprehensive SEO strategy resulting in first-page rankings for 50+ keywords.",
+        image: "/portfolio-seo.png",
+        tags: ["SEO", "Content", "Analytics"],
+        results: "+500% Traffic",
+        href: "/projects/seo-campaign"
+      },
+      {
+        title: "Healthcare Portal",
+        category: "Web Design",
+        description:
+          "HIPAA-compliant patient portal with appointment scheduling and telemedicine features.",
+        image: "/portfolio-healthcare.png",
+        tags: ["Next.js", "Security", "Compliance"],
+        results: "HIPAA Certified",
+        href: "/projects/healthcare-portal"
+      },
+    ] as const,
+
+    cta: {
+      title: "Let's Create Something Amazing",
+      description:
+        "Ready to see your project featured in our portfolio? Let's discuss your vision.",
+      button: { text: "Start Your Project", href: "/contact" },
+    },
+  },
+  //----------------------------------------------pricing page corpus-----------------------------------------------------------
+  pricing: {
+    meta: {
+      title: "Pricing",
+      description: "Flexible pricing that fits your business. Choose a package or request a custom quote.",
+      path: "/pricing",
+      ogImage: FALLBACK_IMAGE,
+      keywords: ["pricing", "packages", "plans", "web design pricing", "agency pricing"] as const,
+    },
+    hero: {
+      badge: "Pricing",
+      title: "Flexible Pricing That Fits Your Business",
+      description: "Choose a package or request a custom quote — we scale to your needs.",
+      primaryCta: { text: "Get a Custom Quote", href: "/contact" },
+      secondaryCta: { text: "View Services", href: "/services" },
+    },
+    toggle: {
+      labels: { onetime: "One-Time", monthly: "Monthly" },
+      defaultCycle: "onetime" as const, // "onetime" | "monthly"
+    },
+    packages: [
+      {
+        name: "Starter",
+        priceOneTime: 499,
+        priceMonthly: 99,
+        description: "Perfect for small businesses and startups",
+        features: [
+          "5-Page Website",
+          "Responsive Design",
+          "Basic SEO Setup",
+          "Contact Form",
+          "2 Revisions",
+          "30-Day Support",
+        ],
+        notIncluded: ["E-commerce", "Custom Animations", "Advanced Analytics"],
+        popular: false,
+      },
+      {
+        name: "Growth",
+        priceOneTime: 1299,
+        priceMonthly: 249,
+        description: "Ideal for growing businesses",
+        features: [
+          "10-Page Website",
+          "Advanced Responsive Design",
+          "Complete SEO Package",
+          "Contact & Lead Forms",
+          "5 Revisions",
+          "90-Day Support",
+          "Performance Optimization",
+          "Analytics Integration",
+        ],
+        notIncluded: ["E-commerce", "Custom CMS"],
+        popular: true,
+      },
+      {
+        name: "Enterprise",
+        priceOneTime: 2999,
+        priceMonthly: 599,
+        description: "For established businesses with complex needs",
+        features: [
+          "Unlimited Pages",
+          "Premium Design System",
+          "Advanced SEO & Marketing",
+          "Custom Forms & Integrations",
+          "Unlimited Revisions",
+          "1-Year Support",
+          "Performance Optimization",
+          "Advanced Analytics",
+          "E-commerce Ready",
+          "Custom CMS",
+          "Priority Support",
+        ],
+        notIncluded: [],
+        popular: false,
+      },
+    ] as const,
+    addons: [
+      { name: "Logo Design", price: 299, description: "Professional brand identity" },
+      { name: "Landing Page", price: 499, description: "High-converting single page" },
+      { name: "Speed Optimization", price: 199, description: "Performance tuning" },
+      { name: "Monthly SEO", price: 399, description: "Ongoing optimization" },
+    ] as const,
+    faqSection: {
+      title: "Payment Terms & FAQ",
+      items: [
+        {
+          question: "Do you offer payment plans?",
+          answer: "Yes, we offer flexible payment plans for projects over $1,000. Contact us to discuss options.",
+        },
+        {
+          question: "What's your refund policy?",
+          answer: "We offer refunds if work hasn't begun. Partial refunds are evaluated case-by-case.",
+        },
+        {
+          question: "Are prices negotiable?",
+          answer: "We're happy to discuss custom packages that fit your budget and needs.",
+        },
+        {
+          question: "Do you include hosting/domain?",
+          answer:
+            "Hosting and domain are separate. We can recommend providers or manage it for you.",
+        },
+      ] as const,
+    },
+    cta: {
+      title: "Let's Launch Your Project with Confidence",
+      description: "Ready to get started? Schedule a call or request a custom quote today.",
+      button: { text: "Get Started Now", href: "/contact" },
+    },
+  },
+  //----------------------------------------------privacy page corpus-----------------------------------------------------------
+  privacy: {
+    meta: {
+      title: "Privacy Policy",
+      description:
+        "How we collect, use, disclose, and safeguard your information when you visit our website or use our services.",
+      path: "/privacy",
+      ogImage: FALLBACK_IMAGE,
+      keywords: ["privacy policy", "data protection", "cookies", "GDPR", "security"] as const,
+      lastUpdated: "January 15, 2025",
+    },
+    hero: {
+      badge: "Legal",
+      title: "Privacy Policy",
+      lead: "At Creative Agency, we take your privacy seriously. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or use our services. Please read this privacy policy carefully.",
+    },
+    sections: [
+      {
+        title: "Information We Collect",
+        paragraphs: [
+          "We collect information you provide directly to us, such as when you create an account, fill out a form, or communicate with us. This may include your name, email address, phone number, company name, and any other information you choose to provide.",
+          "We automatically collect certain information about your device when you use our website, including your IP address, browser type, operating system, referring URLs, and pages visited."
+        ]
+      },
+      {
+        title: "How We Use Your Information",
+        paragraphs: [
+          "We use the information we collect to provide, maintain, and improve our services, including to process transactions, send you technical notices and support messages, and respond to your comments and questions.",
+          "We may use your information to send you marketing communications about our services, events, and promotions. You can opt out of these communications at any time.",
+          "We use analytics tools to understand how users interact with our website and services, which helps us improve the user experience."
+        ]
+      },
+      {
+        title: "Information Sharing and Disclosure",
+        paragraphs: [
+          "We do not sell, trade, or rent your personal information to third parties. We may share your information with service providers who perform services on our behalf, such as hosting, analytics, and customer support.",
+          "We may disclose your information if required by law or if we believe such action is necessary to comply with legal obligations, protect our rights, or ensure the safety of our users."
+        ]
+      },
+      {
+        title: "Data Security",
+        paragraphs: [
+          "We implement appropriate technical and organizational measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction.",
+          "However, no method of transmission over the Internet or electronic storage is 100% secure, and we cannot guarantee absolute security."
+        ]
+      },
+      {
+        title: "Cookies and Tracking Technologies",
+        paragraphs: [
+          "We use cookies and similar tracking technologies to collect information about your browsing activities and to personalize your experience on our website.",
+          "You can control cookies through your browser settings, but disabling cookies may affect your ability to use certain features of our website."
+        ]
+      },
+      {
+        title: "Your Rights and Choices",
+        paragraphs: [
+          "You have the right to access, update, or delete your personal information. You can do this by logging into your account or contacting us directly.",
+          "You have the right to opt out of marketing communications at any time by clicking the unsubscribe link in our emails or contacting us.",
+          "If you are located in the European Economic Area, you have additional rights under GDPR, including the right to data portability and the right to lodge a complaint with a supervisory authority."
+        ]
+      },
+      {
+        title: "Children's Privacy",
+        paragraphs: [
+          "Our services are not directed to children under the age of 13, and we do not knowingly collect personal information from children under 13. If we learn that we have collected personal information from a child under 13, we will take steps to delete such information."
+        ]
+      },
+      {
+        title: "Changes to This Privacy Policy",
+        paragraphs: [
+          "We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the 'Last Updated' date.",
+          "We encourage you to review this Privacy Policy periodically to stay informed about how we are protecting your information."
+        ]
+      },
+      {
+        title: "Contact Us",
+        paragraphs: [
+          "If you have any questions about this Privacy Policy or our privacy practices, please contact us at:",
+          "Email: privacy@creative.agency",
+          "Phone: +1 (555) 123-4567",
+          "Address: 123 Creative Street, San Francisco, CA 94102"
+        ]
+      }
+    ] as const,
+    consent: {
+      title: "Your Consent",
+      text: "By using our website and services, you consent to our Privacy Policy and agree to its terms. If you do not agree with this policy, please do not use our website or services."
+    }
+  },
+  //----------------------------------------------terms page corpus-------------------------------------------------------------
+  terms: {
+    meta: {
+      title: "Terms & Conditions",
+      description:
+        "The rules and regulations for using our website and services. Please read these terms carefully.",
+      path: "/terms",
+      ogImage: FALLBACK_IMAGE,
+      keywords: ["terms", "terms and conditions", "legal", "service terms", "agreement"] as const,
+      lastUpdated: "January 15, 2025",
+    },
+    hero: {
+      badge: "Legal",
+      title: "Terms & Conditions",
+      lead:
+        "Welcome to Creative Agency. These Terms and Conditions outline the rules and regulations for the use of our website and services. By accessing this website and using our services, you accept these terms and conditions in full.",
+    },
+    sections: [
+      {
+        title: "Acceptance of Terms",
+        paragraphs: [
+          "By accessing and using this website and our services, you accept and agree to be bound by the terms and provisions of this agreement. If you do not agree to these terms, please do not use our website or services.",
+          "We reserve the right to modify these terms at any time. Your continued use of the website following any changes indicates your acceptance of the new terms."
+        ]
+      },
+      {
+        title: "Use of Services",
+        paragraphs: [
+          "You agree to use our services only for lawful purposes and in accordance with these Terms and Conditions. You agree not to use our services in any way that could damage, disable, overburden, or impair our servers or networks.",
+          "You are responsible for maintaining the confidentiality of your account credentials and for all activities that occur under your account."
+        ]
+      },
+      {
+        title: "Intellectual Property Rights",
+        paragraphs: [
+          "All content on this website, including text, graphics, logos, images, and software, is the property of Creative Agency or its content suppliers and is protected by international copyright laws.",
+          "You may not reproduce, distribute, modify, create derivative works of, publicly display, or exploit any of our content without our express written permission.",
+          "Any work we create for you as part of our services remains our intellectual property until full payment is received, at which point ownership transfers to you as specified in your service agreement."
+        ]
+      },
+      {
+        title: "Service Agreements",
+        paragraphs: [
+          "Specific terms for our services will be outlined in individual service agreements or statements of work. These agreements will detail project scope, deliverables, timelines, and payment terms.",
+          "We reserve the right to refuse service to anyone for any reason at any time.",
+          "All prices are subject to change without notice, but changes will not affect orders already confirmed."
+        ]
+      },
+      {
+        title: "Payment Terms",
+        paragraphs: [
+          "Payment terms will be specified in your service agreement. Generally, we require a deposit before beginning work, with the balance due upon completion or according to agreed milestones.",
+          "Late payments may be subject to interest charges and may result in suspension of services.",
+          "All fees are non-refundable unless otherwise specified in your service agreement."
+        ]
+      },
+      {
+        title: "Client Responsibilities",
+        paragraphs: [
+          "You agree to provide timely feedback, approvals, and any materials or information necessary for us to complete your project.",
+          "Delays caused by lack of client input may result in project timeline extensions and potential additional fees.",
+          "You represent and warrant that any materials you provide to us do not infringe on any third-party rights."
+        ]
+      },
+      {
+        title: "Warranties and Disclaimers",
+        paragraphs: [
+          "We strive to provide high-quality services, but we make no warranties or representations about the accuracy or completeness of our website content or services.",
+          "Our services are provided 'as is' without warranty of any kind, either express or implied, including but not limited to warranties of merchantability or fitness for a particular purpose.",
+          "We do not guarantee that our services will be uninterrupted, timely, secure, or error-free."
+        ]
+      },
+      {
+        title: "Limitation of Liability",
+        paragraphs: [
+          "To the fullest extent permitted by law, Creative Agency shall not be liable for any indirect, incidental, special, consequential, or punitive damages resulting from your use of our services.",
+          "Our total liability for any claims arising from our services shall not exceed the amount you paid us for the specific service giving rise to the claim."
+        ]
+      },
+      {
+        title: "Indemnification",
+        paragraphs: [
+          "You agree to indemnify and hold harmless Creative Agency and its employees, contractors, and affiliates from any claims, damages, losses, liabilities, and expenses arising from your use of our services or violation of these terms."
+        ]
+      },
+      {
+        title: "Termination",
+        paragraphs: [
+          "We reserve the right to terminate or suspend your access to our services immediately, without prior notice, for any reason, including breach of these Terms and Conditions.",
+          "Upon termination, your right to use our services will immediately cease. All provisions of these terms that by their nature should survive termination shall survive."
+        ]
+      },
+      {
+        title: "Governing Law",
+        paragraphs: [
+          "These Terms and Conditions shall be governed by and construed in accordance with the laws of the State of California, without regard to its conflict of law provisions.",
+          "Any disputes arising from these terms shall be resolved in the courts of San Francisco County, California."
+        ]
+      },
+      {
+        title: "Contact Information",
+        paragraphs: [
+          "If you have any questions about these Terms and Conditions, please contact us at:",
+          "Email: legal@creative.agency",
+          "Phone: +1 (555) 123-4567",
+          "Address: 123 Creative Street, San Francisco, CA 94102"
+        ]
+      }
+    ] as const,
+    agreement: {
+      title: "Agreement",
+      text:
+        "By using our website and services, you hereby consent to our Terms and Conditions and agree to abide by them. If you do not agree with any part of these terms, you must not use our website or services."
+    }
+  },
+  //----------------------------------------------testimonials page corpus------------------------------------------------------
+  testimonials: {
+    meta: {
+      title: "Client Testimonials",
+      description:
+        "What our clients say about our web design, marketing, SEO, and app development services.",
+      path: "/testimonials",
+      ogImage: FALLBACK_IMAGE,
+      keywords: [
+        "testimonials",
+        "client reviews",
+        "case studies",
+        "ratings",
+        "success stories",
+      ] as const,
+    },
+    hero: {
+      badge: "Testimonials",
+      title: "What Our Clients Say",
+      subtitle:
+        "Don't just take our word for it. Hear from the businesses we've helped transform and grow through our digital services.",
+    },
+    stats: [
+      { value: "98%", label: "Client Satisfaction" },
+      { value: "4.9/5", label: "Average Rating" },
+      { value: "200+", label: "Happy Clients" },
+      { value: "95%", label: "Client Retention" },
+    ] as const,
+    items: [
+      {
+        name: "Sarah Johnson",
+        role: "CEO",
+        company: "TechStart Inc",
+        avatar: "/testimonial-sarah.png",
+        content:
+          "Working with this team completely transformed our online presence. Their web design expertise helped us increase our conversion rate by 300% in just three months. The attention to detail and understanding of our business goals was exceptional.",
+        rating: 5,
+        project: "Website Redesign",
+      },
+      {
+        name: "Michael Chen",
+        role: "Founder",
+        company: "GrowthLabs",
+        avatar: "/testimonial-michael.png",
+        content:
+          "The digital marketing campaign they created exceeded all our expectations. We saw a 250% increase in qualified leads within the first quarter. Their data-driven approach and creative strategies made all the difference.",
+        rating: 5,
+        project: "Digital Marketing",
+      },
+      {
+        name: "Emily Rodriguez",
+        role: "Marketing Director",
+        company: "Innovate Co",
+        avatar: "/testimonial-emily.png",
+        content:
+          "Their SEO expertise helped us dominate our market. We're now ranking #1 for all our target keywords, and our organic traffic has increased by 500%. The ROI has been incredible.",
+        rating: 5,
+        project: "SEO Services",
+      },
+      {
+        name: "David Park",
+        role: "CTO",
+        company: "FinTech Solutions",
+        avatar: "/testimonial-david.png",
+        content:
+          "The mobile app they developed for us is outstanding. The user experience is seamless, and our customers love it. We've seen a 40% increase in user engagement since launch.",
+        rating: 5,
+        project: "App Development",
+      },
+      {
+        name: "Lisa Thompson",
+        role: "VP of Operations",
+        company: "RetailPro",
+        avatar: "/testimonial-lisa.png",
+        content:
+          "From start to finish, the process was smooth and professional. They took the time to understand our needs and delivered a solution that perfectly aligned with our business objectives.",
+        rating: 5,
+        project: "E-commerce Platform",
+      },
+      {
+        name: "James Wilson",
+        role: "Owner",
+        company: "Local Services Co",
+        avatar: "/testimonial-james.png",
+        content:
+          "As a small business, we needed a partner who could deliver big results on a reasonable budget. They exceeded our expectations in every way. Our online bookings have tripled!",
+        rating: 5,
+        project: "Website & SEO",
+      },
+      {
+        name: "Amanda Foster",
+        role: "Brand Manager",
+        company: "Lifestyle Brand",
+        avatar: "/testimonial-amanda.png",
+        content:
+          "The branding and design work they did for us was phenomenal. They captured our vision perfectly and created a cohesive brand identity that resonates with our target audience.",
+        rating: 5,
+        project: "Brand Identity",
+      },
+      {
+        name: "Robert Martinez",
+        role: "Director of Sales",
+        company: "B2B Solutions",
+        avatar: "/testimonial-robert.png",
+        content:
+          "Their strategic approach to digital marketing has been a game-changer for our sales team. The quality of leads has improved dramatically, and our close rate has increased by 45%.",
+        rating: 5,
+        project: "Lead Generation",
+      },
+      {
+        name: "Jennifer Lee",
+        role: "Founder",
+        company: "Health & Wellness",
+        avatar: "/testimonial-jennifer.png",
+        content:
+          "Working with this team felt like having an in-house digital department. They were responsive, creative, and always went above and beyond to ensure our success.",
+        rating: 5,
+        project: "Full Digital Strategy",
+      },
+    ] as const,
+    videos: {
+      count: 2,
+      label: "Video Testimonial",
+    },
+    cta: {
+      title: "Ready to Join Our Success Stories?",
+      subtitle:
+        "Let's create a success story for your business. Get in touch to discuss your project.",
+      buttonText: "Start Your Project",
+      href: "/contact",
+    },
+  },
+  //----------------------------------------------appDev page corpus-------------------------------------------------------------
+  appDev: {
+    meta: {
+      title: "App Development",
+      description:
+        "We build powerful, scalable mobile and web applications that deliver exceptional user experiences and drive business growth.",
+      path: "/app-development",
+      ogImage: FALLBACK_IMAGE,
+      keywords: ["app development", "mobile apps", "react native", "ios", "android", "pwa"],
+    },
+    hero: {
+      badge: "App Development",
+      title: "Custom Apps That Users Love",
+      description:
+        "We build powerful, scalable mobile and web applications that deliver exceptional user experiences and drive business growth. From concept to launch and beyond.",
+      primaryCta: { text: "Discuss Your App Idea", href: "/contact" },
+      secondaryCta: { text: "See Our Apps", href: "/portfolio" },
+      media: { src: "/app-development.jpg", alt: "App development" }
+    },
+    services: [
+      { iconId: "smartphone", title: "Native Apps", description: "iOS and Android apps built with native technologies for optimal performance." },
+      { iconId: "code", title: "Cross-Platform", description: "React Native apps that work seamlessly across multiple platforms." },
+      { iconId: "zap", title: "Web Apps", description: "Progressive web apps that combine the best of web and mobile." },
+      { iconId: "shield", title: "Maintenance", description: "Ongoing support, updates, and optimization for your applications." }
+    ] as const,
+    benefits: [
+      "Reach customers on their preferred devices",
+      "Increase engagement with push notifications",
+      "Provide seamless offline functionality",
+      "Leverage device features like camera and GPS",
+      "Build brand loyalty with a dedicated app",
+      "Generate additional revenue streams"
+    ] as const,
+    benefitMedia: { src: "/mobile-app-ui.jpg", alt: "Mobile app UI" },
+    technologies: ["React Native", "Swift", "Kotlin", "Flutter", "Node.js", "Firebase", "AWS", "GraphQL"] as const,
+    process: [
+      { step: "01", title: "Discovery", description: "Define requirements and project scope" },
+      { step: "02", title: "Design", description: "Create intuitive UI/UX designs" },
+      { step: "03", title: "Development", description: "Build and test your application" },
+      { step: "04", title: "Launch & Support", description: "Deploy and provide ongoing maintenance" }
+    ] as const,
+    cta: {
+      title: "Ready to Build Your App?",
+      subtitle: "Let's turn your app idea into reality. Schedule a consultation to discuss your project.",
+      buttonText: "Start Your Project",
+      href: "/contact"
+    }
+  },
+  //----------------------------------------------marketing page corpus----------------------------------------------------------
+  marketing: {
+    meta: {
+      title: "Digital Marketing",
+      description:
+        "Data-driven marketing campaigns that amplify your brand, engage your audience, and drive measurable growth.",
+      path: "/digital-marketing",
+      ogImage: FALLBACK_IMAGE,
+      keywords: ["digital marketing", "ppc", "social media", "content marketing", "analytics"],
+    },
+    hero: {
+      badge: "Digital Marketing",
+      title: "Strategic Marketing That Delivers Results",
+      description:
+        "We create data-driven marketing campaigns that amplify your brand, engage your audience, and drive measurable business growth across all digital channels.",
+      primaryCta: { text: "Get a Free Consultation", href: "/contact" },
+      secondaryCta: { text: "See Case Studies", href: "/portfolio" },
+      media: { src: "/digital-marketing-dashboard.jpg", alt: "Digital marketing dashboard" }
+    },
+    stats: [
+      { value: "300%", label: "Average ROI Increase" },
+      { value: "2.5x", label: "Lead Generation Growth" },
+      { value: "85%", label: "Client Retention Rate" },
+      { value: "50+", label: "Successful Campaigns" }
+    ] as const,
+    services: [
+      { iconId: "users", title: "Social Media Marketing", description: "Build and engage your audience across all major social platforms." },
+      { iconId: "target", title: "PPC Advertising", description: "Targeted campaigns that maximize ROI and drive qualified leads." },
+      { iconId: "trendingUp", title: "Content Marketing", description: "Compelling content that attracts, engages, and converts your audience." },
+      { iconId: "barChart", title: "Analytics & Reporting", description: "Data-driven insights to optimize your marketing performance." }
+    ] as const,
+    benefitsMedia: { src: "/marketing-strategy.jpg", alt: "Marketing strategy" },
+    benefits: [
+      "Increase brand awareness and reach",
+      "Generate high-quality leads consistently",
+      "Improve customer engagement and loyalty",
+      "Achieve measurable ROI on marketing spend",
+      "Stay ahead of competitors in your market",
+      "Build a strong online presence"
+    ] as const,
+    cta: {
+      title: "Ready to Grow Your Business?",
+      subtitle: "Let's create a custom marketing strategy that drives real results for your business.",
+      buttonText: "Schedule a Strategy Call",
+      href: "/contact"
+    }
+  },
+  //-------------------------------------------------seo page corpus-------------------------------------------------------------
+  seo: {
+    meta: {
+      title: "SEO Services",
+      description:
+        "Proven SEO strategies to rank higher, grow organic traffic, and convert visitors into customers.",
+      path: "/seo",
+      ogImage: FALLBACK_IMAGE,
+      keywords: ["seo", "search engine optimization", "link building", "technical seo", "keyword research"],
+    },
+    hero: {
+      badge: "SEO Services",
+      title: "Dominate Search Results & Drive Organic Growth",
+      description:
+        "Our proven SEO strategies help businesses rank higher, attract more qualified traffic, and convert visitors into customers. Get found by people actively searching for your services.",
+      primaryCta: { text: "Get a Free SEO Audit", href: "/contact" },
+      secondaryCta: { text: "View Success Stories", href: "/portfolio" },
+      media: { src: "/seo-analytics.jpg", alt: "SEO analytics" }
+    },
+    results: [
+      { metric: "First Page Rankings", value: "50+ Keywords", client: "E-commerce Client" },
+      { metric: "Organic Traffic Growth", value: "+425%", client: "SaaS Company" },
+      { metric: "Lead Generation", value: "+280%", client: "B2B Service" },
+      { metric: "Domain Authority", value: "35 → 62", client: "Tech Startup" }
+    ] as const,
+    services: [
+      { iconId: "search", title: "Keyword Research", description: "Identify high-value keywords that drive qualified traffic to your site." },
+      { iconId: "fileText", title: "On-Page SEO", description: "Optimize your content, meta tags, and site structure for search engines." },
+      { iconId: "link", title: "Link Building", description: "Build high-quality backlinks that boost your domain authority." },
+      { iconId: "trendingUp", title: "Technical SEO", description: "Improve site speed, mobile-friendliness, and crawlability." }
+    ] as const,
+    benefitsMedia: { src: "/seo-growth.jpg", alt: "SEO growth" },
+    benefits: [
+      "Rank on the first page of Google",
+      "Increase organic traffic by 300%+",
+      "Generate more qualified leads",
+      "Reduce customer acquisition costs",
+      "Build long-term sustainable growth",
+      "Outrank your competitors"
+    ] as const,
+    cta: {
+      title: "Ready to Rank Higher on Google?",
+      subtitle: "Get a free SEO audit and discover how we can help you dominate search results.",
+      buttonText: "Claim Your Free Audit",
+      href: "/contact"
+    }
+  },
+  //----------------------------------------------webDesign page corpus------------------------------------------------------------
+  webDesign: {
+    meta: {
+      title: "Web Design Services - Beautiful Websites That Convert",
+      description:
+        "Professional web design services that create stunning, user-friendly websites to drive results for your business.",
+      path: "/services/web-design",
+      ogImage: FALLBACK_IMAGE,
+      keywords: [
+        "web design",
+        "responsive web design",
+        "ui ux",
+        "website performance",
+        "mobile first"
+      ],
+    },
+
+    hero: {
+      badge: "Web Design",
+      title: "Beautiful Websites That Drive Results",
+      description:
+        "We create stunning, user-friendly websites that not only look amazing but also convert visitors into customers. Every design is crafted with your business goals in mind.",
+      primaryCta: { text: "Start Your Project", href: "/contact" },
+      secondaryCta: { text: "View Our Work", href: "/portfolio" }
+    },
+
+    showcaseImage: {
+      src: "/web-design-showcase.jpg",
+      alt: "Web design showcase"
+    },
+
+    featuresBlock: {
+      title: "What We Offer",
+      subtitle: "Comprehensive web design services tailored to your needs"
+    },
+
+    features: [
+      {
+        iconId: "layout",
+        title: "Responsive Design",
+        description: "Beautiful layouts that work flawlessly across all devices and screen sizes."
+      },
+      {
+        iconId: "palette",
+        title: "Custom UI/UX",
+        description: "Intuitive interfaces designed with your users and brand identity in mind."
+      },
+      {
+        iconId: "smartphone",
+        title: "Mobile-First",
+        description: "Optimized for mobile devices to reach your audience wherever they are."
+      },
+      {
+        iconId: "zap",
+        title: "Performance",
+        description: "Lightning-fast load times and smooth interactions for better user experience."
+      }
+    ],
+
+    benefitsBlock: {
+      title: "Why Invest in Professional Web Design?",
+      subtitle:
+        "Your website is often the first impression potential customers have of your business. A professionally designed website can make all the difference."
+    },
+
+    benefitsImage: {
+      src: "/web-design-benefits.jpg",
+      alt: "Web design benefits"
+    },
+
+    benefits: [
+      "Increase conversion rates by up to 200%",
+      "Improve user engagement and time on site",
+      "Build trust with professional design",
+      "Stand out from competitors",
+      "Reduce bounce rates significantly",
+      "Enhance brand perception and credibility"
+    ],
+
+    processBlock: {
+      title: "Our Design Process",
+      subtitle: "A structured approach that ensures exceptional results"
+    },
+
+    process: [
+      { title: "Research & Discovery", description: "Understanding your brand, audience, and goals" },
+      { title: "Wireframing", description: "Creating the blueprint for your website structure" },
+      { title: "Design Mockups", description: "Crafting pixel-perfect visual designs" },
+      { title: "Development", description: "Building your site with clean, modern code" },
+      { title: "Testing & Launch", description: "Ensuring everything works perfectly before going live" },
+      { title: "Support", description: "Ongoing maintenance and optimization" }
+    ],
+
+    cta: {
+      title: "Ready to Transform Your Website?",
+      subtitle: "Let's create a website that truly represents your brand and drives business growth.",
+      buttonText: "Get Started Today",
+      href: "/contact"
+    }
+  },
+  //----------------------------------------------services page corpus------------------------------------------------------------
+  services: {
+    meta: {
+      title: "Our Services - Comprehensive Digital Solutions",
+      description:
+        "From design to development, marketing to optimization - we provide end-to-end digital services tailored to your business needs.",
+      path: "/services",
+      ogImage: FALLBACK_IMAGE,
+      keywords: [
+        "web design",
+        "digital marketing",
+        "SEO services",
+        "app development",
+        "digital solutions",
+      ] as const,
+    },
+    hero: {
+      badge: "Our Services",
+      title: "Comprehensive Digital Solutions",
+      subtitle:
+        "From design to development, marketing to optimization — we provide end-to-end digital services tailored to your business needs.",
+    },
+    grid: {
+      ctaLabel: "Learn More",
+      items: [
+        {
+          icon: "palette",
+          title: "Web Design",
+          description:
+            "Create stunning, user-friendly websites that captivate your audience and drive conversions.",
+          features: ["Responsive Design", "UI/UX Optimization", "Brand Integration", "Performance Focused"],
+          href: "/services/web-design",
+        },
+        {
+          icon: "trendingUp",
+          title: "Digital Marketing",
+          description:
+            "Strategic campaigns that amplify your brand reach and deliver measurable business results.",
+          features: ["Social Media Marketing", "PPC Campaigns", "Email Marketing", "Analytics & Reporting"],
+          href: "/services/digital-marketing",
+        },
+        {
+          icon: "search",
+          title: "SEO Services",
+          description:
+            "Boost your visibility and rank higher in search results with our proven SEO strategies.",
+          features: ["Keyword Research", "On-Page SEO", "Link Building", "Technical SEO"],
+          href: "/services/seo",
+        },
+        {
+          icon: "smartphone",
+          title: "App Development",
+          description:
+            "Custom mobile and web applications built with cutting-edge technology and best practices.",
+          features: ["iOS & Android", "Cross-Platform", "API Integration", "Maintenance & Support"],
+          href: "/services/app-development",
+        },
+      ],
+    },
+    process: {
+      title: "Our Process",
+      subtitle: "A proven methodology that delivers results",
+      steps: [
+        { title: "Discovery", description: "We learn about your business, goals, and challenges" },
+        { title: "Strategy", description: "We develop a customized plan tailored to your needs" },
+        { title: "Execution", description: "We bring your vision to life with expert craftsmanship" },
+        { title: "Optimization", description: "We continuously improve and refine for best results" },
+      ],
+    },
+    cta: {
+      title: "Ready to Get Started?",
+      subtitle:
+        "Let's discuss which services are right for your business and create a custom solution.",
+      buttonText: "Schedule a Consultation",
+      href: "/contact",
+    },
+  },
+  //----------------------------------------------homeData page corpus------------------------------------------------------------
+
+  homeData: {
+
+    "meta": {
+      "title": "Creative Digital Agency — Home",
+      "description": "We craft exceptional digital experiences that drive growth, engage audiences, and elevate your brand.",
+      "path": "/",
+      "ogImage": "/placeholder.svg",
+      "keywords": ["digital agency", "web design", "marketing", "seo", "app development"]
+    },
+    "hero": {
+      "badge": "Award-Winning Digital Agency",
+      "title": "Transform Your Business with <span class='text-primary'>Creative Digital Solutions</span>",
+      "description": "We craft exceptional digital experiences that drive growth, engage audiences, and elevate your brand to new heights.",
+      "primaryCta": { "label": "Get Started", "href": "/contact" },
+      "secondaryCta": { "label": "View Our Work", "href": "/portfolio" }
+    },
+    "stats": [
+      { "value": "300%", "label": "Avg. Traffic Lift" },
+      { "value": "120+", "label": "Projects Delivered" },
+      { "value": "50+", "label": "Happy Clients" },
+      { "value": "12", "label": "Industry Awards" }
+    ],
+    "services": {
+      "title": "Our Services",
+      "subtitle": "Comprehensive digital solutions tailored to your business needs",
+      "items": [
+        { "icon": "Palette", "title": "Web Design", "description": "Beautiful, responsive websites that captivate your audience and drive conversions.", "href": "/services/web-design" },
+        { "icon": "TrendingUp", "title": "Digital Marketing", "description": "Strategic campaigns that amplify your brand and deliver measurable results.", "href": "/services/digital-marketing" },
+        { "icon": "Search", "title": "SEO Services", "description": "Boost your visibility and rank higher in search results with our proven strategies.", "href": "/services/seo" },
+        { "icon": "Smartphone", "title": "App Development", "description": "Custom mobile and web applications built with cutting-edge technology.", "href": "/services/app-development" }
+      ]
+    },
+    "portfolio": {
+      "title": "Featured Work",
+      "subtitle": "Explore our portfolio of successful projects and client transformations",
+      "cta": { "label": "View All Projects", "href": "/portfolio" },
+      "projects": [
+        { "title": "E-Commerce Platform", "category": "Web Development", "image": "/modern-ecommerce-website.png", "tags": ["React", "Next.js", "Stripe"] },
+        { "title": "Brand Identity Design", "category": "Branding", "image": "/brand-identity-design-mockup.jpg", "tags": ["Design", "Branding", "UI/UX"] },
+        { "title": "Mobile Banking App", "category": "App Development", "image": "/mobile-banking-app.png", "tags": ["React Native", "FinTech", "iOS"] },
+        { "title": "SEO Campaign Success", "category": "Digital Marketing", "image": "/seo-analytics-dashboard.png", "tags": ["SEO", "Analytics", "Growth"] }
+      ]
+    },
+    "testimonials": {
+      "title": "What Our Clients Say",
+      "subtitle": "Don't just take our word for it - hear from businesses we've helped succeed",
+      "items": [
+        { "name": "Sarah Johnson", "role": "CEO, TechStart Inc", "avatar": "/professional-woman-headshot.png", "content": "Working with this team transformed our online presence. Our traffic increased by 300% in just three months!", "rating": 5 },
+        { "name": "Michael Chen", "role": "Founder, GrowthLabs", "avatar": "/professional-man-headshot.png", "content": "The attention to detail and creative approach exceeded our expectations. Highly recommend their services!", "rating": 5 },
+        { "name": "Emily Rodriguez", "role": "Marketing Director, Innovate Co", "avatar": "/professional-woman-headshot-2.png", "content": "Their SEO expertise helped us dominate our market. We're now ranking #1 for all our target keywords.", "rating": 5 }
+      ]
+    },
+    "cta": {
+      "title": "Ready to Transform Your Business?",
+      "description": "Let's discuss how we can help you achieve your digital goals and drive real results for your business.",
+      "primary": { "label": "Start Your Project", "href": "/contact" },
+      "secondary": { "label": "Explore Services", "href": "/services" }
+    }
+
+
+  }
 
 } as const
 
 
 // Convenience named exports 
-export const { about, blog, booking, careers, contact, events, faq, help, partners } = corpus
-
-
-
-
-
+export const { about, blog, booking, careers, contact, events, faq, help, partners, portfolio, pricing, privacy, terms, testimonials, appDev, marketing, seo, webDesign, services, homeData } = corpus
 
 
 
