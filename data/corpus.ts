@@ -782,10 +782,10 @@ export const corpus = {
 
     // CHANGED: icon is now a string key
     categories: [
-      { icon: "Book",        title: "Getting Started",    description: "Learn the basics and get up to speed quickly", articles: 12, link: "/help/getting-started" },
-      { icon: "FileText",    title: "Services & Pricing", description: "Understand our services, packages, and pricing", articles: 8,  link: "/help/services" },
+      { icon: "Book", title: "Getting Started", description: "Learn the basics and get up to speed quickly", articles: 12, link: "/help/getting-started" },
+      { icon: "FileText", title: "Services & Pricing", description: "Understand our services, packages, and pricing", articles: 8, link: "/help/services" },
       { icon: "MessageCircle", title: "Project Management", description: "How we manage projects and communicate with clients", articles: 15, link: "/help/projects" },
-      { icon: "Video",       title: "Video Tutorials",    description: "Step-by-step video guides for common tasks", articles: 6,  link: "/help/tutorials" },
+      { icon: "Video", title: "Video Tutorials", description: "Step-by-step video guides for common tasks", articles: 6, link: "/help/tutorials" },
     ] as const,
 
     popularSection: {
@@ -807,17 +807,112 @@ export const corpus = {
       subtitle: "Our support team is here to assist you",
       // CHANGED: icon is now a string key
       options: [
-        { icon: "MessageCircle", title: "Live Chat",    description: "Chat with our support team", action: "Start Chat", available: "Mon-Fri, 9AM-6PM PST" },
-        { icon: "Mail",          title: "Email Support", description: "Get help via email",         action: "Send Email", available: "Response within 24 hours" },
-        { icon: "Phone",         title: "Phone Support", description: "Speak with an expert",       action: "Call Us",    available: "+1 (555) 123-4567" },
+        { icon: "MessageCircle", title: "Live Chat", description: "Chat with our support team", action: "Start Chat", available: "Mon-Fri, 9AM-6PM PST" },
+        { icon: "Mail", title: "Email Support", description: "Get help via email", action: "Send Email", available: "Response within 24 hours" },
+        { icon: "Phone", title: "Phone Support", description: "Speak with an expert", action: "Call Us", available: "+1 (555) 123-4567" },
       ] as const,
     },
 
     quickLinksSection: {
       title: "Explore More Resources",
-      primary:   { text: "View FAQ",   href: "/faq" },
+      primary: { text: "View FAQ", href: "/faq" },
       secondary: { text: "Contact Us", href: "/contact" },
-      tertiary:  { text: "Book a Call", href: "/booking" },
+      tertiary: { text: "Book a Call", href: "/booking" },
+    },
+  },
+  //----------------------------------------------partners page corpus-------------------------------------------------------------
+  partners: {
+    meta: {
+      title: "Partners & Affiliates",
+      description: "We collaborate with top platforms, agencies, and professionals to bring added value to our clients.",
+      path: "/partners",
+      ogImage: FALLBACK_IMAGE,
+      keywords: ["partners", "affiliates", "white label", "referral program", "integrations"],
+    },
+
+    hero: {
+      badge: "Partners & Affiliates",
+      title: "Trusted by Industry Leaders & Growth Partners",
+      description:
+        "We collaborate with top platforms, agencies, and professionals to bring added value to our clients.",
+      primaryCta: { text: "Become a Partner", href: "/contact" },
+      secondaryCta: { text: "Affiliate Program Info", href: "#affiliate" },
+    },
+
+    logos: [
+      { name: "Google Partner", logo: "/partner-google.png" },
+      { name: "Shopify Expert", logo: "/partner-shopify.png" },
+      { name: "Clutch Rated", logo: "/partner-clutch.png" },
+      { name: "Mailchimp Partner", logo: "/partner-mailchimp.png" },
+      { name: "Stripe Integration", logo: "/partner-stripe.png" },
+      { name: "AWS Partner", logo: "/partner-aws.png" },
+    ] as const,
+
+    affiliate: {
+      title: "Affiliate Program Overview",
+      subtitle: "Join our affiliate program and earn generous commissions",
+      stats: [
+        { label: "Commission Rate", value: "15%" },
+        { label: "Cookie Duration", value: "30 Days" },
+        { label: "Payout Schedule", value: "Monthly" },
+      ] as const,
+      cta: { text: "Apply as an Affiliate", href: "/contact" },
+    },
+
+    modelsSection: {
+      title: "Partnership Models",
+      subtitle: "Choose the partnership model that fits your business",
+    },
+
+    // icons are string keys (resolved client-side)
+    models: [
+      {
+        icon: "DollarSign",
+        title: "White-Label Partner",
+        description:
+          "Offer our services under your brand. Perfect for agencies looking to expand their service offerings.",
+        benefits: ["Your branding", "Flexible pricing", "Dedicated support", "Priority delivery"],
+        cta: { text: "Get Started", href: "/contact" },
+      },
+      {
+        icon: "Target",
+        title: "Tech Integration Partner",
+        description: "Integrate your platform or service with our solutions for mutual client benefit.",
+        benefits: ["Co-marketing", "Technical support", "Joint case studies", "Revenue sharing"],
+        cta: { text: "Get Started", href: "/contact" },
+      },
+      {
+        icon: "GraduationCap",
+        title: "Referral Partner",
+        description: "Earn commission by referring clients to our services. Simple and rewarding.",
+        benefits: ["15% commission", "Custom dashboard", "Monthly payouts", "Marketing materials"],
+        cta: { text: "Get Started", href: "/contact" },
+      },
+    ] as const,
+
+    testimonialsSection: { title: "What Our Partners Say" },
+
+    testimonials: [
+      {
+        quote:
+          "Working with this team has been a game-changer for our agency. Their white-label services are top-notch.",
+        author: "Jennifer Smith",
+        company: "Digital Solutions Co",
+        logo: "/partner-testimonial-1.png",
+      },
+      {
+        quote:
+          "The referral program is straightforward and the commissions are paid on time, every time.",
+        author: "Robert Johnson",
+        company: "Marketing Pro",
+        logo: "/partner-testimonial-2.png",
+      },
+    ] as const,
+
+    cta: {
+      title: "Let's Grow Together",
+      description: "Join our network of successful partners and start earning today",
+      button: { text: "Apply Now", href: "/contact" },
     },
   },
 
@@ -825,7 +920,7 @@ export const corpus = {
 
 
 // Convenience named exports 
-export const { about, blog, booking, careers, contact, events, faq, help } = corpus
+export const { about, blog, booking, careers, contact, events, faq, help, partners } = corpus
 
 
 
