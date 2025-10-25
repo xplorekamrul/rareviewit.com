@@ -1569,10 +1569,10 @@ export const corpus = {
       { metric: "Domain Authority", value: "35 → 62", client: "Tech Startup" }
     ] as const,
     services: [
-      { iconId: "search",     title: "Keyword Research", description: "Identify high-value keywords that drive qualified traffic to your site." },
-      { iconId: "fileText",   title: "On-Page SEO",      description: "Optimize your content, meta tags, and site structure for search engines." },
-      { iconId: "link",       title: "Link Building",    description: "Build high-quality backlinks that boost your domain authority." },
-      { iconId: "trendingUp", title: "Technical SEO",    description: "Improve site speed, mobile-friendliness, and crawlability." }
+      { iconId: "search", title: "Keyword Research", description: "Identify high-value keywords that drive qualified traffic to your site." },
+      { iconId: "fileText", title: "On-Page SEO", description: "Optimize your content, meta tags, and site structure for search engines." },
+      { iconId: "link", title: "Link Building", description: "Build high-quality backlinks that boost your domain authority." },
+      { iconId: "trendingUp", title: "Technical SEO", description: "Improve site speed, mobile-friendliness, and crawlability." }
     ] as const,
     benefitsMedia: { src: "/seo-growth.jpg", alt: "SEO growth" },
     benefits: [
@@ -1590,7 +1590,7 @@ export const corpus = {
       href: "/contact"
     }
   },
-//----------------------------------------------webDesign page corpus------------------------------------------------------------
+  //----------------------------------------------webDesign page corpus------------------------------------------------------------
   webDesign: {
     meta: {
       title: "Web Design Services - Beautiful Websites That Convert",
@@ -1690,14 +1690,90 @@ export const corpus = {
       href: "/contact"
     }
   },
-
+  //----------------------------------------------services page corpus------------------------------------------------------------
+  services: {
+    meta: {
+      title: "Our Services - Comprehensive Digital Solutions",
+      description:
+        "From design to development, marketing to optimization - we provide end-to-end digital services tailored to your business needs.",
+      path: "/services",
+      ogImage: FALLBACK_IMAGE,
+      keywords: [
+        "web design",
+        "digital marketing",
+        "SEO services",
+        "app development",
+        "digital solutions",
+      ] as const,
+    },
+    hero: {
+      badge: "Our Services",
+      title: "Comprehensive Digital Solutions",
+      subtitle:
+        "From design to development, marketing to optimization — we provide end-to-end digital services tailored to your business needs.",
+    },
+    grid: {
+      ctaLabel: "Learn More",
+      items: [
+        {
+          icon: "palette", 
+          title: "Web Design",
+          description:
+            "Create stunning, user-friendly websites that captivate your audience and drive conversions.",
+          features: ["Responsive Design", "UI/UX Optimization", "Brand Integration", "Performance Focused"],
+          href: "/services/web-design",
+        },
+        {
+          icon: "trendingUp",
+          title: "Digital Marketing",
+          description:
+            "Strategic campaigns that amplify your brand reach and deliver measurable business results.",
+          features: ["Social Media Marketing", "PPC Campaigns", "Email Marketing", "Analytics & Reporting"],
+          href: "/services/digital-marketing",
+        },
+        {
+          icon: "search",
+          title: "SEO Services",
+          description:
+            "Boost your visibility and rank higher in search results with our proven SEO strategies.",
+          features: ["Keyword Research", "On-Page SEO", "Link Building", "Technical SEO"],
+          href: "/services/seo",
+        },
+        {
+          icon: "smartphone",
+          title: "App Development",
+          description:
+            "Custom mobile and web applications built with cutting-edge technology and best practices.",
+          features: ["iOS & Android", "Cross-Platform", "API Integration", "Maintenance & Support"],
+          href: "/services/app-development",
+        },
+      ],
+    },
+    process: {
+      title: "Our Process",
+      subtitle: "A proven methodology that delivers results",
+      steps: [
+        { title: "Discovery", description: "We learn about your business, goals, and challenges" },
+        { title: "Strategy", description: "We develop a customized plan tailored to your needs" },
+        { title: "Execution", description: "We bring your vision to life with expert craftsmanship" },
+        { title: "Optimization", description: "We continuously improve and refine for best results" },
+      ],
+    },
+    cta: {
+      title: "Ready to Get Started?",
+      subtitle:
+        "Let's discuss which services are right for your business and create a custom solution.",
+      buttonText: "Schedule a Consultation",
+      href: "/contact",
+    },
+  }
 
 
 } as const
 
 
 // Convenience named exports 
-export const { about, blog, booking, careers, contact, events, faq, help, partners, portfolio, pricing, privacy, terms, testimonials, appDev, marketing, seo, webDesign } = corpus
+export const { about, blog, booking, careers, contact, events, faq, help, partners, portfolio, pricing, privacy, terms, testimonials, appDev, marketing, seo, webDesign, services } = corpus
 
 
 

@@ -1523,13 +1523,79 @@
         "button_text": "Get Started Today",
         "href": "/contact"
       }
+    },
+    {
+      "page_id": "services",
+      "route": "/services",
+      "last_updated": "2025-01-15",
+      "meta": {
+        "title": "Our Services - Comprehensive Digital Solutions",
+        "description": "From design to development, marketing to optimization - we provide end-to-end digital services tailored to your business needs.",
+        "og_image": "/placeholder.svg",
+        "keywords": [
+          "web design",
+          "digital marketing",
+          "SEO services",
+          "app development",
+          "digital solutions"
+        ]
+      },
+      "hero": {
+        "badge": "Our Services",
+        "title": "Comprehensive Digital Solutions",
+        "subtitle": "From design to development, marketing to optimization — we provide end-to-end digital services tailored to your business needs."
+      },
+      "grid_block": {
+        "title": "Our Services",
+        "cta_label": "Learn More"
+      },
+      "services": [
+        {
+          "icon_id": "palette",
+          "title": "Web Design",
+          "description": "Create stunning, user-friendly websites that captivate your audience and drive conversions.",
+          "features": ["Responsive Design", "UI/UX Optimization", "Brand Integration", "Performance Focused"],
+          "href": "/services/web-design"
+        },
+        {
+          "icon_id": "trendingUp",
+          "title": "Digital Marketing",
+          "description": "Strategic campaigns that amplify your brand reach and deliver measurable business results.",
+          "features": ["Social Media Marketing", "PPC Campaigns", "Email Marketing", "Analytics & Reporting"],
+          "href": "/services/digital-marketing"
+        },
+        {
+          "icon_id": "search",
+          "title": "SEO Services",
+          "description": "Boost your visibility and rank higher in search results with our proven SEO strategies.",
+          "features": ["Keyword Research", "On-Page SEO", "Link Building", "Technical SEO"],
+          "href": "/services/seo"
+        },
+        {
+          "icon_id": "smartphone",
+          "title": "App Development",
+          "description": "Custom mobile and web applications built with cutting-edge technology and best practices.",
+          "features": ["iOS & Android", "Cross-Platform", "API Integration", "Maintenance & Support"],
+          "href": "/services/app-development"
+        }
+      ],
+      "process_block": {
+        "title": "Our Process",
+        "subtitle": "A proven methodology that delivers results"
+      },
+      "process": [
+        { "title": "Discovery", "description": "We learn about your business, goals, and challenges" },
+        { "title": "Strategy", "description": "We develop a customized plan tailored to your needs" },
+        { "title": "Execution", "description": "We bring your vision to life with expert craftsmanship" },
+        { "title": "Optimization", "description": "We continuously improve and refine for best results" }
+      ],
+      "cta": {
+        "title": "Ready to Get Started?",
+        "subtitle": "Let's discuss which services are right for your business and create a custom solution.",
+        "button_text": "Schedule a Consultation",
+        "href": "/contact"
+      }
     }
-    
-    
-    
-    
-    
-    
-        
+      
   ]
 }
