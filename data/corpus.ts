@@ -1316,7 +1316,7 @@ export const corpus = {
         "By using our website and services, you hereby consent to our Terms and Conditions and agree to abide by them. If you do not agree with any part of these terms, you must not use our website or services."
     }
   },
-//----------------------------------------------testimonials page corpus--------------------------------------------------------
+  //----------------------------------------------testimonials page corpus--------------------------------------------------------
   testimonials: {
     meta: {
       title: "Client Testimonials",
@@ -1448,7 +1448,7 @@ export const corpus = {
       href: "/contact",
     },
   },
-//----------------------------------------------appDev page corpus-------------------------------------------------------------
+  //----------------------------------------------appDev page corpus-------------------------------------------------------------
   appDev: {
     meta: {
       title: "App Development",
@@ -1495,14 +1495,62 @@ export const corpus = {
       buttonText: "Start Your Project",
       href: "/contact"
     }
+  },
+  //----------------------------------------------marketing page corpus-------------------------------------------------------------
+  marketing: {
+    meta: {
+      title: "Digital Marketing",
+      description:
+        "Data-driven marketing campaigns that amplify your brand, engage your audience, and drive measurable growth.",
+      path: "/digital-marketing",
+      ogImage: FALLBACK_IMAGE,
+      keywords: ["digital marketing", "ppc", "social media", "content marketing", "analytics"],
+    },
+    hero: {
+      badge: "Digital Marketing",
+      title: "Strategic Marketing That Delivers Results",
+      description:
+        "We create data-driven marketing campaigns that amplify your brand, engage your audience, and drive measurable business growth across all digital channels.",
+      primaryCta: { text: "Get a Free Consultation", href: "/contact" },
+      secondaryCta: { text: "See Case Studies", href: "/portfolio" },
+      media: { src: "/digital-marketing-dashboard.jpg", alt: "Digital marketing dashboard" }
+    },
+    stats: [
+      { value: "300%", label: "Average ROI Increase" },
+      { value: "2.5x", label: "Lead Generation Growth" },
+      { value: "85%", label: "Client Retention Rate" },
+      { value: "50+", label: "Successful Campaigns" }
+    ] as const,
+    services: [
+      { iconId: "users", title: "Social Media Marketing", description: "Build and engage your audience across all major social platforms." },
+      { iconId: "target", title: "PPC Advertising", description: "Targeted campaigns that maximize ROI and drive qualified leads." },
+      { iconId: "trendingUp", title: "Content Marketing", description: "Compelling content that attracts, engages, and converts your audience." },
+      { iconId: "barChart", title: "Analytics & Reporting", description: "Data-driven insights to optimize your marketing performance." }
+    ] as const,
+    benefitsMedia: { src: "/marketing-strategy.jpg", alt: "Marketing strategy" },
+    benefits: [
+      "Increase brand awareness and reach",
+      "Generate high-quality leads consistently",
+      "Improve customer engagement and loyalty",
+      "Achieve measurable ROI on marketing spend",
+      "Stay ahead of competitors in your market",
+      "Build a strong online presence"
+    ] as const,
+    cta: {
+      title: "Ready to Grow Your Business?",
+      subtitle: "Let's create a custom marketing strategy that drives real results for your business.",
+      buttonText: "Schedule a Strategy Call",
+      href: "/contact"
+    }
   }
+
 
 
 } as const
 
 
 // Convenience named exports 
-export const { about, blog, booking, careers, contact, events, faq, help, partners, portfolio, pricing, privacy, terms, testimonials, appDev } = corpus
+export const { about, blog, booking, careers, contact, events, faq, help, partners, portfolio, pricing, privacy, terms, testimonials, appDev, marketing } = corpus
 
 
 
