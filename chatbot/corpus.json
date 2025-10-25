@@ -1386,7 +1386,79 @@
         "buttonText": "Schedule a Strategy Call",
         "href": "/contact"
       }
+    },
+    {
+      "page_id": "seo",
+      "route": "/seo",
+      "last_updated": "2025-01-15",
+      "meta": {
+        "title": "SEO Services",
+        "description": "Proven SEO strategies to rank higher, grow organic traffic, and convert visitors into customers.",
+        "og_image": "/placeholder.svg",
+        "keywords": [
+          "seo",
+          "search engine optimization",
+          "link building",
+          "technical seo",
+          "keyword research"
+        ]
+      },
+      "hero": {
+        "badge": "SEO Services",
+        "title": "Dominate Search Results & Drive Organic Growth",
+        "description": "Our proven SEO strategies help businesses rank higher, attract more qualified traffic, and convert visitors into customers. Get found by people actively searching for your services.",
+        "primary_cta": { "text": "Get a Free SEO Audit", "href": "/contact" },
+        "secondary_cta": { "text": "View Success Stories", "href": "/portfolio" },
+        "media": { "src": "/seo-analytics.jpg", "alt": "SEO analytics" }
+      },
+      "results": [
+        { "metric": "First Page Rankings", "value": "50+ Keywords", "client": "E-commerce Client" },
+        { "metric": "Organic Traffic Growth", "value": "+425%", "client": "SaaS Company" },
+        { "metric": "Lead Generation", "value": "+280%", "client": "B2B Service" },
+        { "metric": "Domain Authority", "value": "35 → 62", "client": "Tech Startup" }
+      ],
+      "services": [
+        { "icon_id": "search", "title": "Keyword Research", "description": "Identify high-value keywords that drive qualified traffic to your site." },
+        { "icon_id": "fileText", "title": "On-Page SEO", "description": "Optimize your content, meta tags, and site structure for search engines." },
+        { "icon_id": "link", "title": "Link Building", "description": "Build high-quality backlinks that boost your domain authority." },
+        { "icon_id": "trendingUp", "title": "Technical SEO", "description": "Improve site speed, mobile-friendliness, and crawlability." }
+      ],
+      "benefits": {
+        "media": { "src": "/seo-growth.jpg", "alt": "SEO growth" },
+        "items": [
+          "Rank on the first page of Google",
+          "Increase organic traffic by 300%+",
+          "Generate more qualified leads",
+          "Reduce customer acquisition costs",
+          "Build long-term sustainable growth",
+          "Outrank your competitors"
+        ]
+      },
+      "cta": {
+        "title": "Ready to Rank Higher on Google?",
+        "subtitle": "Get a free SEO audit and discover how we can help you dominate search results.",
+        "button_text": "Claim Your Free Audit",
+        "href": "/contact"
+      },
+      "sections": [
+        {
+          "type": "overview",
+          "title": "Real Results for Real Businesses",
+          "summary": "Examples of measurable SEO outcomes across industries."
+        },
+        {
+          "type": "services",
+          "title": "Comprehensive SEO Services",
+          "summary": "End-to-end SEO offerings: research, on-page, off-page, and technical."
+        },
+        {
+          "type": "benefits",
+          "title": "Why SEO is Essential for Your Business",
+          "summary": "Long-term, compounding growth from organic search."
+        }
+      ]
     }
+    
     
     
     

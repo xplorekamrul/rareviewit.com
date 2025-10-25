@@ -1316,7 +1316,7 @@ export const corpus = {
         "By using our website and services, you hereby consent to our Terms and Conditions and agree to abide by them. If you do not agree with any part of these terms, you must not use our website or services."
     }
   },
-  //----------------------------------------------testimonials page corpus--------------------------------------------------------
+  //----------------------------------------------testimonials page corpus------------------------------------------------------
   testimonials: {
     meta: {
       title: "Client Testimonials",
@@ -1496,7 +1496,7 @@ export const corpus = {
       href: "/contact"
     }
   },
-  //----------------------------------------------marketing page corpus-------------------------------------------------------------
+  //----------------------------------------------marketing page corpus----------------------------------------------------------
   marketing: {
     meta: {
       title: "Digital Marketing",
@@ -1542,6 +1542,53 @@ export const corpus = {
       buttonText: "Schedule a Strategy Call",
       href: "/contact"
     }
+  },
+  //-------------------------------------------------seo page corpus-------------------------------------------------------------
+  seo: {
+    meta: {
+      title: "SEO Services",
+      description:
+        "Proven SEO strategies to rank higher, grow organic traffic, and convert visitors into customers.",
+      path: "/seo",
+      ogImage: FALLBACK_IMAGE,
+      keywords: ["seo", "search engine optimization", "link building", "technical seo", "keyword research"],
+    },
+    hero: {
+      badge: "SEO Services",
+      title: "Dominate Search Results & Drive Organic Growth",
+      description:
+        "Our proven SEO strategies help businesses rank higher, attract more qualified traffic, and convert visitors into customers. Get found by people actively searching for your services.",
+      primaryCta: { text: "Get a Free SEO Audit", href: "/contact" },
+      secondaryCta: { text: "View Success Stories", href: "/portfolio" },
+      media: { src: "/seo-analytics.jpg", alt: "SEO analytics" }
+    },
+    results: [
+      { metric: "First Page Rankings", value: "50+ Keywords", client: "E-commerce Client" },
+      { metric: "Organic Traffic Growth", value: "+425%", client: "SaaS Company" },
+      { metric: "Lead Generation", value: "+280%", client: "B2B Service" },
+      { metric: "Domain Authority", value: "35 → 62", client: "Tech Startup" }
+    ] as const,
+    services: [
+      { iconId: "search",     title: "Keyword Research", description: "Identify high-value keywords that drive qualified traffic to your site." },
+      { iconId: "fileText",   title: "On-Page SEO",      description: "Optimize your content, meta tags, and site structure for search engines." },
+      { iconId: "link",       title: "Link Building",    description: "Build high-quality backlinks that boost your domain authority." },
+      { iconId: "trendingUp", title: "Technical SEO",    description: "Improve site speed, mobile-friendliness, and crawlability." }
+    ] as const,
+    benefitsMedia: { src: "/seo-growth.jpg", alt: "SEO growth" },
+    benefits: [
+      "Rank on the first page of Google",
+      "Increase organic traffic by 300%+",
+      "Generate more qualified leads",
+      "Reduce customer acquisition costs",
+      "Build long-term sustainable growth",
+      "Outrank your competitors"
+    ] as const,
+    cta: {
+      title: "Ready to Rank Higher on Google?",
+      subtitle: "Get a free SEO audit and discover how we can help you dominate search results.",
+      buttonText: "Claim Your Free Audit",
+      href: "/contact"
+    }
   }
 
 
@@ -1550,7 +1597,7 @@ export const corpus = {
 
 
 // Convenience named exports 
-export const { about, blog, booking, careers, contact, events, faq, help, partners, portfolio, pricing, privacy, terms, testimonials, appDev, marketing } = corpus
+export const { about, blog, booking, careers, contact, events, faq, help, partners, portfolio, pricing, privacy, terms, testimonials, appDev, marketing, seo } = corpus
 
 
 
