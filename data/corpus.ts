@@ -1316,13 +1316,145 @@ export const corpus = {
         "By using our website and services, you hereby consent to our Terms and Conditions and agree to abide by them. If you do not agree with any part of these terms, you must not use our website or services."
     }
   },
+//----------------------------------------------testimonials page corpus--------------------------------------------------------
+  testimonials: {
+    meta: {
+      title: "Client Testimonials",
+      description:
+        "What our clients say about our web design, marketing, SEO, and app development services.",
+      path: "/testimonials",
+      ogImage: FALLBACK_IMAGE,
+      keywords: [
+        "testimonials",
+        "client reviews",
+        "case studies",
+        "ratings",
+        "success stories",
+      ] as const,
+    },
+    hero: {
+      badge: "Testimonials",
+      title: "What Our Clients Say",
+      subtitle:
+        "Don't just take our word for it. Hear from the businesses we've helped transform and grow through our digital services.",
+    },
+    stats: [
+      { value: "98%", label: "Client Satisfaction" },
+      { value: "4.9/5", label: "Average Rating" },
+      { value: "200+", label: "Happy Clients" },
+      { value: "95%", label: "Client Retention" },
+    ] as const,
+    items: [
+      {
+        name: "Sarah Johnson",
+        role: "CEO",
+        company: "TechStart Inc",
+        avatar: "/testimonial-sarah.png",
+        content:
+          "Working with this team completely transformed our online presence. Their web design expertise helped us increase our conversion rate by 300% in just three months. The attention to detail and understanding of our business goals was exceptional.",
+        rating: 5,
+        project: "Website Redesign",
+      },
+      {
+        name: "Michael Chen",
+        role: "Founder",
+        company: "GrowthLabs",
+        avatar: "/testimonial-michael.png",
+        content:
+          "The digital marketing campaign they created exceeded all our expectations. We saw a 250% increase in qualified leads within the first quarter. Their data-driven approach and creative strategies made all the difference.",
+        rating: 5,
+        project: "Digital Marketing",
+      },
+      {
+        name: "Emily Rodriguez",
+        role: "Marketing Director",
+        company: "Innovate Co",
+        avatar: "/testimonial-emily.png",
+        content:
+          "Their SEO expertise helped us dominate our market. We're now ranking #1 for all our target keywords, and our organic traffic has increased by 500%. The ROI has been incredible.",
+        rating: 5,
+        project: "SEO Services",
+      },
+      {
+        name: "David Park",
+        role: "CTO",
+        company: "FinTech Solutions",
+        avatar: "/testimonial-david.png",
+        content:
+          "The mobile app they developed for us is outstanding. The user experience is seamless, and our customers love it. We've seen a 40% increase in user engagement since launch.",
+        rating: 5,
+        project: "App Development",
+      },
+      {
+        name: "Lisa Thompson",
+        role: "VP of Operations",
+        company: "RetailPro",
+        avatar: "/testimonial-lisa.png",
+        content:
+          "From start to finish, the process was smooth and professional. They took the time to understand our needs and delivered a solution that perfectly aligned with our business objectives.",
+        rating: 5,
+        project: "E-commerce Platform",
+      },
+      {
+        name: "James Wilson",
+        role: "Owner",
+        company: "Local Services Co",
+        avatar: "/testimonial-james.png",
+        content:
+          "As a small business, we needed a partner who could deliver big results on a reasonable budget. They exceeded our expectations in every way. Our online bookings have tripled!",
+        rating: 5,
+        project: "Website & SEO",
+      },
+      {
+        name: "Amanda Foster",
+        role: "Brand Manager",
+        company: "Lifestyle Brand",
+        avatar: "/testimonial-amanda.png",
+        content:
+          "The branding and design work they did for us was phenomenal. They captured our vision perfectly and created a cohesive brand identity that resonates with our target audience.",
+        rating: 5,
+        project: "Brand Identity",
+      },
+      {
+        name: "Robert Martinez",
+        role: "Director of Sales",
+        company: "B2B Solutions",
+        avatar: "/testimonial-robert.png",
+        content:
+          "Their strategic approach to digital marketing has been a game-changer for our sales team. The quality of leads has improved dramatically, and our close rate has increased by 45%.",
+        rating: 5,
+        project: "Lead Generation",
+      },
+      {
+        name: "Jennifer Lee",
+        role: "Founder",
+        company: "Health & Wellness",
+        avatar: "/testimonial-jennifer.png",
+        content:
+          "Working with this team felt like having an in-house digital department. They were responsive, creative, and always went above and beyond to ensure our success.",
+        rating: 5,
+        project: "Full Digital Strategy",
+      },
+    ] as const,
+    videos: {
+      count: 2,
+      label: "Video Testimonial",
+    },
+    cta: {
+      title: "Ready to Join Our Success Stories?",
+      subtitle:
+        "Let's create a success story for your business. Get in touch to discuss your project.",
+      buttonText: "Start Your Project",
+      href: "/contact",
+    },
+  },
 
 
 } as const
 
 
 // Convenience named exports 
-export const { about, blog, booking, careers, contact, events, faq, help, partners, portfolio, pricing, privacy, terms } = corpus
+export const { about, blog, booking, careers, contact, events, faq, help, partners, portfolio, pricing, privacy, terms, testimonials } = corpus
 
 
 
