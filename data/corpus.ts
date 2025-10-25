@@ -1448,18 +1448,61 @@ export const corpus = {
       href: "/contact",
     },
   },
+//----------------------------------------------appDev page corpus-------------------------------------------------------------
+  appDev: {
+    meta: {
+      title: "App Development",
+      description:
+        "We build powerful, scalable mobile and web applications that deliver exceptional user experiences and drive business growth.",
+      path: "/app-development",
+      ogImage: FALLBACK_IMAGE,
+      keywords: ["app development", "mobile apps", "react native", "ios", "android", "pwa"],
+    },
+    hero: {
+      badge: "App Development",
+      title: "Custom Apps That Users Love",
+      description:
+        "We build powerful, scalable mobile and web applications that deliver exceptional user experiences and drive business growth. From concept to launch and beyond.",
+      primaryCta: { text: "Discuss Your App Idea", href: "/contact" },
+      secondaryCta: { text: "See Our Apps", href: "/portfolio" },
+      media: { src: "/app-development.jpg", alt: "App development" }
+    },
+    services: [
+      { iconId: "smartphone", title: "Native Apps", description: "iOS and Android apps built with native technologies for optimal performance." },
+      { iconId: "code", title: "Cross-Platform", description: "React Native apps that work seamlessly across multiple platforms." },
+      { iconId: "zap", title: "Web Apps", description: "Progressive web apps that combine the best of web and mobile." },
+      { iconId: "shield", title: "Maintenance", description: "Ongoing support, updates, and optimization for your applications." }
+    ] as const,
+    benefits: [
+      "Reach customers on their preferred devices",
+      "Increase engagement with push notifications",
+      "Provide seamless offline functionality",
+      "Leverage device features like camera and GPS",
+      "Build brand loyalty with a dedicated app",
+      "Generate additional revenue streams"
+    ] as const,
+    benefitMedia: { src: "/mobile-app-ui.jpg", alt: "Mobile app UI" },
+    technologies: ["React Native", "Swift", "Kotlin", "Flutter", "Node.js", "Firebase", "AWS", "GraphQL"] as const,
+    process: [
+      { step: "01", title: "Discovery", description: "Define requirements and project scope" },
+      { step: "02", title: "Design", description: "Create intuitive UI/UX designs" },
+      { step: "03", title: "Development", description: "Build and test your application" },
+      { step: "04", title: "Launch & Support", description: "Deploy and provide ongoing maintenance" }
+    ] as const,
+    cta: {
+      title: "Ready to Build Your App?",
+      subtitle: "Let's turn your app idea into reality. Schedule a consultation to discuss your project.",
+      buttonText: "Start Your Project",
+      href: "/contact"
+    }
+  }
 
 
 } as const
 
 
 // Convenience named exports 
-export const { about, blog, booking, careers, contact, events, faq, help, partners, portfolio, pricing, privacy, terms, testimonials } = corpus
-
-
-
-
-
+export const { about, blog, booking, careers, contact, events, faq, help, partners, portfolio, pricing, privacy, terms, testimonials, appDev } = corpus
 
 
 
