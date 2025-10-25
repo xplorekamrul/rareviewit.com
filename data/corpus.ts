@@ -7,7 +7,7 @@ export const FALLBACK_IMAGE = "/placeholder.svg"
 type LucideIcon = ComponentType<SVGProps<SVGSVGElement>>
 
 export const corpus = {
-  //----------------------------------------------about page corpus------------------------------------------------------------
+  //----------------------------------------------about page corpus-------------------------------------------------------------
   about: {
     meta: {
       title: "About Us - Digital Innovation Team",
@@ -99,7 +99,7 @@ export const corpus = {
       btnUrl: "/contact",
     },
   },
-  //----------------------------------------------blog page corpus----------------------------------------------------------------
+  //----------------------------------------------blog page corpus--------------------------------------------------------------
   blog: {
     meta: {
       title: "Blog - Insights & Resources",
@@ -201,7 +201,7 @@ export const corpus = {
       btnUrl: "/contact",
     },
   },
-  //-------------------------------------------booking page corpus---------------------------------------------------------------
+  //-------------------------------------------booking page corpus--------------------------------------------------------------
   booking: {
     meta: {
       title: "Book a Consultation",
@@ -308,7 +308,7 @@ export const corpus = {
       btnUrl: "#calendar",
     },
   },
-  //----------------------------------------------careers page corpus-------------------------------------------------------------
+  //----------------------------------------------careers page corpus-----------------------------------------------------------
   careers: {
     meta: {
       title: "Careers - Join Our Creative Team",
@@ -417,7 +417,7 @@ export const corpus = {
       btnUrl: "/contact",
     },
   },
-  //----------------------------------------------contact page corpus-------------------------------------------------------------
+  //----------------------------------------------contact page corpus-----------------------------------------------------------
   contact: {
     meta: {
       title: "Contact Us",
@@ -505,7 +505,7 @@ export const corpus = {
       placeholderIcon: "MapPin"
     }
   },
-  //----------------------------------------------events page corpus-------------------------------------------------------------
+  //----------------------------------------------events page corpus------------------------------------------------------------
   events: {
     meta: {
       title: "Events & Webinars",
@@ -607,7 +607,7 @@ export const corpus = {
       btnText: "Notify Me",
     },
   },
-  //----------------------------------------------faq page corpus-------------------------------------------------------------
+  //----------------------------------------------faq page corpus---------------------------------------------------------------
   faq: {
     meta: {
       title: "FAQ",
@@ -756,7 +756,7 @@ export const corpus = {
       secondary: { text: "Schedule a Call", href: "/booking" },
     },
   },
-  //----------------------------------------------help page corpus-------------------------------------------------------------
+  //----------------------------------------------help page corpus--------------------------------------------------------------
   help: {
     meta: {
       title: "Help Center",
@@ -820,7 +820,7 @@ export const corpus = {
       tertiary: { text: "Book a Call", href: "/booking" },
     },
   },
-  //----------------------------------------------partners page corpus-------------------------------------------------------------
+  //----------------------------------------------partners page corpus----------------------------------------------------------
   partners: {
     meta: {
       title: "Partners & Affiliates",
@@ -915,8 +915,7 @@ export const corpus = {
       button: { text: "Apply Now", href: "/contact" },
     },
   },
-  //----------------------------------------------portfolio page corpus-------------------------------------------------------------
-
+  //----------------------------------------------portfolio page corpus---------------------------------------------------------
   portfolio: {
     meta: {
       title: "Our Work - Portfolio",
@@ -1002,12 +1001,213 @@ export const corpus = {
       button: { text: "Start Your Project", href: "/contact" },
     },
   },
+  //----------------------------------------------pricing page corpus-----------------------------------------------------------
+  pricing: {
+    meta: {
+      title: "Pricing",
+      description: "Flexible pricing that fits your business. Choose a package or request a custom quote.",
+      path: "/pricing",
+      ogImage: FALLBACK_IMAGE,
+      keywords: ["pricing", "packages", "plans", "web design pricing", "agency pricing"] as const,
+    },
+    hero: {
+      badge: "Pricing",
+      title: "Flexible Pricing That Fits Your Business",
+      description: "Choose a package or request a custom quote — we scale to your needs.",
+      primaryCta: { text: "Get a Custom Quote", href: "/contact" },
+      secondaryCta: { text: "View Services", href: "/services" },
+    },
+    toggle: {
+      labels: { onetime: "One-Time", monthly: "Monthly" },
+      defaultCycle: "onetime" as const, // "onetime" | "monthly"
+    },
+    packages: [
+      {
+        name: "Starter",
+        priceOneTime: 499,
+        priceMonthly: 99,
+        description: "Perfect for small businesses and startups",
+        features: [
+          "5-Page Website",
+          "Responsive Design",
+          "Basic SEO Setup",
+          "Contact Form",
+          "2 Revisions",
+          "30-Day Support",
+        ],
+        notIncluded: ["E-commerce", "Custom Animations", "Advanced Analytics"],
+        popular: false,
+      },
+      {
+        name: "Growth",
+        priceOneTime: 1299,
+        priceMonthly: 249,
+        description: "Ideal for growing businesses",
+        features: [
+          "10-Page Website",
+          "Advanced Responsive Design",
+          "Complete SEO Package",
+          "Contact & Lead Forms",
+          "5 Revisions",
+          "90-Day Support",
+          "Performance Optimization",
+          "Analytics Integration",
+        ],
+        notIncluded: ["E-commerce", "Custom CMS"],
+        popular: true,
+      },
+      {
+        name: "Enterprise",
+        priceOneTime: 2999,
+        priceMonthly: 599,
+        description: "For established businesses with complex needs",
+        features: [
+          "Unlimited Pages",
+          "Premium Design System",
+          "Advanced SEO & Marketing",
+          "Custom Forms & Integrations",
+          "Unlimited Revisions",
+          "1-Year Support",
+          "Performance Optimization",
+          "Advanced Analytics",
+          "E-commerce Ready",
+          "Custom CMS",
+          "Priority Support",
+        ],
+        notIncluded: [],
+        popular: false,
+      },
+    ] as const,
+    addons: [
+      { name: "Logo Design", price: 299, description: "Professional brand identity" },
+      { name: "Landing Page", price: 499, description: "High-converting single page" },
+      { name: "Speed Optimization", price: 199, description: "Performance tuning" },
+      { name: "Monthly SEO", price: 399, description: "Ongoing optimization" },
+    ] as const,
+    faqSection: {
+      title: "Payment Terms & FAQ",
+      items: [
+        {
+          question: "Do you offer payment plans?",
+          answer: "Yes, we offer flexible payment plans for projects over $1,000. Contact us to discuss options.",
+        },
+        {
+          question: "What's your refund policy?",
+          answer: "We offer refunds if work hasn't begun. Partial refunds are evaluated case-by-case.",
+        },
+        {
+          question: "Are prices negotiable?",
+          answer: "We're happy to discuss custom packages that fit your budget and needs.",
+        },
+        {
+          question: "Do you include hosting/domain?",
+          answer:
+            "Hosting and domain are separate. We can recommend providers or manage it for you.",
+        },
+      ] as const,
+    },
+    cta: {
+      title: "Let's Launch Your Project with Confidence",
+      description: "Ready to get started? Schedule a call or request a custom quote today.",
+      button: { text: "Get Started Now", href: "/contact" },
+    },
+  },
+  //----------------------------------------------privacy page corpus-----------------------------------------------------------
+  privacy: {
+    meta: {
+      title: "Privacy Policy",
+      description:
+        "How we collect, use, disclose, and safeguard your information when you visit our website or use our services.",
+      path: "/privacy",
+      ogImage: FALLBACK_IMAGE,
+      keywords: ["privacy policy", "data protection", "cookies", "GDPR", "security"] as const,
+      lastUpdated: "January 15, 2025",
+    },
+    hero: {
+      badge: "Legal",
+      title: "Privacy Policy",
+      lead: "At Creative Agency, we take your privacy seriously. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or use our services. Please read this privacy policy carefully.",
+    },
+    sections: [
+      {
+        title: "Information We Collect",
+        paragraphs: [
+          "We collect information you provide directly to us, such as when you create an account, fill out a form, or communicate with us. This may include your name, email address, phone number, company name, and any other information you choose to provide.",
+          "We automatically collect certain information about your device when you use our website, including your IP address, browser type, operating system, referring URLs, and pages visited."
+        ]
+      },
+      {
+        title: "How We Use Your Information",
+        paragraphs: [
+          "We use the information we collect to provide, maintain, and improve our services, including to process transactions, send you technical notices and support messages, and respond to your comments and questions.",
+          "We may use your information to send you marketing communications about our services, events, and promotions. You can opt out of these communications at any time.",
+          "We use analytics tools to understand how users interact with our website and services, which helps us improve the user experience."
+        ]
+      },
+      {
+        title: "Information Sharing and Disclosure",
+        paragraphs: [
+          "We do not sell, trade, or rent your personal information to third parties. We may share your information with service providers who perform services on our behalf, such as hosting, analytics, and customer support.",
+          "We may disclose your information if required by law or if we believe such action is necessary to comply with legal obligations, protect our rights, or ensure the safety of our users."
+        ]
+      },
+      {
+        title: "Data Security",
+        paragraphs: [
+          "We implement appropriate technical and organizational measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction.",
+          "However, no method of transmission over the Internet or electronic storage is 100% secure, and we cannot guarantee absolute security."
+        ]
+      },
+      {
+        title: "Cookies and Tracking Technologies",
+        paragraphs: [
+          "We use cookies and similar tracking technologies to collect information about your browsing activities and to personalize your experience on our website.",
+          "You can control cookies through your browser settings, but disabling cookies may affect your ability to use certain features of our website."
+        ]
+      },
+      {
+        title: "Your Rights and Choices",
+        paragraphs: [
+          "You have the right to access, update, or delete your personal information. You can do this by logging into your account or contacting us directly.",
+          "You have the right to opt out of marketing communications at any time by clicking the unsubscribe link in our emails or contacting us.",
+          "If you are located in the European Economic Area, you have additional rights under GDPR, including the right to data portability and the right to lodge a complaint with a supervisory authority."
+        ]
+      },
+      {
+        title: "Children's Privacy",
+        paragraphs: [
+          "Our services are not directed to children under the age of 13, and we do not knowingly collect personal information from children under 13. If we learn that we have collected personal information from a child under 13, we will take steps to delete such information."
+        ]
+      },
+      {
+        title: "Changes to This Privacy Policy",
+        paragraphs: [
+          "We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the 'Last Updated' date.",
+          "We encourage you to review this Privacy Policy periodically to stay informed about how we are protecting your information."
+        ]
+      },
+      {
+        title: "Contact Us",
+        paragraphs: [
+          "If you have any questions about this Privacy Policy or our privacy practices, please contact us at:",
+          "Email: privacy@creative.agency",
+          "Phone: +1 (555) 123-4567",
+          "Address: 123 Creative Street, San Francisco, CA 94102"
+        ]
+      }
+    ] as const,
+    consent: {
+      title: "Your Consent",
+      text: "By using our website and services, you consent to our Privacy Policy and agree to its terms. If you do not agree with this policy, please do not use our website or services."
+    }
+  },
+
 
 } as const
 
 
 // Convenience named exports 
-export const { about, blog, booking, careers, contact, events, faq, help, partners, portfolio } = corpus
+export const { about, blog, booking, careers, contact, events, faq, help, partners, portfolio, pricing, privacy } = corpus
 
 
 
