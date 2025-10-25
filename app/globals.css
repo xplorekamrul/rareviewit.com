@@ -127,3 +127,7 @@
     @apply bg-background text-foreground;
   }
 }
+
+.container{
+  margin: 0 auto;
+}

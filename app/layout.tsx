@@ -28,7 +28,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`font-sans antialiased w-[90%] mx-auto`}>
+      <body className={`font-sans antialiased `}>
         <ThemeProvider defaultTheme="light">
           <ChatProvider>
             <SiteHeader />

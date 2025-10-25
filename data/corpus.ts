@@ -1,4 +1,4 @@
-import { Users, Target, Award, Zap, Clock, Video, Phone } from "lucide-react"
+import { Users, Target, Award, Zap, Clock, Video, Phone, MapPin, Mail } from "lucide-react"
 
 // src/data/corpus.ts
 import type { ComponentType, SVGProps } from "react"
@@ -7,8 +7,8 @@ export const FALLBACK_IMAGE = "/placeholder.svg"
 type LucideIcon = ComponentType<SVGProps<SVGSVGElement>>
 
 export const corpus = {
-   //----------------------------------------------about page corpus-------------------------------------------------------------
-   about: {
+  //----------------------------------------------about page corpus------------------------------------------------------------
+  about: {
     meta: {
       title: "About Us - Digital Innovation Team",
       description:
@@ -99,337 +99,526 @@ export const corpus = {
       btnUrl: "/contact",
     },
   },
-//----------------------------------------------blog page corpus-------------------------------------------------------------
+  //----------------------------------------------blog page corpus----------------------------------------------------------------
   blog: {
-   meta: {
-     title: "Blog - Insights & Resources",
-     description:
-       "Expert advice, industry trends, and practical tips to help you succeed in the digital world.",
-     path: "/blog",
-     ogImage: FALLBACK_IMAGE,
-   },
-
-   hero: {
-     badge: "Blog",
-     title: "Insights & Resources",
-     description:
-       "Expert advice, industry trends, and practical tips to help you succeed in the digital world.",
-   },
-
-   featured: {
-     badge: "Featured",
-     title: "The Future of Web Design: Trends to Watch in 2025",
-     excerpt:
-       "Discover the emerging design trends that will shape the digital landscape in 2025, from AI-powered interfaces to immersive 3D experiences.",
-     image: FALLBACK_IMAGE,
-     category: "Design",
-     date: "Jan 15, 2025",
-     readTime: "8 min read",
-     author: "Sarah Martinez",
-     btnText: "Read Articles",
-     btnUrl: "/blog/future-of-web-design",
-   },
-
-   // Grid header + load-more button text
-   postList: {
-     title: "Latest Articles",
-     btnText: "Load More Articles",
-   },
-
-   posts: [
-     {
-       title: "10 SEO Strategies That Actually Work in 2025",
-       excerpt:
-         "Cut through the noise with proven SEO tactics that deliver real results for your business.",
-       image: FALLBACK_IMAGE,
-       category: "Marketing",
-       date: "Jan 12, 2025",
-       readTime: "6 min read",
-     },
-     {
-       title: "Building Scalable React Applications",
-       excerpt:
-         "Best practices for architecting React apps that grow with your business needs.",
-       image: FALLBACK_IMAGE,
-       category: "Development",
-       date: "Jan 10, 2025",
-       readTime: "10 min read",
-     },
-     {
-       title: "The ROI of Good UX Design",
-       excerpt:
-         "How investing in user experience design directly impacts your bottom line.",
-       image: FALLBACK_IMAGE,
-       category: "Design",
-       date: "Jan 8, 2025",
-       readTime: "5 min read",
-     },
-     {
-       title: "Mobile-First Development: A Complete Guide",
-       excerpt:
-         "Why mobile-first approach is essential and how to implement it effectively.",
-       image: FALLBACK_IMAGE,
-       category: "Development",
-       date: "Jan 5, 2025",
-       readTime: "7 min read",
-     },
-     {
-       title: "Content Marketing Strategies for SaaS",
-       excerpt:
-         "Proven content strategies that drive signups and reduce churn for SaaS companies.",
-       image: FALLBACK_IMAGE,
-       category: "Marketing",
-       date: "Jan 3, 2025",
-       readTime: "9 min read",
-     },
-     {
-       title: "Accessibility in Modern Web Design",
-       excerpt:
-         "Making your website accessible to everyone isn't just good practice—it's essential.",
-       image: FALLBACK_IMAGE,
-       category: "Design",
-       date: "Dec 30, 2024",
-       readTime: "6 min read",
-     },
-   ],
-
-   cta: {
-     title: "Stay Updated",
-     description:
-       "Get the latest insights and tips delivered directly to your inbox.",
-     btnText: "Load More Articles",
-     btnUrl: "/contact",
-   },
- },
- //-------------------------------------------booking page corpus-------------------------------------------------------------
- booking: {
-  meta: {
-    title: "Book a Consultation",
-    description: "Pick a time that works for you — no back and forth.",
-    path: "/booking",
-    ogImage: FALLBACK_IMAGE,
-  },
-
-  hero: {
-    badge: "Book a Consultation",
-    title: "Schedule a Free Consultation",
-    description: "Pick a time that works for you — no back and forth.",
-    btnText: "Book Now",
-    btnUrl: "#calendar",
-  },
-
-  meetingTypesSection: {
-    title: "Choose Your Meeting Type",
-    subtitle: "Select the consultation that best fits your needs",
-  },
-
-  meetingTypes: [
-    {
-      icon: Clock as LucideIcon,
-      title: "15-Min Discovery Call",
-      duration: "15 minutes",
+    meta: {
+      title: "Blog - Insights & Resources",
       description:
-        "Quick chat to understand your needs and see if we're a good fit.",
-      features: ["No commitment", "Friendly expert", "Quick turnaround"],
+        "Expert advice, industry trends, and practical tips to help you succeed in the digital world.",
+      path: "/blog",
+      ogImage: FALLBACK_IMAGE,
     },
-    {
-      icon: Video as LucideIcon,
-      title: "Strategy Session",
-      duration: "30 minutes",
+
+    hero: {
+      badge: "Blog",
+      title: "Insights & Resources",
       description:
-        "Deep dive into your project goals and discuss potential solutions.",
-      features: ["Video call", "Detailed discussion", "Action plan"],
+        "Expert advice, industry trends, and practical tips to help you succeed in the digital world.",
     },
-    {
-      icon: Phone as LucideIcon,
-      title: "Project Planning",
-      duration: "60 minutes",
+
+    featured: {
+      badge: "Featured",
+      title: "The Future of Web Design: Trends to Watch in 2025",
+      excerpt:
+        "Discover the emerging design trends that will shape the digital landscape in 2025, from AI-powered interfaces to immersive 3D experiences.",
+      image: FALLBACK_IMAGE,
+      category: "Design",
+      date: "Jan 15, 2025",
+      readTime: "8 min read",
+      author: "Sarah Martinez",
+      btnText: "Read Articles",
+      btnUrl: "/blog/future-of-web-design",
+    },
+
+    // Grid header + load-more button text
+    postList: {
+      title: "Latest Articles",
+      btnText: "Load More Articles",
+    },
+
+    posts: [
+      {
+        title: "10 SEO Strategies That Actually Work in 2025",
+        excerpt:
+          "Cut through the noise with proven SEO tactics that deliver real results for your business.",
+        image: FALLBACK_IMAGE,
+        category: "Marketing",
+        date: "Jan 12, 2025",
+        readTime: "6 min read",
+      },
+      {
+        title: "Building Scalable React Applications",
+        excerpt:
+          "Best practices for architecting React apps that grow with your business needs.",
+        image: FALLBACK_IMAGE,
+        category: "Development",
+        date: "Jan 10, 2025",
+        readTime: "10 min read",
+      },
+      {
+        title: "The ROI of Good UX Design",
+        excerpt:
+          "How investing in user experience design directly impacts your bottom line.",
+        image: FALLBACK_IMAGE,
+        category: "Design",
+        date: "Jan 8, 2025",
+        readTime: "5 min read",
+      },
+      {
+        title: "Mobile-First Development: A Complete Guide",
+        excerpt:
+          "Why mobile-first approach is essential and how to implement it effectively.",
+        image: FALLBACK_IMAGE,
+        category: "Development",
+        date: "Jan 5, 2025",
+        readTime: "7 min read",
+      },
+      {
+        title: "Content Marketing Strategies for SaaS",
+        excerpt:
+          "Proven content strategies that drive signups and reduce churn for SaaS companies.",
+        image: FALLBACK_IMAGE,
+        category: "Marketing",
+        date: "Jan 3, 2025",
+        readTime: "9 min read",
+      },
+      {
+        title: "Accessibility in Modern Web Design",
+        excerpt:
+          "Making your website accessible to everyone isn't just good practice—it's essential.",
+        image: FALLBACK_IMAGE,
+        category: "Design",
+        date: "Dec 30, 2024",
+        readTime: "6 min read",
+      },
+    ],
+
+    cta: {
+      title: "Stay Updated",
       description:
-        "Comprehensive planning session for complex projects.",
-      features: ["Full consultation", "Technical review", "Custom proposal"],
+        "Get the latest insights and tips delivered directly to your inbox.",
+      btnText: "Load More Articles",
+      btnUrl: "/contact",
     },
-  ] as {
-    icon: LucideIcon
-    title: string
-    duration: string
-    description: string
-    features: string[]
-  }[],
-
-  calendarSection: {
-    title: "Pick Your Time",
-    subtitle: "Select a date and time that works best for you",
-    embedNoteTitle: "📅",
-    embedNoteLine1: "Calendar Integration (Calendly/TidyCal)",
-    embedNoteLine2: "Embed your booking calendar here",
   },
-
-  expectationsSection: {
-    title: "What to Expect",
-  },
-  expectations: [
-    "Friendly expert (not a sales rep)",
-    "Video call or phone",
-    "No commitment required",
-    "Follow-up summary included",
-  ],
-
-  faqSection: {
-    title: "Booking FAQ",
-  },
-  faqs: [
-    {
-      question: "What if I need to reschedule?",
-      answer:
-        "You can reschedule anytime up to 24 hours before your meeting through the confirmation email.",
+  //-------------------------------------------booking page corpus---------------------------------------------------------------
+  booking: {
+    meta: {
+      title: "Book a Consultation",
+      description: "Pick a time that works for you — no back and forth.",
+      path: "/booking",
+      ogImage: FALLBACK_IMAGE,
     },
-    {
-      question: "Do you offer video or phone calls?",
-      answer:
-        "We offer both! You can choose your preferred method when booking.",
+
+    hero: {
+      badge: "Book a Consultation",
+      title: "Schedule a Free Consultation",
+      description: "Pick a time that works for you — no back and forth.",
+      btnText: "Book Now",
+      btnUrl: "#calendar",
     },
-    {
-      question: "Will I be charged for this meeting?",
-      answer:
-        "No, all consultation calls are completely free with no obligation.",
+
+    meetingTypesSection: {
+      title: "Choose Your Meeting Type",
+      subtitle: "Select the consultation that best fits your needs",
     },
-    {
-      question: "Can I book from outside my time zone?",
-      answer:
-        "Yes! Our calendar automatically detects and adjusts to your local time zone.",
+
+    meetingTypes: [
+      {
+        icon: Clock as LucideIcon,
+        title: "15-Min Discovery Call",
+        duration: "15 minutes",
+        description:
+          "Quick chat to understand your needs and see if we're a good fit.",
+        features: ["No commitment", "Friendly expert", "Quick turnaround"],
+      },
+      {
+        icon: Video as LucideIcon,
+        title: "Strategy Session",
+        duration: "30 minutes",
+        description:
+          "Deep dive into your project goals and discuss potential solutions.",
+        features: ["Video call", "Detailed discussion", "Action plan"],
+      },
+      {
+        icon: Phone as LucideIcon,
+        title: "Project Planning",
+        duration: "60 minutes",
+        description:
+          "Comprehensive planning session for complex projects.",
+        features: ["Full consultation", "Technical review", "Custom proposal"],
+      },
+    ] as {
+      icon: LucideIcon
+      title: string
+      duration: string
+      description: string
+      features: string[]
+    }[],
+
+    calendarSection: {
+      title: "Pick Your Time",
+      subtitle: "Select a date and time that works best for you",
+      embedNoteTitle: "📅",
+      embedNoteLine1: "Calendar Integration (Calendly/TidyCal)",
+      embedNoteLine2: "Embed your booking calendar here",
     },
-  ],
 
-  cta: {
-    title: "Let's Make Your Project Happen",
-    description:
-      "Book your free consultation now and take the first step toward your digital transformation",
-    btnText: "Book My Session Now",
-    btnUrl: "#calendar",
-  },
-},
-careers: {
-  meta: {
-    title: "Careers - Join Our Creative Team",
-    description:
-      "Build your career with a team that values innovation, creativity, and personal growth.",
-    path: "/careers",
-    ogImage: FALLBACK_IMAGE,
-  },
+    expectationsSection: {
+      title: "What to Expect",
+    },
+    expectations: [
+      "Friendly expert (not a sales rep)",
+      "Video call or phone",
+      "No commitment required",
+      "Follow-up summary included",
+    ],
 
-  hero: {
-    badge: "Careers",
-    title: "Join Our Creative Team",
-    description:
-      "Build your career with a team that values innovation, creativity, and personal growth. We're always looking for talented individuals to join our mission.",
-  },
+    faqSection: {
+      title: "Booking FAQ",
+    },
+    faqs: [
+      {
+        question: "What if I need to reschedule?",
+        answer:
+          "You can reschedule anytime up to 24 hours before your meeting through the confirmation email.",
+      },
+      {
+        question: "Do you offer video or phone calls?",
+        answer:
+          "We offer both! You can choose your preferred method when booking.",
+      },
+      {
+        question: "Will I be charged for this meeting?",
+        answer:
+          "No, all consultation calls are completely free with no obligation.",
+      },
+      {
+        question: "Can I book from outside my time zone?",
+        answer:
+          "Yes! Our calendar automatically detects and adjusts to your local time zone.",
+      },
+    ],
 
-  whySection: {
-    title: "Why Work With Us?",
-    subtitle:
-      "We offer more than just a job - we offer a career where you can grow and make an impact",
-  },
-
-  benefits: [
-    { title: "Competitive Salary", description: "Industry-leading compensation packages with performance bonuses" },
-    { title: "Health & Wellness", description: "Comprehensive health insurance and wellness programs" },
-    { title: "Flexible Work", description: "Remote-friendly with flexible hours and work-life balance" },
-    { title: "Professional Growth", description: "Continuous learning opportunities and career development" },
-    { title: "Creative Environment", description: "Collaborative culture that values innovation and creativity" },
-    { title: "Latest Technology", description: "Work with cutting-edge tools and technologies" }
-  ],
-
-  valuesSection: { title: "Our Values" },
-  values: [
-    { title: "Innovation First", description: "We embrace new ideas and technologies to stay ahead of the curve." },
-    { title: "Client Success", description: "Our clients' success is our success. We go above and beyond every time." },
-    { title: "Team Collaboration", description: "We believe in the power of teamwork and open communication." },
-    { title: "Continuous Learning", description: "We invest in our team's growth and encourage ongoing education." }
-  ],
-
-  openingsSection: {
-    title: "Open Positions",
-    subtitle: "Explore our current job openings and find your perfect role",
-  },
-  openings: [
-    {
-      title: "Senior Web Designer",
-      slug: "senior-web-designer",
-      department: "Design",
-      location: "San Francisco, CA / Remote",
-      type: "Full-time",
+    cta: {
+      title: "Let's Make Your Project Happen",
       description:
-        "We're looking for a talented web designer to create beautiful, user-friendly websites for our clients."
+        "Book your free consultation now and take the first step toward your digital transformation",
+      btnText: "Book My Session Now",
+      btnUrl: "#calendar",
     },
-    {
-      title: "Digital Marketing Manager",
-      slug: "digital-marketing-manager",
-      department: "Marketing",
-      location: "San Francisco, CA / Remote",
-      type: "Full-time",
+  },
+  //----------------------------------------------careers page corpus-------------------------------------------------------------
+  careers: {
+    meta: {
+      title: "Careers - Join Our Creative Team",
       description:
-        "Lead digital marketing campaigns and strategies for diverse clients across multiple industries."
+        "Build your career with a team that values innovation, creativity, and personal growth.",
+      path: "/careers",
+      ogImage: FALLBACK_IMAGE,
     },
-    {
-      title: "Full-Stack Developer",
-      slug: "full-stack-developer",
-      department: "Development",
-      location: "Remote",
-      type: "Full-time",
+
+    hero: {
+      badge: "Careers",
+      title: "Join Our Creative Team",
       description:
-        "Build scalable web applications using modern technologies like React, Node.js, and Next.js."
+        "Build your career with a team that values innovation, creativity, and personal growth. We're always looking for talented individuals to join our mission.",
     },
-    {
-      title: "SEO Specialist",
-      slug: "seo-specialist",
-      department: "Marketing",
-      location: "San Francisco, CA / Remote",
-      type: "Full-time",
-      description:
-        "Drive organic growth for clients through strategic SEO planning and implementation."
+
+    whySection: {
+      title: "Why Work With Us?",
+      subtitle:
+        "We offer more than just a job - we offer a career where you can grow and make an impact",
     },
-    {
-      title: "Mobile App Developer",
-      slug: "mobile-app-developer",
-      department: "Development",
-      location: "Remote",
-      type: "Full-time",
-      description:
-        "Create native and cross-platform mobile applications for iOS and Android."
+
+    benefits: [
+      { title: "Competitive Salary", description: "Industry-leading compensation packages with performance bonuses" },
+      { title: "Health & Wellness", description: "Comprehensive health insurance and wellness programs" },
+      { title: "Flexible Work", description: "Remote-friendly with flexible hours and work-life balance" },
+      { title: "Professional Growth", description: "Continuous learning opportunities and career development" },
+      { title: "Creative Environment", description: "Collaborative culture that values innovation and creativity" },
+      { title: "Latest Technology", description: "Work with cutting-edge tools and technologies" }
+    ],
+
+    valuesSection: { title: "Our Values" },
+    values: [
+      { title: "Innovation First", description: "We embrace new ideas and technologies to stay ahead of the curve." },
+      { title: "Client Success", description: "Our clients' success is our success. We go above and beyond every time." },
+      { title: "Team Collaboration", description: "We believe in the power of teamwork and open communication." },
+      { title: "Continuous Learning", description: "We invest in our team's growth and encourage ongoing education." }
+    ],
+
+    openingsSection: {
+      title: "Open Positions",
+      subtitle: "Explore our current job openings and find your perfect role",
     },
-    {
-      title: "Content Strategist",
-      slug: "content-strategist",
-      department: "Marketing",
-      location: "San Francisco, CA / Remote",
-      type: "Full-time",
+    openings: [
+      {
+        title: "Senior Web Designer",
+        slug: "senior-web-designer",
+        department: "Design",
+        location: "San Francisco, CA / Remote",
+        type: "Full-time",
+        description:
+          "We're looking for a talented web designer to create beautiful, user-friendly websites for our clients."
+      },
+      {
+        title: "Digital Marketing Manager",
+        slug: "digital-marketing-manager",
+        department: "Marketing",
+        location: "San Francisco, CA / Remote",
+        type: "Full-time",
+        description:
+          "Lead digital marketing campaigns and strategies for diverse clients across multiple industries."
+      },
+      {
+        title: "Full-Stack Developer",
+        slug: "full-stack-developer",
+        department: "Development",
+        location: "Remote",
+        type: "Full-time",
+        description:
+          "Build scalable web applications using modern technologies like React, Node.js, and Next.js."
+      },
+      {
+        title: "SEO Specialist",
+        slug: "seo-specialist",
+        department: "Marketing",
+        location: "San Francisco, CA / Remote",
+        type: "Full-time",
+        description:
+          "Drive organic growth for clients through strategic SEO planning and implementation."
+      },
+      {
+        title: "Mobile App Developer",
+        slug: "mobile-app-developer",
+        department: "Development",
+        location: "Remote",
+        type: "Full-time",
+        description:
+          "Create native and cross-platform mobile applications for iOS and Android."
+      },
+      {
+        title: "Content Strategist",
+        slug: "content-strategist",
+        department: "Marketing",
+        location: "San Francisco, CA / Remote",
+        type: "Full-time",
+        description:
+          "Develop content strategies that engage audiences and drive business results."
+      }
+    ],
+
+    cta: {
+      title: "Don't See the Right Role?",
       description:
-        "Develop content strategies that engage audiences and drive business results."
+        "We're always interested in hearing from talented individuals. Send us your resume and let's talk about future opportunities.",
+      btnText: "Get in Touch",
+      btnUrl: "/contact",
+    },
+  },
+  //----------------------------------------------contact page corpus-------------------------------------------------------------
+  contact: {
+    meta: {
+      title: "Contact Us",
+      description:
+        "Have a project in mind? We'd love to hear about it. Get in touch and let's create something amazing together.",
+      path: "/contact",
+      ogImage: FALLBACK_IMAGE,
+    },
+
+    hero: {
+      badge: "Contact Us",
+      title: "Let's Start a Conversation",
+      description:
+        "Have a project in mind? We'd love to hear about it. Get in touch and let's create something amazing together.",
+    },
+
+    formSection: {
+      title: "Send Us a Message",
+      fields: {
+        firstName: { label: "First Name", placeholder: "John", required: true },
+        lastName: { label: "Last Name", placeholder: "Doe", required: true },
+        email: { label: "Email", placeholder: "john@example.com", required: true },
+        company: { label: "Company (Optional)", placeholder: "Your Company" },
+        service: {
+          label: "Service Interested In",
+          placeholder: "Select a service",
+          options: [
+            { value: "", label: "Select a service" },
+            { value: "web-design", label: "Web Design" },
+            { value: "digital-marketing", label: "Digital Marketing" },
+            { value: "seo", label: "SEO Services" },
+            { value: "app-development", label: "App Development" },
+            { value: "other", label: "Other" }
+          ],
+        },
+        message: {
+          label: "Message",
+          placeholder: "Tell us about your project...",
+          rows: 6,
+          required: true,
+        },
+      },
+      submit: { label: "Send Message" },
+    },
+
+    infoSection: {
+      title: "Get in Touch",
+      description:
+        "We're here to answer your questions and discuss how we can help bring your vision to life. Reach out through any of these channels.",
+      items: [
+        {
+          icon: Mail as LucideIcon,
+          title: "Email",
+          details: "hello@creative.agency",
+          link: "mailto:hello@creative.agency",
+        },
+        {
+          icon: Phone as LucideIcon,
+          title: "Phone",
+          details: "+1 (555) 123-4567",
+          link: "tel:+15551234567",
+        },
+        {
+          icon: MapPin as LucideIcon,
+          title: "Office",
+          details: "123 Creative Street, San Francisco, CA 94102",
+          link: "#",
+        },
+        {
+          icon: Clock as LucideIcon,
+          title: "Hours",
+          details: "Mon-Fri: 9AM - 6PM PST",
+          link: "#",
+        }
+      ],
+      quickNote: {
+        title: "Quick Response Guarantee",
+        description: "We typically respond to all inquiries within 24 hours during business days.",
+      }
+    },
+
+    mapSection: {
+      // purely presentational placeholder copy
+      placeholderTitle: "Map Location",
+      placeholderIcon: "MapPin"
     }
-  ],
-
-  cta: {
-    title: "Don't See the Right Role?",
-    description:
-      "We're always interested in hearing from talented individuals. Send us your resume and let's talk about future opportunities.",
-    btnText: "Get in Touch",
-    btnUrl: "/contact",
   },
-},
+  //----------------------------------------------events page corpus-------------------------------------------------------------
+  events: {
+    meta: {
+      title: "Events & Webinars",
+      description: "Workshops, webinars, and live events to help your business grow.",
+      path: "/events",
+      ogImage: FALLBACK_IMAGE,
+    },
+
+    hero: {
+      badge: "Events & Webinars",
+      title: "Workshops, Webinars & Live Events",
+      description: "Join our community for expert-led sessions designed to help your business grow.",
+      ctaText: "View Upcoming Events",
+      ctaHref: "#upcoming",
+    },
+
+    upcomingSection: {
+      title: "Upcoming Events",
+      subtitle: "Register now to secure your spot",
+    },
+
+    upcomingEvents: [
+      {
+        title: "Modern Web Design Trends 2025",
+        date: "Feb 15, 2025",
+        time: "2:00 PM PST",
+        format: "Online",
+        platform: "Zoom",
+        spotsLeft: 12,
+        description:
+          "Discover the latest design trends and techniques shaping the web in 2025.",
+        speaker: "Sarah Martinez, Creative Director",
+      },
+      {
+        title: "SEO Masterclass: From Zero to Hero",
+        date: "Feb 22, 2025",
+        time: "1:00 PM PST",
+        format: "Online",
+        platform: "YouTube Live",
+        spotsLeft: 45,
+        description:
+          "Learn proven SEO strategies to boost your website's visibility and traffic.",
+        speaker: "Michael Chen, SEO Specialist",
+      },
+      {
+        title: "Building Scalable React Applications",
+        date: "Mar 5, 2025",
+        time: "3:00 PM PST",
+        format: "In-Person",
+        platform: "San Francisco Office",
+        spotsLeft: 8,
+        description:
+          "Hands-on workshop covering React best practices and architecture patterns.",
+        speaker: "David Kim, Lead Developer",
+      },
+    ],
+
+    pastSection: {
+      title: "Past Events & Replays",
+      subtitle: "Catch up on sessions you missed",
+      btnText: "View All Replays",
+    },
+
+    pastEvents: [
+      {
+        title: "Digital Marketing in 2024: What Worked",
+        date: "Jan 10, 2025",
+        views: "1.2K",
+        thumbnail: "/event-marketing.jpg",
+        duration: "45 min",
+      },
+      {
+        title: "Introduction to Next.js 15",
+        date: "Dec 15, 2024",
+        views: "2.5K",
+        thumbnail: "/event-nextjs.jpg",
+        duration: "60 min",
+      },
+      {
+        title: "E-commerce Best Practices",
+        date: "Nov 20, 2024",
+        views: "980",
+        thumbnail: "/event-ecommerce.jpg",
+        duration: "50 min",
+      },
+      {
+        title: "Mobile-First Design Workshop",
+        date: "Oct 30, 2024",
+        views: "1.8K",
+        thumbnail: "/event-mobile.jpg",
+        duration: "55 min",
+      },
+    ],
+
+    newsletter: {
+      title: "Don't Miss Our Next Live Session",
+      description: "Get notified about upcoming events and exclusive content",
+      placeholder: "Enter your email",
+      btnText: "Notify Me",
+    },
+  },
 
 } as const
 
+
 // Convenience named exports 
-export const { about, blog, booking, careers } = corpus
+export const { about, blog, booking, careers, contact, events } = corpus
 
 
 
 
-//----------------------------------------------about page corpus-------------------------------------------------------------
 
-//----------------------------------------------about page corpus-------------------------------------------------------------
 
-//----------------------------------------------about page corpus-------------------------------------------------------------
 
 //----------------------------------------------about page corpus-------------------------------------------------------------
 

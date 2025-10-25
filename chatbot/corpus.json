@@ -30,20 +30,56 @@
         "description": "The principles that guide everything we do"
       },
       "values": [
-        { "icon": "Target", "title": "Client-Focused", "description": "Your success is our priority. We tailor every solution to meet your unique business goals." },
-        { "icon": "Zap", "title": "Innovation", "description": "We stay ahead of trends and leverage cutting-edge technology to deliver exceptional results." },
-        { "icon": "Award", "title": "Excellence", "description": "Quality is non-negotiable. We maintain the highest standards in everything we create." },
-        { "icon": "Users", "title": "Collaboration", "description": "We work as an extension of your team, fostering transparent communication and partnership." }
+        {
+          "icon": "Target",
+          "title": "Client-Focused",
+          "description": "Your success is our priority. We tailor every solution to meet your unique business goals."
+        },
+        {
+          "icon": "Zap",
+          "title": "Innovation",
+          "description": "We stay ahead of trends and leverage cutting-edge technology to deliver exceptional results."
+        },
+        {
+          "icon": "Award",
+          "title": "Excellence",
+          "description": "Quality is non-negotiable. We maintain the highest standards in everything we create."
+        },
+        {
+          "icon": "Users",
+          "title": "Collaboration",
+          "description": "We work as an extension of your team, fostering transparent communication and partnership."
+        }
       ],
       "teamBlock": {
         "title": "Meet Our Team",
         "description": "Talented professionals dedicated to your success"
       },
       "team": [
-        { "name": "Alex Thompson", "role": "Founder & CEO", "image": "/placeholder.svg", "bio": "15+ years leading digital transformation" },
-        { "name": "Sarah Martinez", "role": "Creative Director", "image": "/placeholder.svg", "bio": "Award-winning designer with global experience" },
-        { "name": "David Kim", "role": "Head of Development", "image": "/placeholder.svg", "bio": "Full-stack expert and tech innovator" },
-        { "name": "Jessica Brown", "role": "Marketing Strategist", "image": "/placeholder.svg", "bio": "Data-driven marketer with proven ROI" }
+        {
+          "name": "Alex Thompson",
+          "role": "Founder & CEO",
+          "image": "/placeholder.svg",
+          "bio": "15+ years leading digital transformation"
+        },
+        {
+          "name": "Sarah Martinez",
+          "role": "Creative Director",
+          "image": "/placeholder.svg",
+          "bio": "Award-winning designer with global experience"
+        },
+        {
+          "name": "David Kim",
+          "role": "Head of Development",
+          "image": "/placeholder.svg",
+          "bio": "Full-stack expert and tech innovator"
+        },
+        {
+          "name": "Jessica Brown",
+          "role": "Marketing Strategist",
+          "image": "/placeholder.svg",
+          "bio": "Data-driven marketer with proven ROI"
+        }
       ],
       "cta": {
         "title": "Ready to Work Together?",
@@ -163,21 +199,33 @@
           "title": "15-Min Discovery Call",
           "duration": "15 minutes",
           "description": "Quick chat to understand your needs and see if we're a good fit.",
-          "features": ["No commitment", "Friendly expert", "Quick turnaround"]
+          "features": [
+            "No commitment",
+            "Friendly expert",
+            "Quick turnaround"
+          ]
         },
         {
           "icon": "Video",
           "title": "Strategy Session",
           "duration": "30 minutes",
           "description": "Deep dive into your project goals and discuss potential solutions.",
-          "features": ["Video call", "Detailed discussion", "Action plan"]
+          "features": [
+            "Video call",
+            "Detailed discussion",
+            "Action plan"
+          ]
         },
         {
           "icon": "Phone",
           "title": "Project Planning",
           "duration": "60 minutes",
           "description": "Comprehensive planning session for complex projects.",
-          "features": ["Full consultation", "Technical review", "Custom proposal"]
+          "features": [
+            "Full consultation",
+            "Technical review",
+            "Custom proposal"
+          ]
         }
       ],
       "calendarSection": {
@@ -242,19 +290,51 @@
         "subtitle": "We offer more than just a job - we offer a career where you can grow and make an impact"
       },
       "benefits": [
-        { "title": "Competitive Salary", "description": "Industry-leading compensation packages with performance bonuses" },
-        { "title": "Health & Wellness", "description": "Comprehensive health insurance and wellness programs" },
-        { "title": "Flexible Work", "description": "Remote-friendly with flexible hours and work-life balance" },
-        { "title": "Professional Growth", "description": "Continuous learning opportunities and career development" },
-        { "title": "Creative Environment", "description": "Collaborative culture that values innovation and creativity" },
-        { "title": "Latest Technology", "description": "Work with cutting-edge tools and technologies" }
+        {
+          "title": "Competitive Salary",
+          "description": "Industry-leading compensation packages with performance bonuses"
+        },
+        {
+          "title": "Health & Wellness",
+          "description": "Comprehensive health insurance and wellness programs"
+        },
+        {
+          "title": "Flexible Work",
+          "description": "Remote-friendly with flexible hours and work-life balance"
+        },
+        {
+          "title": "Professional Growth",
+          "description": "Continuous learning opportunities and career development"
+        },
+        {
+          "title": "Creative Environment",
+          "description": "Collaborative culture that values innovation and creativity"
+        },
+        {
+          "title": "Latest Technology",
+          "description": "Work with cutting-edge tools and technologies"
+        }
       ],
-      "valuesSection": { "title": "Our Values" },
+      "valuesSection": {
+        "title": "Our Values"
+      },
       "values": [
-        { "title": "Innovation First", "description": "We embrace new ideas and technologies to stay ahead of the curve." },
-        { "title": "Client Success", "description": "Our clients' success is our success. We go above and beyond every time." },
-        { "title": "Team Collaboration", "description": "We believe in the power of teamwork and open communication." },
-        { "title": "Continuous Learning", "description": "We invest in our team's growth and encourage ongoing education." }
+        {
+          "title": "Innovation First",
+          "description": "We embrace new ideas and technologies to stay ahead of the curve."
+        },
+        {
+          "title": "Client Success",
+          "description": "Our clients' success is our success. We go above and beyond every time."
+        },
+        {
+          "title": "Team Collaboration",
+          "description": "We believe in the power of teamwork and open communication."
+        },
+        {
+          "title": "Continuous Learning",
+          "description": "We invest in our team's growth and encourage ongoing education."
+        }
       ],
       "openingsSection": {
         "title": "Open Positions",
@@ -316,8 +396,214 @@
         "btnText": "Get in Touch",
         "btnUrl": "/contact"
       }
+    },
+    {
+      "pageId": "contact",
+      "meta": {
+        "title": "Contact Us",
+        "description": "Have a project in mind? We'd love to hear about it. Get in touch and let's create something amazing together.",
+        "path": "/contact",
+        "ogImage": "/placeholder.svg"
+      },
+      "hero": {
+        "badge": "Contact Us",
+        "title": "Let's Start a Conversation",
+        "description": "Have a project in mind? We'd love to hear about it. Get in touch and let's create something amazing together."
+      },
+      "formSection": {
+        "title": "Send Us a Message",
+        "fields": {
+          "firstName": {
+            "label": "First Name",
+            "placeholder": "John",
+            "required": true
+          },
+          "lastName": {
+            "label": "Last Name",
+            "placeholder": "Doe",
+            "required": true
+          },
+          "email": {
+            "label": "Email",
+            "placeholder": "john@example.com",
+            "required": true
+          },
+          "company": {
+            "label": "Company (Optional)",
+            "placeholder": "Your Company"
+          },
+          "service": {
+            "label": "Service Interested In",
+            "placeholder": "Select a service",
+            "options": [
+              {
+                "value": "",
+                "label": "Select a service"
+              },
+              {
+                "value": "web-design",
+                "label": "Web Design"
+              },
+              {
+                "value": "digital-marketing",
+                "label": "Digital Marketing"
+              },
+              {
+                "value": "seo",
+                "label": "SEO Services"
+              },
+              {
+                "value": "app-development",
+                "label": "App Development"
+              },
+              {
+                "value": "other",
+                "label": "Other"
+              }
+            ]
+          },
+          "message": {
+            "label": "Message",
+            "placeholder": "Tell us about your project...",
+            "rows": 6,
+            "required": true
+          }
+        },
+        "submit": {
+          "label": "Send Message"
+        }
+      },
+      "infoSection": {
+        "title": "Get in Touch",
+        "description": "We're here to answer your questions and discuss how we can help bring your vision to life. Reach out through any of these channels.",
+        "items": [
+          {
+            "icon": "Mail",
+            "title": "Email",
+            "details": "hello@creative.agency",
+            "link": "mailto:hello@creative.agency"
+          },
+          {
+            "icon": "Phone",
+            "title": "Phone",
+            "details": "+1 (555) 123-4567",
+            "link": "tel:+15551234567"
+          },
+          {
+            "icon": "MapPin",
+            "title": "Office",
+            "details": "123 Creative Street, San Francisco, CA 94102",
+            "link": "#"
+          },
+          {
+            "icon": "Clock",
+            "title": "Hours",
+            "details": "Mon-Fri: 9AM - 6PM PST",
+            "link": "#"
+          }
+        ],
+        "quickNote": {
+          "title": "Quick Response Guarantee",
+          "description": "We typically respond to all inquiries within 24 hours during business days."
+        }
+      },
+      "mapSection": {
+        "placeholderTitle": "Map Location",
+        "placeholderIcon": "MapPin"
+      }
+    },
+    {
+      "pageId": "events",
+      "meta": {
+        "title": "Events & Webinars",
+        "description": "Workshops, webinars, and live events to help your business grow.",
+        "path": "/events",
+        "ogImage": "/placeholder.svg"
+      },
+      "hero": {
+        "badge": "Events & Webinars",
+        "title": "Workshops, Webinars & Live Events",
+        "description": "Join our community for expert-led sessions designed to help your business grow.",
+        "ctaText": "View Upcoming Events",
+        "ctaHref": "#upcoming"
+      },
+      "upcomingSection": {
+        "title": "Upcoming Events",
+        "subtitle": "Register now to secure your spot"
+      },
+      "upcomingEvents": [
+        {
+          "title": "Modern Web Design Trends 2025",
+          "date": "Feb 15, 2025",
+          "time": "2:00 PM PST",
+          "format": "Online",
+          "platform": "Zoom",
+          "spotsLeft": 12,
+          "description": "Discover the latest design trends and techniques shaping the web in 2025.",
+          "speaker": "Sarah Martinez, Creative Director"
+        },
+        {
+          "title": "SEO Masterclass: From Zero to Hero",
+          "date": "Feb 22, 2025",
+          "time": "1:00 PM PST",
+          "format": "Online",
+          "platform": "YouTube Live",
+          "spotsLeft": 45,
+          "description": "Learn proven SEO strategies to boost your website's visibility and traffic.",
+          "speaker": "Michael Chen, SEO Specialist"
+        },
+        {
+          "title": "Building Scalable React Applications",
+          "date": "Mar 5, 2025",
+          "time": "3:00 PM PST",
+          "format": "In-Person",
+          "platform": "San Francisco Office",
+          "spotsLeft": 8,
+          "description": "Hands-on workshop covering React best practices and architecture patterns.",
+          "speaker": "David Kim, Lead Developer"
+        }
+      ],
+      "pastSection": {
+        "title": "Past Events & Replays",
+        "subtitle": "Catch up on sessions you missed",
+        "btnText": "View All Replays"
+      },
+      "pastEvents": [
+        {
+          "title": "Digital Marketing in 2024: What Worked",
+          "date": "Jan 10, 2025",
+          "views": "1.2K",
+          "thumbnail": "/event-marketing.jpg",
+          "duration": "45 min"
+        },
+        {
+          "title": "Introduction to Next.js 15",
+          "date": "Dec 15, 2024",
+          "views": "2.5K",
+          "thumbnail": "/event-nextjs.jpg",
+          "duration": "60 min"
+        },
+        {
+          "title": "E-commerce Best Practices",
+          "date": "Nov 20, 2024",
+          "views": "980",
+          "thumbnail": "/event-ecommerce.jpg",
+          "duration": "50 min"
+        },
+        {
+          "title": "Mobile-First Design Workshop",
+          "date": "Oct 30, 2024",
+          "views": "1.8K",
+          "thumbnail": "/event-mobile.jpg",
+          "duration": "55 min"
+        }
+      ],
+      "newsletter": {
+        "title": "Don't Miss Our Next Live Session",
+        "description": "Get notified about upcoming events and exclusive content",
+        "placeholder": "Enter your email",
+        "btnText": "Notify Me"
+      }
     }
-    
-    
   ]
 }
