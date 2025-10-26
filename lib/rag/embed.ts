@@ -1,66 +1,51 @@
-//lib/rag/embed.ts
+// lib/rag/embed.ts
+"use client";
 
-let worker: Worker | null = null
-let requestId = 0
-const pendingRequests = new Map<number, { resolve: (value: number[][]) => void; reject: (error: Error) => void }>()
+let worker: Worker | null = null;
+let reqId = 0;
+const pending = new Map<number, { resolve: (v: number[][]) => void; reject: (e: Error) => void }>();
 
-function getWorker(): Worker {
+function ensureWorker(): Worker {
+  if (typeof window === "undefined") throw new Error("embed() must run in the browser");
   if (!worker) {
-    worker = new Worker(new URL("../../workers/embed.worker.ts", import.meta.url), { type: "module" })
-
-    worker.onmessage = (event: MessageEvent) => {
-      const { id, embeddings, error } = event.data
-      const pending = pendingRequests.get(id)
-
-      if (pending) {
-        if (error) {
-          pending.reject(new Error(error))
-        } else {
-          pending.resolve(embeddings)
-        }
-        pendingRequests.delete(id)
-      }
-    }
+    worker = new Worker(new URL("../../workers/embed.worker.ts", import.meta.url), { type: "module" });
+    worker.onmessage = (e: MessageEvent) => {
+      const { id, embeddings, error } = e.data ?? {};
+      const p = pending.get(id);
+      if (!p) return;
+      if (error) p.reject(new Error(error));
+      else p.resolve(embeddings);
+      pending.delete(id);
+    };
   }
-
-  return worker
+  return worker;
 }
 
 export async function embed(texts: string[]): Promise<number[][]> {
-  const id = requestId++
-  const worker = getWorker()
-
+  const id = reqId++;
+  const w = ensureWorker();
   return new Promise((resolve, reject) => {
-    pendingRequests.set(id, { resolve, reject })
-    worker.postMessage({ id, texts })
-  })
+    pending.set(id, { resolve, reject });
+    w.postMessage({ id, texts });
+  });
 }
 
 export function cosineSimilarity(a: number[], b: number[]): number {
-  let dotProduct = 0
-  let normA = 0
-  let normB = 0
-
+  let dot = 0, na = 0, nb = 0;
   for (let i = 0; i < a.length; i++) {
-    dotProduct += a[i] * b[i]
-    normA += a[i] * a[i]
-    normB += b[i] * b[i]
+    dot += a[i] * b[i];
+    na += a[i] * a[i];
+    nb += b[i] * b[i];
   }
-
-  return dotProduct / (Math.sqrt(normA) * Math.sqrt(normB))
+  return dot / (Math.sqrt(na) * Math.sqrt(nb));
 }
 
-export function topK(
+export function topK<T extends { vector: number[]; data: any }>(
   query: number[],
-  vectors: Array<{ vector: number[]; data: any }>,
-  k: number,
+  vectors: T[],
+  k: number
 ): Array<{ score: number; data: any }> {
-  const scores = vectors.map((item) => ({
-    score: cosineSimilarity(query, item.vector),
-    data: item.data,
-  }))
-
-  scores.sort((a, b) => b.score - a.score)
-
-  return scores.slice(0, k)
+  const scored = vectors.map((x) => ({ score: cosineSimilarity(query, x.vector), data: x.data }));
+  scored.sort((a, b) => b.score - a.score);
+  return scored.slice(0, k);
 }

@@ -1,48 +1,57 @@
-//lib/rag/clean.ts
+// lib/rag/clean.ts
 
-
+/** Convert HTML to plain text */
 export function htmlToText(html: string): string {
   // Remove script and style tags
-  let text = html.replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, "")
-  text = text.replace(/<style\b[^<]*(?:(?!<\/style>)<[^<]*)*<\/style>/gi, "")
+  let text = html.replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, "");
+  text = text.replace(/<style\b[^<]*(?:(?!<\/style>)<[^<]*)*<\/style>/gi, "");
 
   // Remove HTML tags
-  text = text.replace(/<[^>]+>/g, " ")
+  text = text.replace(/<[^>]+>/g, " ");
 
-  // Decode HTML entities
-  text = text.replace(/&nbsp;/g, " ")
-  text = text.replace(/&amp;/g, "&")
-  text = text.replace(/&lt;/g, "<")
-  text = text.replace(/&gt;/g, ">")
-  text = text.replace(/&quot;/g, '"')
+  // Decode a few common entities
+  text = text
+    .replace(/&nbsp;/g, " ")
+    .replace(/&amp;/g, "&")
+    .replace(/&lt;/g, "<")
+    .replace(/&gt;/g, ">")
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;/g, "'");
 
   // Normalize whitespace
-  text = text.replace(/\s+/g, " ").trim()
-
-  return text
+  return text.replace(/\s+/g, " ").trim();
 }
 
+/** Convert Markdown to plain text */
 export function markdownToText(markdown: string): string {
-  // Remove code blocks
-  let text = markdown.replace(/```[\s\S]*?```/g, "")
+  let text = markdown;
+
+  // Remove fenced code blocks
+  text = text.replace(/```[\s\S]*?```/g, "");
 
   // Remove inline code
-  text = text.replace(/`[^`]+`/g, "")
+  text = text.replace(/`[^`]+`/g, "");
 
-  // Remove links but keep text
-  text = text.replace(/\[([^\]]+)\]$$[^)]+$$/g, "$1")
+  // Images ![alt](url) -> remove entirely
+  text = text.replace(/!\[[^\]]*]\([^)]+\)/g, "");
 
-  // Remove images
-  text = text.replace(/!\[([^\]]*)\]$$[^)]+$$/g, "")
+  // Links [label](url) -> keep label only
+  text = text.replace(/\[([^\]]+)]\([^)]+\)/g, "$1");
 
-  // Remove headers
-  text = text.replace(/^#+\s+/gm, "")
+  // Headers: drop the hashes
+  text = text.replace(/^#{1,6}\s+/gm, "");
 
-  // Remove bold/italic
-  text = text.replace(/[*_]{1,2}([^*_]+)[*_]{1,2}/g, "$1")
+  // Bold / italic
+  text = text.replace(/(\*\*|__)(.*?)\1/g, "$2");
+  text = text.replace(/(\*|_)(.*?)\1/g, "$2");
+  text = text.replace(/~~(.*?)~~/g, "$1");
+
+  // Blockquotes, lists, tables décor
+  text = text.replace(/^\s{0,3}>\s?/gm, "");
+  text = text.replace(/^\s*[-*+]\s+/gm, "");
+  text = text.replace(/^\s*\d+\.\s+/gm, "");
+  text = text.replace(/\|/g, " ");
 
   // Normalize whitespace
-  text = text.replace(/\s+/g, " ").trim()
-
-  return text
+  return text.replace(/\s+/g, " ").trim();
 }
