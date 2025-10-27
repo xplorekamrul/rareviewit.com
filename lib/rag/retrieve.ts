@@ -1,65 +1,65 @@
-////lib/rag/retrieve.ts
+// lib/rag/retrieve.ts
+"use client";
 
-import { embed, topK } from "./embed"
-import { getAllChunks } from "./store.client"
-import type { Source } from "../types"
+import { embed, topK } from "./embed";
+import { getAllChunks } from "./store.client";
+
+export interface Source {
+  title: string;
+  url: string;
+  score: number;
+  snippet: string;
+}
 
 export interface RetrieveOptions {
-  topK?: number
-  minScore?: number
+  topK?: number;
+  minScore?: number;
   filters?: {
-    pageType?: string
-    tags?: string[]
-  }
+    pageType?: string;
+    tags?: string[];
+  };
 }
 
 export async function retrieve(query: string, options: RetrieveOptions = {}): Promise<Source[]> {
-  const { topK: k = 8, minScore = 0.3, filters } = options
+  const { topK: k = 8, minScore = 0.3, filters } = options;
 
   try {
-    // Get query embedding
-    const [queryEmbedding] = await embed([query])
+    const [qVec] = await embed([query]);
+    let chunks = await getAllChunks();
 
-    // Get all chunks
-    let chunks = await getAllChunks()
-
-    // Apply filters
     if (filters?.pageType) {
-      chunks = chunks.filter((c) => c.metadata.pageType === filters.pageType)
+      chunks = chunks.filter(c => c.metadata?.pageType === filters.pageType);
+    }
+    if (filters?.tags?.length) {
+      chunks = chunks.filter(c => c.metadata?.tags?.some((t: string) => filters.tags!.includes(t)));
     }
 
-    if (filters?.tags && filters.tags.length > 0) {
-      chunks = chunks.filter((c) => c.metadata.tags?.some((tag) => filters.tags?.includes(tag)))
+    const ranked = topK(
+      qVec,
+      chunks.map(c => ({ vector: c.vector, data: c })),
+      k
+    );
+
+    const seen = new Set<string>();
+    const out: Source[] = [];
+    for (const r of ranked) {
+      if (r.score < minScore) continue;
+      const url = r.data.url || r.data.metadata?.path || "/";
+      if (seen.has(url)) continue;
+      seen.add(url);
+
+      out.push({
+        title: r.data.title ?? r.data.metadata?.title ?? "Untitled",
+        url,
+        score: r.score,
+        snippet: (r.data.chunk ?? "").slice(0, 300) + (r.data.chunk?.length > 300 ? "…" : "")
+      });
+
+      if (out.length >= 6) break;
     }
-
-    // Calculate similarities
-    const results = topK(
-      queryEmbedding,
-      chunks.map((c) => ({ vector: c.vector, data: c })),
-      k,
-    )
-
-    // Filter by minimum score and deduplicate by URL
-    const seen = new Set<string>()
-    const sources: Source[] = []
-
-    for (const result of results) {
-      if (result.score >= minScore && !seen.has(result.data.url)) {
-        seen.add(result.data.url)
-        sources.push({
-          title: result.data.title,
-          url: result.data.url,
-          score: result.score,
-          snippet: result.data.chunk.slice(0, 200) + "...",
-        })
-
-        if (sources.length >= 6) break
-      }
-    }
-
-    return sources
-  } catch (error) {
-    console.error("[v0] Retrieval error:", error)
-    return []
+    return out;
+  } catch (e) {
+    console.error("[RAG] Retrieval error:", e);
+    return [];
   }
 }

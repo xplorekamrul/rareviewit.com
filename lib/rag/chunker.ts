@@ -1,56 +1,53 @@
-//lib/rag/chunker.ts
+// lib/rag/chunker.ts
 export interface ChunkOptions {
-  maxTokens?: number
-  overlap?: number
+  maxTokens?: number;
+  overlap?: number;
 }
 
 export function chunkText(text: string, options: ChunkOptions = {}): string[] {
-  const { maxTokens = 800, overlap = 100 } = options
+  const { maxTokens = 800, overlap = 100 } = options;
 
-  // Rough token estimation: ~4 chars per token
-  const maxChars = maxTokens * 4
-  const overlapChars = overlap * 4
+  // ~4 chars per token heuristic
+  const maxChars = Math.max(200, maxTokens * 4);
+  const overlapChars = Math.max(0, overlap * 4);
 
-  const chunks: string[] = []
+  const chunks: string[] = [];
+  const paragraphs = text.split(/\n{2,}/).map(p => p.trim()).filter(Boolean);
+  let current = "";
 
-  // Split by paragraphs first
-  const paragraphs = text.split(/\n\n+/).filter((p) => p.trim().length > 0)
-
-  let currentChunk = ""
-
-  for (const paragraph of paragraphs) {
-    if (currentChunk.length + paragraph.length < maxChars) {
-      currentChunk += (currentChunk ? "\n\n" : "") + paragraph
+  const pushWithOverlap = () => {
+    if (!current) return;
+    chunks.push(current);
+    if (overlapChars > 0) {
+      const tail = current.slice(-overlapChars);
+      current = tail.trim();
     } else {
-      if (currentChunk) {
-        chunks.push(currentChunk)
-        // Add overlap from end of previous chunk
-        const words = currentChunk.split(/\s+/)
-        const overlapWords = words.slice(-Math.floor(overlapChars / 5))
-        currentChunk = overlapWords.join(" ") + "\n\n" + paragraph
+      current = "";
+    }
+  };
+
+  for (const p of paragraphs) {
+    if ((current + (current ? "\n\n" : "") + p).length <= maxChars) {
+      current = (current ? current + "\n\n" : "") + p;
+      continue;
+    }
+
+    // Paragraph too big or won't fit; split by sentence
+    const sentences = p.match(/[^.!?]+[.!?]+|\S+$/g) ?? [p];
+    for (const s of sentences) {
+      if ((current + (current ? " " : "") + s).length <= maxChars) {
+        current = (current ? current + " " : "") + s;
       } else {
-        // Paragraph is too long, split by sentences
-        const sentences = paragraph.match(/[^.!?]+[.!?]+/g) || [paragraph]
-        for (const sentence of sentences) {
-          if (currentChunk.length + sentence.length < maxChars) {
-            currentChunk += (currentChunk ? " " : "") + sentence
-          } else {
-            if (currentChunk) chunks.push(currentChunk)
-            currentChunk = sentence
-          }
-        }
+        pushWithOverlap();
+        current = s;
       }
     }
   }
 
-  if (currentChunk) {
-    chunks.push(currentChunk)
-  }
-
-  return chunks
+  if (current) chunks.push(current);
+  return chunks;
 }
 
 export function estimateTokens(text: string): number {
-  // Rough estimation: ~4 characters per token
-  return Math.ceil(text.length / 4)
+  return Math.ceil(text.length / 4);
 }

@@ -10,6 +10,10 @@ export interface Chunk {
     pageType?: string
     tags?: string[]
     timestamp: number
+    path?: string
+    title?: string
+    pageId?: string
+    [k: string]: any
   }
   vector: number[]
 }

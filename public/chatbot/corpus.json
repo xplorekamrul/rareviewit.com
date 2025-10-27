@@ -1,8 +1,9 @@
+
 {
   "version": 1,
   "site": {
-    "brand": "Creative Agency",
-    "baseUrl": "https://example.com"
+    "brand": "www.Rareviewit.com",
+    "baseUrl": "https://www.rareviewit.com/"
   },
   "pages": [
     {
