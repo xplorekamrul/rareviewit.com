@@ -7,6 +7,7 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { motion } from "framer-motion"
+import Image from "next/image"
 import Link from "next/link"
 
 type Project = { title: string; category: string; image: string; tags: readonly string[] }
@@ -35,10 +36,13 @@ export default function PortfolioSection({ data }: { data: PortfolioBlock }) {
             <motion.div key={index} variants={staggerItem}>
               <Card className="group overflow-hidden transition-all hover:shadow-xl">
                 <div className="relative aspect-video overflow-hidden">
-                  <img
+                  <Image
                     src={project.image || "/placeholder.svg"}
                     alt={project.title}
-                    className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
+                    className="object-cover transition-transform duration-300 group-hover:scale-105"
+                    priority={index < 2}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
                 </div>
