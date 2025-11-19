@@ -177,7 +177,7 @@ export default function ContactPage() {
                 <Card className="mt-8 bg-primary text-primary-foreground">
                   <CardContent className="p-6">
                     <h3 className="mb-2 text-xl font-bold">{infoSection.quickNote.title}</h3>
-                    <p className="text-primary-foreground/90">
+                    <p className="text-primary-foreground">
                       {infoSection.quickNote.description}
                     </p>
                   </CardContent>

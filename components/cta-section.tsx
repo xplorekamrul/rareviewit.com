@@ -1,10 +1,10 @@
 // components/home/CtaSection.tsx
 "use client"
 
-import Link from "next/link"
+import { AnimateInView } from "@/components/animate-in-view"
 import { Button } from "@/components/ui/button"
 import { ArrowRight } from "lucide-react"
-import { AnimateInView } from "@/components/animate-in-view"
+import Link from "next/link"
 
 type CTAData = {
   title: string
@@ -21,7 +21,7 @@ export default function CtaSection({ data }: { data: CTAData }) {
           <h2 className="mb-6 text-3xl font-bold tracking-tight md:text-5xl text-balance">
             {data.title}
           </h2>
-          <p className="mb-8 text-lg leading-relaxed text-primary-foreground/90 md:text-xl text-balance">
+          <p className="mb-8 text-lg leading-relaxed text-primary-foreground md:text-xl text-balance">
             {data.description}
           </p>
           <div className="flex flex-col gap-4 sm:flex-row sm:justify-center">

@@ -33,7 +33,7 @@ export function SiteHeader() {
             <Link
               key={item.name}
               href={item.href}
-              className="text-sm font-medium text-foreground/80 transition-colors hover:text-foreground"
+              className="text-sm font-medium text-foreground transition-colors hover:text-primary"
             >
               {item.name}
             </Link>
@@ -59,7 +59,7 @@ export function SiteHeader() {
               <Link
                 key={item.name}
                 href={item.href}
-                className="block rounded-md px-3 py-2 text-base font-medium text-foreground/80 hover:bg-muted hover:text-foreground"
+                className="block rounded-md px-3 py-2 text-base font-medium text-foreground hover:bg-muted hover:text-primary"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 {item.name}
