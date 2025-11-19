@@ -23,7 +23,7 @@
         "title": "Our Mission",
         "descriptionOne": "We believe every business deserves a powerful digital presence that drives real results. Our mission is to democratize access to world-class digital services, making them accessible to companies of all sizes.",
         "descriptionTwo": "Through innovation, collaboration, and unwavering commitment to excellence, we help our clients navigate the digital landscape and achieve sustainable growth.",
-        "image": "/placeholder.svg",
+        "image": "/ourmission.png",
         "alt": "Team collaboration"
       },
       "valuesBlock": {
@@ -106,7 +106,7 @@
         "badge": "Featured",
         "title": "The Future of Web Design: Trends to Watch in 2025",
         "excerpt": "Discover the emerging design trends that will shape the digital landscape in 2025, from AI-powered interfaces to immersive 3D experiences.",
-        "image": "/placeholder.svg",
+        "image": "/blogimage.png",
         "category": "Design",
         "date": "Jan 15, 2025",
         "readTime": "8 min read",
@@ -122,14 +122,14 @@
         {
           "title": "10 SEO Strategies That Actually Work in 2025",
           "excerpt": "Cut through the noise with proven SEO tactics that deliver real results for your business.",
-          "image": "/placeholder.svg",
+          "image": "/seo-blog-image.png",
           "category": "Marketing",
           "date": "Jan 12, 2025",
           "readTime": "6 min read"
         },
         {
-          "title": "Building Scalable React Applications",
-          "excerpt": "Best practices for architecting React apps that grow with your business needs.",
+          "title": "Building Scalable Web Applications",
+          "excerpt": "Best practices for architecting Web apps that grow with your business needs.",
           "image": "/placeholder.svg",
           "category": "Development",
           "date": "Jan 10, 2025",
@@ -138,7 +138,8 @@
         {
           "title": "The ROI of Good UX Design",
           "excerpt": "How investing in user experience design directly impacts your bottom line.",
-          "image": "/placeholder.svg",
+          "image": "/blog-uxui-image.png",
+          "anotherimage": "/blog-ux-image.png",
           "category": "Design",
           "date": "Jan 8, 2025",
           "readTime": "5 min read"
@@ -146,7 +147,7 @@
         {
           "title": "Mobile-First Development: A Complete Guide",
           "excerpt": "Why mobile-first approach is essential and how to implement it effectively.",
-          "image": "/placeholder.svg",
+          "image": "/blog-mobile-first-design-image.png",
           "category": "Development",
           "date": "Jan 5, 2025",
           "readTime": "7 min read"
@@ -154,7 +155,7 @@
         {
           "title": "Content Marketing Strategies for SaaS",
           "excerpt": "Proven content strategies that drive signups and reduce churn for SaaS companies.",
-          "image": "/placeholder.svg",
+          "image": "/blog-content-marketing-image.png",
           "category": "Marketing",
           "date": "Jan 3, 2025",
           "readTime": "9 min read"
