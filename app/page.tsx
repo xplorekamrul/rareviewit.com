@@ -7,7 +7,6 @@ import  CtaSection  from "@/components/cta-section"
 import {homeData} from "@/data/corpus"
 import { generateMetadata as generateSEOMetadata } from "@/lib/seo"
 
-export const revalidate = 3600
 
 export const metadata = generateSEOMetadata({
   title: homeData.meta.title,

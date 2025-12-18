@@ -1,5 +1,5 @@
+import { Facebook, Instagram, Linkedin, Twitter } from "lucide-react"
 import Link from "next/link"
-import { Facebook, Twitter, Linkedin, Instagram } from "lucide-react"
 
 export function SiteFooter() {
   const services = [
@@ -38,10 +38,10 @@ export function SiteFooter() {
           {/* Brand */}
           <div className="space-y-4">
             <Link href="/" className="flex items-center space-x-2">
-              <span className="text-2xl font-bold text-primary">Creative</span>
+              <span className="text-2xl font-bold text-primary">RareviewIt</span>
             </Link>
             <p className="text-sm text-muted-foreground leading-relaxed">
-              Transform your business with our comprehensive digital solutions and creative services.
+              Transform your business with our comprehensive digital solutions and RareviewIt services.
             </p>
             <div className="flex gap-4">
               <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">
@@ -134,7 +134,7 @@ export function SiteFooter() {
 
         <div className="mt-12 border-t border-border pt-8">
           <p className="text-center text-sm text-muted-foreground">
-            © {new Date().getFullYear()} Creative Agency. All rights reserved.
+            © 2025 RareviewIt Agency. All rights reserved.
           </p>
         </div>
       </div>

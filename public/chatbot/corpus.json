@@ -1,4 +1,3 @@
-
 {
   "version": 1,
   "site": {
@@ -17,7 +16,7 @@
       "hero": {
         "badge": "About Us",
         "title": "Insights & Resources",
-        "description": "For over 15 years, we've been helping businesses transform their digital presence and achieve remarkable growth through creative solutions and strategic thinking."
+        "description": "For over 15 years, we've been helping businesses transform their digital presence and achieve remarkable growth through RareviewIt solutions and strategic thinking."
       },
       "mission": {
         "title": "Our Mission",
@@ -65,7 +64,7 @@
         },
         {
           "name": "Sarah Martinez",
-          "role": "Creative Director",
+          "role": "RareviewIt Director",
           "image": "/placeholder.svg",
           "bio": "Award-winning designer with global experience"
         },
@@ -277,14 +276,14 @@
     {
       "pageId": "careers",
       "meta": {
-        "title": "Careers - Join Our Creative Team",
+        "title": "Careers - Join Our RareviewIt Team",
         "description": "Build your career with a team that values innovation, creativity, and personal growth.",
         "path": "/careers",
         "ogImage": "/placeholder.svg"
       },
       "hero": {
         "badge": "Careers",
-        "title": "Join Our Creative Team",
+        "title": "Join Our RareviewIt Team",
         "description": "Build your career with a team that values innovation, creativity, and personal growth. We're always looking for talented individuals to join our mission."
       },
       "whySection": {
@@ -309,7 +308,7 @@
           "description": "Continuous learning opportunities and career development"
         },
         {
-          "title": "Creative Environment",
+          "title": "RareviewIt Environment",
           "description": "Collaborative culture that values innovation and creativity"
         },
         {
@@ -482,8 +481,8 @@
           {
             "icon": "Mail",
             "title": "Email",
-            "details": "hello@creative.agency",
-            "link": "mailto:hello@creative.agency"
+            "details": "hello@RareviewIt.agency",
+            "link": "mailto:hello@RareviewIt.agency"
           },
           {
             "icon": "Phone",
@@ -494,7 +493,7 @@
           {
             "icon": "MapPin",
             "title": "Office",
-            "details": "123 Creative Street, San Francisco, CA 94102",
+            "details": "123 RareviewIt Street, San Francisco, CA 94102",
             "link": "#"
           },
           {
@@ -542,7 +541,7 @@
           "platform": "Zoom",
           "spotsLeft": 12,
           "description": "Discover the latest design trends and techniques shaping the web in 2025.",
-          "speaker": "Sarah Martinez, Creative Director"
+          "speaker": "Sarah Martinez, RareviewIt Director"
         },
         {
           "title": "SEO Masterclass: From Zero to Hero",
@@ -622,45 +621,115 @@
         "ctaText": "Still Need Help? Chat With Us",
         "ctaHref": "/contact"
       },
-      "categories": ["General", "Web Design", "SEO", "App Development", "eCommerce", "Pricing & Payment"],
+      "categories": [
+        "General",
+        "Web Design",
+        "SEO",
+        "App Development",
+        "eCommerce",
+        "Pricing & Payment"
+      ],
       "faqsByCategory": {
         "General": [
-          {"question":"How do I start a project?","answer":"Simply contact us through our website, schedule a consultation, or give us a call. We'll discuss your needs and provide a custom proposal."},
-          {"question":"What is your typical turnaround time?","answer":"Project timelines vary based on scope. A basic website takes 2-4 weeks, while complex applications can take 2-3 months. We'll provide a detailed timeline in your proposal."},
-          {"question":"Do you work with clients remotely?","answer":"Yes! We work with clients worldwide. We use video calls, project management tools, and regular updates to ensure smooth collaboration."}
+          {
+            "question": "How do I start a project?",
+            "answer": "Simply contact us through our website, schedule a consultation, or give us a call. We'll discuss your needs and provide a custom proposal."
+          },
+          {
+            "question": "What is your typical turnaround time?",
+            "answer": "Project timelines vary based on scope. A basic website takes 2-4 weeks, while complex applications can take 2-3 months. We'll provide a detailed timeline in your proposal."
+          },
+          {
+            "question": "Do you work with clients remotely?",
+            "answer": "Yes! We work with clients worldwide. We use video calls, project management tools, and regular updates to ensure smooth collaboration."
+          }
         ],
         "Web Design": [
-          {"question":"Will my website work on phones?","answer":"All our websites are fully responsive and optimized for mobile, tablet, and desktop devices."},
-          {"question":"Do you use WordPress, Webflow, or custom code?","answer":"We work with various platforms based on your needs. We specialize in custom Next.js applications, but also work with WordPress, Webflow, and other CMS platforms."},
-          {"question":"Can I update the website myself after launch?","answer":"Yes! We provide training and documentation so you can make content updates. We also offer ongoing maintenance packages if you prefer us to handle updates."}
+          {
+            "question": "Will my website work on phones?",
+            "answer": "All our websites are fully responsive and optimized for mobile, tablet, and desktop devices."
+          },
+          {
+            "question": "Do you use WordPress, Webflow, or custom code?",
+            "answer": "We work with various platforms based on your needs. We specialize in custom Next.js applications, but also work with WordPress, Webflow, and other CMS platforms."
+          },
+          {
+            "question": "Can I update the website myself after launch?",
+            "answer": "Yes! We provide training and documentation so you can make content updates. We also offer ongoing maintenance packages if you prefer us to handle updates."
+          }
         ],
         "SEO": [
-          {"question":"How long until I see SEO results?","answer":"SEO is a long-term strategy. You may start seeing improvements in 3-6 months, with significant results typically appearing after 6-12 months of consistent optimization."},
-          {"question":"Do you guarantee rankings?","answer":"We don't guarantee specific rankings as search algorithms constantly change. However, we guarantee our best efforts using proven strategies and transparent reporting."},
-          {"question":"What's included in your SEO service?","answer":"Our SEO service includes keyword research, on-page optimization, technical SEO, content strategy, link building, and monthly performance reports."}
+          {
+            "question": "How long until I see SEO results?",
+            "answer": "SEO is a long-term strategy. You may start seeing improvements in 3-6 months, with significant results typically appearing after 6-12 months of consistent optimization."
+          },
+          {
+            "question": "Do you guarantee rankings?",
+            "answer": "We don't guarantee specific rankings as search algorithms constantly change. However, we guarantee our best efforts using proven strategies and transparent reporting."
+          },
+          {
+            "question": "What's included in your SEO service?",
+            "answer": "Our SEO service includes keyword research, on-page optimization, technical SEO, content strategy, link building, and monthly performance reports."
+          }
         ],
         "App Development": [
-          {"question":"Do you build both iOS and Android?","answer":"Yes! We develop native apps for both platforms, as well as cross-platform solutions using React Native for cost-effective development."},
-          {"question":"Will I own the source code?","answer":"Yes, upon final payment, you receive full ownership of the source code and all project files."},
-          {"question":"Do you provide app store submission?","answer":"Yes, we handle the entire app store submission process for both Apple App Store and Google Play Store, including all required assets and descriptions."}
+          {
+            "question": "Do you build both iOS and Android?",
+            "answer": "Yes! We develop native apps for both platforms, as well as cross-platform solutions using React Native for cost-effective development."
+          },
+          {
+            "question": "Will I own the source code?",
+            "answer": "Yes, upon final payment, you receive full ownership of the source code and all project files."
+          },
+          {
+            "question": "Do you provide app store submission?",
+            "answer": "Yes, we handle the entire app store submission process for both Apple App Store and Google Play Store, including all required assets and descriptions."
+          }
         ],
         "eCommerce": [
-          {"question":"Can I manage my store after launch?","answer":"We provide comprehensive training on managing products, orders, inventory, and customers through your e-commerce platform."},
-          {"question":"Do you help with payment setup and shipping?","answer":"Yes, we integrate payment gateways (Stripe, PayPal, etc.) and configure shipping options based on your business needs."},
-          {"question":"What e-commerce platforms do you use?","answer":"We work with Shopify, WooCommerce, custom Next.js solutions, and headless commerce platforms depending on your requirements."}
+          {
+            "question": "Can I manage my store after launch?",
+            "answer": "We provide comprehensive training on managing products, orders, inventory, and customers through your e-commerce platform."
+          },
+          {
+            "question": "Do you help with payment setup and shipping?",
+            "answer": "Yes, we integrate payment gateways (Stripe, PayPal, etc.) and configure shipping options based on your business needs."
+          },
+          {
+            "question": "What e-commerce platforms do you use?",
+            "answer": "We work with Shopify, WooCommerce, custom Next.js solutions, and headless commerce platforms depending on your requirements."
+          }
         ],
         "Pricing & Payment": [
-          {"question":"Do you offer refunds?","answer":"Refunds are only issued if work hasn't begun. Partial refunds are evaluated case-by-case based on work completed."},
-          {"question":"What payment methods do you accept?","answer":"We accept credit cards, bank transfers, PayPal, and for larger projects, we can arrange payment plans."},
-          {"question":"How many design revisions are included?","answer":"Most packages include 2 major and 2 minor revisions. Additional revisions can be purchased if needed."},
-          {"question":"Do you require a deposit?","answer":"Yes, we typically require a 50% deposit to begin work, with the balance due upon completion or according to agreed milestones."}
+          {
+            "question": "Do you offer refunds?",
+            "answer": "Refunds are only issued if work hasn't begun. Partial refunds are evaluated case-by-case based on work completed."
+          },
+          {
+            "question": "What payment methods do you accept?",
+            "answer": "We accept credit cards, bank transfers, PayPal, and for larger projects, we can arrange payment plans."
+          },
+          {
+            "question": "How many design revisions are included?",
+            "answer": "Most packages include 2 major and 2 minor revisions. Additional revisions can be purchased if needed."
+          },
+          {
+            "question": "Do you require a deposit?",
+            "answer": "Yes, we typically require a 50% deposit to begin work, with the balance due upon completion or according to agreed milestones."
+          }
         ]
       },
       "cta": {
         "title": "Didn't Find What You're Looking For?",
         "description": "Our team is here to help answer any questions you have about our services.",
-        "primary": { "text": "Send Us a Message", "href": "/contact" },
-        "secondary": { "text": "Schedule a Call", "href": "/booking" }
+        "primary": {
+          "text": "Send Us a Message",
+          "href": "/contact"
+        },
+        "secondary": {
+          "text": "Schedule a Call",
+          "href": "/booking"
+        }
       }
     },
     {
@@ -670,7 +739,13 @@
         "description": "Find answers to your questions, browse our knowledge base, and get support for all our services.",
         "path": "/help",
         "ogImage": "/placeholder.svg",
-        "keywords": ["help center", "support", "FAQ", "customer service", "documentation"]
+        "keywords": [
+          "help center",
+          "support",
+          "FAQ",
+          "customer service",
+          "documentation"
+        ]
       },
       "hero": {
         "badge": "Help Center",
@@ -683,37 +758,112 @@
         "subtitle": "Find the information you need organized by topic"
       },
       "categories": [
-        { "icon": "Book", "title": "Getting Started", "description": "Learn the basics and get up to speed quickly", "articles": 12, "link": "/help/getting-started" },
-        { "icon": "FileText", "title": "Services & Pricing", "description": "Understand our services, packages, and pricing", "articles": 8, "link": "/help/services" },
-        { "icon": "MessageCircle", "title": "Project Management", "description": "How we manage projects and communicate with clients", "articles": 15, "link": "/help/projects" },
-        { "icon": "Video", "title": "Video Tutorials", "description": "Step-by-step video guides for common tasks", "articles": 6, "link": "/help/tutorials" }
+        {
+          "icon": "Book",
+          "title": "Getting Started",
+          "description": "Learn the basics and get up to speed quickly",
+          "articles": 12,
+          "link": "/help/getting-started"
+        },
+        {
+          "icon": "FileText",
+          "title": "Services & Pricing",
+          "description": "Understand our services, packages, and pricing",
+          "articles": 8,
+          "link": "/help/services"
+        },
+        {
+          "icon": "MessageCircle",
+          "title": "Project Management",
+          "description": "How we manage projects and communicate with clients",
+          "articles": 15,
+          "link": "/help/projects"
+        },
+        {
+          "icon": "Video",
+          "title": "Video Tutorials",
+          "description": "Step-by-step video guides for common tasks",
+          "articles": 6,
+          "link": "/help/tutorials"
+        }
       ],
       "popularSection": {
         "title": "Popular Articles",
         "subtitle": "Most viewed help articles this month"
       },
       "popularArticles": [
-        { "title": "How do I get started with a new project?", "category": "Getting Started", "views": "2.5K" },
-        { "title": "What's included in your web design packages?", "category": "Services", "views": "1.8K" },
-        { "title": "How long does a typical project take?", "category": "Project Management", "views": "1.6K" },
-        { "title": "What payment methods do you accept?", "category": "Billing", "views": "1.4K" },
-        { "title": "Can I request revisions after project completion?", "category": "Project Management", "views": "1.2K" },
-        { "title": "Do you offer ongoing support and maintenance?", "category": "Services", "views": "1.1K" }
+        {
+          "title": "How do I get started with a new project?",
+          "category": "Getting Started",
+          "views": "2.5K"
+        },
+        {
+          "title": "What's included in your web design packages?",
+          "category": "Services",
+          "views": "1.8K"
+        },
+        {
+          "title": "How long does a typical project take?",
+          "category": "Project Management",
+          "views": "1.6K"
+        },
+        {
+          "title": "What payment methods do you accept?",
+          "category": "Billing",
+          "views": "1.4K"
+        },
+        {
+          "title": "Can I request revisions after project completion?",
+          "category": "Project Management",
+          "views": "1.2K"
+        },
+        {
+          "title": "Do you offer ongoing support and maintenance?",
+          "category": "Services",
+          "views": "1.1K"
+        }
       ],
       "contactSection": {
         "title": "Still Need Help?",
         "subtitle": "Our support team is here to assist you",
         "options": [
-          { "icon": "MessageCircle", "title": "Live Chat", "description": "Chat with our support team", "action": "Start Chat", "available": "Mon-Fri, 9AM-6PM PST" },
-          { "icon": "Mail", "title": "Email Support", "description": "Get help via email", "action": "Send Email", "available": "Response within 24 hours" },
-          { "icon": "Phone", "title": "Phone Support", "description": "Speak with an expert", "action": "Call Us", "available": "+1 (555) 123-4567" }
+          {
+            "icon": "MessageCircle",
+            "title": "Live Chat",
+            "description": "Chat with our support team",
+            "action": "Start Chat",
+            "available": "Mon-Fri, 9AM-6PM PST"
+          },
+          {
+            "icon": "Mail",
+            "title": "Email Support",
+            "description": "Get help via email",
+            "action": "Send Email",
+            "available": "Response within 24 hours"
+          },
+          {
+            "icon": "Phone",
+            "title": "Phone Support",
+            "description": "Speak with an expert",
+            "action": "Call Us",
+            "available": "+1 (555) 123-4567"
+          }
         ]
       },
       "quickLinksSection": {
         "title": "Explore More Resources",
-        "primary": { "text": "View FAQ", "href": "/faq" },
-        "secondary": { "text": "Contact Us", "href": "/contact" },
-        "tertiary": { "text": "Book a Call", "href": "/booking" }
+        "primary": {
+          "text": "View FAQ",
+          "href": "/faq"
+        },
+        "secondary": {
+          "text": "Contact Us",
+          "href": "/contact"
+        },
+        "tertiary": {
+          "text": "Book a Call",
+          "href": "/booking"
+        }
       }
     },
     {
@@ -723,58 +873,129 @@
         "description": "We collaborate with top platforms, agencies, and professionals to bring added value to our clients.",
         "path": "/partners",
         "ogImage": "/placeholder.svg",
-        "keywords": ["partners", "affiliates", "white label", "referral program", "integrations"]
+        "keywords": [
+          "partners",
+          "affiliates",
+          "white label",
+          "referral program",
+          "integrations"
+        ]
       },
       "hero": {
         "badge": "Partners & Affiliates",
         "title": "Trusted by Industry Leaders & Growth Partners",
         "description": "We collaborate with top platforms, agencies, and professionals to bring added value to our clients.",
-        "primaryCta": { "text": "Become a Partner", "href": "/contact" },
-        "secondaryCta": { "text": "Affiliate Program Info", "href": "#affiliate" }
+        "primaryCta": {
+          "text": "Become a Partner",
+          "href": "/contact"
+        },
+        "secondaryCta": {
+          "text": "Affiliate Program Info",
+          "href": "#affiliate"
+        }
       },
       "logos": [
-        { "name": "Google Partner", "logo": "/partner-google.png" },
-        { "name": "Shopify Expert", "logo": "/partner-shopify.png" },
-        { "name": "Clutch Rated", "logo": "/partner-clutch.png" },
-        { "name": "Mailchimp Partner", "logo": "/partner-mailchimp.png" },
-        { "name": "Stripe Integration", "logo": "/partner-stripe.png" },
-        { "name": "AWS Partner", "logo": "/partner-aws.png" }
+        {
+          "name": "Google Partner",
+          "logo": "/partner-google.png"
+        },
+        {
+          "name": "Shopify Expert",
+          "logo": "/partner-shopify.png"
+        },
+        {
+          "name": "Clutch Rated",
+          "logo": "/partner-clutch.png"
+        },
+        {
+          "name": "Mailchimp Partner",
+          "logo": "/partner-mailchimp.png"
+        },
+        {
+          "name": "Stripe Integration",
+          "logo": "/partner-stripe.png"
+        },
+        {
+          "name": "AWS Partner",
+          "logo": "/partner-aws.png"
+        }
       ],
       "affiliate": {
         "title": "Affiliate Program Overview",
         "subtitle": "Join our affiliate program and earn generous commissions",
         "stats": [
-          { "label": "Commission Rate", "value": "15%" },
-          { "label": "Cookie Duration", "value": "30 Days" },
-          { "label": "Payout Schedule", "value": "Monthly" }
+          {
+            "label": "Commission Rate",
+            "value": "15%"
+          },
+          {
+            "label": "Cookie Duration",
+            "value": "30 Days"
+          },
+          {
+            "label": "Payout Schedule",
+            "value": "Monthly"
+          }
         ],
-        "cta": { "text": "Apply as an Affiliate", "href": "/contact" }
+        "cta": {
+          "text": "Apply as an Affiliate",
+          "href": "/contact"
+        }
       },
-      "modelsSection": { "title": "Partnership Models", "subtitle": "Choose the partnership model that fits your business" },
+      "modelsSection": {
+        "title": "Partnership Models",
+        "subtitle": "Choose the partnership model that fits your business"
+      },
       "models": [
         {
           "icon": "DollarSign",
           "title": "White-Label Partner",
           "description": "Offer our services under your brand. Perfect for agencies looking to expand their service offerings.",
-          "benefits": ["Your branding", "Flexible pricing", "Dedicated support", "Priority delivery"],
-          "cta": { "text": "Get Started", "href": "/contact" }
+          "benefits": [
+            "Your branding",
+            "Flexible pricing",
+            "Dedicated support",
+            "Priority delivery"
+          ],
+          "cta": {
+            "text": "Get Started",
+            "href": "/contact"
+          }
         },
         {
           "icon": "Target",
           "title": "Tech Integration Partner",
           "description": "Integrate your platform or service with our solutions for mutual client benefit.",
-          "benefits": ["Co-marketing", "Technical support", "Joint case studies", "Revenue sharing"],
-          "cta": { "text": "Get Started", "href": "/contact" }
+          "benefits": [
+            "Co-marketing",
+            "Technical support",
+            "Joint case studies",
+            "Revenue sharing"
+          ],
+          "cta": {
+            "text": "Get Started",
+            "href": "/contact"
+          }
         },
         {
           "icon": "GraduationCap",
           "title": "Referral Partner",
           "description": "Earn commission by referring clients to our services. Simple and rewarding.",
-          "benefits": ["15% commission", "Custom dashboard", "Monthly payouts", "Marketing materials"],
-          "cta": { "text": "Get Started", "href": "/contact" }
+          "benefits": [
+            "15% commission",
+            "Custom dashboard",
+            "Monthly payouts",
+            "Marketing materials"
+          ],
+          "cta": {
+            "text": "Get Started",
+            "href": "/contact"
+          }
         }
       ],
-      "testimonialsSection": { "title": "What Our Partners Say" },
+      "testimonialsSection": {
+        "title": "What Our Partners Say"
+      },
       "testimonials": [
         {
           "quote": "Working with this team has been a game-changer for our agency. Their white-label services are top-notch.",
@@ -789,7 +1010,14 @@
           "logo": "/partner-testimonial-2.png"
         }
       ],
-      "cta": { "title": "Let's Grow Together", "description": "Join our network of successful partners and start earning today", "button": { "text": "Apply Now", "href": "/contact" } }
+      "cta": {
+        "title": "Let's Grow Together",
+        "description": "Join our network of successful partners and start earning today",
+        "button": {
+          "text": "Apply Now",
+          "href": "/contact"
+        }
+      }
     },
     {
       "pageId": "portfolio",
@@ -798,21 +1026,39 @@
         "description": "Explore our portfolio of successful digital transformations across web, app, branding, and marketing.",
         "path": "/portfolio",
         "ogImage": "/placeholder.svg",
-        "keywords": ["portfolio", "case studies", "web design", "app development", "branding", "marketing"]
+        "keywords": [
+          "portfolio",
+          "case studies",
+          "web design",
+          "app development",
+          "branding",
+          "marketing"
+        ]
       },
       "hero": {
         "badge": "Our Work",
         "title": "Projects That Drive Results",
         "description": "Explore our portfolio of successful digital transformations and see how we've helped businesses achieve their goals."
       },
-      "filters": ["All", "Web Design", "App Development", "Branding", "Digital Marketing"],
+      "filters": [
+        "All",
+        "Web Design",
+        "App Development",
+        "Branding",
+        "Digital Marketing"
+      ],
       "projects": [
         {
           "title": "E-Commerce Platform",
           "category": "Web Design",
           "description": "Complete redesign and development of a modern e-commerce platform with 300% increase in conversions.",
           "image": "/portfolio-ecommerce.png",
-          "tags": ["React", "Next.js", "Stripe", "Tailwind"],
+          "tags": [
+            "React",
+            "Next.js",
+            "Stripe",
+            "Tailwind"
+          ],
           "results": "+300% Conversions",
           "href": "/projects/ecommerce-platform"
         },
@@ -821,7 +1067,11 @@
           "category": "App Development",
           "description": "Secure mobile banking application serving 100K+ active users with seamless UX.",
           "image": "/portfolio-fintech.png",
-          "tags": ["React Native", "Node.js", "Security"],
+          "tags": [
+            "React Native",
+            "Node.js",
+            "Security"
+          ],
           "results": "100K+ Users",
           "href": "/projects/fintech-mobile-app"
         },
@@ -830,7 +1080,11 @@
           "category": "Branding",
           "description": "Complete brand overhaul including logo, guidelines, and marketing materials for a tech startup.",
           "image": "/portfolio-branding.png",
-          "tags": ["Design", "Branding", "Strategy"],
+          "tags": [
+            "Design",
+            "Branding",
+            "Strategy"
+          ],
           "results": "Award Winner",
           "href": "/projects/brand-identity-refresh"
         },
@@ -839,7 +1093,11 @@
           "category": "Web Design",
           "description": "Analytics dashboard with real-time data visualization and intuitive user experience.",
           "image": "/portfolio-saas.png",
-          "tags": ["React", "D3.js", "API Integration"],
+          "tags": [
+            "React",
+            "D3.js",
+            "API Integration"
+          ],
           "results": "98% Satisfaction",
           "href": "/projects/saas-dashboard"
         },
@@ -848,7 +1106,11 @@
           "category": "Digital Marketing",
           "description": "Comprehensive SEO strategy resulting in first-page rankings for 50+ keywords.",
           "image": "/portfolio-seo.png",
-          "tags": ["SEO", "Content", "Analytics"],
+          "tags": [
+            "SEO",
+            "Content",
+            "Analytics"
+          ],
           "results": "+500% Traffic",
           "href": "/projects/seo-campaign"
         },
@@ -857,7 +1119,11 @@
           "category": "Web Design",
           "description": "HIPAA-compliant patient portal with appointment scheduling and telemedicine features.",
           "image": "/portfolio-healthcare.png",
-          "tags": ["Next.js", "Security", "Compliance"],
+          "tags": [
+            "Next.js",
+            "Security",
+            "Compliance"
+          ],
           "results": "HIPAA Certified",
           "href": "/projects/healthcare-portal"
         }
@@ -865,7 +1131,10 @@
       "cta": {
         "title": "Let's Create Something Amazing",
         "description": "Ready to see your project featured in our portfolio? Let's discuss your vision.",
-        "button": { "text": "Start Your Project", "href": "/contact" }
+        "button": {
+          "text": "Start Your Project",
+          "href": "/contact"
+        }
       }
     },
     {
@@ -875,17 +1144,32 @@
         "description": "Flexible pricing that fits your business. Choose a package or request a custom quote.",
         "path": "/pricing",
         "ogImage": "/placeholder.svg",
-        "keywords": ["pricing", "packages", "plans", "web design pricing", "agency pricing"]
+        "keywords": [
+          "pricing",
+          "packages",
+          "plans",
+          "web design pricing",
+          "agency pricing"
+        ]
       },
       "hero": {
         "badge": "Pricing",
         "title": "Flexible Pricing That Fits Your Business",
         "description": "Choose a package or request a custom quote — we scale to your needs.",
-        "primaryCta": { "text": "Get a Custom Quote", "href": "/contact" },
-        "secondaryCta": { "text": "View Services", "href": "/services" }
+        "primaryCta": {
+          "text": "Get a Custom Quote",
+          "href": "/contact"
+        },
+        "secondaryCta": {
+          "text": "View Services",
+          "href": "/services"
+        }
       },
       "toggle": {
-        "labels": { "onetime": "One-Time", "monthly": "Monthly" },
+        "labels": {
+          "onetime": "One-Time",
+          "monthly": "Monthly"
+        },
         "defaultCycle": "onetime"
       },
       "packages": [
@@ -902,7 +1186,11 @@
             "2 Revisions",
             "30-Day Support"
           ],
-          "notIncluded": ["E-commerce", "Custom Animations", "Advanced Analytics"],
+          "notIncluded": [
+            "E-commerce",
+            "Custom Animations",
+            "Advanced Analytics"
+          ],
           "popular": false
         },
         {
@@ -920,7 +1208,10 @@
             "Performance Optimization",
             "Analytics Integration"
           ],
-          "notIncluded": ["E-commerce", "Custom CMS"],
+          "notIncluded": [
+            "E-commerce",
+            "Custom CMS"
+          ],
           "popular": true
         },
         {
@@ -946,10 +1237,26 @@
         }
       ],
       "addons": [
-        { "name": "Logo Design", "price": 299, "description": "Professional brand identity" },
-        { "name": "Landing Page", "price": 499, "description": "High-converting single page" },
-        { "name": "Speed Optimization", "price": 199, "description": "Performance tuning" },
-        { "name": "Monthly SEO", "price": 399, "description": "Ongoing optimization" }
+        {
+          "name": "Logo Design",
+          "price": 299,
+          "description": "Professional brand identity"
+        },
+        {
+          "name": "Landing Page",
+          "price": 499,
+          "description": "High-converting single page"
+        },
+        {
+          "name": "Speed Optimization",
+          "price": 199,
+          "description": "Performance tuning"
+        },
+        {
+          "name": "Monthly SEO",
+          "price": 399,
+          "description": "Ongoing optimization"
+        }
       ],
       "faqSection": {
         "title": "Payment Terms & FAQ",
@@ -975,7 +1282,10 @@
       "cta": {
         "title": "Let's Launch Your Project with Confidence",
         "description": "Ready to get started? Schedule a call or request a custom quote today.",
-        "button": { "text": "Get Started Now", "href": "/contact" }
+        "button": {
+          "text": "Get Started Now",
+          "href": "/contact"
+        }
       }
     },
     {
@@ -985,13 +1295,19 @@
         "description": "How we collect, use, disclose, and safeguard your information when you visit our website or use our services.",
         "path": "/privacy",
         "ogImage": "/placeholder.svg",
-        "keywords": ["privacy policy", "data protection", "cookies", "GDPR", "security"],
+        "keywords": [
+          "privacy policy",
+          "data protection",
+          "cookies",
+          "GDPR",
+          "security"
+        ],
         "lastUpdated": "January 15, 2025"
       },
       "hero": {
         "badge": "Legal",
         "title": "Privacy Policy",
-        "lead": "At Creative Agency, we take your privacy seriously. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or use our services. Please read this privacy policy carefully."
+        "lead": "At RareviewIt Agency, we take your privacy seriously. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or use our services. Please read this privacy policy carefully."
       },
       "sections": [
         {
@@ -1055,9 +1371,9 @@
           "title": "Contact Us",
           "paragraphs": [
             "If you have any questions about this Privacy Policy or our privacy practices, please contact us at:",
-            "Email: privacy@creative.agency",
+            "Email: privacy@RareviewIt.agency",
             "Phone: +1 (555) 123-4567",
-            "Address: 123 Creative Street, San Francisco, CA 94102"
+            "Address: 123 RareviewIt Street, San Francisco, CA 94102"
           ]
         }
       ],
@@ -1073,13 +1389,19 @@
         "description": "The rules and regulations for using our website and services. Please read these terms carefully.",
         "path": "/terms",
         "ogImage": "/placeholder.svg",
-        "keywords": ["terms", "terms and conditions", "legal", "service terms", "agreement"],
+        "keywords": [
+          "terms",
+          "terms and conditions",
+          "legal",
+          "service terms",
+          "agreement"
+        ],
         "lastUpdated": "January 15, 2025"
       },
       "hero": {
         "badge": "Legal",
         "title": "Terms & Conditions",
-        "lead": "Welcome to Creative Agency. These Terms and Conditions outline the rules and regulations for the use of our website and services. By accessing this website and using our services, you accept these terms and conditions in full."
+        "lead": "Welcome to RareviewIt Agency. These Terms and Conditions outline the rules and regulations for the use of our website and services. By accessing this website and using our services, you accept these terms and conditions in full."
       },
       "sections": [
         {
@@ -1099,7 +1421,7 @@
         {
           "title": "Intellectual Property Rights",
           "paragraphs": [
-            "All content on this website, including text, graphics, logos, images, and software, is the property of Creative Agency or its content suppliers and is protected by international copyright laws.",
+            "All content on this website, including text, graphics, logos, images, and software, is the property of RareviewIt Agency or its content suppliers and is protected by international copyright laws.",
             "You may not reproduce, distribute, modify, create derivative works of, publicly display, or exploit any of our content without our express written permission.",
             "Any work we create for you as part of our services remains our intellectual property until full payment is received, at which point ownership transfers to you as specified in your service agreement."
           ]
@@ -1139,14 +1461,14 @@
         {
           "title": "Limitation of Liability",
           "paragraphs": [
-            "To the fullest extent permitted by law, Creative Agency shall not be liable for any indirect, incidental, special, consequential, or punitive damages resulting from your use of our services.",
+            "To the fullest extent permitted by law, RareviewIt Agency shall not be liable for any indirect, incidental, special, consequential, or punitive damages resulting from your use of our services.",
             "Our total liability for any claims arising from our services shall not exceed the amount you paid us for the specific service giving rise to the claim."
           ]
         },
         {
           "title": "Indemnification",
           "paragraphs": [
-            "You agree to indemnify and hold harmless Creative Agency and its employees, contractors, and affiliates from any claims, damages, losses, liabilities, and expenses arising from your use of our services or violation of these terms."
+            "You agree to indemnify and hold harmless RareviewIt Agency and its employees, contractors, and affiliates from any claims, damages, losses, liabilities, and expenses arising from your use of our services or violation of these terms."
           ]
         },
         {
@@ -1167,9 +1489,9 @@
           "title": "Contact Information",
           "paragraphs": [
             "If you have any questions about these Terms and Conditions, please contact us at:",
-            "Email: legal@creative.agency",
+            "Email: legal@RareviewIt.agency",
             "Phone: +1 (555) 123-4567",
-            "Address: 123 Creative Street, San Francisco, CA 94102"
+            "Address: 123 RareviewIt Street, San Francisco, CA 94102"
           ]
         }
       ],
@@ -1199,10 +1521,22 @@
         "subtitle": "Don't just take our word for it. Hear from the businesses we've helped transform and grow through our digital services."
       },
       "stats": [
-        { "value": "98%", "label": "Client Satisfaction" },
-        { "value": "4.9/5", "label": "Average Rating" },
-        { "value": "200+", "label": "Happy Clients" },
-        { "value": "95%", "label": "Client Retention" }
+        {
+          "value": "98%",
+          "label": "Client Satisfaction"
+        },
+        {
+          "value": "4.9/5",
+          "label": "Average Rating"
+        },
+        {
+          "value": "200+",
+          "label": "Happy Clients"
+        },
+        {
+          "value": "95%",
+          "label": "Client Retention"
+        }
       ],
       "items": [
         {
@@ -1219,7 +1553,7 @@
           "role": "Founder",
           "company": "GrowthLabs",
           "avatar": "/testimonial-michael.png",
-          "content": "The digital marketing campaign they created exceeded all our expectations. We saw a 250% increase in qualified leads within the first quarter. Their data-driven approach and creative strategies made all the difference.",
+          "content": "The digital marketing campaign they created exceeded all our expectations. We saw a 250% increase in qualified leads within the first quarter. Their data-driven approach and RareviewIt strategies made all the difference.",
           "rating": 5,
           "project": "Digital Marketing"
         },
@@ -1282,7 +1616,7 @@
           "role": "Founder",
           "company": "Health & Wellness",
           "avatar": "/testimonial-jennifer.png",
-          "content": "Working with this team felt like having an in-house digital department. They were responsive, creative, and always went above and beyond to ensure our success.",
+          "content": "Working with this team felt like having an in-house digital department. They were responsive, RareviewIt, and always went above and beyond to ensure our success.",
           "rating": 5,
           "project": "Full Digital Strategy"
         }
@@ -1305,21 +1639,53 @@
         "description": "We build powerful, scalable mobile and web applications that deliver exceptional user experiences and drive business growth.",
         "path": "/app-development",
         "ogImage": "/placeholder.svg",
-        "keywords": ["app development", "mobile apps", "react native", "ios", "android", "pwa"]
+        "keywords": [
+          "app development",
+          "mobile apps",
+          "react native",
+          "ios",
+          "android",
+          "pwa"
+        ]
       },
       "hero": {
         "badge": "App Development",
         "title": "Custom Apps That Users Love",
         "description": "We build powerful, scalable mobile and web applications that deliver exceptional user experiences and drive business growth. From concept to launch and beyond.",
-        "primaryCta": { "text": "Discuss Your App Idea", "href": "/contact" },
-        "secondaryCta": { "text": "See Our Apps", "href": "/portfolio" },
-        "media": { "src": "/app-development.jpg", "alt": "App development" }
+        "primaryCta": {
+          "text": "Discuss Your App Idea",
+          "href": "/contact"
+        },
+        "secondaryCta": {
+          "text": "See Our Apps",
+          "href": "/portfolio"
+        },
+        "media": {
+          "src": "/app-development.jpg",
+          "alt": "App development"
+        }
       },
       "services": [
-        { "iconId": "smartphone", "title": "Native Apps", "description": "iOS and Android apps built with native technologies for optimal performance." },
-        { "iconId": "code", "title": "Cross-Platform", "description": "React Native apps that work seamlessly across multiple platforms." },
-        { "iconId": "zap", "title": "Web Apps", "description": "Progressive web apps that combine the best of web and mobile." },
-        { "iconId": "shield", "title": "Maintenance", "description": "Ongoing support, updates, and optimization for your applications." }
+        {
+          "iconId": "smartphone",
+          "title": "Native Apps",
+          "description": "iOS and Android apps built with native technologies for optimal performance."
+        },
+        {
+          "iconId": "code",
+          "title": "Cross-Platform",
+          "description": "React Native apps that work seamlessly across multiple platforms."
+        },
+        {
+          "iconId": "zap",
+          "title": "Web Apps",
+          "description": "Progressive web apps that combine the best of web and mobile."
+        },
+        {
+          "iconId": "shield",
+          "title": "Maintenance",
+          "description": "Ongoing support, updates, and optimization for your applications."
+        }
       ],
       "benefits": [
         "Reach customers on their preferred devices",
@@ -1329,13 +1695,41 @@
         "Build brand loyalty with a dedicated app",
         "Generate additional revenue streams"
       ],
-      "benefitMedia": { "src": "/mobile-app-ui.jpg", "alt": "Mobile app UI" },
-      "technologies": ["React Native", "Swift", "Kotlin", "Flutter", "Node.js", "Firebase", "AWS", "GraphQL"],
+      "benefitMedia": {
+        "src": "/mobile-app-ui.jpg",
+        "alt": "Mobile app UI"
+      },
+      "technologies": [
+        "React Native",
+        "Swift",
+        "Kotlin",
+        "Flutter",
+        "Node.js",
+        "Firebase",
+        "AWS",
+        "GraphQL"
+      ],
       "process": [
-        { "step": "01", "title": "Discovery", "description": "Define requirements and project scope" },
-        { "step": "02", "title": "Design", "description": "Create intuitive UI/UX designs" },
-        { "step": "03", "title": "Development", "description": "Build and test your application" },
-        { "step": "04", "title": "Launch & Support", "description": "Deploy and provide ongoing maintenance" }
+        {
+          "step": "01",
+          "title": "Discovery",
+          "description": "Define requirements and project scope"
+        },
+        {
+          "step": "02",
+          "title": "Design",
+          "description": "Create intuitive UI/UX designs"
+        },
+        {
+          "step": "03",
+          "title": "Development",
+          "description": "Build and test your application"
+        },
+        {
+          "step": "04",
+          "title": "Launch & Support",
+          "description": "Deploy and provide ongoing maintenance"
+        }
       ],
       "cta": {
         "title": "Ready to Build Your App?",
@@ -1351,29 +1745,75 @@
         "description": "Data-driven marketing campaigns that amplify your brand, engage your audience, and drive measurable growth.",
         "path": "/digital-marketing",
         "ogImage": "/placeholder.svg",
-        "keywords": ["digital marketing", "ppc", "social media", "content marketing", "analytics"]
+        "keywords": [
+          "digital marketing",
+          "ppc",
+          "social media",
+          "content marketing",
+          "analytics"
+        ]
       },
       "hero": {
         "badge": "Digital Marketing",
         "title": "Strategic Marketing That Delivers Results",
         "description": "We create data-driven marketing campaigns that amplify your brand, engage your audience, and drive measurable business growth across all digital channels.",
-        "primaryCta": { "text": "Get a Free Consultation", "href": "/contact" },
-        "secondaryCta": { "text": "See Case Studies", "href": "/portfolio" },
-        "media": { "src": "/digital-marketing-dashboard.jpg", "alt": "Digital marketing dashboard" }
+        "primaryCta": {
+          "text": "Get a Free Consultation",
+          "href": "/contact"
+        },
+        "secondaryCta": {
+          "text": "See Case Studies",
+          "href": "/portfolio"
+        },
+        "media": {
+          "src": "/digital-marketing-dashboard.jpg",
+          "alt": "Digital marketing dashboard"
+        }
       },
       "stats": [
-        { "value": "300%", "label": "Average ROI Increase" },
-        { "value": "2.5x", "label": "Lead Generation Growth" },
-        { "value": "85%", "label": "Client Retention Rate" },
-        { "value": "50+", "label": "Successful Campaigns" }
+        {
+          "value": "300%",
+          "label": "Average ROI Increase"
+        },
+        {
+          "value": "2.5x",
+          "label": "Lead Generation Growth"
+        },
+        {
+          "value": "85%",
+          "label": "Client Retention Rate"
+        },
+        {
+          "value": "50+",
+          "label": "Successful Campaigns"
+        }
       ],
       "services": [
-        { "iconId": "users", "title": "Social Media Marketing", "description": "Build and engage your audience across all major social platforms." },
-        { "iconId": "target", "title": "PPC Advertising", "description": "Targeted campaigns that maximize ROI and drive qualified leads." },
-        { "iconId": "trendingUp", "title": "Content Marketing", "description": "Compelling content that attracts, engages, and converts your audience." },
-        { "iconId": "barChart", "title": "Analytics & Reporting", "description": "Data-driven insights to optimize your marketing performance." }
+        {
+          "iconId": "users",
+          "title": "Social Media Marketing",
+          "description": "Build and engage your audience across all major social platforms."
+        },
+        {
+          "iconId": "target",
+          "title": "PPC Advertising",
+          "description": "Targeted campaigns that maximize ROI and drive qualified leads."
+        },
+        {
+          "iconId": "trendingUp",
+          "title": "Content Marketing",
+          "description": "Compelling content that attracts, engages, and converts your audience."
+        },
+        {
+          "iconId": "barChart",
+          "title": "Analytics & Reporting",
+          "description": "Data-driven insights to optimize your marketing performance."
+        }
       ],
-      "benefitsMedia": { "src": "/marketing-strategy.jpg", "alt": "Marketing strategy" },
+      "benefitsMedia": {
+        "src": "/marketing-strategy.jpg",
+        "alt": "Marketing strategy"
+      },
       "benefits": [
         "Increase brand awareness and reach",
         "Generate high-quality leads consistently",
@@ -1409,24 +1849,68 @@
         "badge": "SEO Services",
         "title": "Dominate Search Results & Drive Organic Growth",
         "description": "Our proven SEO strategies help businesses rank higher, attract more qualified traffic, and convert visitors into customers. Get found by people actively searching for your services.",
-        "primary_cta": { "text": "Get a Free SEO Audit", "href": "/contact" },
-        "secondary_cta": { "text": "View Success Stories", "href": "/portfolio" },
-        "media": { "src": "/seo-analytics.jpg", "alt": "SEO analytics" }
+        "primary_cta": {
+          "text": "Get a Free SEO Audit",
+          "href": "/contact"
+        },
+        "secondary_cta": {
+          "text": "View Success Stories",
+          "href": "/portfolio"
+        },
+        "media": {
+          "src": "/seo-analytics.jpg",
+          "alt": "SEO analytics"
+        }
       },
       "results": [
-        { "metric": "First Page Rankings", "value": "50+ Keywords", "client": "E-commerce Client" },
-        { "metric": "Organic Traffic Growth", "value": "+425%", "client": "SaaS Company" },
-        { "metric": "Lead Generation", "value": "+280%", "client": "B2B Service" },
-        { "metric": "Domain Authority", "value": "35 → 62", "client": "Tech Startup" }
+        {
+          "metric": "First Page Rankings",
+          "value": "50+ Keywords",
+          "client": "E-commerce Client"
+        },
+        {
+          "metric": "Organic Traffic Growth",
+          "value": "+425%",
+          "client": "SaaS Company"
+        },
+        {
+          "metric": "Lead Generation",
+          "value": "+280%",
+          "client": "B2B Service"
+        },
+        {
+          "metric": "Domain Authority",
+          "value": "35 → 62",
+          "client": "Tech Startup"
+        }
       ],
       "services": [
-        { "icon_id": "search", "title": "Keyword Research", "description": "Identify high-value keywords that drive qualified traffic to your site." },
-        { "icon_id": "fileText", "title": "On-Page SEO", "description": "Optimize your content, meta tags, and site structure for search engines." },
-        { "icon_id": "link", "title": "Link Building", "description": "Build high-quality backlinks that boost your domain authority." },
-        { "icon_id": "trendingUp", "title": "Technical SEO", "description": "Improve site speed, mobile-friendliness, and crawlability." }
+        {
+          "icon_id": "search",
+          "title": "Keyword Research",
+          "description": "Identify high-value keywords that drive qualified traffic to your site."
+        },
+        {
+          "icon_id": "fileText",
+          "title": "On-Page SEO",
+          "description": "Optimize your content, meta tags, and site structure for search engines."
+        },
+        {
+          "icon_id": "link",
+          "title": "Link Building",
+          "description": "Build high-quality backlinks that boost your domain authority."
+        },
+        {
+          "icon_id": "trendingUp",
+          "title": "Technical SEO",
+          "description": "Improve site speed, mobile-friendliness, and crawlability."
+        }
       ],
       "benefits": {
-        "media": { "src": "/seo-growth.jpg", "alt": "SEO growth" },
+        "media": {
+          "src": "/seo-growth.jpg",
+          "alt": "SEO growth"
+        },
         "items": [
           "Rank on the first page of Google",
           "Increase organic traffic by 300%+",
@@ -1480,25 +1964,53 @@
         "badge": "Web Design",
         "title": "Beautiful Websites That Drive Results",
         "description": "We create stunning, user-friendly websites that not only look amazing but also convert visitors into customers. Every design is crafted with your business goals in mind.",
-        "primary_cta": { "text": "Start Your Project", "href": "/contact" },
-        "secondary_cta": { "text": "View Our Work", "href": "/portfolio" },
-        "media": { "src": "/web-design-showcase.jpg", "alt": "Web design showcase" }
+        "primary_cta": {
+          "text": "Start Your Project",
+          "href": "/contact"
+        },
+        "secondary_cta": {
+          "text": "View Our Work",
+          "href": "/portfolio"
+        },
+        "media": {
+          "src": "/web-design-showcase.jpg",
+          "alt": "Web design showcase"
+        }
       },
       "features_block": {
         "title": "What We Offer",
         "subtitle": "Comprehensive web design services tailored to your needs"
       },
       "features": [
-        { "icon_id": "layout", "title": "Responsive Design", "description": "Beautiful layouts that work flawlessly across all devices and screen sizes." },
-        { "icon_id": "palette", "title": "Custom UI/UX", "description": "Intuitive interfaces designed with your users and brand identity in mind." },
-        { "icon_id": "smartphone", "title": "Mobile-First", "description": "Optimized for mobile devices to reach your audience wherever they are." },
-        { "icon_id": "zap", "title": "Performance", "description": "Lightning-fast load times and smooth interactions for better user experience." }
+        {
+          "icon_id": "layout",
+          "title": "Responsive Design",
+          "description": "Beautiful layouts that work flawlessly across all devices and screen sizes."
+        },
+        {
+          "icon_id": "palette",
+          "title": "Custom UI/UX",
+          "description": "Intuitive interfaces designed with your users and brand identity in mind."
+        },
+        {
+          "icon_id": "smartphone",
+          "title": "Mobile-First",
+          "description": "Optimized for mobile devices to reach your audience wherever they are."
+        },
+        {
+          "icon_id": "zap",
+          "title": "Performance",
+          "description": "Lightning-fast load times and smooth interactions for better user experience."
+        }
       ],
       "benefits_block": {
         "title": "Why Invest in Professional Web Design?",
         "subtitle": "Your website is often the first impression potential customers have of your business. A professionally designed website can make all the difference."
       },
-      "benefits_media": { "src": "/web-design-benefits.jpg", "alt": "Web design benefits" },
+      "benefits_media": {
+        "src": "/web-design-benefits.jpg",
+        "alt": "Web design benefits"
+      },
       "benefits": [
         "Increase conversion rates by up to 200%",
         "Improve user engagement and time on site",
@@ -1512,12 +2024,30 @@
         "subtitle": "A structured approach that ensures exceptional results"
       },
       "process": [
-        { "title": "Research & Discovery", "description": "Understanding your brand, audience, and goals" },
-        { "title": "Wireframing", "description": "Creating the blueprint for your website structure" },
-        { "title": "Design Mockups", "description": "Crafting pixel-perfect visual designs" },
-        { "title": "Development", "description": "Building your site with clean, modern code" },
-        { "title": "Testing & Launch", "description": "Ensuring everything works perfectly before going live" },
-        { "title": "Support", "description": "Ongoing maintenance and optimization" }
+        {
+          "title": "Research & Discovery",
+          "description": "Understanding your brand, audience, and goals"
+        },
+        {
+          "title": "Wireframing",
+          "description": "Creating the blueprint for your website structure"
+        },
+        {
+          "title": "Design Mockups",
+          "description": "Crafting pixel-perfect visual designs"
+        },
+        {
+          "title": "Development",
+          "description": "Building your site with clean, modern code"
+        },
+        {
+          "title": "Testing & Launch",
+          "description": "Ensuring everything works perfectly before going live"
+        },
+        {
+          "title": "Support",
+          "description": "Ongoing maintenance and optimization"
+        }
       ],
       "cta": {
         "title": "Ready to Transform Your Website?",
@@ -1556,28 +2086,48 @@
           "icon_id": "palette",
           "title": "Web Design",
           "description": "Create stunning, user-friendly websites that captivate your audience and drive conversions.",
-          "features": ["Responsive Design", "UI/UX Optimization", "Brand Integration", "Performance Focused"],
+          "features": [
+            "Responsive Design",
+            "UI/UX Optimization",
+            "Brand Integration",
+            "Performance Focused"
+          ],
           "href": "/services/web-design"
         },
         {
           "icon_id": "trendingUp",
           "title": "Digital Marketing",
           "description": "Strategic campaigns that amplify your brand reach and deliver measurable business results.",
-          "features": ["Social Media Marketing", "PPC Campaigns", "Email Marketing", "Analytics & Reporting"],
+          "features": [
+            "Social Media Marketing",
+            "PPC Campaigns",
+            "Email Marketing",
+            "Analytics & Reporting"
+          ],
           "href": "/services/digital-marketing"
         },
         {
           "icon_id": "search",
           "title": "SEO Services",
           "description": "Boost your visibility and rank higher in search results with our proven SEO strategies.",
-          "features": ["Keyword Research", "On-Page SEO", "Link Building", "Technical SEO"],
+          "features": [
+            "Keyword Research",
+            "On-Page SEO",
+            "Link Building",
+            "Technical SEO"
+          ],
           "href": "/services/seo"
         },
         {
           "icon_id": "smartphone",
           "title": "App Development",
           "description": "Custom mobile and web applications built with cutting-edge technology and best practices.",
-          "features": ["iOS & Android", "Cross-Platform", "API Integration", "Maintenance & Support"],
+          "features": [
+            "iOS & Android",
+            "Cross-Platform",
+            "API Integration",
+            "Maintenance & Support"
+          ],
           "href": "/services/app-development"
         }
       ],
@@ -1586,10 +2136,22 @@
         "subtitle": "A proven methodology that delivers results"
       },
       "process": [
-        { "title": "Discovery", "description": "We learn about your business, goals, and challenges" },
-        { "title": "Strategy", "description": "We develop a customized plan tailored to your needs" },
-        { "title": "Execution", "description": "We bring your vision to life with expert craftsmanship" },
-        { "title": "Optimization", "description": "We continuously improve and refine for best results" }
+        {
+          "title": "Discovery",
+          "description": "We learn about your business, goals, and challenges"
+        },
+        {
+          "title": "Strategy",
+          "description": "We develop a customized plan tailored to your needs"
+        },
+        {
+          "title": "Execution",
+          "description": "We bring your vision to life with expert craftsmanship"
+        },
+        {
+          "title": "Optimization",
+          "description": "We continuously improve and refine for best results"
+        }
       ],
       "cta": {
         "title": "Ready to Get Started?",
@@ -1601,48 +2163,97 @@
     {
       "pageId": "home",
       "meta": {
-        "title": "Creative Digital Agency — Home",
+        "title": "RareviewIt Digital Agency — Home",
         "description": "We craft exceptional digital experiences that drive growth, engage audiences, and elevate your brand.",
         "path": "/",
         "ogImage": "/placeholder.svg",
-        "keywords": ["digital agency", "web design", "marketing", "seo", "app development"]
+        "keywords": [
+          "digital agency",
+          "web design",
+          "marketing",
+          "seo",
+          "app development"
+        ]
       },
       "hero": {
         "badge": "Award-Winning Digital Agency",
-        "title": "Transform Your Business with Creative Digital Solutions",
+        "title": "Transform Your Business with RareviewIt Digital Solutions",
         "description": "We craft exceptional digital experiences that drive growth, engage audiences, and elevate your brand to new heights.",
         "primaryCta": "Get Started",
         "secondaryCta": "View Our Work"
       },
       "stats": [
-        { "value": "300%", "label": "Avg. Traffic Lift" },
-        { "value": "120+", "label": "Projects Delivered" },
-        { "value": "50+", "label": "Happy Clients" },
-        { "value": "12", "label": "Industry Awards" }
+        {
+          "value": "300%",
+          "label": "Avg. Traffic Lift"
+        },
+        {
+          "value": "120+",
+          "label": "Projects Delivered"
+        },
+        {
+          "value": "50+",
+          "label": "Happy Clients"
+        },
+        {
+          "value": "12",
+          "label": "Industry Awards"
+        }
       ],
       "services": [
-        { "title": "Web Design", "description": "Beautiful, responsive websites that captivate your audience and drive conversions." },
-        { "title": "Digital Marketing", "description": "Strategic campaigns that amplify your brand and deliver measurable results." },
-        { "title": "SEO Services", "description": "Boost your visibility and rank higher in search results with our proven strategies." },
-        { "title": "App Development", "description": "Custom mobile and web applications built with cutting-edge technology." }
+        {
+          "title": "Web Design",
+          "description": "Beautiful, responsive websites that captivate your audience and drive conversions."
+        },
+        {
+          "title": "Digital Marketing",
+          "description": "Strategic campaigns that amplify your brand and deliver measurable results."
+        },
+        {
+          "title": "SEO Services",
+          "description": "Boost your visibility and rank higher in search results with our proven strategies."
+        },
+        {
+          "title": "App Development",
+          "description": "Custom mobile and web applications built with cutting-edge technology."
+        }
       ],
       "portfolio": [
-        { "title": "E-Commerce Platform", "category": "Web Development" },
-        { "title": "Brand Identity Design", "category": "Branding" },
-        { "title": "Mobile Banking App", "category": "App Development" },
-        { "title": "SEO Campaign Success", "category": "Digital Marketing" }
+        {
+          "title": "E-Commerce Platform",
+          "category": "Web Development"
+        },
+        {
+          "title": "Brand Identity Design",
+          "category": "Branding"
+        },
+        {
+          "title": "Mobile Banking App",
+          "category": "App Development"
+        },
+        {
+          "title": "SEO Campaign Success",
+          "category": "Digital Marketing"
+        }
       ],
       "testimonials": [
-        { "name": "Sarah Johnson", "quote": "Traffic increased by 300% in three months." },
-        { "name": "Michael Chen", "quote": "Attention to detail and creative approach exceeded expectations." },
-        { "name": "Emily Rodriguez", "quote": "Now ranking #1 for all our target keywords." }
+        {
+          "name": "Sarah Johnson",
+          "quote": "Traffic increased by 300% in three months."
+        },
+        {
+          "name": "Michael Chen",
+          "quote": "Attention to detail and RareviewIt approach exceeded expectations."
+        },
+        {
+          "name": "Emily Rodriguez",
+          "quote": "Now ranking #1 for all our target keywords."
+        }
       ],
       "cta": {
         "title": "Ready to Transform Your Business?",
         "description": "Let's discuss how we can help you achieve your digital goals and drive real results for your business."
       }
     }
-    
-      
   ]
 }

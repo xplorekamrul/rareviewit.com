@@ -5,17 +5,16 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
+import { Progress } from "@/components/ui/progress"
 import { ScrollArea } from "@/components/ui/scroll-area"
-import { retrieve } from "@/lib/rag/retrieve"
-import { cancelGeneration, streamChat } from "@/lib/webllm/engine"
-import * as webllm from "@mlc-ai/web-llm"
+import { getSmartCitationsV2, smartStreamChatV2 } from "@/lib/chat/smart-engine-v2"
 import { AnimatePresence, motion } from "framer-motion"
 import { Bot, FileText, Loader2, Send, Square, User, X } from "lucide-react"
 import { useEffect, useRef, useState } from "react"
 import ReactMarkdown from "react-markdown"
 import remarkGfm from "remark-gfm"
 import { useChat } from "./chat-provider"
-import { useRagAndEngine } from "./use-rag-index"
+import { useFastChat } from "./use-fast-chat"
 
 interface Message {
   id: string
@@ -34,7 +33,7 @@ function truncateToWords(text: string, maxWords = MAX_WORDS) {
 
 export function ChatWidget() {
   const { isOpen, closeChat } = useChat()
-  const { ready, status } = useRagAndEngine(isOpen)
+  const { ready, status } = useFastChat(isOpen)
 
   const [messages, setMessages] = useState<Message[]>([
     {
@@ -61,62 +60,42 @@ export function ChatWidget() {
     setIsStreaming(true)
     stopRequested.current = false
 
+    // Show immediate "thinking" feedback
+    const assistantId = (Date.now() + 1).toString()
+    setMessages((prev) => [
+      ...prev,
+      {
+        id: assistantId,
+        role: "assistant",
+        content: "",
+        timestamp: new Date(),
+      },
+    ])
+
     try {
-      const sources = await retrieve(userMessage.content, { topK: 8, minScore: 0.2 })
+      // Get smart citations for the query
+      const citations = await getSmartCitationsV2(userMessage.content)
 
-      const contextBlocks = sources
-        .map((s, i) => `SOURCE ${i + 1} (${s.title} | ${s.url} | score=${s.score.toFixed(2)}):\n${s.snippet}`)
-        .join("\n\n")
-
-      const sys =
-        "You are a helpful website assistant. Prefer short paragraphs and bullet lists. " +
-        `STRICT LIMIT: Keep answers under ${MAX_WORDS} words. If needed, summarize.`
-
-      const userPrompt =
-        `User question:\n${userMessage.content}\n\n` +
-        `SOURCES:\n${contextBlocks}\n\n` +
-        `Answer in under ${MAX_WORDS} words. If you reference a source, add a short label like [About], [Blog].`
-
-      const msgs = [
-        { role: "system", content: sys },
-        { role: "user", content: userPrompt },
-      ] satisfies webllm.ChatCompletionMessageParam[]
-
-      const assistantId = (Date.now() + 1).toString()
       let acc = ""
 
-      setMessages((prev) => [
-        ...prev,
-        {
-          id: assistantId,
-          role: "assistant",
-          content: "",
-          citations: sources.map((s) => ({ title: s.title, url: s.url })),
-          timestamp: new Date(),
-        },
-      ])
+      // Update the existing message with citations
+      setMessages((prev) => prev.map((m) =>
+        m.id === assistantId
+          ? { ...m, citations }
+          : m
+      ))
 
-      // Stream, but stop at MAX_WORDS or when user presses Stop
-      const stream = streamChat(msgs, { temperature: 0.2, maxTokens: 256 })
+      // Stream response from smart engine
+      const stream = smartStreamChatV2(userMessage.content)
       for await (const chunk of stream) {
         if (stopRequested.current) break
         acc += chunk
-        // live truncate to reduce flicker
-        const limited = truncateToWords(acc, MAX_WORDS)
-        setMessages((prev) => prev.map((m) => (m.id === assistantId ? { ...m, content: limited } : m)))
-        // hard stop if exceeded cap
-        const wordCount = limited.trim().split(/\s+/).length
-        if (wordCount >= MAX_WORDS) {
-          stopRequested.current = true
-          await cancelGeneration()
-          break
-        }
-      }
 
-      // final clamp (just in case)
-      setMessages((prev) =>
-        prev.map((m) => (m.id === assistantId ? { ...m, content: truncateToWords(m.content, MAX_WORDS) } : m)),
-      )
+        // Update message content
+        setMessages((prev) => prev.map((m) =>
+          m.id === assistantId ? { ...m, content: acc } : m
+        ))
+      }
     } catch (e) {
       console.error(e)
       setMessages((prev) => [
@@ -137,7 +116,6 @@ export function ChatWidget() {
   async function handleStop() {
     if (!isStreaming) return
     stopRequested.current = true
-    await cancelGeneration()
     setIsStreaming(false)
   }
 
@@ -156,7 +134,12 @@ export function ChatWidget() {
           {/* Header */}
           <div className="flex items-center justify-between border-b bg-primary p-4 text-primary-foreground">
             <div className="flex items-center gap-2">
-              <Bot className="h-5 w-5" />
+              <div className="relative">
+                <Bot className="h-5 w-5" />
+                {ready && (
+                  <div className="absolute -bottom-1 -right-1 h-2 w-2 rounded-full bg-green-400 ring-1 ring-primary-foreground" />
+                )}
+              </div>
               <div>
                 <h3 className="font-semibold">AI Assistant</h3>
                 <p className="text-xs opacity-90">{ready ? "Ready" : status}</p>
@@ -170,6 +153,18 @@ export function ChatWidget() {
           {/* Messages */}
           <ScrollArea className="flex-1 p-4" ref={scrollRef}>
             <div className="space-y-4">
+              {!ready && (
+                <div className="rounded-lg bg-muted p-4 text-center">
+                  <div className="mb-2 flex items-center justify-center gap-2">
+                    <Loader2 className="h-4 w-4 animate-spin" />
+                    <span className="text-sm font-medium">{status}</span>
+                  </div>
+                  <Progress value={ready ? 100 : 50} className="h-2" />
+                  <p className="mt-2 text-xs text-muted-foreground">
+                    This may take a moment on first use
+                  </p>
+                </div>
+              )}
               {messages.map((message) => (
                 <motion.div
                   key={message.id}

@@ -154,7 +154,7 @@ export default function DigitalMarketingClient() {
             <h2 className="mb-6 text-3xl font-bold tracking-tight md:text-4xl text-balance">
               {cta.title}
             </h2>
-            <p className="mb-8 text-lg leading-relaxed text-primary-foreground/90 text-balance">
+            <p className="mb-8 text-lg leading-relaxed text-primary-foreground text-balance">
               {cta.subtitle}
             </p>
             <Button size="lg" variant="secondary" asChild>

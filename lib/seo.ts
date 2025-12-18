@@ -40,7 +40,7 @@ export function generateSEO({
   alternates,
   robots,
 }: SEOProps): Metadata {
-  const siteTitle = "Creative Agency"
+  const siteTitle = "RareviewIt Agency"
   const fullTitle = `${title} | ${siteTitle}`
 
   const canonical = absoluteUrl(path || "/")
@@ -53,8 +53,8 @@ export function generateSEO({
     typeof keywords === "string"
       ? keywords
       : Array.isArray(keywords) && keywords.length
-      ? [...keywords] // spread to convert readonly -> mutable string[]
-      : undefined
+        ? [...keywords] // spread to convert readonly -> mutable string[]
+        : undefined
 
   const computedRobots: Metadata["robots"] =
     noIndex

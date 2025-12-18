@@ -17,13 +17,30 @@ function pickDefaultModel() {
 
 export async function initEngine(preferredModelId?: string, onProgress?: (p: webllm.InitProgressReport) => void) {
   if (engine) return engine
-  if (isInitializing) { while (isInitializing) await new Promise(r => setTimeout(r, 100)); return engine! }
+  if (isInitializing) {
+    // Wait for existing initialization to complete
+    while (isInitializing) await new Promise(r => setTimeout(r, 100))
+    return engine!
+  }
+
   isInitializing = true
   try {
     const modelId = isSupported(preferredModelId) ? preferredModelId! : pickDefaultModel()
-    engine = await webllm.CreateMLCEngine(modelId, { appConfig: APP_CONFIG, initProgressCallback: onProgress })
+    console.log(`🤖 Initializing WebLLM with model: ${modelId}`)
+
+    engine = await webllm.CreateMLCEngine(modelId, {
+      appConfig: APP_CONFIG,
+      initProgressCallback: (progress) => {
+        console.log(`Model loading: ${progress.text} (${progress.progress}%)`)
+        onProgress?.(progress)
+      }
+    })
+
+    console.log("✅ WebLLM engine ready")
     return engine
-  } finally { isInitializing = false }
+  } finally {
+    isInitializing = false
+  }
 }
 
 export async function* streamChat(

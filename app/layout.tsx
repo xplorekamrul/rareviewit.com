@@ -14,11 +14,11 @@ const _geist = Geist({ subsets: ["latin"] })
 const _geistMono = Geist_Mono({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Creative Agency | Digital Solutions & Design Services",
+  title: "RareviewIt Agency | Digital Solutions & Design Services",
   description:
     "Transform your business with our comprehensive digital services including web design, SEO, digital marketing, and app development.",
   generator: "v0.app",
-  keywords: ["web design", "digital marketing", "SEO", "app development", "creative agency", "SaaS"],
+  keywords: ["web design", "digital marketing", "SEO", "app development", "RareviewIt agency", "SaaS"],
 }
 
 export default function RootLayout({
