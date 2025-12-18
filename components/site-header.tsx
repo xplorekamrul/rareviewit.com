@@ -1,10 +1,10 @@
 "use client"
 
+import { useChat } from "@/components/chat/chat-provider"
+import { Button } from "@/components/ui/button"
+import { Menu, MessageSquare, X } from "lucide-react"
 import Link from "next/link"
 import { useState } from "react"
-import { Button } from "@/components/ui/button"
-import { Menu, X, MessageSquare } from "lucide-react"
-import { useChat } from "@/components/chat/chat-provider"
 
 export function SiteHeader() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -24,7 +24,7 @@ export function SiteHeader() {
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <nav className=" flex h-16 items-center justify-between px-4">
         <Link href="/" className="flex items-center space-x-2">
-          <span className="text-2xl font-bold text-primary">Creative</span>
+          <span className="text-2xl font-bold text-primary">RareviewIt</span>
         </Link>
 
         {/* Desktop Navigation */}

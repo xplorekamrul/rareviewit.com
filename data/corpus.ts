@@ -1,4 +1,4 @@
-import { Users, Target, Award, Zap, Clock, Video, Phone, MapPin, Mail, MessageCircle, FileText, Book, } from "lucide-react"
+import { Award, Clock, Mail, MapPin, Phone, Target, Users, Video, Zap } from "lucide-react"
 
 // src/data/corpus.ts
 import type { ComponentType, SVGProps } from "react"
@@ -20,7 +20,7 @@ export const corpus = {
       badge: "About Us",
       title: "Insights & Resources",
       description:
-        "For over 15 years, we've been helping businesses transform their digital presence and achieve remarkable growth through creative solutions and strategic thinking.",
+        "For over 15 years, we've been helping businesses transform their digital presence and achieve remarkable growth through RareviewIt solutions and strategic thinking.",
     },
     mission: {
       title: "Our Mission",
@@ -74,7 +74,7 @@ export const corpus = {
       },
       {
         name: "Sarah Martinez",
-        role: "Creative Director",
+        role: "RareviewIt Director",
         image: "/placeholder.svg",
         bio: "Award-winning designer with global experience",
       },
@@ -311,7 +311,7 @@ export const corpus = {
   //----------------------------------------------careers page corpus-----------------------------------------------------------
   careers: {
     meta: {
-      title: "Careers - Join Our Creative Team",
+      title: "Careers - Join Our RareviewIt Team",
       description:
         "Build your career with a team that values innovation, creativity, and personal growth.",
       path: "/careers",
@@ -320,7 +320,7 @@ export const corpus = {
 
     hero: {
       badge: "Careers",
-      title: "Join Our Creative Team",
+      title: "Join Our RareviewIt Team",
       description:
         "Build your career with a team that values innovation, creativity, and personal growth. We're always looking for talented individuals to join our mission.",
     },
@@ -336,7 +336,7 @@ export const corpus = {
       { title: "Health & Wellness", description: "Comprehensive health insurance and wellness programs" },
       { title: "Flexible Work", description: "Remote-friendly with flexible hours and work-life balance" },
       { title: "Professional Growth", description: "Continuous learning opportunities and career development" },
-      { title: "Creative Environment", description: "Collaborative culture that values innovation and creativity" },
+      { title: "RareviewIt Environment", description: "Collaborative culture that values innovation and creativity" },
       { title: "Latest Technology", description: "Work with cutting-edge tools and technologies" }
     ],
 
@@ -471,8 +471,8 @@ export const corpus = {
         {
           icon: Mail as LucideIcon,
           title: "Email",
-          details: "hello@creative.agency",
-          link: "mailto:hello@creative.agency",
+          details: "hello@RareviewIt.agency",
+          link: "mailto:hello@RareviewIt.agency",
         },
         {
           icon: Phone as LucideIcon,
@@ -483,7 +483,7 @@ export const corpus = {
         {
           icon: MapPin as LucideIcon,
           title: "Office",
-          details: "123 Creative Street, San Francisco, CA 94102",
+          details: "123 RareviewIt Street, San Francisco, CA 94102",
           link: "#",
         },
         {
@@ -537,7 +537,7 @@ export const corpus = {
         spotsLeft: 12,
         description:
           "Discover the latest design trends and techniques shaping the web in 2025.",
-        speaker: "Sarah Martinez, Creative Director",
+        speaker: "Sarah Martinez, RareviewIt Director",
       },
       {
         title: "SEO Masterclass: From Zero to Hero",
@@ -1126,7 +1126,7 @@ export const corpus = {
     hero: {
       badge: "Legal",
       title: "Privacy Policy",
-      lead: "At Creative Agency, we take your privacy seriously. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or use our services. Please read this privacy policy carefully.",
+      lead: "At RareviewIt Agency, we take your privacy seriously. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or use our services. Please read this privacy policy carefully.",
     },
     sections: [
       {
@@ -1190,9 +1190,9 @@ export const corpus = {
         title: "Contact Us",
         paragraphs: [
           "If you have any questions about this Privacy Policy or our privacy practices, please contact us at:",
-          "Email: privacy@creative.agency",
+          "Email: privacy@RareviewIt.agency",
           "Phone: +1 (555) 123-4567",
-          "Address: 123 Creative Street, San Francisco, CA 94102"
+          "Address: 123 RareviewIt Street, San Francisco, CA 94102"
         ]
       }
     ] as const,
@@ -1216,7 +1216,7 @@ export const corpus = {
       badge: "Legal",
       title: "Terms & Conditions",
       lead:
-        "Welcome to Creative Agency. These Terms and Conditions outline the rules and regulations for the use of our website and services. By accessing this website and using our services, you accept these terms and conditions in full.",
+        "Welcome to RareviewIt Agency. These Terms and Conditions outline the rules and regulations for the use of our website and services. By accessing this website and using our services, you accept these terms and conditions in full.",
     },
     sections: [
       {
@@ -1236,7 +1236,7 @@ export const corpus = {
       {
         title: "Intellectual Property Rights",
         paragraphs: [
-          "All content on this website, including text, graphics, logos, images, and software, is the property of Creative Agency or its content suppliers and is protected by international copyright laws.",
+          "All content on this website, including text, graphics, logos, images, and software, is the property of RareviewIt Agency or its content suppliers and is protected by international copyright laws.",
           "You may not reproduce, distribute, modify, create derivative works of, publicly display, or exploit any of our content without our express written permission.",
           "Any work we create for you as part of our services remains our intellectual property until full payment is received, at which point ownership transfers to you as specified in your service agreement."
         ]
@@ -1276,14 +1276,14 @@ export const corpus = {
       {
         title: "Limitation of Liability",
         paragraphs: [
-          "To the fullest extent permitted by law, Creative Agency shall not be liable for any indirect, incidental, special, consequential, or punitive damages resulting from your use of our services.",
+          "To the fullest extent permitted by law, RareviewIt Agency shall not be liable for any indirect, incidental, special, consequential, or punitive damages resulting from your use of our services.",
           "Our total liability for any claims arising from our services shall not exceed the amount you paid us for the specific service giving rise to the claim."
         ]
       },
       {
         title: "Indemnification",
         paragraphs: [
-          "You agree to indemnify and hold harmless Creative Agency and its employees, contractors, and affiliates from any claims, damages, losses, liabilities, and expenses arising from your use of our services or violation of these terms."
+          "You agree to indemnify and hold harmless RareviewIt Agency and its employees, contractors, and affiliates from any claims, damages, losses, liabilities, and expenses arising from your use of our services or violation of these terms."
         ]
       },
       {
@@ -1304,9 +1304,9 @@ export const corpus = {
         title: "Contact Information",
         paragraphs: [
           "If you have any questions about these Terms and Conditions, please contact us at:",
-          "Email: legal@creative.agency",
+          "Email: legal@RareviewIt.agency",
           "Phone: +1 (555) 123-4567",
-          "Address: 123 Creative Street, San Francisco, CA 94102"
+          "Address: 123 RareviewIt Street, San Francisco, CA 94102"
         ]
       }
     ] as const,
@@ -1361,7 +1361,7 @@ export const corpus = {
         company: "GrowthLabs",
         avatar: "/testimonial-michael.png",
         content:
-          "The digital marketing campaign they created exceeded all our expectations. We saw a 250% increase in qualified leads within the first quarter. Their data-driven approach and creative strategies made all the difference.",
+          "The digital marketing campaign they created exceeded all our expectations. We saw a 250% increase in qualified leads within the first quarter. Their data-driven approach and RareviewIt strategies made all the difference.",
         rating: 5,
         project: "Digital Marketing",
       },
@@ -1431,7 +1431,7 @@ export const corpus = {
         company: "Health & Wellness",
         avatar: "/testimonial-jennifer.png",
         content:
-          "Working with this team felt like having an in-house digital department. They were responsive, creative, and always went above and beyond to ensure our success.",
+          "Working with this team felt like having an in-house digital department. They were responsive, RareviewIt, and always went above and beyond to ensure our success.",
         rating: 5,
         project: "Full Digital Strategy",
       },
@@ -1772,7 +1772,7 @@ export const corpus = {
   homeData: {
 
     "meta": {
-      "title": "Creative Digital Agency — Home",
+      "title": "RareviewIt Digital Agency — Home",
       "description": "We craft exceptional digital experiences that drive growth, engage audiences, and elevate your brand.",
       "path": "/",
       "ogImage": "/placeholder.svg",
@@ -1780,7 +1780,7 @@ export const corpus = {
     },
     "hero": {
       "badge": "Award-Winning Digital Agency",
-      "title": "Transform Your Business with <span class='text-primary'>Creative Digital Solutions</span>",
+      "title": "Transform Your Business with <span class='text-primary'>RareviewIt Digital Solutions</span>",
       "description": "We craft exceptional digital experiences that drive growth, engage audiences, and elevate your brand to new heights.",
       "primaryCta": { "label": "Get Started", "href": "/contact" },
       "secondaryCta": { "label": "View Our Work", "href": "/portfolio" }
@@ -1817,7 +1817,7 @@ export const corpus = {
       "subtitle": "Don't just take our word for it - hear from businesses we've helped succeed",
       "items": [
         { "name": "Sarah Johnson", "role": "CEO, TechStart Inc", "avatar": "/professional-woman-headshot.png", "content": "Working with this team transformed our online presence. Our traffic increased by 300% in just three months!", "rating": 5 },
-        { "name": "Michael Chen", "role": "Founder, GrowthLabs", "avatar": "/professional-man-headshot.png", "content": "The attention to detail and creative approach exceeded our expectations. Highly recommend their services!", "rating": 5 },
+        { "name": "Michael Chen", "role": "Founder, GrowthLabs", "avatar": "/professional-man-headshot.png", "content": "The attention to detail and RareviewIt approach exceeded our expectations. Highly recommend their services!", "rating": 5 },
         { "name": "Emily Rodriguez", "role": "Marketing Director, Innovate Co", "avatar": "/professional-woman-headshot-2.png", "content": "Their SEO expertise helped us dominate our market. We're now ranking #1 for all our target keywords.", "rating": 5 }
       ]
     },
