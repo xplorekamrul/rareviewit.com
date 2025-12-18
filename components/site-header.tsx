@@ -1,14 +1,12 @@
 "use client"
 
-import { useChat } from "@/components/chat/chat-provider"
 import { Button } from "@/components/ui/button"
-import { Menu, MessageSquare, X } from "lucide-react"
+import { Menu, X } from "lucide-react"
 import Link from "next/link"
 import { useState } from "react"
 
 export function SiteHeader() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-  const { toggleChat } = useChat()
 
   const navigation = [
     { name: "Home", href: "/" },
@@ -38,10 +36,6 @@ export function SiteHeader() {
               {item.name}
             </Link>
           ))}
-          <Button variant="outline" size="sm" onClick={toggleChat} className="gap-2 bg-transparent">
-            <MessageSquare className="h-4 w-4" />
-            Chat
-          </Button>
           <Button size="sm">Get Started</Button>
         </div>
 
@@ -65,18 +59,7 @@ export function SiteHeader() {
                 {item.name}
               </Link>
             ))}
-            <Button
-              variant="outline"
-              className="w-full gap-2 bg-transparent"
-              size="sm"
-              onClick={() => {
-                toggleChat()
-                setMobileMenuOpen(false)
-              }}
-            >
-              <MessageSquare className="h-4 w-4" />
-              Chat with AI
-            </Button>
+
             <div className="pt-2">
               <Button className="w-full" size="sm">
                 Get Started

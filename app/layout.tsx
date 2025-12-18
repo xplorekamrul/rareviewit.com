@@ -1,3 +1,4 @@
+import { ChatButton } from "@/components/chat/chat-button";
 import { ChatLauncher } from "@/components/chat/chat-launcher";
 import { ChatProvider } from "@/components/chat/chat-provider";
 import { SiteFooter } from "@/components/site-footer";
@@ -34,6 +35,7 @@ export default function RootLayout({
             <SiteHeader />
             <main className="min-h-screen">{children}</main>
             <SiteFooter />
+            <ChatButton />
             <ThemeToggle />
             <ChatLauncher />
           </ChatProvider>
