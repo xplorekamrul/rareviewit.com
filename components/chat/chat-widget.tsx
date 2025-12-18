@@ -5,7 +5,6 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
-import { Progress } from "@/components/ui/progress"
 import { ScrollArea } from "@/components/ui/scroll-area"
 import { getSmartCitationsV2, smartStreamChatV2 } from "@/lib/chat/smart-engine-v2"
 import { AnimatePresence, motion } from "framer-motion"
@@ -128,7 +127,7 @@ export function ChatWidget() {
         animate={{ opacity: 1, y: 0, scale: 1 }}
         exit={{ opacity: 0, y: 20, scale: 0.95 }}
         transition={{ duration: 0.2 }}
-        className="fixed bottom-4 right-4 z-50 w-full max-w-md"
+        className="fixed bottom-4 right-4 z-50 w-[calc(100vw-2rem)] max-w-md sm:w-full sm:max-w-sm md:max-w-md"
       >
         <Card className="flex h-[600px] flex-col shadow-2xl">
           {/* Header */}
@@ -153,18 +152,6 @@ export function ChatWidget() {
           {/* Messages */}
           <ScrollArea className="flex-1 p-4" ref={scrollRef}>
             <div className="space-y-4">
-              {!ready && (
-                <div className="rounded-lg bg-muted p-4 text-center">
-                  <div className="mb-2 flex items-center justify-center gap-2">
-                    <Loader2 className="h-4 w-4 animate-spin" />
-                    <span className="text-sm font-medium">{status}</span>
-                  </div>
-                  <Progress value={ready ? 100 : 50} className="h-2" />
-                  <p className="mt-2 text-xs text-muted-foreground">
-                    This may take a moment on first use
-                  </p>
-                </div>
-              )}
               {messages.map((message) => (
                 <motion.div
                   key={message.id}
@@ -244,7 +231,7 @@ export function ChatWidget() {
               <Input
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
-                placeholder={ready ? "Ask me anything about the site…" : "Initializing…"}
+                placeholder={ready ? "Ask me anything about the site…" : "AI is initializing..."}
                 disabled={isStreaming || !ready}
                 className="flex-1"
               />

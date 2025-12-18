@@ -1,17 +1,12 @@
 "use client"
 
-import dynamic from "next/dynamic"
 import { useChat } from "./chat-provider"
-
-const LazyChatWidget = dynamic(async () => {
-   const mod = await import("./chat-widget")
-   return { default: mod.ChatWidget }
-}, { ssr: false, loading: () => null })
+import { ChatWidget } from "./chat-widget"
 
 export function ChatLauncher() {
-   const { isOpen, hasLaunched } = useChat()
+   const { isOpen } = useChat()
 
-   if (!isOpen && !hasLaunched) return null
-   return isOpen ? <LazyChatWidget /> : null
+   // Show widget instantly when opened, no lazy loading delay
+   return isOpen ? <ChatWidget /> : null
 }
 
