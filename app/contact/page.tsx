@@ -1,14 +1,14 @@
 // app/contact/page.tsx
-import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { Label } from "@/components/ui/label"
-import { MapPin as MapPinIcon } from "lucide-react"
-import { contact } from "@/data/corpus"
-import { generateMetadata as generateSEOMetadata } from "@/lib/seo"
-import { AnimateInView } from "@/components/animate-in-view" // client island for animations
+import { AnimateInView } from "@/components/animate-in-view"; // client island for animations
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
+import { contact } from "@/data/corpus";
+import { generateMetadata as generateSEOMetadata } from "@/lib/seo";
+import { MapPin as MapPinIcon } from "lucide-react";
 
 // ---- Metadata (server)
 export const metadata = generateSEOMetadata({
@@ -148,7 +148,7 @@ export default function ContactPage() {
                   const Icon = info.icon
                   return (
                     <AnimateInView key={idx} delay={idx * 0.1}>
-                      <Card>
+                      <Card animated={false} speed={2} lineLength={80} >
                         <CardContent className="flex items-start gap-4 p-6">
                           <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
                             <Icon className="h-6 w-6" />

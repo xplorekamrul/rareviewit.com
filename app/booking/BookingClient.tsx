@@ -1,13 +1,12 @@
 "use client"
 
 import { Badge } from "@/components/ui/badge"
-import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { Calendar, CheckCircle2 } from "lucide-react"
-import Link from "next/link"
-import { motion } from "framer-motion"
-import Image from "next/image"
+import { Card, CardContent } from "@/components/ui/card"
 import { booking, FALLBACK_IMAGE } from "@/data/corpus"
+import { motion } from "framer-motion"
+import { CheckCircle2 } from "lucide-react"
+import Link from "next/link"
 
 const withFallback = (src?: string) =>
   src && src.trim().length > 0 ? src : FALLBACK_IMAGE
@@ -131,7 +130,7 @@ export default function BookingClient() {
               </p>
             </div>
 
-            <Card>
+            <Card animated={true} speed={10} lineLength={80} >
               <CardContent className="p-8">
                 <div className="aspect-video flex items-center justify-center rounded-lg bg-muted">
                   <div className="text-center text-muted-foreground">
@@ -171,7 +170,7 @@ export default function BookingClient() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                 >
-                  <Card>
+                  <Card animated={false} speed={2} lineLength={80} >
                     <CardContent className="flex items-center gap-4 p-6">
                       <CheckCircle2 className="h-6 w-6 shrink-0 text-accent" />
                       <span className="text-foreground">{expectation}</span>
@@ -209,7 +208,7 @@ export default function BookingClient() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                 >
-                  <Card>
+                  <Card animated={false} speed={2} lineLength={80} >
                     <CardContent className="p-6">
                       <h3 className="mb-2 font-bold text-foreground">{faq.question}</h3>
                       <p className="text-sm text-muted-foreground leading-relaxed">{faq.answer}</p>

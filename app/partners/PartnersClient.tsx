@@ -1,14 +1,14 @@
 "use client"
 
-import Link from "next/link"
-import { motion } from "framer-motion"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
+import { motion } from "framer-motion"
 import { Quote } from "lucide-react"
+import Link from "next/link"
 
 // Icon registry
-import { DollarSign, Target, GraduationCap } from "lucide-react"
+import { DollarSign, GraduationCap, Target } from "lucide-react"
 const ICONS = { DollarSign, Target, GraduationCap } as const
 type IconKey = keyof typeof ICONS
 
@@ -242,7 +242,7 @@ export default function PartnersClient({ data }: { data: PartnersData }) {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
               >
-                <Card>
+                <Card animated={true} speed={10} lineLength={80} >
                   <CardContent className="p-6">
                     <Quote className="mb-4 h-8 w-8 text-accent/20" />
                     <p className="mb-6 text-muted-foreground leading-relaxed">"{t.quote}"</p>

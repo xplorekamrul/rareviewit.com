@@ -48,10 +48,10 @@ function CountUp({ end, duration = 2 }: { end: number; duration?: number }) {
 
 export function StatsSection() {
   const stats = [
-    { value: 500, suffix: "+", label: "Projects Completed" },
+    { value: 50, suffix: "+", label: "Projects Completed" },
     { value: 98, suffix: "%", label: "Client Satisfaction" },
-    { value: 50, suffix: "+", label: "Team Members" },
-    { value: 15, suffix: "+", label: "Years Experience" },
+    { value: 25, suffix: "+", label: "Team Members" },
+    { value: 5, suffix: "+", label: "Years Experience" },
   ]
 
   return (
