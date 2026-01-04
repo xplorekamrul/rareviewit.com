@@ -1,12 +1,15 @@
-import  HeroSection  from "@/components/hero-section"
-import  ServicesSection  from "@/components/services-section"
-import  PortfolioSection from "@/components/portfolio-section"
-import  TestimonialsSection  from "@/components/testimonials-section"
+import CtaSection from "@/components/cta-section"
+import HeroSection from "@/components/hero-section"
+import PortfolioSection from "@/components/portfolio-section"
+import ServicesSection from "@/components/services-section"
 import { StatsSection } from "@/components/stats-section"
-import  CtaSection  from "@/components/cta-section"
-import {homeData} from "@/data/corpus"
+import { homeData } from "@/data/corpus"
 import { generateMetadata as generateSEOMetadata } from "@/lib/seo"
+import dynamic from "next/dynamic"
 
+const TestimonialsSection = dynamic(() => import("@/components/testimonials-section"), {
+  loading: () => <div className="py-20 md:py-32" />,
+})
 
 export const metadata = generateSEOMetadata({
   title: homeData.meta.title,
