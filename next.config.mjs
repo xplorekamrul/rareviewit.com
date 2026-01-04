@@ -11,7 +11,6 @@ const nextConfig = {
     minimumCacheTTL: 60 * 60 * 24 * 365,
   },
   compress: true,
-  swcMinify: true,
   productionBrowserSourceMaps: false,
   async headers() {
     return [
