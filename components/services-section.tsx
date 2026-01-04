@@ -2,10 +2,8 @@
 "use client"
 
 import { AnimateInView } from "@/components/animate-in-view"
-import { StaggerContainer, staggerItem } from "@/components/stagger-container"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { motion } from "framer-motion"
 import { ArrowRight, Palette, Search, Smartphone, TrendingUp } from "lucide-react"
 import Link from "next/link"
 
@@ -37,12 +35,12 @@ export default function ServicesSection({ data }: { data: ServicesBlock }) {
           </p>
         </AnimateInView>
 
-        <StaggerContainer className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           {data.items.map((service, index) => {
             const Icon = ICONS[service.icon] ?? Palette
             return (
-              <motion.div key={index} variants={staggerItem}>
-                <Card animated={true} speed={10} lineLength={80} className="group h-full transition-all hover:shadow-lg">
+              <div key={index}>
+                <Card animated={false} className="group h-full transition-all hover:shadow-lg">
                   <CardHeader>
                     <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
                       <Icon className="h-6 w-6" />
@@ -59,10 +57,10 @@ export default function ServicesSection({ data }: { data: ServicesBlock }) {
                     </Button>
                   </CardContent>
                 </Card>
-              </motion.div>
+              </div>
             )
           })}
-        </StaggerContainer>
+        </div>
       </div>
     </section>
   )

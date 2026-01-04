@@ -16,18 +16,18 @@ export function AnimateInView({
   children,
   className,
   delay = 0,
-  duration = 0.5,
+  duration = 0.3,
   direction = "up",
   once = true,
 }: AnimateInViewProps) {
   const ref = useRef(null)
-  const isInView = useInView(ref, { once, margin: "-100px" })
+  const isInView = useInView(ref, { once, margin: "-50px" })
 
   const directions = {
-    up: { y: 40, x: 0 },
-    down: { y: -40, x: 0 },
-    left: { y: 0, x: 40 },
-    right: { y: 0, x: -40 },
+    up: { y: 20, x: 0 },
+    down: { y: -20, x: 0 },
+    left: { y: 0, x: 20 },
+    right: { y: 0, x: -20 },
     none: { y: 0, x: 0 },
   }
 

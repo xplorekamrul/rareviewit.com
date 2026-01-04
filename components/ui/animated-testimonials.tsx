@@ -45,7 +45,7 @@ export const AnimatedTestimonials = ({
       const interval = setInterval(handleNext, 8000);
       return () => clearInterval(interval);
     }
-  }, [autoplay]);
+  }, [autoplay, handleNext]);
 
   const getRandomRotation = (index: number) => {
     return rotations[index] || 0;
@@ -83,7 +83,7 @@ export const AnimatedTestimonials = ({
                     rotate: getRandomRotation(index),
                   }}
                   transition={{
-                    duration: 0.4,
+                    duration: 0.3,
                     ease: "easeInOut",
                   }}
                   className="absolute inset-0 origin-bottom"
@@ -129,29 +129,7 @@ export const AnimatedTestimonials = ({
               {testimonials[active].designation}
             </p>
             <motion.p className="mt-8 text-lg text-gray-500 dark:text-neutral-300">
-              {testimonials[active].quote.split(" ").map((word, index) => (
-                <motion.span
-                  key={index}
-                  initial={{
-                    filter: "blur(10px)",
-                    opacity: 0,
-                    y: 5,
-                  }}
-                  animate={{
-                    filter: "blur(0px)",
-                    opacity: 1,
-                    y: 0,
-                  }}
-                  transition={{
-                    duration: 0.2,
-                    ease: "easeInOut",
-                    delay: 0.02 * index,
-                  }}
-                  className="inline-block"
-                >
-                  {word}&nbsp;
-                </motion.span>
-              ))}
+              {testimonials[active].quote}
             </motion.p>
           </motion.div>
 
