@@ -1818,7 +1818,9 @@ export const corpus = {
       "items": [
         { "name": "Sarah Johnson", "role": "CEO, TechStart Inc", "avatar": "/professional-woman-headshot.png", "content": "Working with this team transformed our online presence. Our traffic increased by 300% in just three months!", "rating": 5 },
         { "name": "Michael Chen", "role": "Founder, GrowthLabs", "avatar": "/professional-man-headshot.png", "content": "The attention to detail and RareviewIt approach exceeded our expectations. Highly recommend their services!", "rating": 5 },
-        { "name": "Emily Rodriguez", "role": "Marketing Director, Innovate Co", "avatar": "/professional-woman-headshot-2.png", "content": "Their SEO expertise helped us dominate our market. We're now ranking #1 for all our target keywords.", "rating": 5 }
+        { "name": "Emily Rodriguez", "role": "Marketing Director, Innovate Co", "avatar": "/professional-woman-headshot-2.png", "content": "Their SEO expertise helped us dominate our market. We're now ranking #1 for all our target keywords.", "rating": 5 },
+        { "name": "Emily Rodriguez", "role": "Marketing Director, Innovate Co", "avatar": "/professional-woman-headshot-2.png", "content": "Their SEO expertise helped us dominate our market. We're now ranking #1 for all our target keywords.", "rating": 5 },
+        { "name": "Emily Rodriguez", "role": "Marketing Director, Innovate Co", "avatar": "/professional-woman-headshot-2.png", "content": "Their SEO expertise helped us dominate our market. We're now ranking #1 for all our target keywords.", "rating": 5 },
       ]
     },
     "cta": {

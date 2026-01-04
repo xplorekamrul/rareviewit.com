@@ -18,7 +18,7 @@ function Card({ className, animated = false, speed = 8, lineLength = 80, ...prop
     <div
       data-slot="card"
       className={cn(
-        'bg-card text-card-foreground flex flex-col gap-6 rounded-xl border py-6 shadow-sm',
+        'bg-card text-card-foreground flex flex-col gap-6 rounded-xl border py-6 shadow-sm hover:shadow-primary/40',
         animated && 'card-snake-border border-0',
         className,
       )}

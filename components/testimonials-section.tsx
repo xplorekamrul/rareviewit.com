@@ -2,10 +2,9 @@
 "use client"
 
 import { AnimateInView } from "@/components/animate-in-view"
-import { StaggerContainer } from "@/components/stagger-container"
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-import { Card, CardContent } from "@/components/ui/card"
-import { Star } from "lucide-react"
+import { AnimatedTestimonials } from "@/components/ui/animated-testimonials"
+import { Slider } from "@/components/ui/slider"
+import { useState } from "react"
 
 type Testimonial = { name: string; role: string; avatar: string; content: string; rating: number }
 type TestimonialsBlock = {
@@ -15,6 +14,20 @@ type TestimonialsBlock = {
 }
 
 export default function TestimonialsSection({ data }: { data: TestimonialsBlock }) {
+  const [currentIndex, setCurrentIndex] = useState(0)
+
+  // Transform data to match AnimatedTestimonials format
+  const transformedTestimonials = data.items.map((t) => ({
+    quote: t.content,
+    name: t.name,
+    designation: t.role,
+    src: t.avatar || "/placeholder.svg",
+  }))
+
+  const handleSliderChange = (value: number[]) => {
+    setCurrentIndex(value[0])
+  }
+
   return (
     <section className="py-20 md:py-32">
       <div className="container px-4">
@@ -27,32 +40,11 @@ export default function TestimonialsSection({ data }: { data: TestimonialsBlock 
           </p>
         </AnimateInView>
 
-        <StaggerContainer className="grid gap-6 md:grid-cols-3 lg:gap-8">
-          {data.items.map((t, index) => (
-            <AnimateInView key={index} delay={index * 0.1}>
-              <Card className="h-full transition-all hover:shadow-lg">
-                <CardContent className="p-6">
-                  <div className="mb-4 flex gap-1">
-                    {Array.from({ length: t.rating }).map((_, i) => (
-                      <Star key={i} className="h-5 w-5 fill-accent text-accent" />
-                    ))}
-                  </div>
-                  <p className="mb-6 text-muted-foreground leading-relaxed">"{t.content}"</p>
-                  <div className="flex items-center gap-4">
-                    <Avatar>
-                      <AvatarImage src={t.avatar || "/placeholder.svg"} alt={t.name} />
-                      <AvatarFallback>{t.name.charAt(0)}</AvatarFallback>
-                    </Avatar>
-                    <div>
-                      <div className="font-semibold text-foreground">{t.name}</div>
-                      <div className="text-sm text-muted-foreground">{t.role}</div>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            </AnimateInView>
-          ))}
-        </StaggerContainer>
+        <AnimateInView className="mx-auto max-w-4xl">
+          <AnimatedTestimonials testimonials={transformedTestimonials} autoplay={true} />
+
+         
+        </AnimateInView>
       </div>
     </section>
   )

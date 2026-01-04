@@ -1,0 +1,15 @@
+https://ui.aceternity.com/components/sparkles
+
+https://ui.aceternity.com/components/background-lines
+
+https://ui.aceternity.com/components/background-beams-with-collision
+
+https://ui.aceternity.com/components/svg-mask-effect
+
+https://ui.aceternity.com/components/lamp-effect
+
+https://ui.aceternity.com/components/glowing-effect
+
+https://ui.aceternity.com/components/text-hover-effect
+
+https://ui.aceternity.com/components/hero-highlight
