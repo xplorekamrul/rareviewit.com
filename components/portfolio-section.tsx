@@ -2,11 +2,9 @@
 "use client"
 
 import { AnimateInView } from "@/components/animate-in-view"
-import { StaggerContainer, staggerItem } from "@/components/stagger-container"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { motion } from "framer-motion"
 import Image from "next/image"
 import Link from "next/link"
 
@@ -31,17 +29,17 @@ export default function PortfolioSection({ data }: { data: PortfolioBlock }) {
           </p>
         </AnimateInView>
 
-        <StaggerContainer className="grid gap-6 md:grid-cols-2 lg:gap-8">
+        <div className="grid gap-6 md:grid-cols-2 lg:gap-8">
           {data.projects.map((project, index) => (
-            <motion.div key={index} variants={staggerItem}>
-              <Card animated={true} speed={10} lineLength={80} className="group overflow-hidden transition-all hover:shadow-xl pt-0 p-1.5">
+            <div key={index}>
+              <Card animated={false} className="group overflow-hidden transition-all hover:shadow-xl pt-0 p-1.5">
                 <div className="relative aspect-video overflow-hidden">
                   <Image
                     src={project.image || "/placeholder.svg"}
                     alt={project.title}
                     fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
-                    className="object-cover transition-transform duration-300 group-hover:scale-105  rounded-md "
+                    className="object-cover transition-transform duration-300 group-hover:scale-105 rounded-md"
                     priority={index < 2}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-0 transition-opacity group-hover:opacity-10" />
@@ -58,9 +56,9 @@ export default function PortfolioSection({ data }: { data: PortfolioBlock }) {
                   </div>
                 </CardContent>
               </Card>
-            </motion.div>
+            </div>
           ))}
-        </StaggerContainer>
+        </div>
 
         <AnimateInView delay={0.2} className="mt-12 text-center">
           <Button size="lg" variant="outline" asChild>

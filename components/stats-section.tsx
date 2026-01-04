@@ -1,9 +1,7 @@
 "use client"
-import { StaggerContainer, staggerItem } from "./stagger-container"
-import { motion } from "framer-motion"
-import { useEffect, useRef, useState } from "react"
+import { useEffect, useRef, useState } from "react";
 
-function CountUp({ end, duration = 2 }: { end: number; duration?: number }) {
+function CountUp({ end, duration = 1.5 }: { end: number; duration?: number }) {
   const [count, setCount] = useState(0)
   const countRef = useRef(0)
   const [isVisible, setIsVisible] = useState(false)
@@ -29,7 +27,7 @@ function CountUp({ end, duration = 2 }: { end: number; duration?: number }) {
   useEffect(() => {
     if (!isVisible) return
 
-    const increment = end / (duration * 60)
+    const increment = end / (duration * 30)
     const timer = setInterval(() => {
       countRef.current += increment
       if (countRef.current >= end) {
@@ -38,7 +36,7 @@ function CountUp({ end, duration = 2 }: { end: number; duration?: number }) {
       } else {
         setCount(Math.floor(countRef.current))
       }
-    }, 1000 / 60)
+    }, 1000 / 30)
 
     return () => clearInterval(timer)
   }, [end, duration, isVisible])
@@ -57,17 +55,17 @@ export function StatsSection() {
   return (
     <section className="border-y border-border bg-muted/20 py-5 md:py-10">
       <div className="container px-4">
-        <StaggerContainer className="grid grid-cols-2 gap-8 md:grid-cols-4">
+        <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
           {stats.map((stat, index) => (
-            <motion.div key={index} variants={staggerItem} className="text-center">
+            <div key={index} className="text-center">
               <div className="mb-2 text-3xl font-bold text-primary md:text-4xl">
                 <CountUp end={stat.value} />
                 {stat.suffix}
               </div>
               <div className="text-sm text-muted-foreground md:text-base">{stat.label}</div>
-            </motion.div>
+            </div>
           ))}
-        </StaggerContainer>
+        </div>
       </div>
     </section>
   )

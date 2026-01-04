@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  cacheComponents:true,
+  cacheComponents: true,
   typescript: {
     ignoreBuildErrors: true,
   },
@@ -8,9 +8,11 @@ const nextConfig = {
     formats: ['image/avif', 'image/webp'],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
-    minimumCacheTTL: 60 * 60 * 24 * 365, // 1 year
+    minimumCacheTTL: 60 * 60 * 24 * 365,
   },
   compress: true,
+  swcMinify: true,
+  productionBrowserSourceMaps: false,
   async headers() {
     return [
       {
@@ -43,8 +45,11 @@ const nextConfig = {
     ]
   },
   onDemandEntries: {
-    maxInactiveAge: 60 * 60 * 1000, // 1 hour
+    maxInactiveAge: 60 * 60 * 1000,
     pagesBufferLength: 5,
+  },
+  experimental: {
+    optimizePackageImports: ['lucide-react', '@tabler/icons-react'],
   },
 }
 
