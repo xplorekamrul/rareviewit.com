@@ -19,7 +19,7 @@
   --secondary-foreground: oklch(0.25 0.02 250);
   --muted: oklch(0.95 0.01 90);
   --muted-foreground: oklch(0.3 0.02 260);
-  --accent: oklch(0.55 0.18 160);
+  --accent: oklch(0.75 0.12 160);
   --accent-foreground: oklch(0.99 0.005 90);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.99 0.005 90);
@@ -132,3 +132,79 @@
 .container {
   margin: 0 auto;
 }
+
+
+/* --- START: UNIFORM SPEED SNAKE BORDER ANIMATION CSS --- */
+/* 1. Define the custom property for rotation angle */
+@property --border-angle {
+  syntax: "<angle>";
+  inherits: true;
+  initial-value: 0deg;
+}
+
+/* 2. Define the spinning keyframe */
+@keyframes border-spin {
+  to {
+    --border-angle: 360deg;
+  }
+}
+
+@layer components {
+  /* Main parent class */
+  .card-snake-border {
+    @apply relative overflow-hidden rounded-xl border-0;
+    z-index: 0;
+  }
+
+  /* LAYER 1 (Bottom): Background Color + Static Muted Dashed Border */
+  .card-snake-border::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    border-radius: inherit;
+    background: var(--card);
+    border: 3px dashed var(--border);
+    pointer-events: none;
+  }
+
+  /* LAYER 2 (Middle): The Active Running "Snake" gradient */
+  .card-snake-border::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    border-radius: inherit;
+    
+    /* IMPROVED SNAKE GRADIENT - More uniform distribution */
+    background: conic-gradient(
+      from var(--border-angle),
+      transparent 0%,
+      transparent var(--line-length, 80%),  /* Dynamic transparent section */
+      var(--primary) calc(var(--line-length, 80%) + 15%),   /* Gradual fade-in */
+      var(--primary) calc(var(--line-length, 80%) + 10%),   /* Bright section */
+      var(--primary) 100%   /* Snake head */
+    );
+    
+    /* ANIMATION WITH DYNAMIC SPEED - Uses CSS variable, defaults to 8s */
+    animation: border-spin var(--snake-speed, 8s) linear infinite;
+    
+    /* THE MASK */
+    mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    -webkit-mask-composite: xor;
+    
+    /* THICKNESS CONTROL */
+    padding: 3px;
+    pointer-events: none;
+  }
+
+  /* Ensure content sits on top */
+  .card-snake-border > * {
+    position: relative;
+    z-index: 1;
+  }
+}
+/* --- END: UNIFORM SPEED SNAKE BORDER ANIMATION CSS --- */

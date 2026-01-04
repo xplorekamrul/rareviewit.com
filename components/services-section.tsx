@@ -42,7 +42,7 @@ export default function ServicesSection({ data }: { data: ServicesBlock }) {
             const Icon = ICONS[service.icon] ?? Palette
             return (
               <motion.div key={index} variants={staggerItem}>
-                <Card className="group h-full transition-all hover:shadow-lg">
+                <Card animated={true} speed={10} lineLength={80} className="group h-full transition-all hover:shadow-lg">
                   <CardHeader>
                     <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
                       <Icon className="h-6 w-6" />

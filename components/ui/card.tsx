@@ -2,14 +2,27 @@ import * as React from 'react'
 
 import { cn } from '@/lib/utils'
 
-function Card({ className, ...props }: React.ComponentProps<'div'>) {
+interface CardProps extends React.ComponentProps<'div'> {
+  animated?: boolean
+  speed?: number // Speed in seconds (e.g., 4 = 4 seconds)
+  lineLength?: number // Line length as percentage (e.g., 80 = 80% transparent)
+}
+
+function Card({ className, animated = false, speed = 8, lineLength = 80, ...props }: CardProps) {
+  const style = animated ? {
+    '--snake-speed': `${speed}s`,
+    '--line-length': `${lineLength}%`
+  } as React.CSSProperties : undefined
+
   return (
     <div
       data-slot="card"
       className={cn(
-        'bg-card text-card-foreground flex flex-col gap-6 rounded-xl border py-6 shadow-sm',
+        'bg-card text-card-foreground flex flex-col gap-6 rounded-xl border py-6 shadow-sm hover:shadow-primary/40',
+        animated && 'card-snake-border border-0',
         className,
       )}
+      style={style}
       {...props}
     />
   )
@@ -82,11 +95,6 @@ function CardFooter({ className, ...props }: React.ComponentProps<'div'>) {
 }
 
 export {
-  Card,
-  CardHeader,
-  CardFooter,
-  CardTitle,
-  CardAction,
-  CardDescription,
-  CardContent,
+  Card, CardAction, CardContent, CardDescription, CardFooter, CardHeader, CardTitle
 }
+

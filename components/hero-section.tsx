@@ -16,7 +16,7 @@ type HeroData = {
 
 export default function HeroSection({ data }: { data: HeroData }) {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-background to-muted/30 py-20 md:py-32">
+    <section className="relative overflow-hidden bg-gradient-to-b from-background to-muted/30 py-20 md:py-20">
       <div className="container px-4">
         <div className="mx-auto max-w-4xl text-center">
           <motion.div

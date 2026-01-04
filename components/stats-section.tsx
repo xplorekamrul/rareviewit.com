@@ -48,14 +48,14 @@ function CountUp({ end, duration = 2 }: { end: number; duration?: number }) {
 
 export function StatsSection() {
   const stats = [
-    { value: 500, suffix: "+", label: "Projects Completed" },
+    { value: 50, suffix: "+", label: "Projects Completed" },
     { value: 98, suffix: "%", label: "Client Satisfaction" },
-    { value: 50, suffix: "+", label: "Team Members" },
-    { value: 15, suffix: "+", label: "Years Experience" },
+    { value: 25, suffix: "+", label: "Team Members" },
+    { value: 5, suffix: "+", label: "Years Experience" },
   ]
 
   return (
-    <section className="border-y border-border bg-muted/20 py-12 md:py-16">
+    <section className="border-y border-border bg-muted/20 py-5 md:py-10">
       <div className="container px-4">
         <StaggerContainer className="grid grid-cols-2 gap-8 md:grid-cols-4">
           {stats.map((stat, index) => (

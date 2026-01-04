@@ -1,12 +1,12 @@
 "use client"
 
-import { useState } from "react"
 import { Badge } from "@/components/ui/badge"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import Link from "next/link"
-import { Check, X } from "lucide-react"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { motion } from "framer-motion"
+import { Check, X } from "lucide-react"
+import Link from "next/link"
+import { useState } from "react"
 
 type BillingCycle = "onetime" | "monthly"
 
@@ -96,17 +96,15 @@ export default function PricingClient({ data }: { data: PricingData }) {
             <div className="inline-flex rounded-lg border border-border bg-muted/30 p-1">
               <button
                 onClick={() => setBillingCycle("onetime")}
-                className={`rounded-md px-6 py-2 text-sm font-medium transition-colors ${
-                  billingCycle === "onetime" ? "bg-background text-foreground shadow-sm" : "text-muted-foreground"
-                }`}
+                className={`rounded-md px-6 py-2 text-sm font-medium transition-colors ${billingCycle === "onetime" ? "bg-background text-foreground shadow-sm" : "text-muted-foreground"
+                  }`}
               >
                 {toggle.labels.onetime}
               </button>
               <button
                 onClick={() => setBillingCycle("monthly")}
-                className={`rounded-md px-6 py-2 text-sm font-medium transition-colors ${
-                  billingCycle === "monthly" ? "bg-background text-foreground shadow-sm" : "text-muted-foreground"
-                }`}
+                className={`rounded-md px-6 py-2 text-sm font-medium transition-colors ${billingCycle === "monthly" ? "bg-background text-foreground shadow-sm" : "text-muted-foreground"
+                  }`}
               >
                 {toggle.labels.monthly}
               </button>
@@ -129,9 +127,8 @@ export default function PricingClient({ data }: { data: PricingData }) {
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                 >
                   <Card
-                    className={`relative h-full transition-all hover:shadow-xl ${
-                      pkg.popular ? "border-primary shadow-lg" : ""
-                    }`}
+                    className={`relative h-full transition-all hover:shadow-xl ${pkg.popular ? "border-primary shadow-lg" : ""
+                      }`}
                   >
                     {pkg.popular && (
                       <div className="absolute -top-4 left-1/2 -translate-x-1/2">
@@ -240,7 +237,7 @@ export default function PricingClient({ data }: { data: PricingData }) {
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                 >
-                  <Card>
+                  <Card animated={false} speed={10} lineLength={80} >
                     <CardContent className="p-6">
                       <h3 className="mb-2 font-bold text-foreground">{faq.question}</h3>
                       <p className="text-sm text-muted-foreground leading-relaxed">{faq.answer}</p>
