@@ -165,7 +165,7 @@ export default function RegisterForm() {
         disabled={status === "executing"}
         className="
           w-full inline-flex items-center justify-center gap-2
-          rounded-lg bg-pcolor text-white py-2.5
+          rounded-lg bg-primary hover:bg-primary/90 text-white py-2.5
           hover:bg-scolor transition-colors
           disabled:opacity-60
           focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-sidebar-ring

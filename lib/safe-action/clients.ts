@@ -2,7 +2,12 @@ import { createSafeActionClient } from "next-safe-action";
 import "server-only";
 import { auth } from "../auth";
 
-export const actionClient = createSafeActionClient();
+export const actionClient = createSafeActionClient({
+  handleServerError: (error) => {
+    console.error("Safe action server error:", error);
+    return "An error occurred while processing your request";
+  },
+});
 
 export const authActionClient = actionClient.use(async ({ next }) => {
   const session = await auth();

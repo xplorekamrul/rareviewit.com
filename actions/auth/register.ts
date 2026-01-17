@@ -36,7 +36,6 @@ export const register = actionClient
       select: { id: true, email: true, role: true, name: true, username: true },
     });
 
-    // Send welcome email (fire and forget to not block response)
     void sendWelcomeEmail(user.email, user.name ?? "User");
 
     return { ok: true as const, user };
