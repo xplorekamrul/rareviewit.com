@@ -1,11 +1,14 @@
+import { ChatButton } from "@/components/chat/chat-button";
 import { ChatLauncher } from "@/components/chat/chat-launcher";
 import { ChatProvider } from "@/components/chat/chat-provider";
+import { SiteFooter } from "@/components/site-footer";
+import { SiteHeader } from "@/components/site-header";
 import { ThemeProvider } from "@/components/theme-provider";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { Analytics } from "@vercel/analytics/next";
 import type { Metadata } from "next";
+import { Geist, Geist_Mono } from "next/font/google";
 import type React from "react";
-import "./globals.css";
 
 
 
@@ -25,14 +28,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`font-sans antialiased  max-w-[1250px] mx-auto`}>
-        <ThemeProvider defaultTheme="light">
-          <ChatProvider>
+
+            <SiteHeader />
             <main className="min-h-screen">{children}</main>
-            <ThemeToggle />
-            <ChatLauncher />
-          </ChatProvider>
-          <Analytics />
-        </ThemeProvider>
+            <SiteFooter />
+            <ChatButton />
+
       </body>
     </html>
   )
