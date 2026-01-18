@@ -48,6 +48,8 @@ export default function AdminPortfolioPage() {
    const [isCategoryDialogOpen, setIsCategoryDialogOpen] = useState(false);
    const [editingId, setEditingId] = useState<string | null>(null);
    const [editingData, setEditingData] = useState<Portfolio | null>(null);
+   const [editingCategoryId, setEditingCategoryId] = useState<string | null>(null);
+   const [editingCategoryData, setEditingCategoryData] = useState<Category | null>(null);
    const [isLoading, setIsLoading] = useState(true);
    const [isDeletingId, setIsDeletingId] = useState<string | null>(null);
    const [activeTab, setActiveTab] = useState("portfolios");
@@ -107,6 +109,20 @@ export default function AdminPortfolioPage() {
       setIsOpen(open);
    };
 
+   const handleCategoryOpenChange = (open: boolean) => {
+      if (!open) {
+         setEditingCategoryId(null);
+         setEditingCategoryData(null);
+      }
+      setIsCategoryDialogOpen(open);
+   };
+
+   const handleEditCategory = (category: Category) => {
+      setEditingCategoryId(category.id);
+      setEditingCategoryData(category);
+      setIsCategoryDialogOpen(true);
+   };
+
    const handleSuccess = async () => {
       await fetchData();
       setIsOpen(false);
@@ -119,11 +135,11 @@ export default function AdminPortfolioPage() {
    };
 
    return (
-      <div className="space-y-6">
-         <div className="flex items-center justify-between">
+      <div className="space-y-6 p-4 md:p-6">
+         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
             <div>
-               <h1 className="text-3xl font-bold">Portfolio Management</h1>
-               <p className="text-muted-foreground mt-1">
+               <h1 className="text-2xl md:text-3xl font-bold">Portfolio Management</h1>
+               <p className="text-muted-foreground mt-1 text-sm md:text-base">
                   Create and manage your portfolio projects and categories
                </p>
             </div>
@@ -134,7 +150,7 @@ export default function AdminPortfolioPage() {
                      setEditingData(null);
                      setIsOpen(true);
                   }}
-                  className="gap-2"
+                  className="gap-2 whitespace-nowrap"
                >
                   <Plus className="h-4 w-4" />
                   New Project
@@ -143,7 +159,7 @@ export default function AdminPortfolioPage() {
             {activeTab === "categories" && (
                <Button
                   onClick={() => setIsCategoryDialogOpen(true)}
-                  className="gap-2"
+                  className="gap-2 whitespace-nowrap"
                >
                   <Plus className="h-4 w-4" />
                   New Category
@@ -152,9 +168,9 @@ export default function AdminPortfolioPage() {
          </div>
 
          <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
-            <TabsList>
-               <TabsTrigger value="portfolios">Projects</TabsTrigger>
+            <TabsList className="grid w-full grid-cols-2">
                <TabsTrigger value="categories">Categories</TabsTrigger>
+               <TabsTrigger value="portfolios">Projects</TabsTrigger>
             </TabsList>
 
             <TabsContent value="portfolios" className="space-y-4">
@@ -163,12 +179,14 @@ export default function AdminPortfolioPage() {
                      Loading portfolios...
                   </div>
                ) : (
-                  <PortfolioTable
-                     data={portfolios}
-                     onEdit={handleEdit}
-                     onDelete={handleDelete}
-                     isDeleting={isDeletingId}
-                  />
+                  <div className="overflow-x-auto">
+                     <PortfolioTable
+                        data={portfolios}
+                        onEdit={handleEdit}
+                        onDelete={handleDelete}
+                        isDeleting={isDeletingId}
+                     />
+                  </div>
                )}
             </TabsContent>
 
@@ -178,13 +196,19 @@ export default function AdminPortfolioPage() {
                      Loading categories...
                   </div>
                ) : (
-                  <CategoryTable data={categories} onRefresh={fetchData} />
+                  <div className="overflow-x-auto">
+                     <CategoryTable
+                        data={categories}
+                        onRefresh={fetchData}
+                        onEdit={handleEditCategory}
+                     />
+                  </div>
                )}
             </TabsContent>
          </Tabs>
 
          <Dialog open={isOpen} onOpenChange={handleOpenChange}>
-            <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
+            <DialogContent className="max-w-md sm:max-w-lg md:max-w-2xl lg:max-w-4xl">
                <DialogHeader>
                   <DialogTitle>
                      {editingId ? "Edit Portfolio" : "Create New Portfolio"}
@@ -214,20 +238,37 @@ export default function AdminPortfolioPage() {
             </DialogContent>
          </Dialog>
 
-         <Dialog open={isCategoryDialogOpen} onOpenChange={setIsCategoryDialogOpen}>
+         <Dialog open={isCategoryDialogOpen} onOpenChange={handleCategoryOpenChange}>
             <DialogContent className="max-w-md">
                <DialogHeader>
-                  <DialogTitle>Create New Category</DialogTitle>
+                  <DialogTitle>
+                     {editingCategoryId ? "Edit Category" : "Create New Category"}
+                  </DialogTitle>
                   <DialogDescription>
-                     Add a new portfolio category to organize your projects
+                     {editingCategoryId
+                        ? "Update the category details"
+                        : "Add a new portfolio category to organize your projects"}
                   </DialogDescription>
                </DialogHeader>
                <CategoryForm
+                  initialData={editingCategoryData ? {
+                     name: editingCategoryData.name,
+                     description: editingCategoryData.description || "",
+                     icon: editingCategoryData.icon || "",
+                     color: editingCategoryData.color || "",
+                  } : undefined}
+                  categoryId={editingCategoryId || undefined}
                   onSuccess={() => {
                      fetchData();
                      setIsCategoryDialogOpen(false);
+                     setEditingCategoryId(null);
+                     setEditingCategoryData(null);
                   }}
-                  onClose={() => setIsCategoryDialogOpen(false)}
+                  onClose={() => {
+                     setIsCategoryDialogOpen(false);
+                     setEditingCategoryId(null);
+                     setEditingCategoryData(null);
+                  }}
                />
             </DialogContent>
          </Dialog>

@@ -5,6 +5,7 @@ import { ModeToggle } from "@/components/ui/mode-toggle";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import clsx from "clsx";
 import {
+  Briefcase,
   ChevronLeft,
   Gauge,
   HelpCircle,
@@ -13,6 +14,7 @@ import {
   LogOut,
   Menu,
   Settings,
+  User,
   Users,
   Wrench,
 } from "lucide-react";
@@ -38,14 +40,23 @@ function initials(name?: string | null, email?: string | null) {
 const commonNav: Item[] = [{ label: "Home", href: "/", icon: Home }];
 
 const roleNav: Record<Role, Item[]> = {
-  DEVELOPER: [{ label: "Dev Tools", href: "/dev/tools", icon: Wrench }],
+  DEVELOPER: [
+    { label: "Profile", href: "/profile", icon: User },
+    { label: "Dev Tools", href: "/dev/tools", icon: Wrench },
+    { label: "Protfolio", href: "/admin/portfolio", icon: Briefcase }
+
+  ],
   SUPER_ADMIN: [
+    { label: "Profile", href: "/profile", icon: User },
     { label: "Super Dashboard", href: "/super-admin/overview", icon: Gauge },
     { label: "Users", href: "/super-admin/users", icon: Users },
+    { label: "Protfolio", href: "/admin/portfolio", icon: Briefcase },
+
   ],
   ADMIN: [
+    { label: "Profile", href: "/profile", icon: User },
     { label: "Admin Panel", href: "/admin", icon: LayoutDashboard },
-    { label: "Settings", href: "/settings", icon: Settings },
+    { label: "Protfolio", href: "/admin/portfolio", icon: Briefcase }
   ],
 };
 

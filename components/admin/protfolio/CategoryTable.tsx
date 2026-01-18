@@ -26,9 +26,10 @@ interface Category {
 interface CategoryTableProps {
    data: Category[];
    onRefresh: () => void;
+   onEdit?: (category: Category) => void;
 }
 
-export function CategoryTable({ data, onRefresh }: CategoryTableProps) {
+export function CategoryTable({ data, onRefresh, onEdit }: CategoryTableProps) {
    const [isDeletingId, setIsDeletingId] = useState<string | null>(null);
 
    const handleDelete = async (id: string) => {
@@ -46,7 +47,7 @@ export function CategoryTable({ data, onRefresh }: CategoryTableProps) {
    };
 
    return (
-      <div className="rounded-lg border">
+      <div className="rounded-lg border overflow-x-auto">
          <Table>
             <TableHeader>
                <TableRow>
@@ -87,6 +88,7 @@ export function CategoryTable({ data, onRefresh }: CategoryTableProps) {
                               <Button
                                  variant="ghost"
                                  size="sm"
+                                 onClick={() => onEdit?.(category)}
                                  disabled={isDeletingId === category.id}
                               >
                                  <Edit2 className="h-4 w-4 text-primary" />
