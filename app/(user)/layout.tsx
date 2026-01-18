@@ -28,12 +28,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`font-sans antialiased  max-w-[1250px] mx-auto`}>
-
             <SiteHeader />
             <main className="min-h-screen">{children}</main>
             <SiteFooter />
             <ChatButton />
-
       </body>
     </html>
   )

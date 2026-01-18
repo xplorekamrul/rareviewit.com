@@ -1,6 +1,6 @@
 "use client";
 
-import { createPortfolioCategory } from "@/actions/portfolio";
+import { createPortfolioCategory, updatePortfolioCategory } from "@/actions/portfolio";
 import { Button } from "@/components/ui/button";
 import {
    Form,
@@ -21,13 +21,15 @@ import { toast } from "sonner";
 interface CategoryFormProps {
    onSuccess?: (category: any) => void;
    onClose?: () => void;
+   initialData?: PortfolioCategoryInput;
+   categoryId?: string;
 }
 
-export function CategoryForm({ onSuccess, onClose }: CategoryFormProps) {
+export function CategoryForm({ onSuccess, onClose, initialData, categoryId }: CategoryFormProps) {
    const form = useForm<PortfolioCategoryInput>({
       // @ts-expect-error - React Hook Form type compatibility
       resolver: zodResolver(portfolioCategorySchema),
-      defaultValues: {
+      defaultValues: initialData || {
          name: "",
          description: "",
          icon: "",
@@ -39,7 +41,13 @@ export function CategoryForm({ onSuccess, onClose }: CategoryFormProps) {
 
    const onSubmit = async (data: PortfolioCategoryInput) => {
       try {
-         const result = await createPortfolioCategory(data);
+         let result;
+         if (categoryId) {
+            result = await updatePortfolioCategory(categoryId, data);
+         } else {
+            result = await createPortfolioCategory(data);
+         }
+
          if (result.success) {
             toast.success(result.message);
             form.reset();
@@ -134,7 +142,7 @@ export function CategoryForm({ onSuccess, onClose }: CategoryFormProps) {
 
             <div className="flex gap-2 pt-4">
                <Button type="submit" disabled={isLoading} className="flex-1">
-                  {isLoading ? "Creating..." : "Create Category"}
+                  {isLoading ? (categoryId ? "Updating..." : "Creating...") : (categoryId ? "Update Category" : "Create Category")}
                </Button>
                <Button
                   type="button"

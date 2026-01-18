@@ -8,9 +8,13 @@ import * as ReactDOM from 'react-dom'
 interface DialogContextType {
   open: boolean
   onOpenChange: (open: boolean) => void
+  zIndex: number
 }
 
 const DialogContext = React.createContext<DialogContextType | undefined>(undefined)
+
+// Global z-index counter for stacking dialogs
+let globalZIndex = 50
 
 function useDialog() {
   const context = React.useContext(DialogContext)
@@ -29,8 +33,12 @@ function Dialog({
   onOpenChange: (open: boolean) => void
   children: React.ReactNode
 }) {
+  const [zIndex, setZIndex] = React.useState(50)
+
   React.useEffect(() => {
     if (open) {
+      globalZIndex += 10
+      setZIndex(globalZIndex)
       document.body.style.overflow = 'hidden'
     } else {
       document.body.style.overflow = 'unset'
@@ -42,7 +50,7 @@ function Dialog({
   }, [open])
 
   return (
-    <DialogContext.Provider value={{ open, onOpenChange }}>
+    <DialogContext.Provider value={{ open, onOpenChange, zIndex }}>
       {children}
     </DialogContext.Provider>
   )
@@ -82,7 +90,7 @@ function DialogPortal({
 }: {
   children: React.ReactNode
 }) {
-  const { open } = useDialog()
+  const { open, zIndex } = useDialog()
   const [mounted, setMounted] = React.useState(false)
   const [portalElement, setPortalElement] = React.useState<HTMLElement | null>(null)
 
@@ -99,7 +107,12 @@ function DialogPortal({
 
   if (!open || !mounted || !portalElement) return null
 
-  return ReactDOM.createPortal(children, portalElement)
+  return ReactDOM.createPortal(
+    <div style={{ position: 'relative', zIndex }}>
+      {children}
+    </div>,
+    portalElement
+  )
 }
 
 function DialogClose({
@@ -124,7 +137,7 @@ function DialogOverlay({
   className,
   ...props
 }: React.HTMLAttributes<HTMLDivElement>) {
-  const { onOpenChange } = useDialog()
+  const { onOpenChange, zIndex } = useDialog()
 
   return (
     <div
@@ -132,6 +145,7 @@ function DialogOverlay({
         'fixed inset-0 bg-black/50',
         className,
       )}
+      style={{ zIndex }}
       onClick={() => onOpenChange(false)}
       {...props}
     />
@@ -146,7 +160,7 @@ function DialogContent({
 }: React.HTMLAttributes<HTMLDivElement> & {
   showCloseButton?: boolean
 }) {
-  const { open, onOpenChange } = useDialog()
+  const { open, onOpenChange, zIndex } = useDialog()
 
   React.useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
@@ -169,9 +183,10 @@ function DialogContent({
       <DialogOverlay />
       <div
         className={cn(
-          'relative w-full max-w-[calc(100%-2rem)] rounded-lg border bg-background p-6 shadow-lg sm:max-w-lg',
+          'fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-md sm:max-w-lg md:max-w-2xl max-h-[90vh] overflow-y-auto rounded-lg border bg-background p-6 shadow-lg',
           className,
         )}
+        style={{ zIndex: zIndex + 1 }}
         {...props}
       >
         {children}
@@ -240,4 +255,3 @@ export {
   DialogTitle,
   DialogTrigger
 }
-

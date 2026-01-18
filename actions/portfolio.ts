@@ -3,7 +3,7 @@
 import { auth } from "@/lib/auth";
 import { prisma } from "@/lib/prisma";
 import { portfolioCategorySchema, portfolioSchema } from "@/lib/validations/portfolio";
-import { revalidateTag } from "next/cache";
+import { cacheLife, cacheTag, revalidateTag } from "next/cache";
 
 // ===== Portfolio Category Actions =====
 
@@ -88,6 +88,10 @@ export async function deletePortfolioCategory(id: string) {
 
 export async function getPortfolioCategories() {
    "use cache";
+   cacheLife("hours");
+   // @ts-expect-error - Next.js 16 cacheTag signature
+   cacheTag("portfolio-categories");
+
    try {
       const categories = await (prisma as any).portfolioCategory.findMany({
          orderBy: { createdAt: "desc" },
@@ -188,6 +192,10 @@ export async function deletePortfolio(id: string) {
 
 export async function getPortfolios() {
    "use cache";
+   cacheLife("hours");
+   // @ts-expect-error - Next.js 16 cacheTag signature
+   cacheTag("portfolios");
+
    try {
       const portfolios = await prisma.portfolio.findMany({
          include: { category: true },
@@ -206,6 +214,10 @@ export async function getPortfolios() {
 
 export async function getPortfolioById(id: string) {
    "use cache";
+   cacheLife("hours");
+   // @ts-expect-error - Next.js 16 cacheTag signature
+   cacheTag("portfolios");
+
    try {
       const portfolio = await prisma.portfolio.findUnique({
          where: { id },
@@ -228,6 +240,10 @@ export async function getPortfolioById(id: string) {
 
 export async function getPublishedPortfolios() {
    "use cache";
+   cacheLife("hours");
+   // @ts-expect-error - Next.js 16 cacheTag signature
+   cacheTag("portfolios");
+
    try {
       const portfolios = await prisma.portfolio.findMany({
          where: { status: "PUBLISHED" },
