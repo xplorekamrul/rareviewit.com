@@ -13,6 +13,7 @@ import {
   LayoutDashboard,
   LogOut,
   Menu,
+  Send,
   Settings,
   User,
   Users,
@@ -43,7 +44,8 @@ const roleNav: Record<Role, Item[]> = {
   DEVELOPER: [
     { label: "Profile", href: "/profile", icon: User },
     { label: "Dev Tools", href: "/dev/tools", icon: Wrench },
-    { label: "Protfolio", href: "/admin/portfolio", icon: Briefcase }
+    { label: "Protfolio", href: "/admin/portfolio", icon: Briefcase },
+    { label: "Contact Submited", href: "/admin/contact-submissions", icon: Send },
 
   ],
   SUPER_ADMIN: [
@@ -51,12 +53,14 @@ const roleNav: Record<Role, Item[]> = {
     { label: "Super Dashboard", href: "/super-admin/overview", icon: Gauge },
     { label: "Users", href: "/super-admin/users", icon: Users },
     { label: "Protfolio", href: "/admin/portfolio", icon: Briefcase },
+    { label: "Contact Submited", href: "/admin/contact-submissions", icon: Send },
 
   ],
   ADMIN: [
     { label: "Profile", href: "/profile", icon: User },
     { label: "Admin Panel", href: "/admin", icon: LayoutDashboard },
-    { label: "Protfolio", href: "/admin/portfolio", icon: Briefcase }
+    { label: "Protfolio", href: "/admin/portfolio", icon: Briefcase },
+    { label: "Contact Submited", href: "/admin/contact-submissions", icon: Send },
   ],
 };
 
