@@ -53,38 +53,46 @@
 }
 
 .dark {
-  /* Dark mode - coordinated with vibrant teal primary */
+  /* Dark mode - coordinated with vibrant teal primary and neon blue accents */
   --background: oklch(0.12 0.02 250);
   --foreground: oklch(0.96 0.01 250);
-  --card: oklch(0.16 0.025 250);
+  --card: oklch(0.22 0.03 250);
   --card-foreground: oklch(0.96 0.01 250);
-  --popover: oklch(0.16 0.025 250);
+  --popover: oklch(0.22 0.03 250);
   --popover-foreground: oklch(0.96 0.01 250);
   --primary: oklch(75.687% 0.19739 152.347);
   --primary-foreground: oklch(0.12 0.02 250);
-  --secondary: oklch(0.22 0.03 250);
+  --secondary: oklch(0.28 0.04 250);
   --secondary-foreground: oklch(0.96 0.01 250);
-  --muted: oklch(0.25 0.03 250);
-  --muted-foreground: oklch(0.65 0.02 250);
+  --muted: oklch(0.32 0.04 250);
+  --muted-foreground: oklch(0.72 0.03 250);
   --accent: oklch(0.82 0.15 152);
   --accent-foreground: oklch(0.12 0.02 250);
   --destructive: oklch(0.55 0.2 27);
   --destructive-foreground: oklch(0.96 0.01 250);
-  --border: oklch(0.28 0.035 250);
-  --input: oklch(0.28 0.035 250);
+  --border: oklch(0.35 0.04 250);
+  --input: oklch(0.20 0.03 250);
   --ring: oklch(0.75 0.18 152);
+
+  /* Neon Blue Colors for Dark Mode */
+  --neon-blue: oklch(0.65 0.25 264);
+  --neon-blue-light: oklch(0.75 0.28 264);
+  --neon-blue-dark: oklch(0.55 0.22 264);
+  --neon-cyan: oklch(0.70 0.28 200);
+  --neon-purple: oklch(0.68 0.26 290);
+
   --chart-1: oklch(0.75 0.19 152);
   --chart-2: oklch(0.7 0.17 130);
   --chart-3: oklch(0.68 0.15 175);
   --chart-4: oklch(0.72 0.16 200);
   --chart-5: oklch(0.65 0.14 100);
-  --sidebar: oklch(0.16 0.025 250);
+  --sidebar: oklch(0.22 0.03 250);
   --sidebar-foreground: oklch(0.96 0.01 250);
   --sidebar-primary: oklch(75.687% 0.19739 152.347);
   --sidebar-primary-foreground: oklch(0.12 0.02 250);
-  --sidebar-accent: oklch(0.25 0.03 250);
+  --sidebar-accent: oklch(0.32 0.04 250);
   --sidebar-accent-foreground: oklch(0.96 0.01 250);
-  --sidebar-border: oklch(0.28 0.035 250);
+  --sidebar-border: oklch(0.35 0.04 250);
   --sidebar-ring: oklch(0.75 0.18 152);
 }
 
@@ -214,6 +222,7 @@
     position: relative;
     z-index: 1;
   }
+
 }
 
 /* --- END: OPTIMIZED STATIC BORDER --- */

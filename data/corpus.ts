@@ -941,7 +941,7 @@ export const corpus = {
         category: "Web Design",
         description:
           "Complete redesign and development of a modern e-commerce platform with 300% increase in conversions.",
-        image: "/portfolio-ecommerce.png",
+        image: "/po rtfolio-ecommerce.png",
         tags: ["React", "Next.js", "Stripe", "Tailwind"],
         results: "+300% Conversions",
         href: "/projects/ecommerce-platform"

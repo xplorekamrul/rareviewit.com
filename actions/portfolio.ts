@@ -89,7 +89,6 @@ export async function deletePortfolioCategory(id: string) {
 export async function getPortfolioCategories() {
    "use cache";
    cacheLife("hours");
-   // @ts-expect-error - Next.js 16 cacheTag signature
    cacheTag("portfolio-categories");
 
    try {
@@ -193,7 +192,6 @@ export async function deletePortfolio(id: string) {
 export async function getPortfolios() {
    "use cache";
    cacheLife("hours");
-   // @ts-expect-error - Next.js 16 cacheTag signature
    cacheTag("portfolios");
 
    try {
@@ -215,7 +213,6 @@ export async function getPortfolios() {
 export async function getPortfolioById(id: string) {
    "use cache";
    cacheLife("hours");
-   // @ts-expect-error - Next.js 16 cacheTag signature
    cacheTag("portfolios");
 
    try {
@@ -241,7 +238,6 @@ export async function getPortfolioById(id: string) {
 export async function getPublishedPortfolios() {
    "use cache";
    cacheLife("hours");
-   // @ts-expect-error - Next.js 16 cacheTag signature
    cacheTag("portfolios");
 
    try {
