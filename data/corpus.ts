@@ -471,19 +471,19 @@ export const corpus = {
         {
           icon: Mail as LucideIcon,
           title: "Email",
-          details: "hello@RareviewIt.agency",
-          link: "mailto:hello@RareviewIt.agency",
+          details: "rareviewit@gmail.com",
+          link: "mailto:rareviewit@gmail.com",
         },
         {
           icon: Phone as LucideIcon,
           title: "Phone",
-          details: "+1 (555) 123-4567",
+          details: "+88 01516573530",
           link: "tel:+15551234567",
         },
         {
           icon: MapPin as LucideIcon,
           title: "Office",
-          details: "123 RareviewIt Street, San Francisco, CA 94102",
+          details: "Uttara Sector :14 , Road No: 13 ,House: 10,  Dhaka Bangladesh 1230.",
           link: "#",
         },
         {
@@ -809,7 +809,7 @@ export const corpus = {
       options: [
         { icon: "MessageCircle", title: "Live Chat", description: "Chat with our support team", action: "Start Chat", available: "Mon-Fri, 9AM-6PM PST" },
         { icon: "Mail", title: "Email Support", description: "Get help via email", action: "Send Email", available: "Response within 24 hours" },
-        { icon: "Phone", title: "Phone Support", description: "Speak with an expert", action: "Call Us", available: "+1 (555) 123-4567" },
+        { icon: "Phone", title: "Phone Support", description: "Speak with an expert", action: "Call Us", available: "+88 01516573530" },
       ] as const,
     },
 
@@ -1191,8 +1191,8 @@ export const corpus = {
         paragraphs: [
           "If you have any questions about this Privacy Policy or our privacy practices, please contact us at:",
           "Email: privacy@RareviewIt.agency",
-          "Phone: +1 (555) 123-4567",
-          "Address: 123 RareviewIt Street, San Francisco, CA 94102"
+          "Phone: +88 01516573530",
+          "Address: Uttara Sector :14 , Road No: 13 ,House: 10,  Dhaka Bangladesh 1230."
         ]
       }
     ] as const,
@@ -1305,8 +1305,8 @@ export const corpus = {
         paragraphs: [
           "If you have any questions about these Terms and Conditions, please contact us at:",
           "Email: legal@RareviewIt.agency",
-          "Phone: +1 (555) 123-4567",
-          "Address: 123 RareviewIt Street, San Francisco, CA 94102"
+          "Phone: +88 01516573530",
+          "Address: Uttara Sector :14 , Road No: 13 ,House: 10,  Dhaka Bangladesh 1230."
         ]
       }
     ] as const,

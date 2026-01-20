@@ -51,55 +51,72 @@ export async function submitContactForm(data: ContactFormData) {
          return { success: false, error: 'Failed to save submission. Please try again.' }
       }
 
-      // Send emails (secondary - if this fails, data is still saved)
+      // Send emails in background (non-blocking)
       const submittedAt = new Date(submission.createdAt).toLocaleString()
 
-      // Email to admin
-      const adminEmailResult = await sendEmail({
-         to: process.env.ADMIN_EMAIL || 'admin@example.com',
-         subject: `New Contact Form Submission - ${data.subject}`,
-         html: generateAdminEmailHTML({
-            fullName: data.fullName,
-            email: data.email,
-            phone: data.phone,
-            subject: data.subject,
-            message: data.message,
-            submittedAt,
-         }),
-         replyTo: data.email,
+      // Fire and forget - don't wait for emails
+      setImmediate(async () => {
+         try {
+            const [adminResult, userResult] = await Promise.all([
+               // Email to admin
+               sendEmail({
+                  to: process.env.ADMIN_EMAIL || 'mdkamruzzaman099826@gmail.com',
+                  subject: `New Contact Form Submission - ${data.subject}`,
+                  html: generateAdminEmailHTML({
+                     fullName: data.fullName,
+                     email: data.email,
+                     phone: data.phone,
+                     subject: data.subject,
+                     message: data.message,
+                     submittedAt,
+                  }),
+                  replyTo: data.email,
+               }),
+               // Email to user (auto-reply)
+               sendEmail({
+                  to: data.email,
+                  subject: `We've received your message - ${process.env.COMPANY_NAME || 'RareviewIt'}`,
+                  html: generateUserEmailHTML({
+                     fullName: data.fullName,
+                     subject: data.subject,
+                     companyName: process.env.COMPANY_NAME || 'RareviewIt',
+                  }),
+               })
+            ])
+
+            // Update email status in background
+            const emailSent = adminResult.success && userResult.success
+            await (prisma as any).contactSubmission.update({
+               where: { id: submission.id },
+               data: { emailSent },
+            })
+
+            if (!emailSent) {
+               console.warn('Email send failed for submission:', submission.id, {
+                  adminEmail: adminResult.success,
+                  userEmail: userResult.success,
+               })
+            }
+         } catch (error) {
+            console.error('Background email sending failed:', error)
+            // Update database to reflect email failure
+            try {
+               await (prisma as any).contactSubmission.update({
+                  where: { id: submission.id },
+                  data: { emailSent: false },
+               })
+            } catch (dbError) {
+               console.error('Failed to update email status after error:', dbError)
+            }
+         }
       })
 
-      // Email to user (auto-reply)
-      const userEmailResult = await sendEmail({
-         to: data.email,
-         subject: `We've received your message - ${process.env.COMPANY_NAME || 'Our Company'}`,
-         html: generateUserEmailHTML({
-            fullName: data.fullName,
-            subject: data.subject,
-            companyName: process.env.COMPANY_NAME || 'Our Company',
-         }),
-      })
-
-      // Update submission with email status
-      const emailSent = adminEmailResult.success && userEmailResult.success
-      if (emailSent) {
-         await (prisma as any).contactSubmission.update({
-            where: { id: submission.id },
-            data: { emailSent: true },
-         })
-      } else {
-         // Log email failure for admin review
-         console.warn('Email send failed for submission:', submission.id, {
-            adminEmail: adminEmailResult.success,
-            userEmail: userEmailResult.success,
-         })
-      }
-
+      // Return immediately after database save (don't wait for emails)
       return {
          success: true,
-         message: 'Your message has been sent successfully!',
+         message: 'Your message has been sent successfully! We\'ll get back to you soon.',
          submissionId: submission.id,
-         emailSent,
+         emailSent: true, // Assume success for UX, actual status tracked in DB
       }
    } catch (error) {
       console.error('Contact form error:', error)

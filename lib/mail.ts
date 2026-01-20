@@ -14,6 +14,16 @@ export const transporter = nodemailer.createTransport({
   port: Number(SMTP_PORT ?? 587),
   secure: (SMTP_SECURE ?? "false") === "true",
   auth: SMTP_USER && SMTP_PASS ? { user: SMTP_USER, pass: SMTP_PASS } : undefined,
+  // Performance optimizations
+  pool: true, // Use connection pooling
+  maxConnections: 5, // Limit concurrent connections
+  maxMessages: 100, // Messages per connection
+  rateDelta: 1000, // Rate limiting
+  rateLimit: 5, // Max 5 emails per second
+  // Timeout settings
+  connectionTimeout: 10000, // 10 seconds
+  greetingTimeout: 5000, // 5 seconds
+  socketTimeout: 30000, // 30 seconds
 });
 
 function wrapHtml(title: string, body: string) {
