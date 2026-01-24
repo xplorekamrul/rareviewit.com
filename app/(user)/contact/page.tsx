@@ -18,7 +18,7 @@ export default function ContactPage() {
   return (
     <>
       {/* Hero Section with Gradient Background */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-background via-background to-primary/5 py-20 md:py-32">
+      <section className="relative overflow-hidden bg-gradient-to-br from-background via-background to-primary/5 py-20 md:py-32" >
         {/* Animated background elements */}
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute -top-40 -right-40 h-80 w-80 rounded-full bg-primary/10 blur-3xl" />
@@ -46,7 +46,7 @@ export default function ContactPage() {
           <div className="grid gap-12 lg:grid-cols-3 lg:gap-8">
             {/* Contact Form - Takes 2 columns on desktop */}
             <AnimateInView direction="left" className="lg:col-span-2">
-              <div className="sticky top-24">
+              <div className="sticky top-24" id="contact-form">
                 <div className="mb-8">
                   <h2 className="text-4xl font-bold text-foreground mb-3">{formSection.title}</h2>
                   <p className="text-muted-foreground text-lg">
@@ -69,7 +69,7 @@ export default function ContactPage() {
                     <AnimateInView key={idx} delay={idx * 0.1}>
                       <div className="group relative overflow-hidden rounded-xl border border-border/50 bg-gradient-to-br from-card to-card/50 p-6 hover:border-primary/50 transition-all duration-300 hover:shadow-lg">
                         <div className="absolute inset-0 bg-gradient-to-br from-primary/0 to-accent/0 group-hover:from-primary/5 group-hover:to-accent/5 transition-all duration-300" />
-                        <div className="relative space-y-3">
+                        <div className="relative space-y-3 flex gap-5">
                           <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary group-hover:bg-primary/20 transition-colors duration-300">
                             <Icon className="h-6 w-6" />
                           </div>
@@ -101,7 +101,7 @@ export default function ContactPage() {
                       <Clock className="h-5 w-5 text-primary" />
                       <div>
                         <p className="text-sm text-muted-foreground">Average response</p>
-                        <p className="font-semibold text-foreground">24 hours</p>
+                        <p className="font-semibold text-foreground">2 hours</p>
                       </div>
                     </div>
                   </div>
@@ -118,7 +118,7 @@ export default function ContactPage() {
                       href="tel:+1234567890"
                       className="inline-flex items-center gap-2 text-primary hover:text-accent transition-colors duration-300 font-medium"
                     >
-                      +1 (234) 567-890
+                      +88 01516573530
                       <ArrowRight className="h-4 w-4" />
                     </a>
                   </div>
@@ -240,7 +240,7 @@ export default function ContactPage() {
             </p>
             <a
               href="#contact-form"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-primary to-accent text-primary-foreground font-semibold rounded-lg hover:shadow-lg hover:shadow-primary/50 transition-all duration-300 hover:-translate-y-1"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-primary to-accent text-primary-foreground font-semibold rounded-lg hover:shadow-lg hover:shadow-primary/50 transition-all duration-300 hover:-translate-y-1 scroll-smooth"
             >
               Send a Message
               <ArrowRight className="h-5 w-5" />

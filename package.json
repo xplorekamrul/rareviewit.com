@@ -34,6 +34,7 @@
   "license": "UNLICENSED",
   "dependencies": {
     "@emotion/is-prop-valid": "1.4.0",
+    "@google/generative-ai": "^0.24.1",
     "@hookform/resolvers": "^5.2.2",
     "@mlc-ai/web-llm": "0.2.79",
     "@prisma/adapter-pg": "^7.2.0",

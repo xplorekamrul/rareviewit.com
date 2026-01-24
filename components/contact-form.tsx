@@ -8,7 +8,7 @@ import { Label } from '@/components/ui/label'
 import { Textarea } from '@/components/ui/textarea'
 import { AnimatePresence, motion } from 'framer-motion'
 import { AlertCircle, CheckCircle, Mail, MessageSquare, Phone, Sparkles, User } from 'lucide-react'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { toast } from 'sonner'
 
 interface FormState {
@@ -62,6 +62,14 @@ export function ContactForm() {
    const [errors, setErrors] = useState<Partial<FormState>>({})
    const [focusedField, setFocusedField] = useState<string | null>(null)
 
+   // Handle success state and prevent navigation
+   useEffect(() => {
+      if (submission.status === 'success') {
+         // Show success toast
+         toast.success('Message sent successfully! 🎉')
+      }
+   }, [submission.status])
+
    const validateForm = (): boolean => {
       const newErrors: Partial<FormState> = {}
 
@@ -99,6 +107,12 @@ export function ContactForm() {
 
    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
       e.preventDefault()
+      e.stopPropagation()
+
+      // Prevent multiple submissions
+      if (submission.status === 'loading') {
+         return
+      }
 
       if (!validateForm()) {
          toast.error('Please fix the errors in the form')
@@ -108,13 +122,20 @@ export function ContactForm() {
       setSubmission({ status: 'loading', showConfetti: false })
 
       try {
-         const result = await submitContactForm({
+         // Add timeout to prevent hanging
+         const timeoutPromise = new Promise((_, reject) =>
+            setTimeout(() => reject(new Error('Request timeout')), 15000)
+         )
+
+         const submitPromise = submitContactForm({
             fullName: formData.fullName,
             email: formData.email,
             phone: formData.phone,
             subject: formData.subject,
             message: formData.message,
          })
+
+         const result = await Promise.race([submitPromise, timeoutPromise]) as any
 
          if (result.success) {
             setSubmission({
@@ -123,6 +144,7 @@ export function ContactForm() {
                showConfetti: true,
             })
 
+            // Clear form data
             setFormData({
                fullName: '',
                email: '',
@@ -131,22 +153,40 @@ export function ContactForm() {
                message: '',
             })
 
+            // Clear errors
+            setErrors({})
+
+            // Hide success message and confetti after 1.5 seconds
             setTimeout(() => {
                setSubmission({ status: 'idle', showConfetti: false })
-            }, 5000)
+            }, 3000)
          } else {
             setSubmission({
                status: 'error',
                message: result.error,
                showConfetti: false,
             })
+
+            // Auto-hide error after 5 seconds
+            setTimeout(() => {
+               setSubmission({ status: 'idle', showConfetti: false })
+            }, 5000)
          }
       } catch (error) {
+         const errorMessage = error instanceof Error && error.message === 'Request timeout'
+            ? 'Request timed out. Your message may have been saved. Please try again if needed.'
+            : 'An unexpected error occurred. Please try again.'
+
          setSubmission({
             status: 'error',
-            message: 'An unexpected error occurred. Please try again.',
+            message: errorMessage,
             showConfetti: false,
          })
+
+         // Auto-hide error after 5 seconds
+         setTimeout(() => {
+            setSubmission({ status: 'idle', showConfetti: false })
+         }, 5000)
       }
    }
 
@@ -155,7 +195,7 @@ export function ContactForm() {
          name: 'fullName',
          label: 'Full Name',
          type: 'text',
-         placeholder: 'John Doe',
+         placeholder: 'Your Name',
          icon: User,
          required: true,
       },
@@ -163,7 +203,7 @@ export function ContactForm() {
          name: 'email',
          label: 'Email Address',
          type: 'email',
-         placeholder: 'john@example.com',
+         placeholder: 'Yourname@example.com',
          icon: Mail,
          required: true,
       },
@@ -171,7 +211,7 @@ export function ContactForm() {
          name: 'phone',
          label: 'Phone Number',
          type: 'tel',
-         placeholder: '+1 (555) 000-0000',
+         placeholder: '+88 000-000-000',
          icon: Phone,
          required: false,
       },
@@ -197,6 +237,8 @@ export function ContactForm() {
             variants={containerVariants}
             initial="hidden"
             animate="visible"
+            noValidate
+            autoComplete="off"
          >
             {/* Success Message */}
             <AnimatePresence>
@@ -205,18 +247,47 @@ export function ContactForm() {
                      initial={{ opacity: 0, y: -20, scale: 0.95 }}
                      animate={{ opacity: 1, y: 0, scale: 1 }}
                      exit={{ opacity: 0, y: -20, scale: 0.95 }}
-                     className="rounded-xl bg-gradient-to-r from-green-50 to-emerald-50 border border-green-200 p-6 flex items-start gap-4 dark:from-green-950/30 dark:to-emerald-950/30 dark:border-green-900/50"
+                     className="rounded-xl bg-gradient-to-r from-green-50 to-emerald-50 border-2 border-green-300 p-8 flex items-start gap-4 dark:from-green-950/30 dark:to-emerald-950/30 dark:border-green-700 shadow-lg"
+                     onAnimationComplete={() => {
+                        // Scroll to top of form to ensure success message is visible
+                        const formElement = document.querySelector('form')
+                        if (formElement) {
+                           formElement.scrollIntoView({ behavior: 'smooth', block: 'start' })
+                        }
+                     }}
                   >
                      <motion.div
-                        initial={{ scale: 0 }}
-                        animate={{ scale: 1 }}
-                        transition={{ delay: 0.2, type: 'spring', stiffness: 200 }}
+                        initial={{ scale: 0, rotate: -180 }}
+                        animate={{ scale: 1, rotate: 0 }}
+                        transition={{ delay: 0.3, type: 'spring', stiffness: 200 }}
                      >
-                        <CheckCircle className="h-6 w-6 text-green-600 dark:text-green-400 flex-shrink-0 mt-0.5" />
+                        <CheckCircle className="h-8 w-8 text-green-600 dark:text-green-400 flex-shrink-0" />
                      </motion.div>
-                     <div>
-                        <h3 className="font-semibold text-green-900 dark:text-green-200 text-lg">Thank you! Message sent!</h3>
-                        <p className="text-sm text-green-700 dark:text-green-300 mt-1">{submission.message}</p>
+                     <div className="flex-1">
+                        <motion.h3
+                           className="font-bold text-green-900 dark:text-green-200 text-xl mb-2"
+                           initial={{ opacity: 0 }}
+                           animate={{ opacity: 1 }}
+                           transition={{ delay: 0.4 }}
+                        >
+                           🎉 Success! Your message has been sent!
+                        </motion.h3>
+                        <motion.p
+                           className="text-green-700 dark:text-green-300"
+                           initial={{ opacity: 0 }}
+                           animate={{ opacity: 1 }}
+                           transition={{ delay: 0.5 }}
+                        >
+                           {submission.message}
+                        </motion.p>
+                        <motion.p
+                           className="text-sm text-green-600 dark:text-green-400 mt-3 font-medium"
+                           initial={{ opacity: 0 }}
+                           animate={{ opacity: 1 }}
+                           transition={{ delay: 0.6 }}
+                        >
+                           We'll get back to you within 24 hours. Check your email for a confirmation!
+                        </motion.p>
                      </div>
                   </motion.div>
                )}
@@ -329,7 +400,20 @@ export function ContactForm() {
                            </motion.p>
                         )}
                      </AnimatePresence>
-                     <p className="text-xs text-muted-foreground">Minimum 10 characters</p>
+                     <div className="flex items-center gap-3">
+                        <p className="text-xs text-muted-foreground">Minimum 10 characters</p>
+                        <motion.p
+                           className={`text-xs font-medium ${formData.message.length < 10
+                              ? 'text-muted-foreground'
+                              : 'text-primary'
+                              }`}
+                           animate={{
+                              scale: formData.message.length > 0 ? 1 : 0.95,
+                           }}
+                        >
+                           {formData.message.length}/500
+                        </motion.p>
+                     </div>
                   </div>
                </motion.div>
             </div>
@@ -341,6 +425,12 @@ export function ContactForm() {
                   size="lg"
                   className="w-full bg-gradient-to-r from-primary to-accent hover:shadow-lg hover:shadow-primary/50 transition-all duration-300 hover:-translate-y-1 text-primary-foreground font-semibold"
                   disabled={submission.status === 'loading'}
+                  onClick={(e) => {
+                     // Ensure no default button behavior
+                     if (submission.status === 'loading') {
+                        e.preventDefault()
+                     }
+                  }}
                >
                   {submission.status === 'loading' ? (
                      <div className="flex items-center">

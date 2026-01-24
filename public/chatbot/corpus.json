@@ -481,19 +481,19 @@
           {
             "icon": "Mail",
             "title": "Email",
-            "details": "hello@RareviewIt.agency",
-            "link": "mailto:hello@RareviewIt.agency"
+            "details": "rareviewit@gmail.com",
+            "link": "mailto:rareviewit@gmail.com"
           },
           {
             "icon": "Phone",
             "title": "Phone",
-            "details": "+1 (555) 123-4567",
+            "details": "+88 01516573530",
             "link": "tel:+15551234567"
           },
           {
             "icon": "MapPin",
             "title": "Office",
-            "details": "123 RareviewIt Street, San Francisco, CA 94102",
+            "details": "Uttara Sector :14 , Road No: 13 ,House: 10,  Dhaka Bangladesh 1230.",
             "link": "#"
           },
           {
@@ -846,7 +846,7 @@
             "title": "Phone Support",
             "description": "Speak with an expert",
             "action": "Call Us",
-            "available": "+1 (555) 123-4567"
+            "available": "+88 01516573530"
           }
         ]
       },
@@ -1372,8 +1372,8 @@
           "paragraphs": [
             "If you have any questions about this Privacy Policy or our privacy practices, please contact us at:",
             "Email: privacy@RareviewIt.agency",
-            "Phone: +1 (555) 123-4567",
-            "Address: 123 RareviewIt Street, San Francisco, CA 94102"
+            "Phone: +88 01516573530",
+            "Address: Uttara Sector :14 , Road No: 13 ,House: 10,  Dhaka Bangladesh 1230."
           ]
         }
       ],
@@ -1490,8 +1490,8 @@
           "paragraphs": [
             "If you have any questions about these Terms and Conditions, please contact us at:",
             "Email: legal@RareviewIt.agency",
-            "Phone: +1 (555) 123-4567",
-            "Address: 123 RareviewIt Street, San Francisco, CA 94102"
+            "Phone: +88 01516573530",
+            "Address: Uttara Sector :14 , Road No: 13 ,House: 10,  Dhaka Bangladesh 1230."
           ]
         }
       ],
