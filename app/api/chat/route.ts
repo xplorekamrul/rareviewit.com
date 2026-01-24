@@ -2,6 +2,17 @@
 import { NextResponse } from "next/server";
 import { GoogleGenerativeAI } from "@google/generative-ai";
 
+// === NEW: Added OPTIONS handler for CORS preflight requests ===
+export async function OPTIONS() {
+   return NextResponse.json({}, {
+      headers: {
+         "Access-Control-Allow-Origin": "*", // Allows any external website to access this API
+         "Access-Control-Allow-Methods": "POST, OPTIONS",
+         "Access-Control-Allow-Headers": "Content-Type, Authorization",
+      },
+   });
+}
+
 export async function POST(req: Request) {
    // console.log("🟢 [API] Request received at /api/chat");
 
@@ -26,7 +37,9 @@ export async function POST(req: Request) {
       // 3. Initialize Gemini
       // console.log("🟢 [API] Initializing Gemini AI...");
       const genAI = new GoogleGenerativeAI(apiKey);
-      const model = genAI.getGenerativeModel({ model: "gemini-flash-latest" });    // 4. Create the Prompt
+      const model = genAI.getGenerativeModel({ model: "gemini-flash-latest" });    
+
+      // 4. Create the Prompt
       const prompt = `You are a helpful customer support bot for a company called . 
     Keep your answers short, friendly, and helpful. 
     User message: ${message}`;
@@ -38,8 +51,12 @@ export async function POST(req: Request) {
       const responseText = result.response.text();
       // console.log("🟢 [API] Successfully received response from Gemini:", responseText);
 
-      // 6. Return the response
-      return NextResponse.json({ reply: responseText });
+      // 6. Return the response WITH CORS HEADERS
+      return NextResponse.json({ reply: responseText }, {
+         headers: {
+            "Access-Control-Allow-Origin": "*", // Essential for external React app fetch
+         },
+      });
 
    } catch (error: any) {
       console.error("🔴 [API] FATAL ERROR in Gemini API Route:", error.message);
