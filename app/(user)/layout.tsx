@@ -4,10 +4,8 @@ import { ChatProvider } from "@/components/chat/chat-provider";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { ThemeProvider } from "@/components/theme-provider";
-import { ThemeToggle } from "@/components/theme-toggle";
 import { Analytics } from "@vercel/analytics/next";
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import type React from "react";
 
 
@@ -16,7 +14,6 @@ export const metadata: Metadata = {
   title: "RareviewIt Agency | Digital Solutions & Design Services",
   description:
     "Transform your business with our comprehensive digital services including web design, SEO, digital marketing, and app development.",
-  generator: "v0.app",
   keywords: ["web design", "digital marketing", "SEO", "app development", "RareviewIt agency", "SaaS"],
 }
 
@@ -28,10 +25,16 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`font-sans antialiased  max-w-[1250px] mx-auto`}>
+        <ThemeProvider defaultTheme="light">
+          <ChatProvider>
             <SiteHeader />
             <main className="min-h-screen">{children}</main>
             <SiteFooter />
             <ChatButton />
+            <ChatLauncher />
+          </ChatProvider>
+          <Analytics />
+        </ThemeProvider>
       </body>
     </html>
   )
