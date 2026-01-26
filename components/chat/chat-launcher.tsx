@@ -6,7 +6,7 @@ import { ChatWidget } from "./chat-widget"
 export function ChatLauncher() {
    const { isOpen } = useChat()
 
-   // Show widget instantly when opened, no lazy loading delay
+   // Only render when opened to prevent affecting page load time
    return isOpen ? <ChatWidget /> : null
 }
 
