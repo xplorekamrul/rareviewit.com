@@ -1,50 +1,58 @@
-// components/home/TestimonialsSection.tsx
-"use client"
+import { getTestimonials } from '@/actions/testimonials'
+import { AnimateInView } from '@/components/animate-in-view'
+import { AnimatedTestimonials } from '@/components/ui/animated-testimonials'
+import type { Testimonial } from '@prisma/client'
+import { Suspense } from 'react'
 
-import { AnimateInView } from "@/components/animate-in-view"
-import { AnimatedTestimonials } from "@/components/ui/animated-testimonials"
-import { Slider } from "@/components/ui/slider"
-import { useState } from "react"
+async function TestimonialsList() {
+  const testimonials = await getTestimonials()
 
-type Testimonial = { name: string; role: string; avatar: string; content: string; rating: number }
-type TestimonialsBlock = {
-  title: string
-  subtitle: string
-  items: readonly Testimonial[]
-}
-
-export default function TestimonialsSection({ data }: { data: TestimonialsBlock }) {
-  const [currentIndex, setCurrentIndex] = useState(0)
-
-  // Transform data to match AnimatedTestimonials format
-  const transformedTestimonials = data.items.map((t) => ({
-    quote: t.content,
-    name: t.name,
-    designation: t.role,
-    src: t.avatar || "/placeholder.svg",
-  }))
-
-  const handleSliderChange = (value: number[]) => {
-    setCurrentIndex(value[0])
+  if (!testimonials || testimonials.length === 0) {
+    return (
+      <div className="text-center py-12">
+        <p className="text-muted-foreground">
+          No testimonials available at the moment.
+        </p>
+      </div>
+    )
   }
 
+  const transformedTestimonials = testimonials.map((t: Testimonial) => ({
+    quote: t.quote,
+    name: t.author,
+    designation: t.company,
+    src: t.logo || '/placeholder.svg',
+  }))
+
+  return (
+    <AnimateInView className="mx-auto max-w-4xl">
+      <AnimatedTestimonials testimonials={transformedTestimonials} autoplay={true} />
+    </AnimateInView>
+  )
+}
+
+export default function TestimonialsSection() {
   return (
     <section className="py-20 md:py-32">
       <div className="container px-4">
         <AnimateInView className="mb-12 text-center md:mb-16">
           <h2 className="mb-4 text-3xl font-bold tracking-tight text-foreground md:text-5xl text-balance">
-            {data.title}
+            What Our Clients Say
           </h2>
           <p className="mx-auto max-w-2xl text-lg text-muted-foreground leading-relaxed text-balance">
-            {data.subtitle}
+            Real feedback from the businesses we've helped transform.
           </p>
         </AnimateInView>
 
-        <AnimateInView className="mx-auto max-w-4xl">
-          <AnimatedTestimonials testimonials={transformedTestimonials} autoplay={true} />
-
-         
-        </AnimateInView>
+        <Suspense
+          fallback={
+            <div className="mx-auto max-w-4xl py-12 text-center">
+              <p className="text-muted-foreground">Loading testimonials...</p>
+            </div>
+          }
+        >
+          <TestimonialsList />
+        </Suspense>
       </div>
     </section>
   )

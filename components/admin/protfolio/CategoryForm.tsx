@@ -27,8 +27,7 @@ interface CategoryFormProps {
 
 export function CategoryForm({ onSuccess, onClose, initialData, categoryId }: CategoryFormProps) {
    const form = useForm<PortfolioCategoryInput>({
-      // @ts-expect-error - React Hook Form type compatibility
-      resolver: zodResolver(portfolioCategorySchema),
+      resolver: zodResolver(portfolioCategorySchema) as any,
       defaultValues: initialData || {
          name: "",
          description: "",
