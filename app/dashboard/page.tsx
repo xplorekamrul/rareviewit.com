@@ -11,7 +11,7 @@ const ROLE_HOME: Record<Role, string> = {
    USER: "/",
 };
 
-async function DashboardRedirect() {
+async function DashboardContent() {
    const session = await auth();
 
    if (!session || !session.user) {
@@ -22,12 +22,14 @@ async function DashboardRedirect() {
    const target = ROLE_HOME[role] || "/";
 
    redirect(target);
+
+   return null;
 }
 
 export default function DashboardPage() {
    return (
-      <Suspense>
-         <DashboardRedirect />
+      <Suspense fallback={null}>
+         <DashboardContent />
       </Suspense>
    );
 }
