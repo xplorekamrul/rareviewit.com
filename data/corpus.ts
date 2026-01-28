@@ -67,29 +67,29 @@ export const corpus = {
     },
     team: [
       {
-        name: "Alex Thompson",
-        role: "Founder & CEO",
-        image: "/placeholder.svg",
-        bio: "15+ years leading digital transformation",
-      },
-      {
-        name: "Sarah Martinez",
-        role: "RareviewIt Director",
-        image: "/placeholder.svg",
-        bio: "Award-winning designer with global experience",
-      },
-      {
-        name: "David Kim",
-        role: "Head of Development",
-        image: "/placeholder.svg",
-        bio: "Full-stack expert and tech innovator",
-      },
-      {
-        name: "Jessica Brown",
-        role: "Marketing Strategist",
-        image: "/placeholder.svg",
-        bio: "Data-driven marketer with proven ROI",
-      },
+          "name": "Md Kamruzzaman",
+          "role": "Founder & CEO",
+          "image": "/placeholder.svg",
+          "bio": "15+ years leading digital transformation"
+        },
+        {
+          "name": "Misty",
+          "role": "RareviewIt Director",
+          "image": "/placeholder.svg",
+          "bio": "Award-winning designer with global experience"
+        },
+        {
+          "name": "David Kim",
+          "role": "Head of Development",
+          "image": "/placeholder.svg",
+          "bio": "Full-stack expert and tech innovator"
+        },
+        {
+          "name": "Mst Kajal",
+          "role": "Office Person",
+          "image": "/placeholder.svg",
+          "bio": "Data-driven marketer with proven ROI"
+        }
     ],
     cta: {
       title: "Ready to Work Together?",

@@ -10,6 +10,8 @@ import type React from "react";
 
 
 
+import { DraggableFloater } from "@/components/ui/draggable-floater";
+
 export const metadata: Metadata = {
   title: "RareviewIt Agency | Digital Solutions & Design Services",
   description:
@@ -30,7 +32,9 @@ export default function RootLayout({
             <SiteHeader />
             <main className="min-h-screen">{children}</main>
             <SiteFooter />
-            <ChatButton />
+            <DraggableFloater className="fixed bottom-24 right-6 z-[9998]">
+              <ChatButton />
+            </DraggableFloater>
             <ChatLauncher />
           </ChatProvider>
           <Analytics />

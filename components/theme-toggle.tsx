@@ -1,9 +1,9 @@
 "use client"
 
+import { motion } from "framer-motion"
 import { Moon, Sun } from "lucide-react"
 import { useTheme } from "./theme-provider"
 import { Button } from "./ui/button"
-import { motion } from "framer-motion"
 
 export function ThemeToggle() {
   const { theme, toggleTheme } = useTheme()
@@ -13,7 +13,7 @@ export function ThemeToggle() {
       initial={{ opacity: 0, scale: 0.8 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ delay: 0.5 }}
-      className="fixed bottom-6 right-6 z-50"
+      className="z-50"
     >
       <Button
         onClick={toggleTheme}

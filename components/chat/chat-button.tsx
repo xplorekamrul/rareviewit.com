@@ -13,7 +13,7 @@ export function ChatButton() {
          initial={{ opacity: 0, scale: 0.8 }}
          animate={{ opacity: 1, scale: 1 }}
          transition={{ delay: 0.3 }}
-         className="fixed bottom-24 right-6 z-[9998]"
+         className="z-[9998]"
       >
          <Button
             onClick={toggleChat}

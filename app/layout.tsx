@@ -9,6 +9,8 @@ import "./globals.css";
 
 
 
+import { DraggableFloater } from "@/components/ui/draggable-floater";
+
 export const metadata: Metadata = {
   title: "RareviewIt Agency | Digital Solutions & Design Services",
   description:
@@ -28,7 +30,9 @@ export default function RootLayout({
         <ThemeProvider defaultTheme="light">
           <ChatProvider>
             <main className="min-h-screen">{children}</main>
-            <ThemeToggle />
+            <DraggableFloater className="fixed bottom-6 right-6 z-50">
+              <ThemeToggle />
+            </DraggableFloater>
             <ChatLauncher />
           </ChatProvider>
           <Analytics />
