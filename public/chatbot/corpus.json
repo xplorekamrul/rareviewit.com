@@ -57,13 +57,13 @@
       },
       "team": [
         {
-          "name": "Alex Thompson",
+          "name": "Md Kamruzzaman",
           "role": "Founder & CEO",
           "image": "/placeholder.svg",
           "bio": "15+ years leading digital transformation"
         },
         {
-          "name": "Sarah Martinez",
+          "name": "Misty",
           "role": "RareviewIt Director",
           "image": "/placeholder.svg",
           "bio": "Award-winning designer with global experience"
@@ -75,8 +75,8 @@
           "bio": "Full-stack expert and tech innovator"
         },
         {
-          "name": "Jessica Brown",
-          "role": "Marketing Strategist",
+          "name": "Mst Kajal",
+          "role": "Office Person",
           "image": "/placeholder.svg",
           "bio": "Data-driven marketer with proven ROI"
         }
