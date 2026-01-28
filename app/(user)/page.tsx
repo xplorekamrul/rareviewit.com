@@ -15,13 +15,17 @@ export const metadata = generateSEOMetadata({
   keywords: homeData.meta.keywords ? [...homeData.meta.keywords] : [],
 })
 
-export default function HomePage() {
+import { Suspense } from "react"
+
+export default async function HomePage() {
   // pass only plain JSON to client islands
   return (
     <>
       <HeroSection data={homeData.hero} />
       <StatsSection />
-      <ServicesSection data={homeData.services} />
+      <Suspense fallback={<div className="py-32 text-center text-muted-foreground">Loading services...</div>}>
+        <ServicesSection />
+      </Suspense>
       <PortfolioSection data={homeData.portfolio} />
       <TestimonialsSection />
       <CtaSection data={homeData.cta} />

@@ -10,15 +10,15 @@ import {
   Gauge,
   HelpCircle,
   Home,
+  Layers,
   LayoutDashboard,
   LogOut,
   Menu,
   Quote,
   Send,
-  Settings,
   User,
   Users,
-  Wrench,
+  Wrench
 } from "lucide-react";
 import { signOut, useSession } from "next-auth/react";
 import Link from "next/link";
@@ -46,6 +46,7 @@ const roleNav: Record<Role, Item[]> = {
     { label: "Profile", href: "/profile", icon: User },
     { label: "Dev Tools", href: "/dev/tools", icon: Wrench },
     { label: "Protfolio", href: "/admin/portfolio", icon: Briefcase },
+    { label: "Services", href: "/admin/services", icon: Layers },
     { label: "Contact Submited", href: "/admin/contact-submissions", icon: Send },
     { label: "Testimonials", href: "/admin/testimonials", icon: Quote },
 
@@ -55,6 +56,7 @@ const roleNav: Record<Role, Item[]> = {
     { label: "Super Dashboard", href: "/super-admin/overview", icon: Gauge },
     { label: "Users", href: "/super-admin/users", icon: Users },
     { label: "Protfolio", href: "/admin/portfolio", icon: Briefcase },
+    { label: "Services", href: "/admin/services", icon: Layers },
     { label: "Contact Submited", href: "/admin/contact-submissions", icon: Send },
     { label: "Testimonials", href: "/admin/testimonials", icon: Quote },
 
@@ -64,6 +66,7 @@ const roleNav: Record<Role, Item[]> = {
     { label: "Profile", href: "/profile", icon: User },
     { label: "Admin Panel", href: "/admin", icon: LayoutDashboard },
     { label: "Protfolio", href: "/admin/portfolio", icon: Briefcase },
+    { label: "Services", href: "/admin/services", icon: Layers },
     { label: "Contact Submited", href: "/admin/contact-submissions", icon: Send },
     { label: "Testimonials", href: "/admin/testimonials", icon: Quote },
 

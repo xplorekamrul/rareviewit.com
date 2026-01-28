@@ -1,28 +1,47 @@
-// components/home/ServicesSection.tsx
-"use client"
-
 import { AnimateInView } from "@/components/animate-in-view"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { homeData } from "@/data/corpus"
+import { Service } from "@prisma/client"
 import { ArrowRight, Palette, Search, Smartphone, TrendingUp } from "lucide-react"
+import { headers } from "next/headers"
 import Link from "next/link"
 
 const ICONS = { Palette, TrendingUp, Search, Smartphone } as const
-type IconKey = keyof typeof ICONS
 
-type ServiceItem = {
-  icon: IconKey
-  title: string
-  description: string
-  href: string
-}
-type ServicesBlock = {
-  title: string
-  subtitle: string
-  items: readonly ServiceItem[]
-}
+export default async function ServicesSection() {
+  const headersList = await headers()
+  const host = headersList.get('host')
+  const protocol = process.env.NODE_ENV === 'development' ? 'http' : 'https'
+  const apiUrl = `${protocol}://${host}/api/services`
 
-export default function ServicesSection({ data }: { data: ServicesBlock }) {
+  let servicesList: Service[] = []
+  try {
+    const res = await fetch(apiUrl, {
+      next: { tags: ['services'] },
+      cache: 'force-cache'
+    })
+
+    if (res.ok) {
+      const json = await res.json()
+      if (json.success) {
+        servicesList = json.data
+      }
+    }
+  } catch (error) {
+    console.error("Failed to fetch services:", error)
+  }
+
+  const data = {
+    ...homeData.services,
+    items: servicesList.length > 0 ? servicesList.map(s => ({
+      icon: s.icon as keyof typeof ICONS,
+      title: s.title,
+      description: s.description,
+      href: s.href
+    })) : homeData.services.items
+  }
+
   return (
     <section className="py-20 md:py-32">
       <div className="container px-4">
@@ -37,7 +56,7 @@ export default function ServicesSection({ data }: { data: ServicesBlock }) {
 
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           {data.items.map((service, index) => {
-            const Icon = ICONS[service.icon] ?? Palette
+            const Icon = ICONS[service.icon as keyof typeof ICONS] ?? Palette
             return (
               <div key={index}>
                 <Card animated={false} className="group h-full transition-all hover:shadow-lg">

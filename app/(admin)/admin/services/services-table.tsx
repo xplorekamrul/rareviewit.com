@@ -1,36 +1,36 @@
 'use client'
 
-import { deleteTestimonial } from '@/actions/testimonials'
-import type { Testimonial } from '@prisma/client'
+import { deleteService } from '@/actions/services'
+import type { Service } from '@prisma/client'
 import { Edit2, Plus, Trash2 } from 'lucide-react'
 import { useState } from 'react'
 
-interface TestimonialsTableProps {
-   testimonials: Testimonial[]
-   onEdit: (testimonial: Testimonial) => void
+interface ServicesTableProps {
+   services: Service[]
+   onEdit: (service: Service) => void
    onDelete: (id: string) => void
    onAddNew: () => void
 }
 
-export function TestimonialsTable({
-   testimonials,
+export function ServicesTable({
+   services,
    onEdit,
    onDelete,
    onAddNew,
-}: TestimonialsTableProps) {
+}: ServicesTableProps) {
    const [isDeleting, setIsDeleting] = useState<string | null>(null)
 
    const handleDelete = async (id: string) => {
-      if (!confirm('Are you sure you want to delete this testimonial?')) return
+      if (!confirm('Are you sure you want to delete this service?')) return
 
       setIsDeleting(id)
       try {
-         const result = await deleteTestimonial({ id })
+         const result = await deleteService({ id })
          if (result.data?.success) {
             onDelete(id)
          }
       } catch (error) {
-         console.error('Error deleting testimonial:', error)
+         console.error('Error deleting service:', error)
       } finally {
          setIsDeleting(null)
       }
@@ -39,13 +39,13 @@ export function TestimonialsTable({
    return (
       <div className="space-y-4">
          <div className="flex justify-between items-center">
-            <h2 className="text-xl font-semibold text-foreground">All Testimonials</h2>
+            <h2 className="text-xl font-semibold text-foreground">All Services</h2>
             <button
                onClick={onAddNew}
                className="inline-flex items-center gap-2 px-4 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors"
             >
                <Plus className="w-4 h-4" />
-               Add Testimonial
+               Add Service
             </button>
          </div>
 
@@ -54,67 +54,56 @@ export function TestimonialsTable({
                <table className="w-full text-left">
                   <thead className="sticky top-0 bg-muted/90 backdrop-blur border-b z-10 shadow-sm">
                      <tr>
-                        <th className="px-6 py-4 text-sm font-semibold text-foreground w-[40%] min-w-[250px]">
-                           Quote
-                        </th>
                         <th className="px-6 py-4 text-sm font-semibold text-foreground w-[20%] min-w-[150px]">
-                           Author
+                           Title
                         </th>
-                        <th className="px-6 py-4 text-sm font-semibold text-foreground w-[20%] min-w-[150px]">
-                           Company
+                        <th className="px-6 py-4 text-sm font-semibold text-foreground w-[50%] min-w-[300px]">
+                           Description
                         </th>
-                        <th className="px-6 py-4 text-sm font-semibold text-foreground w-[10%] min-w-[100px]">
-                           Status
+                        <th className="px-6 py-4 text-sm font-semibold text-foreground w-[15%] min-w-[120px]">
+                           Icon
                         </th>
-                        <th className="px-6 py-4 text-center text-sm font-semibold text-foreground w-[10%] min-w-[100px]">
+                        <th className="px-6 py-4 text-center text-sm font-semibold text-foreground w-[15%] min-w-[100px]">
                            Actions
                         </th>
                      </tr>
                   </thead>
                   <tbody className="divide-y relative">
-                     {testimonials.length === 0 ? (
+                     {services.length === 0 ? (
                         <tr>
-                           <td colSpan={5} className="px-6 py-12 text-center text-muted-foreground">
-                              No testimonials found. Create one to get started.
+                           <td colSpan={4} className="px-6 py-12 text-center text-muted-foreground">
+                              No services found. Create one to get started.
                            </td>
                         </tr>
                      ) : (
-                        testimonials.map(testimonial => (
+                        services.map(service => (
                            <tr
-                              key={testimonial.id}
+                              key={service.id}
                               className="group transition-colors odd:bg-white even:bg-primary/5 hover:bg-primary/10"
                            >
-                              <td className="px-6 py-4 text-sm text-foreground align-top">
-                                 <p className="line-clamp-2 md:line-clamp-3">{testimonial.quote}</p>
-                              </td>
-                              <td className="px-6 py-4 text-sm text-foreground align-top font-medium">
-                                 {testimonial.author}
+                              <td className="px-6 py-4 text-sm font-medium text-foreground align-top">
+                                 {service.title}
                               </td>
                               <td className="px-6 py-4 text-sm text-muted-foreground align-top">
-                                 {testimonial.company}
+                                 <p className="line-clamp-2 md:line-clamp-3">{service.description}</p>
                               </td>
                               <td className="px-6 py-4 text-sm align-top">
-                                 <span
-                                    className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium border ${testimonial.status === 'PUBLISHED'
-                                       ? 'bg-green-50 text-green-700 border-green-200'
-                                       : 'bg-yellow-50 text-yellow-700 border-yellow-200'
-                                       }`}
-                                 >
-                                    {testimonial.status}
-                                 </span>
+                                 <code className="bg-primary/10 text-primary px-2 py-1 rounded text-xs font-mono border border-primary/20">
+                                    {service.icon}
+                                 </code>
                               </td>
                               <td className="px-6 py-4 text-sm align-top">
                                  <div className="flex justify-center gap-2">
                                     <button
-                                       onClick={() => onEdit(testimonial)}
+                                       onClick={() => onEdit(service)}
                                        className="p-2 hover:bg-background/80 rounded-md transition-colors text-muted-foreground hover:text-foreground shadow-sm"
                                        title="Edit"
                                     >
                                        <Edit2 className="w-4 h-4" />
                                     </button>
                                     <button
-                                       onClick={() => handleDelete(testimonial.id)}
-                                       disabled={isDeleting === testimonial.id}
+                                       onClick={() => handleDelete(service.id)}
+                                       disabled={isDeleting === service.id}
                                        className="p-2 hover:bg-red-50 hover:text-red-600 rounded-md transition-colors text-muted-foreground disabled:opacity-50"
                                        title="Delete"
                                     >

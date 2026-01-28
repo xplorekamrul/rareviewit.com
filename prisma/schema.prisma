@@ -170,3 +170,15 @@ model Testimonial {
   @@index([featured])
   @@index([createdAt])
 }
+
+model Service {
+  id          String   @id @default(cuid())
+  title       String   @db.VarChar(255)
+  description String   @db.Text
+  icon        String   @db.VarChar(50)
+  href        String   @db.VarChar(255)
+  createdAt   DateTime @default(now()) @map("created_at")
+  updatedAt   DateTime @updatedAt @map("updated_at")
+
+  @@index([createdAt])
+}

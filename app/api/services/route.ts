@@ -1,14 +1,14 @@
-import { getTestimonials } from '@/actions/testimonials'
+import { getServices } from '@/actions/services'
 import { NextResponse } from 'next/server'
 
 export async function GET() {
    try {
-      const testimonials = await getTestimonials()
+      const services = await getServices()
 
       return NextResponse.json(
          {
             success: true,
-            data: testimonials,
+            data: services,
          },
          {
             status: 200,
@@ -22,11 +22,11 @@ export async function GET() {
          }
       )
    } catch (error) {
-      console.error('Error fetching testimonials:', error)
+      console.error('Error fetching services:', error)
       return NextResponse.json(
          {
             success: false,
-            error: 'Failed to fetch testimonials',
+            error: 'Failed to fetch services',
          },
          { status: 500 }
       )
