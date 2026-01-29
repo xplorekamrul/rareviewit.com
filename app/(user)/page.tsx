@@ -1,3 +1,4 @@
+import { getFeaturedProjects } from "@/actions/portfolio"
 import CtaSection from "@/components/cta-section"
 import HeroSection from "@/components/hero-section"
 import PortfolioSection from "@/components/portfolio-section"
@@ -5,7 +6,6 @@ import ServicesSection from "@/components/services-section"
 import { StatsSection } from "@/components/stats-section"
 import TestimonialsSection from "@/components/testimonials-section"
 import { homeData } from "@/data/corpus"
-import { prisma } from "@/lib/prisma"
 import { generateMetadata as generateSEOMetadata } from "@/lib/seo"
 import { Suspense } from "react"
 
@@ -17,44 +17,13 @@ export const metadata = generateSEOMetadata({
   keywords: homeData.meta.keywords ? [...homeData.meta.keywords] : [],
 })
 
-async function getFeaturedProjects() {
-  "use cache"
-  try {
-    const projects = await prisma.portfolio.findMany({
-      where: {
-        status: "PUBLISHED",
-      },
-      orderBy: [
-        { featured: "desc" },
-        { createdAt: "desc" }
-      ],
-      take: 6,
-      include: {
-        category: {
-          select: { name: true },
-        },
-      },
-    })
-
-    return projects.map((project) => ({
-      title: project.title,
-      category: project.category.name,
-      image: project.image,
-      tags: project.tags,
-    }))
-  } catch (error) {
-    console.error("Error fetching featured projects:", error)
-    return []
-  }
-}
-
 async function PortfolioLoader() {
-  const featuredProjects = await getFeaturedProjects()
+  const { data: featuredProjects } = await getFeaturedProjects()
   // Merge static content with dynamic projects
   // If no dynamic projects found (e.g. database empty/error), fallback to static data or show empty
   const portfolioData = {
     ...homeData.portfolio,
-    projects: featuredProjects.length > 0 ? featuredProjects : homeData.portfolio.projects,
+    projects: (featuredProjects && featuredProjects.length > 0) ? featuredProjects : homeData.portfolio.projects,
   }
 
   return <PortfolioSection data={portfolioData} />
