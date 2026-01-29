@@ -63,6 +63,7 @@ export function PortfolioForm({
          description: initialData?.description || "",
          categoryId: initialData?.categoryId || "",
          image: initialData?.image || "",
+         url: initialData?.url || "",
          tags: initialData?.tags || [],
          featured: initialData?.featured || false,
          status: initialData?.status || "PUBLISHED",
@@ -76,6 +77,7 @@ export function PortfolioForm({
             description: "",
             categoryId: "",
             image: "",
+            url: "",
             tags: [],
             featured: false,
             status: "PUBLISHED",
@@ -229,6 +231,26 @@ export function PortfolioForm({
                               placeholder="https://example.com/image.jpg"
                               type="url"
                               {...field}
+                              disabled={isLoading}
+                           />
+                        </FormControl>
+                        <FormMessage />
+                     </FormItem>
+                  )}
+               />
+
+               <FormField
+                  control={(form as any).control}
+                  name="url"
+                  render={({ field }: any) => (
+                     <FormItem>
+                        <FormLabel>Project URL</FormLabel>
+                        <FormControl>
+                           <Input
+                              placeholder="https://project-link.com"
+                              type="url"
+                              {...field}
+                              value={field.value || ""}
                               disabled={isLoading}
                            />
                         </FormControl>

@@ -8,7 +8,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import Image from "next/image"
 import Link from "next/link"
 
-type Project = { title: string; category: string; image: string; tags: readonly string[] }
+type Project = { title: string; category: string; image: string; tags: readonly string[]; url?: string | null }
 type PortfolioBlock = {
   title: string
   subtitle: string
@@ -29,10 +29,13 @@ export default function PortfolioSection({ data }: { data: PortfolioBlock }) {
           </p>
         </AnimateInView>
 
-        <div className="grid gap-6 md:grid-cols-2 lg:gap-8">
-          {data.projects.map((project, index) => (
-            <div key={index}>
-              <Card animated={false} className="group overflow-hidden transition-all hover:shadow-xl pt-0 p-1.5">
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4 lg:gap-8">
+          {data.projects.map((project, index) => {
+            const cardContent = (
+              <Card
+                animated={false}
+                className={`group overflow-hidden transition-all hover:shadow-xl pt-0 p-1.5 h-full ${project.url ? "cursor-pointer" : ""}`}
+              >
                 <div className="relative aspect-video overflow-hidden">
                   <Image
                     src={project.image || "/placeholder.svg"}
@@ -56,8 +59,20 @@ export default function PortfolioSection({ data }: { data: PortfolioBlock }) {
                   </div>
                 </CardContent>
               </Card>
-            </div>
-          ))}
+            )
+
+            return (
+              <div key={index} className="h-full">
+                {project.url ? (
+                  <Link href={project.url} target="_blank" rel="noopener noreferrer" className="block h-full">
+                    {cardContent}
+                  </Link>
+                ) : (
+                  cardContent
+                )}
+              </div>
+            )
+          })}
         </div>
 
         <AnimateInView delay={0.2} className="mt-12 text-center">

@@ -49,6 +49,7 @@ const roleNav: Record<Role, Item[]> = {
     { label: "Services", href: "/admin/services", icon: Layers },
     { label: "Contact Submited", href: "/admin/contact-submissions", icon: Send },
     { label: "Testimonials", href: "/admin/testimonials", icon: Quote },
+    { label: "Team", href: "/admin/team", icon: Users },
 
   ],
   SUPER_ADMIN: [
@@ -59,6 +60,7 @@ const roleNav: Record<Role, Item[]> = {
     { label: "Services", href: "/admin/services", icon: Layers },
     { label: "Contact Submited", href: "/admin/contact-submissions", icon: Send },
     { label: "Testimonials", href: "/admin/testimonials", icon: Quote },
+    { label: "Team", href: "/admin/team", icon: Users },
 
 
   ],
@@ -67,8 +69,11 @@ const roleNav: Record<Role, Item[]> = {
     { label: "Admin Panel", href: "/admin", icon: LayoutDashboard },
     { label: "Protfolio", href: "/admin/portfolio", icon: Briefcase },
     { label: "Services", href: "/admin/services", icon: Layers },
+    { label: "Team", href: "/admin/team", icon: Users },
     { label: "Contact Submited", href: "/admin/contact-submissions", icon: Send },
     { label: "Testimonials", href: "/admin/testimonials", icon: Quote },
+    { label: "Team", href: "/admin/team", icon: Users },
+
 
   ],
 };

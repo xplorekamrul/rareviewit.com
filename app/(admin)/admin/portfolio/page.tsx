@@ -25,6 +25,7 @@ interface Portfolio {
    categoryId: string;
    category: { id: string; name: string } | string;
    image: string;
+   url: string | null;
    tags: string[];
    featured: boolean;
    status: string;
@@ -67,7 +68,7 @@ export default function AdminPortfolioPage() {
          ]);
 
          if (portfolioResult.success && portfolioResult.data) {
-            setPortfolios(portfolioResult.data as Portfolio[]);
+            setPortfolios(portfolioResult.data as unknown as Portfolio[]);
          }
          if (categoryResult.success && categoryResult.data) {
             setCategories(categoryResult.data);
@@ -225,6 +226,7 @@ export default function AdminPortfolioPage() {
                      description: editingData.description || "",
                      categoryId: editingData.categoryId,
                      image: editingData.image,
+                     url: editingData.url || undefined,
                      tags: editingData.tags,
                      featured: editingData.featured,
                      status: editingData.status as "PUBLISHED" | "DRAFT",

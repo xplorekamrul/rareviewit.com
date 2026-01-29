@@ -14,6 +14,7 @@ export async function GET() {
                   title: true,
                   description: true,
                   image: true,
+                  url: true,
                   tags: true,
                   featured: true,
                   status: true,
@@ -29,6 +30,9 @@ export async function GET() {
          {
             headers: {
                "Cache-Control": "public, s-maxage=3600, stale-while-revalidate=86400",
+               "Access-Control-Allow-Origin": "*",
+               "Access-Control-Allow-Methods": "GET, OPTIONS",
+               "Access-Control-Allow-Headers": "Content-Type, Authorization",
             },
          }
       );
@@ -36,7 +40,25 @@ export async function GET() {
       console.error("GET /api/portfolio error:", error);
       return NextResponse.json(
          { success: false, error: "Failed to fetch portfolios" },
-         { status: 500 }
+         {
+            status: 500,
+            headers: {
+               "Access-Control-Allow-Origin": "*",
+            }
+         }
       );
    }
+}
+
+export async function OPTIONS() {
+   return NextResponse.json(
+      {},
+      {
+         headers: {
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Methods": "GET, OPTIONS",
+            "Access-Control-Allow-Headers": "Content-Type, Authorization",
+         },
+      }
+   );
 }

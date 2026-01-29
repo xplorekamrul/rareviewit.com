@@ -1,13 +1,14 @@
 // src/app/about/page.tsx
-import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import Link from "next/link"
+import { getTeamMembers } from "@/actions/team"
 import { AnimateInView } from "@/components/animate-in-view"
 import { StaggerContainer } from "@/components/stagger-container"
-import Image from "next/image"
+import { Badge } from "@/components/ui/badge"
+import { Button } from "@/components/ui/button"
+import { Card, CardContent } from "@/components/ui/card"
 import { about, FALLBACK_IMAGE } from "@/data/corpus"
 import { generateMetadata as generateSEOMetadata } from "@/lib/seo"
+import Image from "next/image"
+import Link from "next/link"
 
 // ---- Metadata sourced from corpus
 export const metadata = generateSEOMetadata({
@@ -23,8 +24,12 @@ function withFallback(src?: string) {
   return src && src.trim().length > 0 ? src : FALLBACK_IMAGE
 }
 
-export default function AboutPage() {
+export default async function AboutPage() {
   const { hero, mission, valuesBlock, values, teamBlock, team, cta } = about
+
+  const { data: teamMembers } = await getTeamMembers();
+  const displayTeam = (teamMembers && teamMembers.length > 0) ? teamMembers : team;
+
 
   return (
     <>
@@ -119,15 +124,16 @@ export default function AboutPage() {
           </AnimateInView>
 
           <StaggerContainer className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-            {team.map((member, index) => (
+            {displayTeam.map((member: any, index: number) => (
               <AnimateInView key={index} delay={index * 0.1} direction="up">
                 <Card className="overflow-hidden transition-all hover:shadow-lg h-full">
                   <div className="relative aspect-square overflow-hidden">
                     <div className="h-full w-full object-cover transition-transform duration-300 hover:scale-105">
                       <Image
                         src={withFallback(member.image)}
-                        alt={member.name}
+                        alt={member.imageAlt || member.name}
                         fill
+                        className="object-cover"
                       />
                     </div>
                   </div>

@@ -117,8 +117,13 @@ export async function createPortfolio(data: unknown) {
 
       const validatedData = portfolioSchema.parse(data);
 
+      const portfolioData = {
+         ...validatedData,
+         url: validatedData.url === "" ? null : validatedData.url,
+      };
+
       const portfolio = await prisma.portfolio.create({
-         data: validatedData,
+         data: portfolioData,
          include: { category: true },
       });
 
@@ -145,9 +150,14 @@ export async function updatePortfolio(id: string, data: unknown) {
 
       const validatedData = portfolioSchema.parse(data);
 
+      const portfolioData = {
+         ...validatedData,
+         url: validatedData.url === "" ? null : validatedData.url,
+      };
+
       const portfolio = await prisma.portfolio.update({
          where: { id },
-         data: validatedData,
+         data: portfolioData,
          include: { category: true },
       });
 
@@ -254,5 +264,48 @@ export async function getPublishedPortfolios() {
    } catch (error) {
       console.error("Get published portfolios error:", error);
       throw error;
+   }
+}
+
+export async function getFeaturedProjects() {
+   "use cache";
+   cacheLife("hours");
+   cacheTag("portfolios");
+
+   try {
+      const projects = await prisma.portfolio.findMany({
+         where: {
+            status: "PUBLISHED",
+         },
+         orderBy: [
+            { featured: "desc" },
+            { createdAt: "desc" }
+         ],
+         take: 6,
+         include: {
+            category: {
+               select: { name: true },
+            },
+         },
+      });
+
+      const mappedProjects = projects.map((project) => ({
+         title: project.title,
+         category: project.category.name,
+         image: project.image,
+         url: project.url,
+         tags: project.tags,
+      }));
+
+      return {
+         success: true,
+         data: mappedProjects,
+      };
+   } catch (error) {
+      console.error("Get featured projects error:", error);
+      return {
+         success: false,
+         data: [],
+      };
    }
 }

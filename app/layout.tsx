@@ -6,9 +6,6 @@ import { Analytics } from "@vercel/analytics/next";
 import type { Metadata } from "next";
 import type React from "react";
 import "./globals.css";
-
-
-
 import { DraggableFloater } from "@/components/ui/draggable-floater";
 
 export const metadata: Metadata = {
