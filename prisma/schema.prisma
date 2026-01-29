@@ -183,3 +183,16 @@ model Service {
 
   @@index([createdAt])
 }
+
+model TeamMember {
+  id        String   @id @default(cuid())
+  name      String   @db.VarChar(255)
+  role      String   @db.VarChar(255)
+  bio       String   @db.Text
+  image     String   @db.VarChar(500)
+  imageAlt  String?  @db.VarChar(255)
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@index([createdAt])
+}
