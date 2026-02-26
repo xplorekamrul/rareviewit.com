@@ -1,12 +1,12 @@
 "use client"
 
-import { useState } from "react"
-import { motion, AnimatePresence } from "framer-motion"
-import Link from "next/link"
-import { ChevronDown } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
+import { AnimatePresence, motion } from "framer-motion"
+import { ChevronDown } from "lucide-react"
+import Link from "next/link"
+import { useState } from "react"
 
 type FAQItem = { question: string; answer: string }
 type FAQData = {
@@ -31,7 +31,7 @@ export default function FAQClient({ data }: { data: FAQData }) {
   return (
     <>
       {/* Hero */}
-      <section className="bg-gradient-to-b from-background to-muted/30 py-20 md:py-32">
+      <section className="bg-gradient-to-b from-background to-muted/30 py-5 md:py-10">
         <div className="container px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -75,7 +75,7 @@ export default function FAQClient({ data }: { data: FAQData }) {
       </section>
 
       {/* FAQ Accordion */}
-      <section className="py-20 md:py-32">
+      <section className="py-5 md:py-10">
         <div className="container px-4">
           <div className="mx-auto max-w-3xl">
             <motion.div
@@ -118,7 +118,7 @@ export default function FAQClient({ data }: { data: FAQData }) {
       </section>
 
       {/* CTA */}
-      <section className="bg-muted/30 py-20 md:py-32">
+      <section className="bg-muted/30 py-5 md:py-10">
         <div className="container px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

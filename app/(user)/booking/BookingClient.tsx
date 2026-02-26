@@ -27,7 +27,7 @@ export default function BookingClient() {
   return (
     <>
       {/* Hero Section */}
-      <section className="bg-gradient-to-b from-background to-muted/30 py-20 md:py-32">
+      <section className="bg-gradient-to-b from-background to-muted/30 py-5 md:py-10">
         <div className="container px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -52,7 +52,7 @@ export default function BookingClient() {
       </section>
 
       {/* Meeting Types */}
-      <section className="py-20 md:py-32">
+      <section className="py-5 md:py-10">
         <div className="container px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -112,7 +112,7 @@ export default function BookingClient() {
       </section>
 
       {/* Calendar Integration */}
-      <section id="calendar" className="bg-muted/30 py-20 md:py-32">
+      <section id="calendar" className="bg-muted/30 py-5 md:py-10">
         <div className="container px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -146,7 +146,7 @@ export default function BookingClient() {
       </section>
 
       {/* What to Expect */}
-      <section className="py-20 md:py-32">
+      <section className="py-5 md:py-10">
         <div className="container px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -184,7 +184,7 @@ export default function BookingClient() {
       </section>
 
       {/* FAQ */}
-      <section className="bg-muted/30 py-20 md:py-32">
+      <section className="bg-muted/30 py-5 md:py-10">
         <div className="container px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -222,7 +222,7 @@ export default function BookingClient() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 md:py-32">
+      <section className="py-5 md:py-10">
         <div className="container px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

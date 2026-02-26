@@ -1,8 +1,8 @@
 "use client"
 
-import { Badge } from "@/components/ui/badge"
 import { AnimateInView } from "@/components/animate-in-view"
 import { StaggerContainer } from "@/components/stagger-container"
+import { Badge } from "@/components/ui/badge"
 
 type Section = { title: string; paragraphs: ReadonlyArray<string> }
 
@@ -19,7 +19,7 @@ export default function TermsClient({ data }: { data: TermsData }) {
   return (
     <>
       {/* Hero */}
-      <section className="bg-gradient-to-b from-background to-muted/30 py-20 md:py-32">
+      <section className="bg-gradient-to-b from-background to-muted/30 py-5 md:py-10">
         <div className="container px-4">
           <AnimateInView className="mx-auto max-w-3xl text-center">
             <Badge className="mb-6" variant="secondary">
