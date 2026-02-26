@@ -26,19 +26,21 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`font-sans antialiased max-w-[90%] md:max-w-[95%] lg:max-w-[90%] mx-auto`}>
-        <ThemeProvider defaultTheme="light">
-          <ChatProvider>
-            <SiteHeader />
-            <main className="min-h-screen">{children}</main>
-            <SiteFooter />
-            <DraggableFloater className="fixed bottom-24 right-6 z-[9998]">
-              <ChatButton />
-            </DraggableFloater>
-            <ChatLauncher />
-          </ChatProvider>
-          <Analytics />
-        </ThemeProvider>
+      <body  className={"font-sans antialiased  "}>
+        <div className=" max-w-[90%] mx-auto">
+          <ThemeProvider defaultTheme="light">
+            <ChatProvider>
+              <SiteHeader />
+              <main className="min-h-screen">{children}</main>
+              <SiteFooter />
+              <DraggableFloater className="fixed bottom-24 right-6 z-[9998]">
+                <ChatButton />
+              </DraggableFloater>
+              <ChatLauncher />
+            </ChatProvider>
+            <Analytics />
+          </ThemeProvider>
+        </div>
       </body>
     </html>
   )

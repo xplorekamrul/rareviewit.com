@@ -18,7 +18,7 @@ type PortfolioBlock = {
 
 export default function PortfolioSection({ data }: { data: PortfolioBlock }) {
   return (
-    <section className="bg-muted/30 py-20 md:py-32">
+    <section className="bg-muted/30 py-5 md:py-10">
       <div className="container px-4">
         <AnimateInView className="mb-12 text-center md:mb-16">
           <h2 className="mb-4 text-3xl font-bold tracking-tight text-foreground md:text-5xl text-balance">

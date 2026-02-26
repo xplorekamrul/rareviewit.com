@@ -60,7 +60,7 @@ export default function PricingClient({ data }: { data: PricingData }) {
   return (
     <>
       {/* Hero */}
-      <section className="bg-gradient-to-b from-background to-muted/30 py-20 md:py-32">
+      <section className="bg-gradient-to-b from-background to-muted/30 py-5 md:py-10">
         <div className="container px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -114,7 +114,7 @@ export default function PricingClient({ data }: { data: PricingData }) {
       </section>
 
       {/* Pricing Cards */}
-      <section className="py-20 md:py-32">
+      <section className="py-5 md:py-10">
         <div className="container px-4">
           <div className="grid gap-8 md:grid-cols-3">
             {packages.map((pkg, index) => {
@@ -173,7 +173,7 @@ export default function PricingClient({ data }: { data: PricingData }) {
       </section>
 
       {/* Add-ons */}
-      <section className="bg-muted/30 py-20 md:py-32">
+      <section className="bg-muted/30 py-5 md:py-10">
         <div className="container px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -213,7 +213,7 @@ export default function PricingClient({ data }: { data: PricingData }) {
       </section>
 
       {/* FAQ */}
-      <section className="py-20 md:py-32">
+      <section className="py-5 md:py-10">
         <div className="container px-4">
           <div className="mx-auto max-w-3xl">
             <motion.div

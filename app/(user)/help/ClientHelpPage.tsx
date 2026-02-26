@@ -1,16 +1,20 @@
 "use client"
 
-import Link from "next/link"
+import { AnimateInView } from "@/components/animate-in-view"
+import { StaggerContainer } from "@/components/stagger-container"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
-import { AnimateInView } from "@/components/animate-in-view"
-import { StaggerContainer } from "@/components/stagger-container"
+import Link from "next/link"
 
 // Icon registry (client-side)
 import {
-  Book, FileText, MessageCircle, Video, HelpCircle, Mail, Phone, Search
+  Book, FileText,
+  HelpCircle, Mail,
+  MessageCircle,
+  Phone, Search,
+  Video
 } from "lucide-react"
 
 const ICONS = {
@@ -58,7 +62,7 @@ export default function ClientHelpPage({ data }: { data: HelpData }) {
   return (
     <>
       {/* Hero */}
-      <section className="bg-gradient-to-b from-background to-muted/30 py-20 md:py-32">
+      <section className="bg-gradient-to-b from-background to-muted/30 py-5 md:py-10">
         <div className="container px-4">
           <AnimateInView className="mx-auto max-w-3xl text-center">
             <Badge className="mb-6" variant="secondary">
@@ -85,7 +89,7 @@ export default function ClientHelpPage({ data }: { data: HelpData }) {
       </section>
 
       {/* Categories */}
-      <section className="py-20 md:py-32">
+      <section className="py-5 md:py-10">
         <div className="container px-4">
           <AnimateInView className="mb-12 text-center">
             <h2 className="mb-4 text-3xl font-bold tracking-tight text-foreground md:text-4xl text-balance">
@@ -121,7 +125,7 @@ export default function ClientHelpPage({ data }: { data: HelpData }) {
       </section>
 
       {/* Popular Articles */}
-      <section className="bg-muted/30 py-20 md:py-32">
+      <section className="bg-muted/30 py-5 md:py-10">
         <div className="container px-4">
           <AnimateInView className="mb-12 text-center">
             <h2 className="mb-4 text-3xl font-bold tracking-tight text-foreground md:text-4xl text-balance">
@@ -158,7 +162,7 @@ export default function ClientHelpPage({ data }: { data: HelpData }) {
       </section>
 
       {/* Contact Support */}
-      <section className="py-20 md:py-32">
+      <section className="py-5 md:py-10">
         <div className="container px-4">
           <AnimateInView className="mb-12 text-center">
             <h2 className="mb-4 text-3xl font-bold tracking-tight text-foreground md:text-4xl text-balance">
@@ -193,7 +197,7 @@ export default function ClientHelpPage({ data }: { data: HelpData }) {
       </section>
 
       {/* Quick Links */}
-      <section className="bg-muted/30 py-20 md:py-32">
+      <section className="bg-muted/30 py-5 md:py-10">
         <div className="container px-4">
           <AnimateInView className="mx-auto max-w-3xl text-center">
             <h2 className="mb-6 text-3xl font-bold tracking-tight text-foreground md:text-4xl text-balance">

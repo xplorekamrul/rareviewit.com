@@ -18,7 +18,7 @@ export default function ContactPage() {
   return (
     <>
       {/* Hero Section with Gradient Background */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-background via-background to-primary/5 py-20 md:py-32" >
+      <section className="relative overflow-hidden bg-gradient-to-br from-background via-background to-primary/5 py-5 md:py-10" >
         {/* Animated background elements */}
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute -top-40 -right-40 h-80 w-80 rounded-full bg-primary/10 blur-3xl" />
@@ -41,7 +41,7 @@ export default function ContactPage() {
       </section>
 
       {/* Main Content Section */}
-      <section className="py-20 md:py-32">
+      <section className="py-5 md:py-10">
         <div className="container px-4">
           <div className="grid gap-12 lg:grid-cols-3 lg:gap-8">
             {/* Contact Form - Takes 2 columns on desktop */}
@@ -130,7 +130,7 @@ export default function ContactPage() {
       </section>
 
       {/* Features Section */}
-      <section className="py-20 md:py-32 bg-gradient-to-b from-background to-primary/5">
+      <section className="py-5 md:py-10 bg-gradient-to-b from-background to-primary/5">
         <div className="container px-4">
           <AnimateInView className="text-center mb-16">
             <h2 className="text-4xl font-bold text-foreground mb-4">Why Contact Us?</h2>
@@ -178,7 +178,7 @@ export default function ContactPage() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-20 md:py-32">
+      <section className="py-5 md:py-10">
         <div className="container px-4">
           <AnimateInView className="text-center mb-16">
             <h2 className="text-4xl font-bold text-foreground mb-4">Frequently Asked Questions</h2>
@@ -223,7 +223,7 @@ export default function ContactPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="relative overflow-hidden py-20 md:py-32">
+      <section className="relative overflow-hidden py-5 md:py-10">
         <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-accent/10" />
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute -top-40 -right-40 h-80 w-80 rounded-full bg-primary/20 blur-3xl" />

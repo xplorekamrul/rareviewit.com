@@ -50,7 +50,7 @@ export default function PartnersClient({ data }: { data: PartnersData }) {
   return (
     <>
       {/* Hero */}
-      <section className="bg-gradient-to-b from-background to-muted/30 py-20 md:py-32">
+      <section className="bg-gradient-to-b from-background to-muted/30 py-5 md:py-10">
         <div className="container px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -116,7 +116,7 @@ export default function PartnersClient({ data }: { data: PartnersData }) {
       </section>
 
       {/* Affiliate Program */}
-      <section id="affiliate" className="py-20 md:py-32">
+      <section id="affiliate" className="py-5 md:py-10">
         <div className="container px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -163,7 +163,7 @@ export default function PartnersClient({ data }: { data: PartnersData }) {
       </section>
 
       {/* Partnership Models */}
-      <section className="bg-muted/30 py-20 md:py-32">
+      <section className="bg-muted/30 py-5 md:py-10">
         <div className="container px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -219,7 +219,7 @@ export default function PartnersClient({ data }: { data: PartnersData }) {
       </section>
 
       {/* Testimonials */}
-      <section className="py-20 md:py-32">
+      <section className="py-5 md:py-10">
         <div className="container px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

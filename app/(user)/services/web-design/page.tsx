@@ -1,13 +1,14 @@
 // app/services/web-design/page.tsx
-import { Badge } from "@/components/ui/badge"
-import { Card, CardContent } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { CheckCircle2, Palette, Layout, Smartphone, Zap } from "lucide-react"
-import Link from "next/link"
 import { AnimateInView } from "@/components/animate-in-view"
+import { ImageSlider } from "@/components/image-slider"
 import { StaggerContainer } from "@/components/stagger-container"
+import { Badge } from "@/components/ui/badge"
+import { Button } from "@/components/ui/button"
+import { Card, CardContent } from "@/components/ui/card"
+import { FALLBACK_IMAGE, webDesign } from "@/data/corpus"
 import { generateMetadata as generateSEOMetadata } from "@/lib/seo"
-import { webDesign, FALLBACK_IMAGE } from "@/data/corpus"
+import { CheckCircle2, Layout, Palette, Smartphone, Zap } from "lucide-react"
+import Link from "next/link"
 
 // ---- Metadata (server)
 export const metadata = generateSEOMetadata({
@@ -25,13 +26,33 @@ const ICONS = {
   zap: Zap,
 } as const
 
+// Sample images for the slider - you can customize these
+const HERO_SLIDER_IMAGES = [
+  "/portfolio-showcase (1).jpeg",
+  "/portfolio-showcase (1).png",
+  "/portfolio-showcase (2).png",
+  "/portfolio-showcase (3).png",
+  "/portfolio-showcase (4).png",
+  "/portfolio-showcase (5).png",
+  "/portfolio-showcase (6).png",
+  "/portfolio-showcase (7).png",
+  "/portfolio-showcase (8).png",
+  "/old-project-slider (1).png",
+  "/old-project-slider (2).png",
+  "/old-project-slider (3).png",
+  "/old-project-slider (4).png",
+  "/old-project-slider (5).png",
+  "/old-project-slider (6).png",
+
+]
+
 export default function WebDesignPage() {
   const { hero, showcaseImage, features, benefits, process, cta } = webDesign
 
   return (
     <>
       {/* Hero Section */}
-      <section className="bg-gradient-to-b from-background to-muted/30 py-20 md:py-32">
+      <section className="bg-gradient-to-b from-background to-muted/30 py-5 md:py-10">
         <div className="container px-4">
           <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
             <AnimateInView direction="left">
@@ -54,11 +75,11 @@ export default function WebDesignPage() {
               </div>
             </AnimateInView>
 
-            <AnimateInView direction="right" className="relative aspect-video overflow-hidden rounded-lg">
-              <img
-                src={showcaseImage.src || FALLBACK_IMAGE}
+            <AnimateInView direction="right">
+              <ImageSlider
+                images={HERO_SLIDER_IMAGES}
                 alt={showcaseImage.alt}
-                className="h-full w-full object-cover"
+                autoScrollInterval={2000}
               />
             </AnimateInView>
           </div>
@@ -66,7 +87,7 @@ export default function WebDesignPage() {
       </section>
 
       {/* Features Section */}
-      <section className="py-20 md:py-32">
+      <section className="py-3 md:py-5">
         <div className="container px-4">
           <AnimateInView className="mb-12 text-center md:mb-16">
             <h2 className="mb-4 text-3xl font-bold tracking-tight text-foreground md:text-4xl text-balance">
@@ -99,7 +120,7 @@ export default function WebDesignPage() {
       </section>
 
       {/* Benefits Section */}
-      <section className="bg-muted/30 py-20 md:py-32">
+      <section className="bg-muted/30 py-5 md:py-10">
         <div className="container px-4">
           <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
             <AnimateInView direction="left">
@@ -121,7 +142,7 @@ export default function WebDesignPage() {
               </StaggerContainer>
             </AnimateInView>
 
-            <AnimateInView direction="right" className="relative aspect-square overflow-hidden rounded-lg">
+            <AnimateInView direction="right" className="relative aspect-video overflow-hidden rounded-lg">
               <img
                 src={webDesign.benefitsImage.src || FALLBACK_IMAGE}
                 alt={webDesign.benefitsImage.alt}
@@ -133,7 +154,7 @@ export default function WebDesignPage() {
       </section>
 
       {/* Process Section */}
-      <section className="py-20 md:py-32">
+      <section className="py-5 md:py-10">
         <div className="container px-4">
           <AnimateInView className="mb-12 text-center md:mb-16">
             <h2 className="mb-4 text-3xl font-bold tracking-tight text-foreground md:text-4xl text-balance">

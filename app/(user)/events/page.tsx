@@ -1,12 +1,12 @@
 // app/events/page.tsx
-import Image from "next/image"
-import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
-import { Calendar, Clock, MapPin, Users, Play } from "lucide-react"
-import { AnimateInView } from "@/components/animate-in-view" // client island for animations
-import { events } from "@/data/corpus"
-import { generateMetadata as generateSEOMetadata } from "@/lib/seo"
+import { AnimateInView } from "@/components/animate-in-view"; // client island for animations
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { events } from "@/data/corpus";
+import { generateMetadata as generateSEOMetadata } from "@/lib/seo";
+import { Calendar, Clock, MapPin, Play, Users } from "lucide-react";
+import Image from "next/image";
 
 export const metadata = generateSEOMetadata({
   title: events.meta.title,
@@ -29,7 +29,7 @@ export default function EventsPage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-gradient-to-b from-background to-muted/30 py-20 md:py-32">
+      <section className="bg-gradient-to-b from-background to-muted/30 py-5 md:py-10">
         <div className="container px-4">
           <AnimateInView className="mx-auto max-w-3xl text-center">
             <Badge className="mb-6" variant="secondary">{hero.badge}</Badge>
@@ -47,7 +47,7 @@ export default function EventsPage() {
       </section>
 
       {/* Upcoming */}
-      <section id="upcoming" className="py-20 md:py-32">
+      <section id="upcoming" className="py-5 md:py-10">
         <div className="container px-4">
           <AnimateInView className="mb-12 text-center">
             <h2 className="mb-4 text-3xl font-bold tracking-tight text-foreground md:text-4xl text-balance">
@@ -108,7 +108,7 @@ export default function EventsPage() {
       </section>
 
       {/* Past / Replays */}
-      <section className="bg-muted/30 py-20 md:py-32">
+      <section className="bg-muted/30 py-5 md:py-10">
         <div className="container px-4">
           <AnimateInView className="mb-12 text-center">
             <h2 className="mb-4 text-3xl font-bold tracking-tight text-foreground md:text-4xl text-balance">
@@ -158,7 +158,7 @@ export default function EventsPage() {
       </section>
 
       {/* Email Signup */}
-      <section className="py-20 md:py-32">
+      <section className="py-5 md:py-10">
         <div className="container px-4">
           <AnimateInView className="mx-auto max-w-2xl text-center">
             <h2 className="mb-4 text-3xl font-bold tracking-tight text-foreground md:text-4xl text-balance">

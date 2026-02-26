@@ -43,7 +43,7 @@ export default async function ServicesSection() {
   }
 
   return (
-    <section className="py-20 md:py-32">
+    <section className="py-5 md:py-10">
       <div className="container px-4">
         <AnimateInView className="mb-12 text-center md:mb-16">
           <h2 className="mb-4 text-3xl font-bold tracking-tight text-foreground md:text-5xl text-balance">

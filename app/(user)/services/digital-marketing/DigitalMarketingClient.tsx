@@ -1,20 +1,20 @@
 // app/digital-marketing/DigitalMarketingClient.tsx
 "use client";
 
-import { Badge } from "@/components/ui/badge";
-import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import Link from "next/link";
 import { AnimateInView } from "@/components/animate-in-view";
 import { StaggerContainer } from "@/components/stagger-container";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
 import { marketing } from "@/data/corpus";
 import {
+  BarChart,
   CheckCircle2,
-  Users,
   Target,
   TrendingUp,
-  BarChart
+  Users
 } from "lucide-react";
+import Link from "next/link";
 
 const iconMap = {
   users: Users,
@@ -29,7 +29,7 @@ export default function DigitalMarketingClient() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-gradient-to-b from-background to-muted/30 py-20 md:py-32">
+      <section className="bg-gradient-to-b from-background to-muted/30 py-5 md:py-10">
         <div className="container px-4">
           <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center">
             <AnimateInView direction="left">
@@ -79,7 +79,7 @@ export default function DigitalMarketingClient() {
       </section>
 
       {/* Services */}
-      <section className="py-20 md:py-32">
+      <section className="py-5 md:py-10">
         <div className="container px-4">
           <AnimateInView className="mb-12 text-center md:mb-16">
             <h2 className="mb-4 text-3xl font-bold tracking-tight text-foreground md:text-4xl text-balance">
@@ -112,11 +112,11 @@ export default function DigitalMarketingClient() {
       </section>
 
       {/* Benefits */}
-      <section className="bg-muted/30 py-20 md:py-32">
+      <section className="bg-muted/30 py-5 md:py-10">
         <div className="container px-4">
           <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center">
             <AnimateInView direction="left" >
-              <div className="relative aspect-square overflow-hidden rounded-lg">
+              <div className="relative aspect-video overflow-hidden rounded-lg">
                 <img
                   src={benefitsMedia.src || "/placeholder.svg"}
                   alt={benefitsMedia.alt}
@@ -150,7 +150,7 @@ export default function DigitalMarketingClient() {
       {/* CTA */}
       <section className="bg-primary py-20 text-primary-foreground md:py-32">
         <div className="container px-4">
-          <AnimateInView  className="mx-auto max-w-3xl text-center">
+          <AnimateInView className="mx-auto max-w-3xl text-center">
             <h2 className="mb-6 text-3xl font-bold tracking-tight md:text-4xl text-balance">
               {cta.title}
             </h2>

@@ -32,7 +32,7 @@ export default function ServicesPage() {
   return (
     <>
       {/* Hero (server-rendered) */}
-      <section className="bg-gradient-to-b from-background to-muted/30 py-20 md:py-32">
+      <section className="bg-gradient-to-b from-background to-muted/30 py-5 md:py-10">
         <div className="container px-4">
           <div className="mx-auto max-w-3xl text-center">
             <AnimateInView direction="none" delay={0.1}>
@@ -55,7 +55,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Services Grid */}
-      <section className="py-20 md:py-32">
+      <section className="py-5 md:py-10">
         <div className="container px-4">
           <StaggerContainer className="grid gap-8 md:grid-cols-2">
             {grid.items.map((item, index) => {
@@ -98,7 +98,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Process Section */}
-      <section className="bg-muted/30 py-20 md:py-32">
+      <section className="bg-muted/30 py-5 md:py-10">
         <div className="container px-4">
           <div className="mb-12 text-center md:mb-16">
             <AnimateInView direction="none">
@@ -132,7 +132,7 @@ export default function ServicesPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 md:py-32">
+      <section className="py-5 md:py-10">
         <div className="container px-4">
           <div className="mx-auto max-w-3xl text-center">
             <AnimateInView direction="none">

@@ -1,13 +1,13 @@
 "use client"
 
-import { Badge } from "@/components/ui/badge"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { MapPin, Clock, Briefcase, ArrowRight } from "lucide-react"
-import Link from "next/link"
 import { AnimateInView } from "@/components/animate-in-view"
 import { StaggerContainer } from "@/components/stagger-container"
+import { Badge } from "@/components/ui/badge"
+import { Button } from "@/components/ui/button"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { careers } from "@/data/corpus"
+import { ArrowRight, Briefcase, Clock, MapPin } from "lucide-react"
+import Link from "next/link"
 
 export default function CareersClient() {
   const {
@@ -24,7 +24,7 @@ export default function CareersClient() {
   return (
     <>
       {/* Hero Section */}
-      <section className="bg-gradient-to-b from-background to-muted/30 py-20 md:py-32">
+      <section className="bg-gradient-to-b from-background to-muted/30 py-5 md:py-10">
         <div className="container px-4">
           <AnimateInView className="mx-auto max-w-3xl text-center">
             <Badge className="mb-6" variant="secondary">
@@ -41,7 +41,7 @@ export default function CareersClient() {
       </section>
 
       {/* Why Join Us */}
-      <section className="py-20 md:py-32">
+      <section className="py-5 md:py-10">
         <div className="container px-4">
           <AnimateInView className="mb-12 text-center md:mb-16">
             <h2 className="mb-4 text-3xl font-bold tracking-tight text-foreground md:text-4xl text-balance">
@@ -68,7 +68,7 @@ export default function CareersClient() {
       </section>
 
       {/* Values */}
-      <section className="bg-muted/30 py-20 md:py-32">
+      <section className="bg-muted/30 py-5 md:py-10">
         <div className="container px-4">
           <AnimateInView className="mb-12 text-center md:mb-16">
             <h2 className="mb-4 text-3xl font-bold tracking-tight text-foreground md:text-4xl text-balance">
@@ -88,7 +88,7 @@ export default function CareersClient() {
       </section>
 
       {/* Open Positions */}
-      <section className="py-20 md:py-32">
+      <section className="py-5 md:py-10">
         <div className="container px-4">
           <AnimateInView className="mb-12 text-center md:mb-16">
             <h2 className="mb-4 text-3xl font-bold tracking-tight text-foreground md:text-4xl text-balance">

@@ -34,7 +34,7 @@ export default async function AboutPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="bg-gradient-to-b from-background to-muted/30 py-20 md:py-32">
+      <section className="bg-gradient-to-b from-background to-muted/30 py-5 md:py-10">
         <div className="container px-4">
           <AnimateInView className="mx-auto max-w-3xl text-center">
             <Badge className="mb-6" variant="secondary">
@@ -51,7 +51,7 @@ export default async function AboutPage() {
       </section>
 
       {/* Mission Section */}
-      <section className="py-20 md:py-32">
+      <section className="py-5 md:py-10">
         <div className="container px-4">
           <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center">
             <AnimateInView direction="left">
@@ -65,7 +65,7 @@ export default async function AboutPage() {
                 {mission.descriptionTwo}
               </p>
             </AnimateInView>
-            <AnimateInView direction="right" className="relative aspect-video overflow-hidden rounded-lg">
+            <AnimateInView direction="right" className="relative aspect-square overflow-hidden rounded-lg">
               <div className="h-full w-full">
                 <Image
                   src={withFallback(mission.image)}
@@ -79,7 +79,7 @@ export default async function AboutPage() {
       </section>
 
       {/* Values Section */}
-      <section className="bg-muted/30 py-20 md:py-32">
+      <section className="bg-muted/30 py-5 md:py-10">
         <div className="container px-4">
           <AnimateInView className="mb-12 text-center md:mb-16">
             <h2 className="mb-4 text-3xl font-bold tracking-tight text-foreground md:text-4xl text-balance">
@@ -112,7 +112,7 @@ export default async function AboutPage() {
       </section>
 
       {/* Team Section */}
-      <section className="py-20 md:py-32">
+      <section className="py-5 md:py-10">
         <div className="container px-4">
           <AnimateInView className="mb-12 text-center md:mb-16">
             <h2 className="mb-4 text-3xl font-bold tracking-tight text-foreground md:text-4xl text-balance">

@@ -14,7 +14,7 @@ export const corpus = {
       description:
         "Learn about our mission, values, and the talented team behind our digital transformation services.",
       path: "/about",
-      ogImage: FALLBACK_IMAGE,
+      ogImage: "/rareviewit-company-vision1.jpeg",
     },
     hero: {
       badge: "About Us",
@@ -28,7 +28,7 @@ export const corpus = {
         "We believe every business deserves a powerful digital presence that drives real results. Our mission is to democratize access to world-class digital services, making them accessible to companies of all sizes.",
       descriptionTwo:
         "Through innovation, collaboration, and unwavering commitment to excellence, we help our clients navigate the digital landscape and achieve sustainable growth.",
-      image: "/placeholder.svg",
+      image: "/rareviewit-company-vision1.jpeg",
       alt: "Team collaboration",
     },
     valuesBlock: {
@@ -118,12 +118,12 @@ export const corpus = {
 
     featured: {
       badge: "Featured",
-      title: "The Future of Web Design: Trends to Watch in 2025",
+      title: "The Future of Web Development : Trends to Watch in 2026",
       excerpt:
-        "Discover the emerging design trends that will shape the digital landscape in 2025, from AI-powered interfaces to immersive 3D experiences.",
+        "Discover the emerging design trends that will shape the digital landscape in 2026, from AI-powered interfaces to immersive 3D experiences.",
       image: FALLBACK_IMAGE,
       category: "Design",
-      date: "Jan 15, 2025",
+      date: "Jan 15, 2026",
       readTime: "8 min read",
       author: "Sarah Martinez",
       btnText: "Read Articles",
@@ -138,12 +138,12 @@ export const corpus = {
 
     posts: [
       {
-        title: "10 SEO Strategies That Actually Work in 2025",
+        title: "10 SEO Strategies That Actually Work in 2026",
         excerpt:
           "Cut through the noise with proven SEO tactics that deliver real results for your business.",
         image: FALLBACK_IMAGE,
         category: "Marketing",
-        date: "Jan 12, 2025",
+        date: "Jan 12, 2026",
         readTime: "6 min read",
       },
       {
@@ -152,7 +152,7 @@ export const corpus = {
           "Best practices for architecting React apps that grow with your business needs.",
         image: FALLBACK_IMAGE,
         category: "Development",
-        date: "Jan 10, 2025",
+        date: "Jan 10, 2026",
         readTime: "10 min read",
       },
       {
@@ -161,7 +161,7 @@ export const corpus = {
           "How investing in user experience design directly impacts your bottom line.",
         image: FALLBACK_IMAGE,
         category: "Design",
-        date: "Jan 8, 2025",
+        date: "Jan 8, 2026",
         readTime: "5 min read",
       },
       {
@@ -170,7 +170,7 @@ export const corpus = {
           "Why mobile-first approach is essential and how to implement it effectively.",
         image: FALLBACK_IMAGE,
         category: "Development",
-        date: "Jan 5, 2025",
+        date: "Jan 5, 2026",
         readTime: "7 min read",
       },
       {
@@ -179,11 +179,11 @@ export const corpus = {
           "Proven content strategies that drive signups and reduce churn for SaaS companies.",
         image: FALLBACK_IMAGE,
         category: "Marketing",
-        date: "Jan 3, 2025",
+        date: "Jan 3, 2026",
         readTime: "9 min read",
       },
       {
-        title: "Accessibility in Modern Web Design",
+        title: "Accessibility in Modern Web Development ",
         excerpt:
           "Making your website accessible to everyone isn't just good practice—it's essential.",
         image: FALLBACK_IMAGE,
@@ -354,13 +354,13 @@ export const corpus = {
     },
     openings: [
       {
-        title: "Senior Web Designer",
+        title: "Senior Web Developer",
         slug: "senior-web-designer",
         department: "Design",
         location: "San Francisco, CA / Remote",
         type: "Full-time",
         description:
-          "We're looking for a talented web designer to create beautiful, user-friendly websites for our clients."
+          "We're looking for a talented web Developer to create beautiful, user-friendly websites for our clients."
       },
       {
         title: "Digital Marketing Manager",
@@ -446,7 +446,7 @@ export const corpus = {
           placeholder: "Select a service",
           options: [
             { value: "", label: "Select a service" },
-            { value: "web-design", label: "Web Design" },
+            { value: "web-design", label: "Web Development " },
             { value: "digital-marketing", label: "Digital Marketing" },
             { value: "seo", label: "SEO Services" },
             { value: "app-development", label: "App Development" },
@@ -529,19 +529,19 @@ export const corpus = {
 
     upcomingEvents: [
       {
-        title: "Modern Web Design Trends 2025",
-        date: "Feb 15, 2025",
+        title: "Modern Web Development  Trends 2026",
+        date: "Feb 15, 2026",
         time: "2:00 PM PST",
         format: "Online",
         platform: "Zoom",
         spotsLeft: 12,
         description:
-          "Discover the latest design trends and techniques shaping the web in 2025.",
+          "Discover the latest design trends and techniques shaping the web in 2026.",
         speaker: "Sarah Martinez, RareviewIt Director",
       },
       {
         title: "SEO Masterclass: From Zero to Hero",
-        date: "Feb 22, 2025",
+        date: "Feb 22, 2026",
         time: "1:00 PM PST",
         format: "Online",
         platform: "YouTube Live",
@@ -552,7 +552,7 @@ export const corpus = {
       },
       {
         title: "Building Scalable React Applications",
-        date: "Mar 5, 2025",
+        date: "Mar 5, 2026",
         time: "3:00 PM PST",
         format: "In-Person",
         platform: "San Francisco Office",
@@ -572,7 +572,7 @@ export const corpus = {
     pastEvents: [
       {
         title: "Digital Marketing in 2024: What Worked",
-        date: "Jan 10, 2025",
+        date: "Jan 10, 2026",
         views: "1.2K",
         thumbnail: "/event-marketing.jpg",
         duration: "45 min",
@@ -628,7 +628,7 @@ export const corpus = {
 
     categories: [
       "General",
-      "Web Design",
+      "Web Development ",
       "SEO",
       "App Development",
       "eCommerce",
@@ -653,7 +653,7 @@ export const corpus = {
             "Yes! We work with clients worldwide. We use video calls, project management tools, and regular updates to ensure smooth collaboration.",
         },
       ],
-      "Web Design": [
+      "Web Development ": [
         {
           question: "Will my website work on phones?",
           answer:
@@ -795,7 +795,7 @@ export const corpus = {
 
     popularArticles: [
       { title: "How do I get started with a new project?", category: "Getting Started", views: "2.5K" },
-      { title: "What's included in your web design packages?", category: "Services", views: "1.8K" },
+      { title: "What's included in your Web Development  packages?", category: "Services", views: "1.8K" },
       { title: "How long does a typical project take?", category: "Project Management", views: "1.6K" },
       { title: "What payment methods do you accept?", category: "Billing", views: "1.4K" },
       { title: "Can I request revisions after project completion?", category: "Project Management", views: "1.2K" },
@@ -923,7 +923,7 @@ export const corpus = {
         "Explore our portfolio of successful digital transformations across web, app, branding, and marketing.",
       path: "/portfolio",
       ogImage: FALLBACK_IMAGE,
-      keywords: ["portfolio", "case studies", "web design", "app development", "branding", "marketing"],
+      keywords: ["portfolio", "case studies", "Web Development ", "app development", "branding", "marketing"],
     },
 
     hero: {
@@ -933,12 +933,12 @@ export const corpus = {
         "Explore our portfolio of successful digital transformations and see how we've helped businesses achieve their goals.",
     },
 
-    filters: ["All", "Web Design", "App Development", "Branding", "Digital Marketing"] as const,
+    filters: ["All", "Web Development ", "App Development", "Branding", "Digital Marketing"] as const,
 
     projects: [
       {
         title: "E-Commerce Platform",
-        category: "Web Design",
+        category: "Web Development ",
         description:
           "Complete redesign and development of a modern e-commerce platform with 300% increase in conversions.",
         image: "/po rtfolio-ecommerce.png",
@@ -950,7 +950,7 @@ export const corpus = {
         title: "FinTech Mobile App",
         category: "App Development",
         description: "Secure mobile banking application serving 100K+ active users with seamless UX.",
-        image: "/portfolio-fintech.png",
+        image: "/App-development.jpeg",
         tags: ["React Native", "Node.js", "Security"],
         results: "100K+ Users",
         href: "/projects/fintech-mobile-app"
@@ -966,7 +966,7 @@ export const corpus = {
       },
       {
         title: "SaaS Dashboard",
-        category: "Web Design",
+        category: "Web Development ",
         description: "Analytics dashboard with real-time data visualization and intuitive user experience.",
         image: "/portfolio-saas.png",
         tags: ["React", "D3.js", "API Integration"],
@@ -984,7 +984,7 @@ export const corpus = {
       },
       {
         title: "Healthcare Portal",
-        category: "Web Design",
+        category: "Web Development ",
         description:
           "HIPAA-compliant patient portal with appointment scheduling and telemedicine features.",
         image: "/portfolio-healthcare.png",
@@ -1008,7 +1008,7 @@ export const corpus = {
       description: "Flexible pricing that fits your business. Choose a package or request a custom quote.",
       path: "/pricing",
       ogImage: FALLBACK_IMAGE,
-      keywords: ["pricing", "packages", "plans", "web design pricing", "agency pricing"] as const,
+      keywords: ["pricing", "packages", "plans", "Web Development  pricing", "agency pricing"] as const,
     },
     hero: {
       badge: "Pricing",
@@ -1121,7 +1121,7 @@ export const corpus = {
       path: "/privacy",
       ogImage: FALLBACK_IMAGE,
       keywords: ["privacy policy", "data protection", "cookies", "GDPR", "security"] as const,
-      lastUpdated: "January 15, 2025",
+      lastUpdated: "January 15, 2026",
     },
     hero: {
       badge: "Legal",
@@ -1210,7 +1210,7 @@ export const corpus = {
       path: "/terms",
       ogImage: FALLBACK_IMAGE,
       keywords: ["terms", "terms and conditions", "legal", "service terms", "agreement"] as const,
-      lastUpdated: "January 15, 2025",
+      lastUpdated: "January 15, 2026",
     },
     hero: {
       badge: "Legal",
@@ -1321,7 +1321,7 @@ export const corpus = {
     meta: {
       title: "Client Testimonials",
       description:
-        "What our clients say about our web design, marketing, SEO, and app development services.",
+        "What our clients say about our Web Development , marketing, SEO, and app development services.",
       path: "/testimonials",
       ogImage: FALLBACK_IMAGE,
       keywords: [
@@ -1351,7 +1351,7 @@ export const corpus = {
         company: "TechStart Inc",
         avatar: "/testimonial-sarah.png",
         content:
-          "Working with this team completely transformed our online presence. Their web design expertise helped us increase our conversion rate by 300% in just three months. The attention to detail and understanding of our business goals was exceptional.",
+          "Working with this team completely transformed our online presence. Their Web Development  expertise helped us increase our conversion rate by 300% in just three months. The attention to detail and understanding of our business goals was exceptional.",
         rating: 5,
         project: "Website Redesign",
       },
@@ -1454,7 +1454,7 @@ export const corpus = {
       title: "App Development",
       description:
         "We build powerful, scalable mobile and web applications that deliver exceptional user experiences and drive business growth.",
-      path: "/app-development",
+      path: "/App-development.jpeg",
       ogImage: FALLBACK_IMAGE,
       keywords: ["app development", "mobile apps", "react native", "ios", "android", "pwa"],
     },
@@ -1465,7 +1465,7 @@ export const corpus = {
         "We build powerful, scalable mobile and web applications that deliver exceptional user experiences and drive business growth. From concept to launch and beyond.",
       primaryCta: { text: "Discuss Your App Idea", href: "/contact" },
       secondaryCta: { text: "See Our Apps", href: "/portfolio" },
-      media: { src: "/app-development.jpg", alt: "App development" }
+      media: { src: "/App-development.jpeg", alt: "App development" }
     },
     services: [
       { iconId: "smartphone", title: "Native Apps", description: "iOS and Android apps built with native technologies for optimal performance." },
@@ -1481,7 +1481,7 @@ export const corpus = {
       "Build brand loyalty with a dedicated app",
       "Generate additional revenue streams"
     ] as const,
-    benefitMedia: { src: "/mobile-app-ui.jpg", alt: "Mobile app UI" },
+    benefitMedia: { src: "/Mobile-app-UI.jpeg", alt: "Mobile-app-UI" },
     technologies: ["React Native", "Swift", "Kotlin", "Flutter", "Node.js", "Firebase", "AWS", "GraphQL"] as const,
     process: [
       { step: "01", title: "Discovery", description: "Define requirements and project scope" },
@@ -1513,7 +1513,7 @@ export const corpus = {
         "We create data-driven marketing campaigns that amplify your brand, engage your audience, and drive measurable business growth across all digital channels.",
       primaryCta: { text: "Get a Free Consultation", href: "/contact" },
       secondaryCta: { text: "See Case Studies", href: "/portfolio" },
-      media: { src: "/digital-marketing-dashboard.jpg", alt: "Digital marketing dashboard" }
+      media: { src: "/Digital-marketing-dashboard.jpeg", alt: "Digital-marketing-dashboard.jpeg" }
     },
     stats: [
       { value: "300%", label: "Average ROI Increase" },
@@ -1527,7 +1527,7 @@ export const corpus = {
       { iconId: "trendingUp", title: "Content Marketing", description: "Compelling content that attracts, engages, and converts your audience." },
       { iconId: "barChart", title: "Analytics & Reporting", description: "Data-driven insights to optimize your marketing performance." }
     ] as const,
-    benefitsMedia: { src: "/marketing-strategy.jpg", alt: "Marketing strategy" },
+    benefitsMedia: { src: "/digital-Marketing-strategy.jpeg", alt: "digital-Marketing-strategy.jpeg" },
     benefits: [
       "Increase brand awareness and reach",
       "Generate high-quality leads consistently",
@@ -1560,7 +1560,7 @@ export const corpus = {
         "Our proven SEO strategies help businesses rank higher, attract more qualified traffic, and convert visitors into customers. Get found by people actively searching for your services.",
       primaryCta: { text: "Get a Free SEO Audit", href: "/contact" },
       secondaryCta: { text: "View Success Stories", href: "/portfolio" },
-      media: { src: "/seo-analytics.jpg", alt: "SEO analytics" }
+      media: { src: "/seo-analytics-dashboard.jpeg", alt: "SEO analytics" }
     },
     results: [
       { metric: "First Page Rankings", value: "50+ Keywords", client: "E-commerce Client" },
@@ -1574,7 +1574,7 @@ export const corpus = {
       { iconId: "link", title: "Link Building", description: "Build high-quality backlinks that boost your domain authority." },
       { iconId: "trendingUp", title: "Technical SEO", description: "Improve site speed, mobile-friendliness, and crawlability." }
     ] as const,
-    benefitsMedia: { src: "/seo-growth.jpg", alt: "SEO growth" },
+    benefitsMedia: { src: "/seo-growth.jpeg", alt: "SEO growth" },
     benefits: [
       "Rank on the first page of Google",
       "Increase organic traffic by 300%+",
@@ -1593,14 +1593,14 @@ export const corpus = {
   //----------------------------------------------webDesign page corpus------------------------------------------------------------
   webDesign: {
     meta: {
-      title: "Web Design Services - Beautiful Websites That Convert",
+      title: "Web Development  Services - Beautiful Websites That Convert",
       description:
-        "Professional web design services that create stunning, user-friendly websites to drive results for your business.",
+        "Professional Web Development  services that create stunning, user-friendly websites to drive results for your business.",
       path: "/services/web-design",
       ogImage: FALLBACK_IMAGE,
       keywords: [
-        "web design",
-        "responsive web design",
+        "Web Development ",
+        "responsive Web Development ",
         "ui ux",
         "website performance",
         "mobile first"
@@ -1608,7 +1608,7 @@ export const corpus = {
     },
 
     hero: {
-      badge: "Web Design",
+      badge: "Web Development ",
       title: "Beautiful Websites That Drive Results",
       description:
         "We create stunning, user-friendly websites that not only look amazing but also convert visitors into customers. Every design is crafted with your business goals in mind.",
@@ -1618,12 +1618,12 @@ export const corpus = {
 
     showcaseImage: {
       src: "/web-design-showcase.jpg",
-      alt: "Web design showcase"
+      alt: "Web Development  showcase"
     },
 
     featuresBlock: {
       title: "What We Offer",
-      subtitle: "Comprehensive web design services tailored to your needs"
+      subtitle: "Comprehensive Web Development  services tailored to your needs"
     },
 
     features: [
@@ -1650,14 +1650,14 @@ export const corpus = {
     ],
 
     benefitsBlock: {
-      title: "Why Invest in Professional Web Design?",
+      title: "Why Invest in Professional Web Development ?",
       subtitle:
         "Your website is often the first impression potential customers have of your business. A professionally designed website can make all the difference."
     },
 
     benefitsImage: {
-      src: "/web-design-benefits.jpg",
-      alt: "Web design benefits"
+      src: "/Webdesignbenefits.jpeg",
+      alt: "Web Development  benefits"
     },
 
     benefits: [
@@ -1699,7 +1699,7 @@ export const corpus = {
       path: "/services",
       ogImage: FALLBACK_IMAGE,
       keywords: [
-        "web design",
+        "Web Development ",
         "digital marketing",
         "SEO services",
         "app development",
@@ -1717,7 +1717,7 @@ export const corpus = {
       items: [
         {
           icon: "palette",
-          title: "Web Design",
+          title: "Web Development ",
           description:
             "Create stunning, user-friendly websites that captivate your audience and drive conversions.",
           features: ["Responsive Design", "UI/UX Optimization", "Brand Integration", "Performance Focused"],
@@ -1776,7 +1776,7 @@ export const corpus = {
       "description": "We craft exceptional digital experiences that drive growth, engage audiences, and elevate your brand.",
       "path": "/",
       "ogImage": "/placeholder.svg",
-      "keywords": ["digital agency", "web design", "marketing", "seo", "app development"]
+      "keywords": ["digital agency", "Web Development ", "marketing", "seo", "app development"]
     },
     "hero": {
       "badge": "Award-Winning Digital Agency",
@@ -1795,7 +1795,7 @@ export const corpus = {
       "title": "Our Services",
       "subtitle": "Comprehensive digital solutions tailored to your business needs",
       "items": [
-        { "icon": "Palette", "title": "Web Design", "description": "Beautiful, responsive websites that captivate your audience and drive conversions.", "href": "/services/web-design" },
+        { "icon": "Palette", "title": "Web Development ", "description": "Beautiful, responsive websites that captivate your audience and drive conversions.", "href": "/services/web-design" },
         { "icon": "TrendingUp", "title": "Digital Marketing", "description": "Strategic campaigns that amplify your brand and deliver measurable results.", "href": "/services/digital-marketing" },
         { "icon": "Search", "title": "SEO Services", "description": "Boost your visibility and rank higher in search results with our proven strategies.", "href": "/services/seo" },
         { "icon": "Smartphone", "title": "App Development", "description": "Custom mobile and web applications built with cutting-edge technology.", "href": "/services/app-development" }

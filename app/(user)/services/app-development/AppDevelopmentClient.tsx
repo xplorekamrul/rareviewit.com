@@ -1,20 +1,20 @@
 // app/app-development/AppDevelopmentClient.tsx
 "use client";
 
-import { Badge } from "@/components/ui/badge";
-import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import Link from "next/link";
 import { AnimateInView } from "@/components/animate-in-view";
 import { StaggerContainer } from "@/components/stagger-container";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
 import { appDev } from "@/data/corpus";
 import {
   CheckCircle2,
-  Smartphone,
   Code,
-  Zap,
-  Shield
+  Shield,
+  Smartphone,
+  Zap
 } from "lucide-react";
+import Link from "next/link";
 
 const iconMap = {
   smartphone: Smartphone,
@@ -29,7 +29,7 @@ export default function AppDevelopmentClient() {
   return (
     <>
       {/* Hero Section */}
-      <section className="bg-gradient-to-b from-background to-muted/30 py-20 md:py-32">
+      <section className="bg-gradient-to-b from-background to-muted/30 py-5 md:py-10">
         <div className="container px-4">
           <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center">
             <AnimateInView direction="left">
@@ -65,7 +65,7 @@ export default function AppDevelopmentClient() {
       </section>
 
       {/* Services */}
-      <section className="py-20 md:py-32">
+      <section className="py-5 md:py-10">
         <div className="container px-4">
           <AnimateInView className="mb-12 text-center md:mb-16">
             <h2 className="mb-4 text-3xl font-bold tracking-tight text-foreground md:text-4xl text-balance">
@@ -98,7 +98,7 @@ export default function AppDevelopmentClient() {
       </section>
 
       {/* Benefits */}
-      <section className="bg-muted/30 py-20 md:py-32">
+      <section className="bg-muted/30 py-5 md:py-10">
         <div className="container px-4">
           <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center">
             <AnimateInView direction="left" >
@@ -134,7 +134,7 @@ export default function AppDevelopmentClient() {
       </section>
 
       {/* Technologies */}
-      <section className="py-20 md:py-32">
+      <section className="py-5 md:py-10">
         <div className="container px-4">
           <AnimateInView className="mb-12 text-center md:mb-16">
             <h2 className="mb-4 text-3xl font-bold tracking-tight text-foreground md:text-4xl text-balance">
@@ -158,7 +158,7 @@ export default function AppDevelopmentClient() {
       </section>
 
       {/* Process */}
-      <section className="bg-muted/30 py-20 md:py-32">
+      <section className="bg-muted/30 py-5 md:py-10">
         <div className="container px-4">
           <AnimateInView className="mb-12 text-center md:mb-16">
             <h2 className="mb-4 text-3xl font-bold tracking-tight text-foreground md:text-4xl text-balance">
@@ -185,7 +185,7 @@ export default function AppDevelopmentClient() {
       {/* CTA */}
       <section className="bg-primary py-20 text-primary-foreground md:py-32">
         <div className="container px-4">
-          <AnimateInView  className="mx-auto max-w-3xl text-center">
+          <AnimateInView className="mx-auto max-w-3xl text-center">
             <h2 className="mb-6 text-3xl font-bold tracking-tight md:text-4xl text-balance">
               {cta.title}
             </h2>
