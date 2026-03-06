@@ -18,6 +18,7 @@ export const serviceSchema = z.object({
       .string()
       .min(1, "Link is required")
       .max(255, "Link must be less than 255 characters"),
+   order: z.number().int().min(0).default(0),
 });
 
 export type ServiceInput = z.infer<typeof serviceSchema>;

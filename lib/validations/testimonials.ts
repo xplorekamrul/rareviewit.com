@@ -21,6 +21,7 @@ export const testimonialSchema = z.object({
       .or(z.literal("")),
    featured: z.boolean().optional().default(false),
    status: z.enum(["PUBLISHED", "DRAFT"]).optional().default("PUBLISHED"),
+   order: z.number().int().min(0).default(0),
 });
 
 export type TestimonialInput = z.infer<typeof testimonialSchema>;

@@ -36,7 +36,7 @@ export default function RegisterForm() {
         password: form.password,
       });
       if (!loginRes?.error) {
-        window.location.href = "/";
+        window.location.href = "/admin";
       } else {
         setFormError(loginRes.error || "Login failed after registration.");
       }
@@ -61,7 +61,7 @@ export default function RegisterForm() {
             text-foreground placeholder:text-muted-foreground
             focus:outline-none focus:ring-2 focus:ring-sidebar-ring
           "
-          placeholder="Jane Doe"
+          placeholder="Your Name "
           aria-invalid={!!fieldErrors.name}
           aria-describedby={fieldErrors.name ? "name-error" : undefined}
         />
@@ -84,7 +84,7 @@ export default function RegisterForm() {
             text-foreground placeholder:text-muted-foreground
             focus:outline-none focus:ring-2 focus:ring-sidebar-ring
           "
-          placeholder="janedoe"
+          placeholder="username"
           aria-invalid={!!fieldErrors.username}
           aria-describedby={fieldErrors.username ? "username-error" : undefined}
         />

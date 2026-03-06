@@ -6,6 +6,7 @@ export const teamMemberSchema = z.object({
    bio: z.string().min(10, "Bio must be at least 10 characters").max(2000, "Bio must be less than 2000 characters"),
    image: z.string().url("Image must be a valid URL"),
    imageAlt: z.string().max(255, "Alt text must be less than 255 characters").optional().or(z.literal("")),
+   order: z.number().int().min(0).default(0),
 });
 
 export type TeamMemberInput = z.infer<typeof teamMemberSchema>;

@@ -36,6 +36,7 @@ export function TeamForm({ initialData, onSuccess, onCancel, mode }: TeamFormPro
          bio: initialData?.bio || "",
          image: initialData?.image || "",
          imageAlt: initialData?.imageAlt || "",
+         order: initialData?.order || 0,
       },
    });
 
@@ -47,6 +48,7 @@ export function TeamForm({ initialData, onSuccess, onCancel, mode }: TeamFormPro
             bio: "",
             image: "",
             imageAlt: "",
+            order: 0,
          });
       }
    }, [mode, form]);
@@ -193,6 +195,31 @@ export function TeamForm({ initialData, onSuccess, onCancel, mode }: TeamFormPro
                            className={form.formState.errors.imageAlt ? "border-red-500" : ""}
                         />
                      </FormControl>
+                     <FormMessage />
+                  </FormItem>
+               )}
+            />
+
+            <FormField
+               control={(form as any).control}
+               name="order"
+               render={({ field }: any) => (
+                  <FormItem>
+                     <FormLabel>Display Order</FormLabel>
+                     <FormControl>
+                        <Input
+                           placeholder="0"
+                           type="number"
+                           {...field}
+                           value={field.value || 0}
+                           onChange={(e) => field.onChange(parseInt(e.target.value) || 0)}
+                           disabled={isLoading}
+                           className={form.formState.errors.order ? "border-red-500" : ""}
+                        />
+                     </FormControl>
+                     <FormDescription>
+                        Lower numbers appear first. You can also drag rows in the table to reorder.
+                     </FormDescription>
                      <FormMessage />
                   </FormItem>
                )}

@@ -44,7 +44,7 @@ const commonNav: Item[] = [{ label: "Home", href: "/", icon: Home }];
 const roleNav: Record<Role, Item[]> = {
   DEVELOPER: [
     { label: "Profile", href: "/profile", icon: User },
-    { label: "Dev Tools", href: "/dev/tools", icon: Wrench },
+    { label: "Users", href: "/super-admin/users", icon: Users },
     { label: "Protfolio", href: "/admin/portfolio", icon: Briefcase },
     { label: "Services", href: "/admin/services", icon: Layers },
     { label: "Contact Submited", href: "/admin/contact-submissions", icon: Send },
