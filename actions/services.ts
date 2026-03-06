@@ -3,7 +3,7 @@
 import prisma from '@/lib/prisma'
 import { adminActionClient } from '@/lib/safe-action/clients'
 import { serviceSchema } from '@/lib/validations/services'
-import { cacheTag, updateTag } from 'next/cache'
+import { cacheLife, cacheTag, updateTag } from 'next/cache'
 import { z } from 'zod'
 
 const createSchema = serviceSchema.omit({ id: true })
@@ -13,12 +13,21 @@ export const createService = adminActionClient
    .schema(createSchema)
    .action(async ({ parsedInput: data }) => {
       try {
+         // Get the highest order value
+         const lastService = await prisma.service.findFirst({
+            orderBy: { order: 'desc' },
+            select: { order: true },
+         })
+
+         const nextOrder = (lastService?.order ?? -1) + 1
+
          const service = await prisma.service.create({
             data: {
                title: data.title,
                description: data.description,
                icon: data.icon,
                href: data.href,
+               order: nextOrder,
             },
          })
 
@@ -51,6 +60,7 @@ export const updateService = adminActionClient
                description: updateData.description,
                icon: updateData.icon,
                href: updateData.href,
+               order: updateData.order,
             },
          })
 
@@ -93,13 +103,48 @@ export const deleteService = adminActionClient
       }
    })
 
+export const reorderServices = adminActionClient
+   .schema(z.object({
+      services: z.array(z.object({
+         id: z.string(),
+         order: z.number().int(),
+      })),
+   }))
+   .action(async ({ parsedInput: { services } }) => {
+      try {
+         // Update all services with their new order
+         await Promise.all(
+            services.map(({ id, order }) =>
+               prisma.service.update({
+                  where: { id },
+                  data: { order },
+               })
+            )
+         )
+
+         updateTag('services')
+
+         return {
+            success: true,
+            message: 'Services reordered successfully',
+         }
+      } catch (error) {
+         console.error('Error reordering services:', error)
+         return {
+            success: false,
+            error: 'Failed to reorder services',
+         }
+      }
+   })
+
 export async function getServices() {
    'use cache'
+   cacheLife('hours')
    cacheTag('services')
 
    try {
       const services = await prisma.service.findMany({
-         orderBy: { createdAt: 'desc' },
+         orderBy: { order: 'asc' },
       })
       return services
    } catch (error) {

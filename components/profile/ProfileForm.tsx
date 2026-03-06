@@ -1,6 +1,6 @@
 "use client";
 
-import { updateProfile } from "@/actions/user/profile";
+import { updateProfile } from "@/actions/users/profile";
 import { Button } from "@/components/ui/button";
 import { Pencil, User as UserIcon, X } from "lucide-react";
 import { useSession } from "next-auth/react";

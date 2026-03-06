@@ -164,9 +164,11 @@ model Testimonial {
   logo      String?  @db.VarChar(500)
   featured  Boolean  @default(false)
   status    String   @default("PUBLISHED")
+  order     Int      @default(0)
   createdAt DateTime @default(now()) @map("created_at")
   updatedAt DateTime @updatedAt @map("updated_at")
 
+  @@index([order])
   @@index([status])
   @@index([featured])
   @@index([createdAt])
@@ -178,9 +180,11 @@ model Service {
   description String   @db.Text
   icon        String   @db.VarChar(50)
   href        String   @db.VarChar(255)
+  order       Int      @default(0)
   createdAt   DateTime @default(now()) @map("created_at")
   updatedAt   DateTime @updatedAt @map("updated_at")
 
+  @@index([order])
   @@index([createdAt])
 }
 
@@ -191,8 +195,10 @@ model TeamMember {
   bio       String   @db.Text
   image     String   @db.VarChar(500)
   imageAlt  String?  @db.VarChar(255)
+  order     Int      @default(0)
   createdAt DateTime @default(now()) @map("created_at")
   updatedAt DateTime @updatedAt @map("updated_at")
 
+  @@index([order])
   @@index([createdAt])
 }

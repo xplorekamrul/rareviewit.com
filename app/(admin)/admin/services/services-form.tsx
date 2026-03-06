@@ -19,6 +19,7 @@ interface FormData {
    description: string
    icon: string
    href: string
+   order: number
 }
 
 const AVAILABLE_ICONS = ['Palette', 'TrendingUp', 'Search', 'Smartphone']
@@ -44,12 +45,14 @@ export function ServicesForm({
             description: service.description,
             icon: service.icon,
             href: service.href,
+            order: service.order,
          }
          : {
             title: '',
             description: '',
             icon: 'Palette',
             href: '#',
+            order: 0,
          },
    })
 
@@ -180,6 +183,26 @@ export function ServicesForm({
                   />
                   {errors.href && (
                      <p className="text-sm text-red-500">{errors.href.message}</p>
+                  )}
+               </div>
+
+               {/* Order Field */}
+               <div className="space-y-2">
+                  <label className="block text-sm font-medium text-foreground">
+                     Display Order <span className="text-red-500">*</span>
+                  </label>
+                  <input
+                     type="number"
+                     {...register('order', { valueAsNumber: true })}
+                     placeholder="0"
+                     className={`w-full px-3 py-2 border rounded-lg bg-background text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary ${errors.order ? 'border-red-500' : 'border-border'
+                        }`}
+                  />
+                  <p className="text-xs text-muted-foreground">
+                     Lower numbers appear first. You can also drag rows in the table to reorder.
+                  </p>
+                  {errors.order && (
+                     <p className="text-sm text-red-500">{errors.order.message}</p>
                   )}
                </div>
             </form>

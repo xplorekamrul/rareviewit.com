@@ -1,12 +1,12 @@
 // app/services/page.tsx (Server Component)
 import { AnimateInView } from "@/components/animate-in-view"
+import ServicesSection from "@/components/services-section"
 import { StaggerContainer } from "@/components/stagger-container"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Card, CardContent } from "@/components/ui/card"
 import { services } from "@/data/corpus"
 import { generateMetadata as generateSEOMetadata } from "@/lib/seo"
-import { ArrowRight, CheckCircle2, Palette, Search, Smartphone, TrendingUp } from "lucide-react"
 import Link from "next/link"
 
 // --- Metadata (spread keywords to avoid readonly -> mutable issues)
@@ -18,16 +18,8 @@ export const metadata = generateSEOMetadata({
   keywords: [...services.meta.keywords],
 })
 
-// Map icon IDs to actual Lucide components (keeps data plain)
-const ICONS = {
-  palette: Palette,
-  trendingUp: TrendingUp,
-  search: Search,
-  smartphone: Smartphone,
-} as const
-
 export default function ServicesPage() {
-  const { hero, grid, process, cta } = services
+  const { hero, process, cta } = services
 
   return (
     <>
@@ -54,48 +46,8 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* Services Grid */}
-      <section className="py-5 md:py-10">
-        <div className="container px-4">
-          <StaggerContainer className="grid gap-8 md:grid-cols-2">
-            {grid.items.map((item, index) => {
-              const Icon = ICONS[item.icon as keyof typeof ICONS]
-              return (
-                <AnimateInView key={item.title} direction="up" delay={index * 0.1}>
-                  <Card className="group transition-all hover:shadow-xl h-full">
-                    <CardHeader>
-                      <div className="mb-4 inline-flex h-14 w-14 items-center justify-center rounded-lg bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
-                        {/* Render icon component resolved from string ID */}
-                        <Icon className="h-7 w-7" />
-                      </div>
-                      <CardTitle className="text-2xl">{item.title}</CardTitle>
-                    </CardHeader>
-                    <CardContent className="space-y-6">
-                      <p className="text-muted-foreground leading-relaxed">{item.description}</p>
-
-                      <div className="space-y-2">
-                        {item.features.map((feature) => (
-                          <div key={feature} className="flex items-center gap-2 text-sm">
-                            <CheckCircle2 className="h-4 w-4 text-accent" />
-                            <span>{feature}</span>
-                          </div>
-                        ))}
-                      </div>
-
-                      <Button asChild className="w-full group/btn">
-                        <Link href={item.href}>
-                          {grid.ctaLabel}
-                          <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover/btn:translate-x-1" />
-                        </Link>
-                      </Button>
-                    </CardContent>
-                  </Card>
-                </AnimateInView>
-              )
-            })}
-          </StaggerContainer>
-        </div>
-      </section>
+      {/* Services Section - Database-driven with order sorting */}
+      <ServicesSection />
 
       {/* Process Section */}
       <section className="bg-muted/30 py-5 md:py-10">

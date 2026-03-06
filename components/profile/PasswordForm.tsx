@@ -1,6 +1,6 @@
 "use client";
 
-import { changePassword } from "@/actions/user/profile";
+import { changePassword } from "@/actions/users/profile";
 import { Button } from "@/components/ui/button";
 import { useAction } from "next-safe-action/hooks";
 import { useState } from "react";

@@ -1,6 +1,6 @@
 "use client";
 
-import { upsertUserInfo } from "@/actions/user/user-info";
+import { upsertUserInfo } from "@/actions/users/user-info";
 import { Button } from "@/components/ui/button";
 import { useAction } from "next-safe-action/hooks";
 import { useState } from "react";
