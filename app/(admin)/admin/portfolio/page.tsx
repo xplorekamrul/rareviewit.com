@@ -1,5 +1,6 @@
 import { getPortfolioCategories, getPortfolios } from "@/actions/portfolio";
 import { PortfolioPageClient } from "@/components/admin/protfolio/PortfolioPageClient";
+import { cacheLife, cacheTag } from "next/cache";
 
 interface Portfolio {
    id: string;
@@ -12,6 +13,7 @@ interface Portfolio {
    tags: string[];
    featured: boolean;
    status: string;
+   order: number;
    createdAt: Date;
    updatedAt: Date;
 }
@@ -22,11 +24,15 @@ interface Category {
    description?: string;
    icon?: string;
    color?: string;
+   order: number;
    createdAt: Date;
 }
 
-export default async function AdminPortfolioPage() {
-   // Fetch data on server side
+async function getPortfolioData() {
+   "use cache";
+   cacheLife("hours");
+   cacheTag("portfolios", "portfolio-categories");
+
    const [portfolioResult, categoryResult] = await Promise.all([
       getPortfolios(),
       getPortfolioCategories(),
@@ -39,6 +45,12 @@ export default async function AdminPortfolioPage() {
    const categories: Category[] = (categoryResult.success && categoryResult.data
       ? categoryResult.data
       : []) || [];
+
+   return { portfolios, categories };
+}
+
+export default async function AdminPortfolioPage() {
+   const { portfolios, categories } = await getPortfolioData();
 
    return (
       <PortfolioPageClient

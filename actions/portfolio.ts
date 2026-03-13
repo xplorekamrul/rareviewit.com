@@ -3,7 +3,7 @@
 import { auth } from "@/lib/auth";
 import { prisma } from "@/lib/prisma";
 import { portfolioCategorySchema, portfolioSchema } from "@/lib/validations/portfolio";
-import { cacheLife, cacheTag, revalidateTag } from "next/cache";
+import { cacheLife, cacheTag, updateTag } from "next/cache";
 
 // ===== Portfolio Category Actions =====
 
@@ -16,12 +16,22 @@ export async function createPortfolioCategory(data: unknown) {
 
       const validatedData = portfolioCategorySchema.parse(data);
 
+      // Get the highest order value
+      const lastCategory = await (prisma as any).portfolioCategory.findFirst({
+         orderBy: { order: 'desc' },
+         select: { order: true },
+      })
+
+      const nextOrder = (lastCategory?.order ?? -1) + 1
+
       const category = await (prisma as any).portfolioCategory.create({
-         data: validatedData,
+         data: {
+            ...validatedData,
+            order: nextOrder,
+         },
       });
 
-      // @ts-expect-error - Next.js 16 revalidateTag signature
-      revalidateTag("portfolio-categories");
+      updateTag("portfolio-categories");
 
       return {
          success: true,
@@ -48,8 +58,7 @@ export async function updatePortfolioCategory(id: string, data: unknown) {
          data: validatedData,
       });
 
-      // @ts-expect-error - Next.js 16 revalidateTag signature
-      revalidateTag("portfolio-categories");
+      updateTag("portfolio-categories");
 
       return {
          success: true,
@@ -73,8 +82,7 @@ export async function deletePortfolioCategory(id: string) {
          where: { id },
       });
 
-      // @ts-expect-error - Next.js 16 revalidateTag signature
-      revalidateTag("portfolio-categories");
+      updateTag("portfolio-categories");
 
       return {
          success: true,
@@ -86,6 +94,37 @@ export async function deletePortfolioCategory(id: string) {
    }
 }
 
+export async function reorderPortfolioCategories(categories: Array<{ id: string; order: number }>) {
+   try {
+      const session = await auth();
+      if (!session?.user || !["ADMIN", "SUPER_ADMIN", "DEVELOPER"].includes(session.user.role)) {
+         throw new Error("Unauthorized");
+      }
+
+      // Update all categories with their new order
+      await Promise.all(
+         categories.map(({ id, order }) =>
+            (prisma as any).portfolioCategory.update({
+               where: { id },
+               data: { order },
+            })
+         )
+      )
+
+      updateTag("portfolio-categories");
+
+      return {
+         success: true,
+         message: "Categories reordered successfully",
+      };
+   } catch (error) {
+      console.error("Error reordering categories:", error);
+      return {
+         success: false,
+         error: "Failed to reorder categories",
+      };
+   }
+}
 
 export async function getPortfolioCategories() {
    "use cache";
@@ -94,7 +133,7 @@ export async function getPortfolioCategories() {
 
    try {
       const categories = await (prisma as any).portfolioCategory.findMany({
-         orderBy: { createdAt: "desc" },
+         orderBy: { order: "asc" },
       });
 
       return {
@@ -118,9 +157,18 @@ export async function createPortfolio(data: unknown) {
 
       const validatedData = portfolioSchema.parse(data);
 
+      // Get the highest order value
+      const lastPortfolio = await prisma.portfolio.findFirst({
+         orderBy: { order: 'desc' },
+         select: { order: true },
+      })
+
+      const nextOrder = (lastPortfolio?.order ?? -1) + 1
+
       const portfolioData = {
          ...validatedData,
          url: validatedData.url === "" ? null : validatedData.url,
+         order: nextOrder,
       };
 
       const portfolio = await prisma.portfolio.create({
@@ -128,8 +176,7 @@ export async function createPortfolio(data: unknown) {
          include: { category: true },
       });
 
-      // @ts-expect-error - Next.js 16 revalidateTag signature
-      revalidateTag("portfolios");
+      updateTag("portfolios");
 
       return {
          success: true,
@@ -162,8 +209,7 @@ export async function updatePortfolio(id: string, data: unknown) {
          include: { category: true },
       });
 
-      // @ts-expect-error - Next.js 16 revalidateTag signature
-      revalidateTag("portfolios");
+      updateTag("portfolios");
 
       return {
          success: true,
@@ -187,8 +233,7 @@ export async function deletePortfolio(id: string) {
          where: { id },
       });
 
-      // @ts-expect-error - Next.js 16 revalidateTag signature
-      revalidateTag("portfolios");
+      updateTag("portfolios");
 
       return {
          success: true,
@@ -200,6 +245,38 @@ export async function deletePortfolio(id: string) {
    }
 }
 
+export async function reorderPortfolios(portfolios: Array<{ id: string; order: number }>) {
+   try {
+      const session = await auth();
+      if (!session?.user || !["ADMIN", "SUPER_ADMIN", "DEVELOPER"].includes(session.user.role)) {
+         throw new Error("Unauthorized");
+      }
+
+      // Update all portfolios with their new order
+      await Promise.all(
+         portfolios.map(({ id, order }) =>
+            prisma.portfolio.update({
+               where: { id },
+               data: { order },
+            })
+         )
+      )
+
+      updateTag("portfolios");
+
+      return {
+         success: true,
+         message: "Portfolios reordered successfully",
+      };
+   } catch (error) {
+      console.error("Error reordering portfolios:", error);
+      return {
+         success: false,
+         error: "Failed to reorder portfolios",
+      };
+   }
+}
+
 export async function getPortfolios() {
    "use cache";
    cacheLife("hours");
@@ -208,7 +285,7 @@ export async function getPortfolios() {
    try {
       const portfolios = await prisma.portfolio.findMany({
          include: { category: true },
-         orderBy: { createdAt: "desc" },
+         orderBy: { order: "asc" },
       });
 
       return {
@@ -255,7 +332,7 @@ export async function getPublishedPortfolios() {
       const portfolios = await prisma.portfolio.findMany({
          where: { status: "PUBLISHED" },
          include: { category: true },
-         orderBy: [{ featured: "desc" }, { createdAt: "desc" }],
+         orderBy: [{ order: "asc" }, { featured: "desc" }],
       });
 
       return {
@@ -279,8 +356,8 @@ export async function getFeaturedProjects() {
             status: "PUBLISHED",
          },
          orderBy: [
+            { order: "asc" },
             { featured: "desc" },
-            { createdAt: "desc" }
          ],
          take: 6,
          include: {

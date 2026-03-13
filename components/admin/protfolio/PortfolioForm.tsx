@@ -39,10 +39,9 @@ import { CategoryForm } from "./CategoryForm";
 
 interface PortfolioFormProps {
    initialData?: PortfolioInput & { id?: string };
-   onSuccess?: () => void;
+   onSuccess?: (portfolio: any) => void;
    mode: "create" | "edit";
    categories: Array<{ id: string; name: string }>;
-   onCategoriesChange?: (categories: Array<{ id: string; name: string }>) => void;
 }
 
 export function PortfolioForm({
@@ -50,7 +49,6 @@ export function PortfolioForm({
    onSuccess,
    mode,
    categories,
-   onCategoriesChange,
 }: PortfolioFormProps) {
    const [showCategoryDialog, setShowCategoryDialog] = useState(false);
    const [localCategories, setLocalCategories] = useState(categories);
@@ -104,7 +102,6 @@ export function PortfolioForm({
    const handleCategoryCreated = (newCategory: any) => {
       const updatedCategories = [...localCategories, { id: newCategory.id, name: newCategory.name }];
       setLocalCategories(updatedCategories);
-      onCategoriesChange?.(updatedCategories);
       form.setValue("categoryId", newCategory.id);
    };
 
@@ -115,13 +112,13 @@ export function PortfolioForm({
             if (result.success) {
                toast.success(result.message);
                form.reset();
-               onSuccess?.();
+               onSuccess?.(result.data || null);
             }
          } else if (initialData?.id) {
             const result = await updatePortfolio(initialData.id, data);
             if (result.success) {
                toast.success(result.message);
-               onSuccess?.();
+               onSuccess?.(result.data || null);
             }
          }
       } catch (error) {

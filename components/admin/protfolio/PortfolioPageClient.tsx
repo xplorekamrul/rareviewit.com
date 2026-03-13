@@ -1,6 +1,6 @@
 "use client";
 
-import { deletePortfolio } from "@/actions/portfolio";
+import { deletePortfolio, deletePortfolioCategory } from "@/actions/portfolio";
 import { CategoryForm } from "@/components/admin/protfolio/CategoryForm";
 import { CategoryTable } from "@/components/admin/protfolio/CategoryTable";
 import { PortfolioForm } from "@/components/admin/protfolio/PortfolioForm";
@@ -15,7 +15,6 @@ import {
 } from "@/components/ui/dialog";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Plus } from "lucide-react";
-import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { toast } from "sonner";
 
@@ -30,6 +29,7 @@ interface Portfolio {
    tags: string[];
    featured: boolean;
    status: string;
+   order: number;
    createdAt: Date;
    updatedAt: Date;
 }
@@ -40,6 +40,7 @@ interface Category {
    description?: string;
    icon?: string;
    color?: string;
+   order: number;
    createdAt: Date;
 }
 
@@ -52,7 +53,6 @@ export function PortfolioPageClient({
    initialPortfolios,
    initialCategories,
 }: PortfolioPageClientProps) {
-   const router = useRouter();
    const [portfolios, setPortfolios] = useState<Portfolio[]>(initialPortfolios);
    const [categories, setCategories] = useState<Category[]>(initialCategories);
    const [isOpen, setIsOpen] = useState(false);
@@ -62,7 +62,7 @@ export function PortfolioPageClient({
    const [editingCategoryId, setEditingCategoryId] = useState<string | null>(null);
    const [editingCategoryData, setEditingCategoryData] = useState<Category | null>(null);
    const [isDeletingId, setIsDeletingId] = useState<string | null>(null);
-   const [activeTab, setActiveTab] = useState("portfolios");
+   const [activeTab, setActiveTab] = useState("categories");
 
    const handleDelete = async (id: string) => {
       setIsDeletingId(id);
@@ -76,6 +76,18 @@ export function PortfolioPageClient({
          toast.error(error instanceof Error ? error.message : "Failed to delete portfolio");
       }
       setIsDeletingId(null);
+   };
+
+   const handleDeleteCategory = async (id: string) => {
+      try {
+         const result = await deletePortfolioCategory(id);
+         if (result.success) {
+            toast.success(result.message);
+            setCategories(categories.filter((c) => c.id !== id));
+         }
+      } catch (error) {
+         toast.error(error instanceof Error ? error.message : "Failed to delete category");
+      }
    };
 
    const handleEdit = (id: string) => {
@@ -109,15 +121,38 @@ export function PortfolioPageClient({
       setIsCategoryDialogOpen(true);
    };
 
-   const handleSuccess = () => {
-      router.refresh();
+   const handlePortfolioSuccess = (newPortfolio: Portfolio | null) => {
+      if (newPortfolio) {
+         if (editingId) {
+            // Update existing
+            setPortfolios(prev =>
+               prev.map(p => (p.id === newPortfolio.id ? newPortfolio : p))
+            );
+         } else {
+            // Add new
+            setPortfolios(prev => [newPortfolio, ...prev]);
+         }
+      }
       setIsOpen(false);
       setEditingId(null);
       setEditingData(null);
    };
 
-   const handleCategoriesChange = (updatedCategories: Array<{ id: string; name: string }>) => {
-      setCategories(updatedCategories as Category[]);
+   const handleCategorySuccess = (newCategory: Category | null) => {
+      if (newCategory) {
+         if (editingCategoryId) {
+            // Update existing
+            setCategories(prev =>
+               prev.map(c => (c.id === newCategory.id ? newCategory : c))
+            );
+         } else {
+            // Add new
+            setCategories(prev => [newCategory, ...prev]);
+         }
+      }
+      setIsCategoryDialogOpen(false);
+      setEditingCategoryId(null);
+      setEditingCategoryData(null);
    };
 
    return (
@@ -174,8 +209,8 @@ export function PortfolioPageClient({
                <div className="overflow-x-auto">
                   <CategoryTable
                      data={categories}
-                     onRefresh={() => router.refresh()}
                      onEdit={handleEditCategory}
+                     onDelete={handleDeleteCategory}
                   />
                </div>
             </TabsContent>
@@ -203,12 +238,12 @@ export function PortfolioPageClient({
                      tags: editingData.tags,
                      featured: editingData.featured,
                      status: editingData.status as "PUBLISHED" | "DRAFT",
+                     order: editingData.order,
                      id: editingData.id,
                   } : undefined}
-                  onSuccess={handleSuccess}
+                  onSuccess={handlePortfolioSuccess}
                   mode={editingId ? "edit" : "create"}
                   categories={categories.map((c) => ({ id: c.id, name: c.name }))}
-                  onCategoriesChange={handleCategoriesChange}
                />
             </DialogContent>
          </Dialog>
@@ -231,14 +266,10 @@ export function PortfolioPageClient({
                      description: editingCategoryData.description || "",
                      icon: editingCategoryData.icon || "",
                      color: editingCategoryData.color || "",
+                     order: editingCategoryData.order,
                   } : undefined}
                   categoryId={editingCategoryId || undefined}
-                  onSuccess={() => {
-                     router.refresh();
-                     setIsCategoryDialogOpen(false);
-                     setEditingCategoryId(null);
-                     setEditingCategoryData(null);
-                  }}
+                  onSuccess={handleCategorySuccess}
                   onClose={() => {
                      setIsCategoryDialogOpen(false);
                      setEditingCategoryId(null);
