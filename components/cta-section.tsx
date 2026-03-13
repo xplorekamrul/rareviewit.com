@@ -17,7 +17,7 @@ export default function CtaSection({ data }: { data: CTAData }) {
   return (
     <section className="relative overflow-hidden bg-primary py-20 text-primary-foreground md:py-32">
       <div className="container relative z-10 px-4">
-        <AnimateInView className="mx-auto max-w-3xl text-center">
+        <AnimateInView className="mx-auto max-w-4xl text-center">
           <h2 className="mb-6 text-3xl font-bold tracking-tight md:text-5xl text-balance">
             {data.title}
           </h2>

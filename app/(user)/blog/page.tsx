@@ -28,7 +28,7 @@ export default function BlogPage() {
       {/* Hero */}
       <section className="bg-gradient-to-b from-background to-muted/30 py-5 md:py-10">
         <div className="container px-4">
-          <AnimateInView className="mx-auto max-w-3xl text-center">
+          <AnimateInView className="mx-auto max-w-4xl text-center">
             <Badge className="mb-6" variant="secondary">{hero.badge}</Badge>
             <h1 className="mb-6 text-4xl font-bold tracking-tight text-foreground md:text-6xl text-balance">
               {hero.title}

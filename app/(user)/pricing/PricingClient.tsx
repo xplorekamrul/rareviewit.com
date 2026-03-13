@@ -53,6 +53,11 @@ type PricingData = {
   }
 }
 
+// Format price with commas (e.g., 299999 -> 2,99,999)
+const formatPrice = (price: number): string => {
+  return price.toLocaleString('en-IN')
+}
+
 export default function PricingClient({ data }: { data: PricingData }) {
   const { hero, toggle, packages, addons, faqSection, cta } = data
   const [billingCycle, setBillingCycle] = useState<BillingCycle>(toggle.defaultCycle)
@@ -66,7 +71,7 @@ export default function PricingClient({ data }: { data: PricingData }) {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="mx-auto max-w-3xl text-center"
+            className="mx-auto max-w-4xl text-center"
           >
             <Badge className="mb-6" variant="secondary">
               {hero.badge}
@@ -96,14 +101,14 @@ export default function PricingClient({ data }: { data: PricingData }) {
             <div className="inline-flex rounded-lg border border-border bg-muted/30 p-1">
               <button
                 onClick={() => setBillingCycle("onetime")}
-                className={`rounded-md px-6 py-2 text-sm font-medium transition-colors ${billingCycle === "onetime" ? "bg-background text-foreground shadow-sm" : "text-muted-foreground"
+                className={`rounded-md px-6 py-2 text-sm font-medium transition-colors ${billingCycle === "onetime" ? "bg-primary text-white shadow-sm" : "text-muted-foreground cursor-pointer"
                   }`}
               >
                 {toggle.labels.onetime}
               </button>
               <button
                 onClick={() => setBillingCycle("monthly")}
-                className={`rounded-md px-6 py-2 text-sm font-medium transition-colors ${billingCycle === "monthly" ? "bg-background text-foreground shadow-sm" : "text-muted-foreground"
+                className={`rounded-md px-6 py-2 text-sm font-medium transition-colors ${billingCycle === "monthly" ? "bg-primary text-white shadow-sm" : "text-muted-foreground cursor-pointer"
                   }`}
               >
                 {toggle.labels.monthly}
@@ -119,6 +124,7 @@ export default function PricingClient({ data }: { data: PricingData }) {
           <div className="grid gap-8 md:grid-cols-3">
             {packages.map((pkg, index) => {
               const price = billingCycle === "onetime" ? pkg.priceOneTime : pkg.priceMonthly
+              const formattedPrice = formatPrice(price)
               return (
                 <motion.div
                   key={pkg.name}
@@ -139,7 +145,7 @@ export default function PricingClient({ data }: { data: PricingData }) {
                       <CardTitle className="text-2xl">{pkg.name}</CardTitle>
                       <p className="text-sm text-muted-foreground">{pkg.description}</p>
                       <div className="mt-4">
-                        <span className="text-4xl font-bold text-foreground">${price}</span>
+                        <span className="text-4xl font-bold text-foreground">৳{formattedPrice}</span>
                         <span className="text-muted-foreground">
                           {billingCycle === "monthly" ? "/month" : " one-time"}
                         </span>
@@ -203,7 +209,7 @@ export default function PricingClient({ data }: { data: PricingData }) {
                   <CardContent className="p-6 text-center">
                     <h3 className="mb-2 text-xl font-bold text-foreground">{addon.name}</h3>
                     <p className="mb-4 text-sm text-muted-foreground">{addon.description}</p>
-                    <div className="text-2xl font-bold text-primary">${addon.price}</div>
+                    <div className="text-2xl font-bold text-primary">৳{formatPrice(addon.price)}</div>
                   </CardContent>
                 </Card>
               </motion.div>
@@ -258,7 +264,7 @@ export default function PricingClient({ data }: { data: PricingData }) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="mx-auto max-w-3xl text-center"
+            className="mx-auto max-w-4xl text-center"
           >
             <h2 className="mb-6 text-3xl font-bold tracking-tight md:text-4xl text-balance">
               {cta.title}

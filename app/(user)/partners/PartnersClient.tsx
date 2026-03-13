@@ -56,7 +56,7 @@ export default function PartnersClient({ data }: { data: PartnersData }) {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="mx-auto max-w-3xl text-center"
+            className="mx-auto max-w-4xl text-center"
           >
             <Badge className="mb-6" variant="secondary">
               {hero.badge}
@@ -275,7 +275,7 @@ export default function PartnersClient({ data }: { data: PartnersData }) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="mx-auto max-w-3xl text-center"
+            className="mx-auto max-w-4xl text-center"
           >
             <h2 className="mb-6 text-3xl font-bold tracking-tight md:text-4xl text-balance">
               {cta.title}

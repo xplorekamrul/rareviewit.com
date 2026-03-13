@@ -90,22 +90,26 @@ model Booking {
   phone       String?
   meetingType String
   durationMin Int
-  startsAt    DateTime
-  status      String   @default("CONFIRMED")
-  notes       String?
-  source      String?
+  order       Int      @default(0)
+
+  startsAt DateTime
+  status   String   @default("CONFIRMED")
+  notes    String?
+  source   String?
 
   @@index([startsAt])
 }
 
 model PortfolioCategory {
-  id          String   @id @default(cuid())
-  name        String   @unique @db.VarChar(100)
-  description String?  @db.Text
-  icon        String?  @db.VarChar(50)
-  color       String?  @db.VarChar(20)
-  createdAt   DateTime @default(now()) @map("created_at")
-  updatedAt   DateTime @updatedAt @map("updated_at")
+  id          String  @id @default(cuid())
+  name        String  @unique @db.VarChar(100)
+  description String? @db.Text
+  order       Int     @default(0)
+
+  icon      String?  @db.VarChar(50)
+  color     String?  @db.VarChar(20)
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
 
   portfolios Portfolio[]
 
@@ -122,9 +126,11 @@ model Portfolio {
   tags        String[]          @default([])
   featured    Boolean           @default(false)
   status      String            @default("PUBLISHED")
-  url         String?
-  createdAt   DateTime          @default(now()) @map("created_at")
-  updatedAt   DateTime          @updatedAt @map("updated_at")
+  order       Int               @default(0)
+
+  url       String?
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
 
   @@index([categoryId])
   @@index([status])

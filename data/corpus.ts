@@ -67,29 +67,29 @@ export const corpus = {
     },
     team: [
       {
-          "name": "Md Kamruzzaman",
-          "role": "Founder & CEO",
-          "image": "/placeholder.svg",
-          "bio": "15+ years leading digital transformation"
-        },
-        {
-          "name": "Misty",
-          "role": "RareviewIt Director",
-          "image": "/placeholder.svg",
-          "bio": "Award-winning designer with global experience"
-        },
-        {
-          "name": "David Kim",
-          "role": "Head of Development",
-          "image": "/placeholder.svg",
-          "bio": "Full-stack expert and tech innovator"
-        },
-        {
-          "name": "Mst Kajal",
-          "role": "Office Person",
-          "image": "/placeholder.svg",
-          "bio": "Data-driven marketer with proven ROI"
-        }
+        "name": "Md Kamruzzaman",
+        "role": "Founder & CEO",
+        "image": "/placeholder.svg",
+        "bio": "15+ years leading digital transformation"
+      },
+      {
+        "name": "Misty",
+        "role": "RareviewIt Director",
+        "image": "/placeholder.svg",
+        "bio": "Award-winning designer with global experience"
+      },
+      {
+        "name": "David Kim",
+        "role": "Head of Development",
+        "image": "/placeholder.svg",
+        "bio": "Full-stack expert and tech innovator"
+      },
+      {
+        "name": "Mst Kajal",
+        "role": "Office Person",
+        "image": "/placeholder.svg",
+        "bio": "Data-driven marketer with proven ROI"
+      }
     ],
     cta: {
       title: "Ready to Work Together?",
@@ -730,7 +730,7 @@ export const corpus = {
         {
           question: "What payment methods do you accept?",
           answer:
-            "We accept credit cards, bank transfers, PayPal, and for larger projects, we can arrange payment plans.",
+            "We accept Mobile Banking Like (bKash , Nagad , Rocket & others) Dabit & credit cards, bank transfers, and for larger projects, we can arrange payment plans.",
         },
         {
           question: "How many design revisions are included?",
@@ -1002,115 +1002,113 @@ export const corpus = {
     },
   },
   //----------------------------------------------pricing page corpus-----------------------------------------------------------
-  pricing: {
-    meta: {
-      title: "Pricing",
-      description: "Flexible pricing that fits your business. Choose a package or request a custom quote.",
-      path: "/pricing",
-      ogImage: FALLBACK_IMAGE,
-      keywords: ["pricing", "packages", "plans", "Web Development  pricing", "agency pricing"] as const,
+
+  "pricing": {
+    "meta": {
+      "title": "Pricing & Plans | Rareviewit",
+      "description": "Affordable and flexible digital solutions for Bangladeshi businesses. Choose a package that fits your growth.",
+      "path": "/pricing",
+      "ogImage": "FALLBACK_IMAGE",
+      "keywords": ["web development price BD", "website design cost Bangladesh", "SEO packages Dhaka", "software agency pricing"]
     },
-    hero: {
-      badge: "Pricing",
-      title: "Flexible Pricing That Fits Your Business",
-      description: "Choose a package or request a custom quote — we scale to your needs.",
-      primaryCta: { text: "Get a Custom Quote", href: "/contact" },
-      secondaryCta: { text: "View Services", href: "/services" },
+    "hero": {
+      "badge": "Transparent Pricing",
+      "title": "Flexible Pricing That Fits Your Business",
+      "description": "Choose a package or request a custom quote — we scale to your needs across Bangladesh.",
+      "primaryCta": { "text": "Get a Custom Quote", "href": "/contact" },
+      "secondaryCta": { "text": "View Services", "href": "/services" }
     },
-    toggle: {
-      labels: { onetime: "One-Time", monthly: "Monthly" },
-      defaultCycle: "onetime" as const, // "onetime" | "monthly"
+    "toggle": {
+      "labels": { "onetime": "One-Time (Project)", "monthly": "Monthly (Retainer)" },
+      "defaultCycle": "onetime"
     },
-    packages: [
+    "packages": [
       {
-        name: "Starter",
-        priceOneTime: 499,
-        priceMonthly: 99,
-        description: "Perfect for small businesses and startups",
-        features: [
-          "5-Page Website",
-          "Responsive Design",
-          "Basic SEO Setup",
-          "Contact Form",
-          "2 Revisions",
-          "30-Day Support",
+        "name": "Starter",
+        "priceOneTime": 29999,
+        "priceMonthly": 9999,
+        "description": "Perfect for local small businesses and startups",
+        "features": [
+          "5-Page Professional Website",
+          "Responsive Mobile Design",
+          "Basic SEO & Google Maps Setup",
+          "Contact Form Integration",
+          "10 Revisions",
+          "365-Day Technical Support"
         ],
-        notIncluded: ["E-commerce", "Custom Animations", "Advanced Analytics"],
-        popular: false,
+        "notIncluded": ["E-commerce", "Custom Animations", "Advanced Analytics"],
+        "popular": false
       },
       {
-        name: "Growth",
-        priceOneTime: 1299,
-        priceMonthly: 249,
-        description: "Ideal for growing businesses",
-        features: [
-          "10-Page Website",
-          "Advanced Responsive Design",
+        "name": "Growth",
+        "priceOneTime": 99999,
+        "priceMonthly": 24999,
+        "description": "Ideal for growing SMEs and E-commerce",
+        "features": [
+          "10-Page Dynamic Website",
+          "E-commerce Functionality",
+          "Payment Gateway (bKash/Nagad/SSL)",
           "Complete SEO Package",
-          "Contact & Lead Forms",
-          "5 Revisions",
-          "90-Day Support",
-          "Performance Optimization",
-          "Analytics Integration",
+          "Lead Generation Forms",
+          "20 Revisions",
+          "90-Day Priority Support",
+          "Performance Optimization"
         ],
-        notIncluded: ["E-commerce", "Custom CMS"],
-        popular: true,
+        "notIncluded": ["Custom Mobile App", "Advanced ERP Integration"],
+        "popular": true
       },
       {
-        name: "Enterprise",
-        priceOneTime: 2999,
-        priceMonthly: 599,
-        description: "For established businesses with complex needs",
-        features: [
-          "Unlimited Pages",
-          "Premium Design System",
-          "Advanced SEO & Marketing",
-          "Custom Forms & Integrations",
+        "name": "Enterprise",
+        "priceOneTime": 299999,
+        "priceMonthly": 54999,
+        "description": "For established brands with complex needs",
+        "features": [
+          "Unlimited Pages / Full Web App",
+          "Custom Design System",
+          "Advanced SEO & Digital Strategy",
           "Unlimited Revisions",
-          "1-Year Support",
-          "Performance Optimization",
-          "Advanced Analytics",
-          "E-commerce Ready",
-          "Custom CMS",
-          "Priority Support",
+          "1-Year Dedicated Support",
+          "High-Speed Performance Audit",
+          "Advanced User Analytics",
+          "Custom CMS (Admin Panel)",
+          "Security Hardening"
         ],
-        notIncluded: [],
-        popular: false,
-      },
-    ] as const,
-    addons: [
-      { name: "Logo Design", price: 299, description: "Professional brand identity" },
-      { name: "Landing Page", price: 499, description: "High-converting single page" },
-      { name: "Speed Optimization", price: 199, description: "Performance tuning" },
-      { name: "Monthly SEO", price: 399, description: "Ongoing optimization" },
-    ] as const,
-    faqSection: {
-      title: "Payment Terms & FAQ",
-      items: [
+        "notIncluded": [],
+        "popular": false
+      }
+    ],
+    "addons": [
+      { "name": "Logo & Branding Kit", "price": 14999, "description": "Unique brand identity design" },
+      { "name": "Landing Page (Single)", "price": 11999, "description": "High-converting sales page" },
+      { "name": "Speed Optimization", "price": 7999, "description": "Core Web Vitals tuning" },
+      { "name": "Monthly SEO Retainer", "price": 19999, "description": "Ongoing ranking growth" }
+    ],
+    "faqSection": {
+      "title": "Payment Terms & FAQ",
+      "items": [
         {
-          question: "Do you offer payment plans?",
-          answer: "Yes, we offer flexible payment plans for projects over $1,000. Contact us to discuss options.",
+          "question": "Do you accept local payment methods?",
+          "answer": "Yes, we accept bKash, Nagad, and local Bank Transfers, as well as international cards."
         },
         {
-          question: "What's your refund policy?",
-          answer: "We offer refunds if work hasn't begun. Partial refunds are evaluated case-by-case.",
+          "question": "Are there payment installments?",
+          "answer": "For projects over ৳50,000, we offer a 50% upfront and 50% upon completion milestone plan."
         },
         {
-          question: "Are prices negotiable?",
-          answer: "We're happy to discuss custom packages that fit your budget and needs.",
+          "question": "Do you include hosting/domain?",
+          "answer": "Hosting and domain are separate. We can recommend top-tier local or global providers (AWS/Vercel) based on your traffic."
         },
         {
-          question: "Do you include hosting/domain?",
-          answer:
-            "Hosting and domain are separate. We can recommend providers or manage it for you.",
-        },
-      ] as const,
+          "question": "Are these prices negotiable?",
+          "answer": "While our packages are optimized for value, we can discuss custom quotes for specific non-profit or long-term projects."
+        }
+      ]
     },
-    cta: {
-      title: "Let's Launch Your Project with Confidence",
-      description: "Ready to get started? Schedule a call or request a custom quote today.",
-      button: { text: "Get Started Now", href: "/contact" },
-    },
+    "cta": {
+      "title": "Let's Launch Your Project with Confidence",
+      "description": "Ready to get started? Call us or request a custom quote today.",
+      "button": { "text": "Start Your Project", "href": "/contact" }
+    }
   },
   //----------------------------------------------privacy page corpus-----------------------------------------------------------
   privacy: {

@@ -26,7 +26,7 @@ export default function ContactPage() {
         </div>
 
         <div className="container relative px-4">
-          <AnimateInView className="mx-auto max-w-3xl text-center">
+          <AnimateInView className="mx-auto max-w-4xl text-center">
             <Badge className="mb-6 bg-primary/10 text-primary hover:bg-primary/20" variant="secondary">
               {hero.badge}
             </Badge>

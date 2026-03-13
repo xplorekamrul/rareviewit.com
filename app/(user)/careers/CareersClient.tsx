@@ -26,7 +26,7 @@ export default function CareersClient() {
       {/* Hero Section */}
       <section className="bg-gradient-to-b from-background to-muted/30 py-5 md:py-10">
         <div className="container px-4">
-          <AnimateInView className="mx-auto max-w-3xl text-center">
+          <AnimateInView className="mx-auto max-w-4xl text-center">
             <Badge className="mb-6" variant="secondary">
               {hero.badge}
             </Badge>
@@ -144,7 +144,7 @@ export default function CareersClient() {
       <section className="bg-primary py-20 text-primary-foreground md:py-32">
         <div className="container px-4">
           {/* FIX: removed unsupported `scale` prop */}
-          <AnimateInView className="mx-auto max-w-3xl text-center">
+          <AnimateInView className="mx-auto max-w-4xl text-center">
             <h2 className="mb-6 text-3xl font-bold tracking-tight md:text-4xl text-balance">
               {cta.title}
             </h2>
