@@ -17,7 +17,7 @@ async function getPortfolioData() {
       include: {
         portfolios: {
           where: { status: "PUBLISHED" },
-          orderBy: [{ featured: "desc" }, { createdAt: "desc" }],
+          orderBy: [{ order: "asc" }, { featured: "desc" }],
           select: {
             id: true,
             title: true,
@@ -26,10 +26,12 @@ async function getPortfolioData() {
             tags: true,
             featured: true,
             status: true,
+            url: true,
+            order: true,
           },
         },
       },
-      orderBy: { createdAt: "desc" },
+      orderBy: { order: "asc" },
     });
 
     return categories as any;

@@ -1,10 +1,10 @@
 import { PrismaPg } from "@prisma/adapter-pg";
 import { PrismaClient } from "@prisma/client";
-import { config } from "dotenv";
+import dotenv from "dotenv";
 import { Pool } from "pg";
 
-// Load environment variables
-config();
+// Load environment variables from .env file
+dotenv.config({ path: ".env" });
 
 const connectionString = process.env.DATABASE_URL;
 
@@ -18,7 +18,6 @@ const adapter = new PrismaPg(pool);
 
 const prisma = new PrismaClient({
   adapter,
-  errorFormat: "pretty",
 });
 
 const portfolioData = [
