@@ -5,6 +5,7 @@ export const portfolioCategorySchema = z.object({
    description: z.string().optional(),
    icon: z.string().optional(),
    color: z.string().optional(),
+   order: z.number().int().min(0).default(0),
 });
 
 export type PortfolioCategoryInput = z.infer<typeof portfolioCategorySchema>;
@@ -18,6 +19,7 @@ export const portfolioSchema = z.object({
    tags: z.array(z.string()).min(1, "At least one tag is required").max(10, "Maximum 10 tags allowed"),
    featured: z.boolean().default(false),
    status: z.enum(["PUBLISHED", "DRAFT"]).default("PUBLISHED"),
+   order: z.number().int().min(0).default(0),
 });
 
 export type PortfolioInput = z.infer<typeof portfolioSchema>;

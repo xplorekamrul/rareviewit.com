@@ -26,7 +26,7 @@ export default function ServicesPage() {
       {/* Hero (server-rendered) */}
       <section className="bg-gradient-to-b from-background to-muted/30 py-5 md:py-10">
         <div className="container px-4">
-          <div className="mx-auto max-w-3xl text-center">
+          <div className="mx-auto max-w-4xl text-center">
             <AnimateInView direction="none" delay={0.1}>
               <Badge className="mb-6" variant="secondary">
                 {hero.badge}
@@ -86,7 +86,7 @@ export default function ServicesPage() {
       {/* CTA */}
       <section className="py-5 md:py-10">
         <div className="container px-4">
-          <div className="mx-auto max-w-3xl text-center">
+          <div className="mx-auto max-w-4xl text-center">
             <AnimateInView direction="none">
               <h2 className="mb-6 text-3xl font-bold tracking-tight text-foreground md:text-4xl text-balance">
                 {cta.title}

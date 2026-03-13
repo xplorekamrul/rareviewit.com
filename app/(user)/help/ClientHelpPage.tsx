@@ -64,7 +64,7 @@ export default function ClientHelpPage({ data }: { data: HelpData }) {
       {/* Hero */}
       <section className="bg-gradient-to-b from-background to-muted/30 py-5 md:py-10">
         <div className="container px-4">
-          <AnimateInView className="mx-auto max-w-3xl text-center">
+          <AnimateInView className="mx-auto max-w-4xl text-center">
             <Badge className="mb-6" variant="secondary">
               {hero.badge}
             </Badge>
@@ -199,7 +199,7 @@ export default function ClientHelpPage({ data }: { data: HelpData }) {
       {/* Quick Links */}
       <section className="bg-muted/30 py-5 md:py-10">
         <div className="container px-4">
-          <AnimateInView className="mx-auto max-w-3xl text-center">
+          <AnimateInView className="mx-auto max-w-4xl text-center">
             <h2 className="mb-6 text-3xl font-bold tracking-tight text-foreground md:text-4xl text-balance">
               {quickLinksSection.title}
             </h2>
