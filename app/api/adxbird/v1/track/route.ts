@@ -21,7 +21,11 @@ export async function GET(req: NextRequest) {
     if (!adId) return new NextResponse(null, { status: 400 });
 
     try {
-        const updateTask = prisma.adAnalytics.upsert({
+        // 1x1 transparent pixel
+        const pixel = Buffer.from('R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7', 'base64');
+
+        // Fire and forget: database write happens asynchronously
+        prisma.adAnalytics.upsert({
             where: { adId: adId },
             update: {
                 impressions: type === 'impression' ? { increment: 1 } : undefined,
@@ -33,13 +37,7 @@ export async function GET(req: NextRequest) {
                 impressions: type === 'impression' ? 1 : 0,
                 clicks: type === 'click' ? 1 : 0,
             },
-        });
-
-        // সার্ভারলেস এনভায়রনমেন্টে প্রসেসটি সচল রাখতে catch এবং error logging নিশ্চিত করুন
-        updateTask.catch(err => console.error("Prisma Tracking Error:", err));
-
-        // ১x১ ট্রান্সপারেন্ট পিক্সেল
-        const pixel = Buffer.from('R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7', 'base64');
+        }).catch(err => console.error("Prisma Tracking Error:", err));
 
         return new NextResponse(new Uint8Array(pixel), {
             headers: {
