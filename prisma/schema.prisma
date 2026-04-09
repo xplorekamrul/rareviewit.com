@@ -208,3 +208,16 @@ model TeamMember {
   @@index([order])
   @@index([createdAt])
 }
+
+
+model AdAnalytics {
+  id           String   @id @default(cuid())
+  adId         String   @unique
+  site         String?  @default("unknown")
+  impressions  Int      @default(0)
+  clicks       Int      @default(0)
+  lastUpdated  DateTime @updatedAt
+  createdAt    DateTime @default(now())
+
+  @@index([adId])
+}
