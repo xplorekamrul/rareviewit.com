@@ -38,6 +38,7 @@ export async function proxy(req: NextRequest) {
     "/login",
     "/register",
     "/api/auth",
+    "/api/adxbird/v1/track",
     "/favicon.ico",
     "/_next",
     "/assets",
